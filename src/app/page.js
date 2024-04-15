@@ -17,6 +17,7 @@ export default function Home() {
 		<iframe className="absolute z-0" width="80%" height="100%" src="https://www.youtube.com/embed/JcYMICpVTCA?si=8LQjeQgxGgfvt_2V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 		<VerticalAccordion />
 		</div>
+		
 		</main>
 	);
 }
