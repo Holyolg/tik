@@ -35,7 +35,13 @@ const Panel = ({ open, setOpen, id, title, imgSrc, description, textMod }) => {
   let textStyle = 'text-white bg-[#003056] sm:flex-col p-5 flex flex-row-reverse items-center gap-4 relative group border-l border-t'
   return (
     <>
-                    <button
+    <AnimatePresence>
+        <motion.div
+        variants={panelVariants}
+        initial="closed"
+        animate="open"
+        exit="closed"
+
                 className={textStyle + textMod}
                  onMouseEnter={() => setOpen(id)}
                  onMouseLeave={() => setOpen(0)}
@@ -49,10 +55,8 @@ const Panel = ({ open, setOpen, id, title, imgSrc, description, textMod }) => {
                   {title}
                 </span>
                 <span className="block lg:hidden text-xl">{title}</span>
-              </button>
+              </motion.div>
 
-
-      <AnimatePresence>
         {isOpen && (
 
           <motion.div
@@ -68,9 +72,7 @@ const Panel = ({ open, setOpen, id, title, imgSrc, description, textMod }) => {
               // backgroundSize: "cover",
             }}
 
-
-            className="w-full h-full overflow-hidden relative bg-[#003056] flex items-end"
-          >
+            className="w-full h-full overflow-hidden relative bg-[#003056] flex items-end">
           </motion.div>
         )},
         

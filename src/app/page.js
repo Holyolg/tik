@@ -14,10 +14,10 @@ export default function Home() {
 	return (
 		<main className="bg-[#003056]">
 		<div className="video">
-		<iframe className="absolute z-0" width="80%" height="100%" src="https://www.youtube.com/embed/JcYMICpVTCA?si=8LQjeQgxGgfvt_2V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		{/* <iframe className="absolute z-0" width="80%" height="100%" src="https://www.youtube.com/embed/JcYMICpVTCA?si=8LQjeQgxGgfvt_2V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */}
 		<VerticalAccordion />
 		</div>
-		
+
 		</main>
 	);
 }
