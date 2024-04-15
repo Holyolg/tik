@@ -37,10 +37,9 @@ const Panel = ({ open, setOpen, id, title, imgSrc, description, textMod }) => {
     <>
     <AnimatePresence>
         <motion.div
-        variants={panelVariants}
-        initial="closed"
-        animate="open"
-        exit="closed"
+        initial={{width: 50}}
+        animate={{width: 500}}
+        exit={{width: 50}}
 
                 className={textStyle + textMod}
                  onMouseEnter={() => setOpen(id)}
