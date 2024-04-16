@@ -7,11 +7,27 @@ import { useWindowSize } from "./useWindowSize";
 
 const VerticalAccordion = () => {
 	const [open, setOpen] = useState(items[0].id);
-
 	return (
 		<>
-			<section className="relative h-fit lg:h-[90vh] w-full overflow-hidden flex">
-				<div className="video w-screen h-screen bg-gray-300"></div>
+			<section className="relative w-full overflow-hidden flex">
+				<video
+					className="w-full h-screen object-cover"
+					width="100%"
+					height="100%"
+					preload="none"
+					autoPlay
+					loop
+					muted
+				>
+					<source src="/hero.mp4" type="video/mp4" />
+					<track
+						src="/path/to/captions.vtt"
+						kind="subtitles"
+						srcLang="en"
+						label="English"
+					/>
+					Your browser does not support the video tag.
+				</video>
 				{items.map(item => {
 					return (
 						<Panel
@@ -42,7 +58,7 @@ const Panel = ({
 	description,
 	textMod,
 }) => {
-	const { width } = useWindowSize();
+	const { width, height } = useWindowSize();
 	const isOpen = open === id;
 	let textStyle =
 		"text-white bg-[#003056] sm:flex-col p-5 border-l w-[39.999779722744364vw] h-screen absolute top-0";
@@ -55,7 +71,7 @@ const Panel = ({
 					onMouseLeave={() => setOpen(0)}
 					whileHover={{
 						transform: "translateX(-30vw)",
-            transition: { duration: 0.3, delay: 0.125}
+						transition: { duration: 0.3, delay: 0.125 },
 					}}
 				>
 					<div className="card-wrapper flex h-full">
@@ -75,7 +91,7 @@ const Panel = ({
 								key={`panel-${id}`}
 								className=""
 								variants={descriptionVariants}
-								initial='closed'
+								initial="closed"
 								animate="open"
 								exit="closed"
 							>
@@ -136,8 +152,7 @@ const items = [
 		id: 1,
 		title: "О НАС",
 		link: "/about",
-		imgSrc:
-			"https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+		imgSrc: "/card.png",
 		textMod: " -right-[10vw]",
 		// description:
 		//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
@@ -146,8 +161,7 @@ const items = [
 		id: 2,
 		title: "ГЕНПРОЕКТИРОВАНИЕ",
 		link: "/general",
-		imgSrc:
-			"https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
+		imgSrc: "/card.png",
 		textMod: " -right-[20vw]",
 		// description:
 		//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
@@ -156,8 +170,7 @@ const items = [
 		id: 3,
 		title: "КОНЦЕПЦИЯ",
 		link: "/concept",
-		imgSrc:
-			"https://images.unsplash.com/photo-1578450671530-5b6a7c9f32a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+		imgSrc: "/card.png",
 		textMod: " -right-[30vw]",
 		// description:
 		//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
