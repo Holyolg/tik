@@ -1,5 +1,3 @@
-"use client";
-
 import VerticalAccordion from "./components/Accordion/Accordion";
 
 export default function Home() {

@@ -1,3 +1,5 @@
+"use client";
+
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
@@ -53,6 +55,7 @@ const Panel = ({
 					onMouseLeave={() => setOpen(0)}
 					whileHover={{
 						transform: "translateX(-30vw)",
+            transition: { duration: 0.3, delay: 0.125}
 					}}
 				>
 					<div className="card-wrapper flex h-full">
@@ -67,18 +70,17 @@ const Panel = ({
 							{title}
 						</Link>
 						<span className="block lg:hidden text-xl">{title}</span>
-
 						{isOpen && (
 							<motion.div
 								key={`panel-${id}`}
 								className=""
 								variants={descriptionVariants}
-								initial="closed"
+								initial='closed'
 								animate="open"
 								exit="closed"
 							>
-								<div className="content-wrapper ml-10">
-									<img className="w-full h-3/4 " src={imgSrc}></img>
+								<div className="content-wrapper h-full ml-10">
+									<img className="w-full" src={imgSrc}></img>
 									<p className="text-xl text-start">
 										САМЫЙ ЛУЧШИЙ КОНЦЕПТУАЛЬНЫЙ ПЛАСТ МОСКВЫ
 									</p>
@@ -122,8 +124,8 @@ const descriptionVariants = {
 		opacity: 1,
 		x: "0%",
 		transition: {
-			easy: "easeIn",
-			duration: 0.125,
+			easy: "linear",
+			duration: 0.2,
 		},
 	},
 	closed: { opacity: 0, x: "100%" },
