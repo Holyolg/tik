@@ -9,11 +9,11 @@ const VerticalAccordion = () => {
 	const [open, setOpen] = useState(items[0].id);
 	return (
 		<>
-			<section className="relative w-full overflow-hidden flex">
+			<section className="relative w-full overflow-hidden">
 				<video
-					className="w-full h-screen object-cover"
+					className="w-full h-[90vh] object-cover"
 					width="100%"
-					height="100%"
+					height="90vh"
 					preload="none"
 					autoPlay
 					loop
@@ -40,6 +40,7 @@ const VerticalAccordion = () => {
 							imgSrc={item.imgSrc}
 							description={item.description}
 							textMod={item.textMod}
+							textAlign={item.textAlign}
 						/>
 					);
 				})}
@@ -57,11 +58,13 @@ const Panel = ({
 	imgSrc,
 	description,
 	textMod,
+	textAlign,
 }) => {
 	const { width, height } = useWindowSize();
+	console.log(width, height);
 	const isOpen = open === id;
 	let textStyle =
-		"text-white bg-[#003056] sm:flex-col p-5 border-l w-[39.999779722744364vw] h-screen absolute top-0";
+		"text-white bg-[#003056] sm:flex-col px-5 py-10 border-l w-[40vw] h-[90vh] absolute top-0 flex";
 	return (
 		<>
 			<AnimatePresence>
@@ -70,7 +73,7 @@ const Panel = ({
 					onMouseEnter={() => setOpen(id)}
 					onMouseLeave={() => setOpen(0)}
 					whileHover={{
-						transform: "translateX(-30vw)",
+						transform: "translateX(-34vw)",
 						transition: { duration: 0.3, delay: 0.125 },
 					}}
 				>
@@ -79,7 +82,7 @@ const Panel = ({
 							href={link}
 							style={{
 								writingMode: "vertical-lr",
-								textAlign: "end",
+								textAlign: textAlign,
 							}}
 							className="hidden lg:block text-3xl rotate-180"
 						>
@@ -150,10 +153,11 @@ const descriptionVariants = {
 const items = [
 	{
 		id: 1,
-		title: "О НАС",
-		link: "/about",
+		title: "КОНЦЕПЦИЯ",
+		link: "/concept",
 		imgSrc: "/card.png",
-		textMod: " -right-[10vw]",
+		textMod: " -right-[22vw]",
+		textAlign: "start",
 		// description:
 		//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
 	},
@@ -162,16 +166,19 @@ const items = [
 		title: "ГЕНПРОЕКТИРОВАНИЕ",
 		link: "/general",
 		imgSrc: "/card.png",
-		textMod: " -right-[20vw]",
+		textMod: " -right-[28vw]",
+		textAlign: "center",
 		// description:
 		//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
 	},
 	{
 		id: 3,
-		title: "КОНЦЕПЦИЯ",
-		link: "/concept",
+
+		title: "О НАС",
+		link: "/about",
 		imgSrc: "/card.png",
-		textMod: " -right-[30vw]",
+		textMod: " -right-[34vw]",
+		textAlign: "end",
 		// description:
 		//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
 	},
