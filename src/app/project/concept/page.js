@@ -3,13 +3,25 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import items from '../../Data/Cards'
+import Categories from "../../components/Categories/Categories";
+import Card from "@/app/components/Card/Card";
+import Sort from "@/app/components/Menu/Menu";
+import Menu from "@/app/components/Menu/Menu";
 
 export default function Concept({ filteredCategories }) {
-	// const [categoryId, setCategoryId] = useState(0);
-	// const filterCategories = items.filter(item => item.type == categoryId);
+	const [categoryId, setCategoryId] = useState(0);
+	const filterCategories = items.filter(item => item.type == categoryId);
+	const [sortCategories, setSortCategories] = useState()
+	console.log(filteredCategories)
+	const [state, setState] = useState('бумеранг не запущен')
+
+	
 
 	return (
 		<>
+				<Menu props={state}/>
+				<p>{state}</p>
 			<div className="flex items-center mx-auto justify-between w-4/5">
 				{/* <Categories
 					type={items.type}
@@ -19,9 +31,10 @@ export default function Concept({ filteredCategories }) {
 			</div>
 			<section className="flex justify-center p-4">
 				<div className="grid grid-cols-3 gap-10 p-10 mt-10">
+
 					{filterCategories.map(item => {
 						return (
-							<Card
+							< Card
 								key={item.id}
 								id={item.id}
 								title={item.title}
@@ -42,40 +55,40 @@ export default function Concept({ filteredCategories }) {
 // 	const [categoryId, setCategoryId] = useState();
 // };
 
-const Card = ({ id, title, link, imgSrc, description, type }) => {
-	const [isHover, setIsHover] = useState(false);
-	return (
-		<>
-			<div className="bg-[#003056]" id={id}>
-				<Link
-					href={link}
-					style={{
-						backgroundImage: `url(${imgSrc})`,
-						backgroundPosition: "center",
-						backgroundSize: "cover",
-					}}
-					className="card-wrapper flex items-center text-center text-white w-64 h-64 "
-				>
-					<motion.div
-						className="text-xl opacity-0 flex-col h-full content-center bg-[#003056]"
-						animate={isHover ? "open" : "hidden"}
-						variants={variants}
-						onMouseEnter={() => setIsHover(true)}
-						onMouseLeave={() => setIsHover(false)}
-					>
-						{title}
-						<p className="mt-10 text-sm">{description}</p>
-					</motion.div>
-				</Link>
-			</div>
-		</>
-	);
-};
+// const Card = ({ id, title, link, imgSrc, description, type }) => {
+// 	const [isHover, setIsHover] = useState(false);
+// 	return (
+// 		<>
+// 			<div className="bg-[#003056]" id={id}>
+// 				<Link
+// 					href={link}
+// 					style={{
+// 						backgroundImage: `url(${imgSrc})`,
+// 						backgroundPosition: "center",
+// 						backgroundSize: "cover",
+// 					}}
+// 					className="card-wrapper flex items-center text-center text-white w-64 h-64 "
+// 				>
+// 					<motion.div
+// 						className="text-xl opacity-0 flex-col h-full content-center bg-[#003056]"
+// 						animate={isHover ? "open" : "hidden"}
+// 						variants={variants}
+// 						onMouseEnter={() => setIsHover(true)}
+// 						onMouseLeave={() => setIsHover(false)}
+// 					>
+// 						{title}
+// 						<p className="mt-10 text-sm">{description}</p>
+// 					</motion.div>
+// 				</Link>
+// 			</div>
+// 		</>
+// 	);
+// };
 
-const variants = {
-	open: { opacity: 1 },
-	hidden: { opacity: 0 },
-};
+// const variants = {
+// 	open: { opacity: 1 },
+// 	hidden: { opacity: 0 },
+// };
 
 // const items = [
 // 	{
