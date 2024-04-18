@@ -1,40 +1,48 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { useState } from "react";
-import items from '../../Data/Cards'
-import Categories from "../../components/Categories/Categories";
+import items from "@/app/Data/Cards";
 import Card from "@/app/components/Card/Card";
-import Sort from "@/app/components/Menu/Menu";
 import Menu from "@/app/components/Menu/Menu";
+import { useState } from "react";
 
-export default function Concept({ filteredCategories }) {
+export default function Concept({}) {
 	const [categoryId, setCategoryId] = useState(0);
 	const filterCategories = items.filter(item => item.type == categoryId);
-	const [sortCategories, setSortCategories] = useState()
-	console.log(filteredCategories)
-	const [state, setState] = useState('бумеранг не запущен')
-
-	
+	const [filteredCategories, setFilteredCategories] = useState(items);
+	// function showCards(category) {
+	// 	setFilteredCategories(category);
+	// 	console.log(filteredCategories);
+	// }
+	function chooseCategory(i) {
+		setCategoryId(i);
+		console.log(filterCategories);
+	}
 
 	return (
 		<>
-				<Menu props={state}/>
-				<p>{state}</p>
-			<div className="flex items-center mx-auto justify-between w-4/5">
-				{/* <Categories
-					type={items.type}
-					category={categoryId}
-					onClickCategory={i => setCategoryId(i)}
-				/> */}
-			</div>
+			{/* <Categories
+				type={items.type}
+				category={categoryId}
+				onClickCategory={i => {
+					setCategoryId(i);
+					setFilteredCategories(filterCategories);
+					// chooseCategory(filterCategories);
+				}}
+			/> */}
+			<Menu
+				type={items.type}
+				category={categoryId}
+				onClickCategory={i => {
+					chooseCategory(i);
+					// setFilteredCategories(filterCategories);
+				}}
+			/>
+			<div className="flex items-center mx-auto justify-between w-4/5"></div>
 			<section className="flex justify-center p-4">
 				<div className="grid grid-cols-3 gap-10 p-10 mt-10">
-
 					{filterCategories.map(item => {
 						return (
-							< Card
+							<Card
 								key={item.id}
 								id={item.id}
 								title={item.title}

@@ -1,51 +1,83 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useActionState, useState } from "react";
-import items from "../../Data/Cards";
+import { useState } from "react";
 import { useWindowSize } from "../Accordion/useWindowSize";
-import Categories from "../Categories/Categories";
 
-export default function Menu({}) {
-const [state, setState] = useState('123')
-const [filteredCategories, setFilteredCategories] = useState([]);
-console.log(filteredCategories)
-const changeCategory = (category) => {
-	setFilteredCategories(category)
-	console.log(category)
-}
-
+export default function Menu({ category, onClickCategory }) {
+	const categories = [
+		"ЖИЛЬЕ",
+		"СОЦИАЛЬНЫЕ",
+		"КОНЦЕПТУАЛЬНЫЕ",
+		"БЛАГОУСТРОЙСТВО",
+	];
+	// const [filteredCategories, setFilteredCategories] = useState([]);
+	// function chooseCategory(category) {
+	// 	setFilteredCategories(category);
+	// 	console.log(filteredCategories);
+	// }
 	const pathname = usePathname();
 	const { width, height } = useWindowSize();
 
+	// const [categoryId, setCategoryId] = useState(0);
+	// const filterCategories = items.filter(item => item.type == categoryId);
+
 	return (
 		<header className="menu">
-							<p>{state}</p>
-			{pathname == "/general" || pathname == "/project/concept" ? <Sort onClickCategory={changeCategory} /> : <Nav />}
+			{pathname == "/general" || pathname == "/project/concept" ? (
+				<div className="categories p-5 w-4/5 flex justify-around">
+					{categories.map((categoryName, i) => (
+						<button
+							key={i}
+							onClick={() => onClickCategory(i)}
+							className={category == i ? "text-violet-600" : " "}
+						>
+							{categoryName}
+						</button>
+					))}
+				</div>
+			) : (
+				<Nav />
+			)}
 		</header>
 	);
 }
 
-function Sort({onClickCategory}) {
-	const [state, setState] = useState('')
-	const click = (state) => {
-		onChange(state)
-	}
-	console.log(state)
+{
+	/* <Categories
+					type={items.type}
+					// category={categoryId}
+					onClickCategory={i => {
+						chooseCategory(i);
+						// setFilteredCategories(filterCategories);
+					}}
+				/> */
+}
+
+{
+	/* <Sort
+chooseCategory={chooseCategory}
+onClick={() => showCards(filteredCategories)}
+/> */
+}
+
+export function Sort({ chooseCategory }) {
 	const [categoryId, setCategoryId] = useState(0);
-	const [filteredCategories, setFilteredCategories] = useState([]);
-	const filterCategories = items.filter(item => item.type == categoryId);
-	console.log(filteredCategories)
+	// const [filteredCategories, setFilteredCategories] = useState([]);
+	// const filterCategories = items.filter(item => item.type == categoryId);
 	return (
 		<>
 			<div className="menu-logo w-full flex justify-end bg-[#003056] text-white p-5 border-b h-[10vh]">
 				<div className="flex items-center mx-auto justify-between w-4/5">
-					<Categories
+					{/* <Categories
 						type={items.type}
 						category={categoryId}
-						onClickCategory={(i) => {setCategoryId(i), setFilteredCategories(filterCategories)}}
-					/>
-        <button onClick={() => {onChange('запущен')}}>Запустить бумеранг</button>
+						onClickCategory={i => {
+							setCategoryId(i);
+							// setFilteredCategories(filterCategories);
+							chooseCategory(filterCategories);
+						}}
+					/> */}
 					<Link className="flex items-center" href="/">
 						<img className="w-[150px]" src="/logo.png"></img>
 					</Link>
@@ -53,7 +85,7 @@ function Sort({onClickCategory}) {
 			</div>
 		</>
 	);
-};
+}
 
 const Nav = () => {
 	return (
