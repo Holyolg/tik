@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useWindowSize } from "./useWindowSize";
 
 const VerticalAccordion = () => {
-	const [open, setOpen] = useState(items[0].id);
+	const [open, setOpen] = useState(0);
 	return (
 		<>
 			<section className="relative w-full overflow-hidden">
@@ -61,7 +61,7 @@ const Panel = ({
 	textAlign,
 }) => {
 	const { width, height } = useWindowSize();
-	console.log(width, height);
+
 	const isOpen = open === id;
 	let textStyle =
 		"text-white bg-[#003056] sm:flex-col px-5 py-10 border-l w-[40vw] h-[90vh] absolute top-0 flex";
@@ -154,7 +154,7 @@ const items = [
 	{
 		id: 1,
 		title: "КОНЦЕПЦИЯ",
-		link: "/concept",
+		link: "/project/concept/school",
 		imgSrc: "/card.png",
 		textMod: " -right-[22vw]",
 		textAlign: "start",
@@ -164,7 +164,7 @@ const items = [
 	{
 		id: 2,
 		title: "ГЕНПРОЕКТИРОВАНИЕ",
-		link: "/general",
+		link: "/project/general",
 		imgSrc: "/card.png",
 		textMod: " -right-[28vw]",
 		textAlign: "center",

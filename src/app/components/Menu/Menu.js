@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useWindowSize } from "../Accordion/useWindowSize";
 
-export default function Menu({ category, onClickCategory }) {
+export default function Menu({ category, onClickCategory, name }) {
 	const categories = [
 		"ЖИЛЬЕ",
 		"СОЦИАЛЬНЫЕ",
@@ -24,21 +24,12 @@ export default function Menu({ category, onClickCategory }) {
 
 	return (
 		<header className="menu">
-			{pathname == "/general" || pathname == "/project/concept" ? (
-				<div className="categories p-5 w-4/5 flex justify-around">
-					{categories.map((categoryName, i) => (
-						<button
-							key={i}
-							onClick={() => onClickCategory(i)}
-							className={category == i ? "text-violet-600" : " "}
-						>
-							{categoryName}
-						</button>
-					))}
-				</div>
-			) : (
-				<Nav />
-			)}
+			<div className="menu-logo w-full flex justify-end bg-[#003056] p-5 text-white border-b h-[10vh]">
+				<div className="flex items-center mx-auto justify-between w-4/5"></div>
+				<Link className="flex items-center" href="/">
+					<img className="w-[150px]" src="/logo.png"></img>
+				</Link>
+			</div>
 		</header>
 	);
 }

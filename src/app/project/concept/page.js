@@ -2,41 +2,25 @@
 
 import items from "@/app/Data/Cards";
 import Card from "@/app/components/Card/Card";
+import Categories from "@/app/components/Categories/Categories";
 import Menu from "@/app/components/Menu/Menu";
 import { useState } from "react";
 
-export default function Concept({}) {
+export default function Concept({name}) {
 	const [categoryId, setCategoryId] = useState(0);
 	const filterCategories = items.filter(item => item.type == categoryId);
-	const [filteredCategories, setFilteredCategories] = useState(items);
-	// function showCards(category) {
-	// 	setFilteredCategories(category);
-	// 	console.log(filteredCategories);
-	// }
-	function chooseCategory(i) {
-		setCategoryId(i);
-		console.log(filterCategories);
-	}
+	
 
 	return (
 		<>
-			{/* <Categories
+			<Categories 
 				type={items.type}
 				category={categoryId}
 				onClickCategory={i => {
 					setCategoryId(i);
-					setFilteredCategories(filterCategories);
-					// chooseCategory(filterCategories);
-				}}
-			/> */}
-			<Menu
-				type={items.type}
-				category={categoryId}
-				onClickCategory={i => {
-					chooseCategory(i);
-					// setFilteredCategories(filterCategories);
 				}}
 			/>
+
 			<div className="flex items-center mx-auto justify-between w-4/5"></div>
 			<section className="flex justify-center p-4">
 				<div className="grid grid-cols-3 gap-10 p-10 mt-10">
@@ -98,76 +82,3 @@ export default function Concept({}) {
 // 	hidden: { opacity: 0 },
 // };
 
-// const items = [
-// 	{
-// 		id: 1,
-// 		title: 'ЖК "АНДРЕЕВСКИЙ"',
-// 		link: "/project/school",
-// 		imgSrc: "/card.png",
-// 		description: "КОНЦЕПЦИЯ КВАРТАЛА В ИСТОРИЧЕСКОЙ ЗАСТРОЙКЕ",
-// 		type: "0",
-// 	},
-// 	{
-// 		id: 2,
-// 		title: "LOREM",
-// 		link: "/page",
-// 		imgSrc: "/card.png",
-// 		description:
-// 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
-// 		type: "1",
-// 	},
-// 	{
-// 		id: 3,
-// 		title: "LOREM",
-// 		link: "/page",
-// 		imgSrc: "/card.png",
-// 		description:
-// 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
-// 		type: "2",
-// 	},
-// 	{
-// 		id: 4,
-// 		title: "LOREM",
-// 		link: "/page",
-// 		imgSrc: "/card.png",
-// 		description:
-// 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
-// 		type: "3",
-// 	},
-// 	{
-// 		id: 5,
-// 		title: "LOREM",
-// 		link: "/page",
-// 		imgSrc: "/card.png",
-// 		description:
-// 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
-// 		type: "0",
-// 	},
-// 	{
-// 		id: 6,
-// 		title: "LOREM",
-// 		link: "/page",
-// 		imgSrc: "/card.png",
-// 		description:
-// 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
-// 		type: "1",
-// 	},
-// 	{
-// 		id: 7,
-// 		title: "LOREM",
-// 		link: "/page",
-// 		imgSrc: "/card.png",
-// 		description:
-// 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
-// 		type: "2",
-// 	},
-// 	{
-// 		id: 8,
-// 		title: "LOREM",
-// 		link: "/page",
-// 		imgSrc: "/card.png",
-// 		description:
-// 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
-// 		type: "0",
-// 	},
-// ];

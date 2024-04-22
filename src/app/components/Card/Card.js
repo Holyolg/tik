@@ -5,6 +5,16 @@ import { useState } from "react";
 
 export default function Card({ id, title, link, imgSrc, description, type }) {
 	const [isHover, setIsHover] = useState(false);
+
+
+	const apiUrl = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json'
+
+	function pullJson(apiUrl) {
+		fetch(apiUrl).then(response => response.json()).then(responseData => {
+			console.log(responseData)
+		})
+	}
+	pullJson(apiUrl)
 	return (
 		<>
 			<div className="bg-[#003056]" id={id}>
@@ -40,3 +50,5 @@ const variants = {
 	open: { opacity: 1 },
 	hidden: { opacity: 0 },
 };
+
+
