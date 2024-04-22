@@ -7,14 +7,7 @@ export default function Card({ id, title, link, imgSrc, description, type }) {
 	const [isHover, setIsHover] = useState(false);
 
 
-	const apiUrl = 'https://raw.githubusercontent.com/Holyolg/tik/master/src/app/Data/Cards%20copy.json?token=GHSAT0AAAAAACP6ON4AMXRDI53Q5RUOHWPSZRGNCPA'
 
-	function pullJson(apiUrl) {
-		fetch(apiUrl).then(response => response.json()).then(responseData => {
-			console.log(responseData)
-		})
-	}
-	pullJson(apiUrl)
 	return (
 		<>
 			<div className="bg-[#003056]" id={id}>

@@ -154,7 +154,7 @@ const items = [
 	{
 		id: 1,
 		title: "КОНЦЕПЦИЯ",
-		link: "/project/concept/school",
+		link: "/project/concept",
 		imgSrc: "/card.png",
 		textMod: " -right-[22vw]",
 		textAlign: "start",

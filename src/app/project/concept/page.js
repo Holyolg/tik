@@ -5,11 +5,13 @@ import Card from "@/app/components/Card/Card";
 import Categories from "@/app/components/Categories/Categories";
 import Menu from "@/app/components/Menu/Menu";
 import { useState } from "react";
+import { getCards } from "@/app/actions/GetCards/GetCards";
 
-export default function Concept({name}) {
+
+
+export default function Concept() {
 	const [categoryId, setCategoryId] = useState(0);
 	const filterCategories = items.filter(item => item.type == categoryId);
-	
 
 	return (
 		<>
@@ -20,11 +22,11 @@ export default function Concept({name}) {
 					setCategoryId(i);
 				}}
 			/>
-
+			
 			<div className="flex items-center mx-auto justify-between w-4/5"></div>
 			<section className="flex justify-center p-4">
 				<div className="grid grid-cols-3 gap-10 p-10 mt-10">
-					{filterCategories.map(item => {
+				{filterCategories.map(item => {
 						return (
 							<Card
 								key={item.id}
