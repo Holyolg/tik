@@ -7,7 +7,7 @@ export default function Card({ id, title, link, imgSrc, description, type }) {
 	const [isHover, setIsHover] = useState(false);
 
 
-	const apiUrl = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json'
+	const apiUrl = 'https://raw.githubusercontent.com/Holyolg/tik/master/src/app/Data/Cards%20copy.js?token=GHSAT0AAAAAACP6ON4A2ZHV2NNLR25SPLAUZRGM4XQ'
 
 	function pullJson(apiUrl) {
 		fetch(apiUrl).then(response => response.json()).then(responseData => {
