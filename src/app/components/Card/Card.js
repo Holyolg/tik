@@ -2,11 +2,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
-
-export default function Card({ id, title, link, imgSrc, description, type }) {
+export default function Card({ id, title, link, img, description, category }) {
 	const [isHover, setIsHover] = useState(false);
-
-
 
 	return (
 		<>
@@ -14,7 +11,7 @@ export default function Card({ id, title, link, imgSrc, description, type }) {
 				<Link
 					href={link}
 					style={{
-						backgroundImage: `url(${imgSrc})`,
+						backgroundImage: `url(${img})`,
 						backgroundPosition: "center",
 						backgroundSize: "cover",
 					}}
@@ -32,16 +29,11 @@ export default function Card({ id, title, link, imgSrc, description, type }) {
 					</motion.div>
 				</Link>
 			</div>
-
-
-            
 		</>
 	);
-};
+}
 
 const variants = {
 	open: { opacity: 1 },
 	hidden: { opacity: 0 },
 };
-
-

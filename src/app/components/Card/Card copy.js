@@ -1,48 +1,45 @@
-'use client'
+"use client";
 import getCards from "@/app/servises/GetCards/GetCards";
-import { motion } from "framer-motion";
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import Categories from "../Categories/Categories";
+import Card from "./Card";
 
-export const Card =( {id, title, link, imgSrc, description, type}) => {
-	const [isHover, setIsHover] = useState(false);
-	const [isLoading, setIsLoading] = useState(true)
-	const [card, setCards] = useState([])
+export const CardTest = ({ id, title, link, imgSrc, description, type }) => {
+	const [cards, setCards] = useState([]);
+	const [categoryId, setCategoryId] = useState(0);
 	useEffect(() => {
-		getCards().then((res) => {
+		getCards().then(res => {
 			setCards(res);
-		  setIsLoading(false)
+			setIsLoading(false);
 		});
-	  }, []);
-	  
+	}, []);
+	const cardFilter = cards.filter(card => card.category == categoryId);
 	return (
 		<>
-		
-		
-			{card.map((card) => {
-			return <div className="bg-[#003056]" id={card.id}>
-			<Link
-				href={card.link}
-				style={{
-					backgroundImage: `url(${card.imgSrc})`,
-					backgroundPosition: "center",
-					backgroundSize: "cover",
+			<Categories
+				category={categoryId}
+				onClickCategory={i => {
+					setCategoryId(i);
 				}}
-				className="card-wrapper flex items-center text-center text-white w-64 h-64 "
-			>
-				<motion.div
-					className="text-xl opacity-0 flex-col h-full content-center bg-[#003056]"
-					animate={isHover ? "open" : "hidden"}
-					variants={variants}
-					onMouseEnter={() => setIsHover(true)}
-					onMouseLeave={() => setIsHover(false)}
-				>
-					{card.title}
-					<p className="mt-10 text-sm">{card.description}</p>
-				</motion.div>
-			</Link>
-		</div>
-			})}
+			/>
+			<div className="flex items-center mx-auto justify-between w-4/5"></div>
+			<section className="flex justify-center p-4">
+				<div className="grid grid-cols-3 gap-10 p-10 mt-10">
+					{cardFilter.map(card => {
+						return (
+							<Card
+								key={card.id}
+								id={card.id}
+								title={card.title}
+								link={card.link}
+								img={card.img}
+								description={card.description}
+								category={card.category}
+							/>
+						);
+					})}
+				</div>
+			</section>
 		</>
 	);
 };
@@ -52,5 +49,4 @@ const variants = {
 	hidden: { opacity: 0 },
 };
 
-
-export default Card
+export default Card;
