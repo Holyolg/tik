@@ -17,9 +17,31 @@ export const Card =( {id, title, link, imgSrc, description, type}) => {
 	  
 	return (
 		<>
+		
+		
 			{card.map((card) => {
-			console.log(card)
-			return <div key={card.id}>{card.title}</div>
+			return <div className="bg-[#003056]" id={card.id}>
+			<Link
+				href={card.link}
+				style={{
+					backgroundImage: `url(${card.imgSrc})`,
+					backgroundPosition: "center",
+					backgroundSize: "cover",
+				}}
+				className="card-wrapper flex items-center text-center text-white w-64 h-64 "
+			>
+				<motion.div
+					className="text-xl opacity-0 flex-col h-full content-center bg-[#003056]"
+					animate={isHover ? "open" : "hidden"}
+					variants={variants}
+					onMouseEnter={() => setIsHover(true)}
+					onMouseLeave={() => setIsHover(false)}
+				>
+					{card.title}
+					<p className="mt-10 text-sm">{card.description}</p>
+				</motion.div>
+			</Link>
+		</div>
 			})}
 		</>
 	);
