@@ -1,17 +1,17 @@
 "use client";
 
 import items from "@/app/Data/Cards";
-import Card from "@/app/components/Card/Card";
+import Card from "@/app/components/Card/Card copy";
 import Categories from "@/app/components/Categories/Categories";
 import Menu from "@/app/components/Menu/Menu";
+import { getCards } from "@/app/servises/GetCards/GetCards";
 import { useState } from "react";
-import { getCards } from "@/app/actions/GetCards/GetCards";
 
 
-
-export default function Concept() {
+export default function Concept({}) {
 	const [categoryId, setCategoryId] = useState(0);
 	const filterCategories = items.filter(item => item.type == categoryId);
+
 
 	return (
 		<>
@@ -23,6 +23,7 @@ export default function Concept() {
 				}}
 			/>
 			
+
 			<div className="flex items-center mx-auto justify-between w-4/5"></div>
 			<section className="flex justify-center p-4">
 				<div className="grid grid-cols-3 gap-10 p-10 mt-10">
