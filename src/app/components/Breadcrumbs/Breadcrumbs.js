@@ -1,44 +1,67 @@
-'use client'
+import { useLang } from "@/hooks/useLang";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useMemo } from "react";
+import Crumb from "./Crumb";
 
-export default function Breadcrumbs() {
-	const path = usePathname()
-  const pathName = path.split('/').filter(path => path)
-  const pagePath = pathName.slice(0, 1)
-  const restPath = pathName.slice(1)
+const generatePathParts = pathStr => {
+	const pathWithoutQuery = pathStr.split("?")[0];
+	return pathWithoutQuery.split("/").filter(v => v.length > 0);
+};
 
-  return (
-<nav className="flex text-gray-400 mt-10" aria-label="Breadcrumb">
-  <ul className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
-  <li className='inline-flex item-center'>
-            <Link href={'/'}>TIK PRO</Link>
-          </li>
-      {restPath.map((link, index) => {
-        let href= `/${pagePath}/${restPath.slice(0, index + 1).join('/')}`
-        return (
-          <>
-          <li key={index} className='inline-flex item-center'>
-            <Link href={href}>{(href).toUpperCase()}</Link>
-          </li>
-          </>
-        )
-     })}
-    <li>
-      |
-    </li>
-    <li className="inline-flex items-center ">
-<Link href='/'>СОЦИАЛЬНЫЕ</Link>
-    </li>
-    <li>
-      |
-    </li>
-    <li className="inline-flex items-center ">
-<Link href='/'>ШКОЛА НА 1500 УЧАЩИХСЯ В ЛЮБЕРЦАХ</Link>
-    </li>
-  </ul>
-</nav>
+const Breadcrumbs = ({ getTextGenerator, getDefaultTextGenerator }) => {
+	const pathname = usePathname();
+	const searchParams = useSearchParams();
+	const { lang, translations } = useLang();
 
-    )}
+	const breadcrumbs = useMemo(
+		function generateBreadcrumbs() {
+			const asPathNestedRoutes = generatePathParts(pathname);
+			const pathnameNestedRoutes = generatePathParts(pathname);
 
+			const crumbList = asPathNestedRoutes.map((subpath, idx) => {
+				const param = pathnameNestedRoutes[idx]
+					.replace("[", "")
+					.replace("]", "");
 
+				const href = "/" + asPathNestedRoutes.slice(0, idx + 1).join("/");
+
+				return {
+					href,
+					textGenerator: getTextGenerator(param, searchParams.getAll("")),
+					text: getDefaultTextGenerator(subpath, href),
+				};
+			});
+
+			return [...crumbList];
+		},
+		[pathname, getTextGenerator, searchParams, getDefaultTextGenerator, lang]
+	);
+
+	return (
+		<div className="container breadcrumbs__container">
+			<ul className="list-reset breadcrumbs">
+				<li className="breadcrumbs__item">
+					<Link href="/" className="breadcrumbs__item__link first-crumb">
+						{translations[lang].breadcrumbs.main}
+					</Link>
+				</li>
+				{breadcrumbs.map((crumb, idx) =>
+					crumb.text ? (
+						<li key={idx} className="breadcrumbs__item">
+							<Crumb
+								{...crumb}
+								key={idx}
+								last={idx === breadcrumbs.length - 1}
+							/>
+						</li>
+					) : (
+						""
+					)
+				)}
+			</ul>
+		</div>
+	);
+};
+
+export default Breadcrumbs;

@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function Card({ id, title, link, img, description, category }) {
+export default function Card({ id, title, link, img, subtitle, category }) {
 	const [isHover, setIsHover] = useState(false);
 
 	return (
 		<>
 			<div className="bg-[#003056]" id={id}>
 				<Link
-					href={link}
+					href={link + id}
 					style={{
 						backgroundImage: `url(${img})`,
 						backgroundPosition: "center",
@@ -25,7 +25,7 @@ export default function Card({ id, title, link, img, description, category }) {
 						onMouseLeave={() => setIsHover(false)}
 					>
 						{title}
-						<p className="mt-10 text-sm">{description}</p>
+						<p className="mt-10 text-sm">{subtitle}</p>
 					</motion.div>
 				</Link>
 			</div>
