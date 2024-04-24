@@ -27,13 +27,13 @@ export default function Breadcrumbs() {
     <li>
       |
     </li>
-    <li class="inline-flex items-center ">
+    <li className="inline-flex items-center ">
 <Link href='/'>СОЦИАЛЬНЫЕ</Link>
     </li>
     <li>
       |
     </li>
-    <li class="inline-flex items-center ">
+    <li className="inline-flex items-center ">
 <Link href='/'>ШКОЛА НА 1500 УЧАЩИХСЯ В ЛЮБЕРЦАХ</Link>
     </li>
   </ul>
