@@ -9,7 +9,6 @@ export default function CardDetails({ params }) {
 	const [card, setCard] = useState();
 	const router = useRouter;
 
-	console.log(id);
 
 	useEffect(() => {
 		const getCards = async () => {
@@ -33,11 +32,10 @@ export default function CardDetails({ params }) {
 			</div>
 		);
 	}
-	console.log(card);
 
 	return (
 		<section className="p-4 mx-auto">
-			<Breadcrumbs />
+			<Breadcrumbs/>
 			<h2 className="text-2xl mt-10">{card.title}</h2>
 			<div className="mt-10">
 				<img src={card.img} className="h-96"></img>
