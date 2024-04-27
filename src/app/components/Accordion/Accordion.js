@@ -11,9 +11,7 @@ const VerticalAccordion = () => {
 		<>
 			<section className="relative w-full overflow-hidden">
 				<video
-					className="w-full h-[90vh] object-cover"
-					width="100%"
-					height="90vh"
+					className="md:w-full md:h-[90vh] h-[60vh] object-cover"
 					preload="none"
 					autoPlay
 					loop
@@ -61,53 +59,68 @@ const Panel = ({
 	textAlign,
 }) => {
 	const { width, height } = useWindowSize();
-
 	const isOpen = open === id;
 	let textStyle =
-		"text-white bg-[#003056] sm:flex-col px-5 py-10 border-l w-[40vw] h-[90vh] absolute top-0 flex";
+		"text-white bg-[#003056] px-5 py-10 border-l w-[40vw] h-[90vh] absolute top-0 flex flex-col";
+	const panelLg = (
+		<motion.div
+			className={textStyle + textMod}
+			onMouseEnter={() => setOpen(id)}
+			onMouseLeave={() => setOpen(0)}
+			whileHover={{
+				transform: "translateX(-34vw)",
+				transition: { duration: 0.3, delay: 0.125 },
+			}}
+		>
+			<div className="card-wrapper flex h-full">
+				<Link
+					href={link}
+					style={{
+						writingMode: "vertical-lr",
+						textAlign: textAlign,
+					}}
+					className="lg:text-3xl md:text-xl rotate-180 font-semibold"
+				>
+					{title}
+				</Link>
+				{isOpen && (
+					<motion.div
+						key={`panel-${id}`}
+						className="self-center"
+						variants={descriptionVariants}
+						initial="closed"
+						animate="open"
+						exit="closed"
+					>
+						<div className="content-wrapper h-full ml-10">
+							<img className="w-full	saturate-0" src={imgSrc}></img>
+							<p className="text-xl text-start">{description}</p>
+						</div>
+					</motion.div>
+				)}
+			</div>
+		</motion.div>
+	);
+
+	const panelSm = (
+		<div className="text-white text-left text-xl card-wrapper p-4 flex-col h-full border-t">
+			<Link href={link} className="font-semibold underline">
+				{title}
+			</Link>
+
+			<div key={`panel-${id}`} className="mt-5">
+				<div className="content-wrapper h-full">
+					<img className="w-full saturate-0" src={imgSrc}></img>
+					<p className="text-xl text-start mt-5">{description}</p>
+				</div>
+			</div>
+		</div>
+	);
+
 	return (
 		<>
 			<AnimatePresence>
-				<motion.div
-					className={textStyle + textMod}
-					onMouseEnter={() => setOpen(id)}
-					onMouseLeave={() => setOpen(0)}
-					whileHover={{
-						transform: "translateX(-34vw)",
-						transition: { duration: 0.3, delay: 0.125 },
-					}}
-				>
-					<div className="card-wrapper flex h-full">
-						<Link
-							href={link}
-							style={{
-								writingMode: "vertical-lr",
-								textAlign: textAlign,
-							}}
-							className="hidden lg:block text-3xl rotate-180"
-						>
-							{title}
-						</Link>
-						<span className="block lg:hidden text-xl">{title}</span>
-						{isOpen && (
-							<motion.div
-								key={`panel-${id}`}
-								className=""
-								variants={descriptionVariants}
-								initial="closed"
-								animate="open"
-								exit="closed"
-							>
-								<div className="content-wrapper h-full ml-10">
-									<img className="w-full" src={imgSrc}></img>
-									<p className="text-xl text-start">
-										САМЫЙ ЛУЧШИЙ КОНЦЕПТУАЛЬНЫЙ ПЛАСТ МОСКВЫ
-									</p>
-								</div>
-							</motion.div>
-						)}
-					</div>
-				</motion.div>
+				{width && width > 768 ? panelLg : panelSm}
 			</AnimatePresence>
 		</>
 	);
@@ -158,29 +171,28 @@ const items = [
 		imgSrc: "/card.png",
 		textMod: " -right-[22vw]",
 		textAlign: "start",
-		// description:
-		//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
+		description: "Лучший концептуальный план Москвы",
 	},
 	{
 		id: 2,
 		title: "ГЕНПРОЕКТИРОВАНИЕ",
 		link: "/project/general",
-		imgSrc: "/card.png",
+		imgSrc: "/genproject.png",
 		textMod: " -right-[28vw]",
 		textAlign: "center",
-		// description:
-		//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
+		description:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
 	},
 	{
 		id: 3,
 
 		title: "О НАС",
 		link: "/about",
-		imgSrc: "/card.png",
+		imgSrc: "/about.png",
 		textMod: " -right-[34vw]",
 		textAlign: "end",
-		// description:
-		//   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
+		description:
+			"- 30% специалистов с опытом работы по профессии - > 15 - 20 лет, 50% - > 5 лет,  20% - менее 5 лет; - текучка кадров не превышает 2-3% в год, коллектив стабилен, при подборе новых кадров предпочтение отдается не только опыту, но и навыкам командной работы в коллективе, что крайне важно в BIM-проектировании. Каждый год Компанию пополняют выпускники ВУЗов.",
 	},
 ];
 

@@ -1,6 +1,7 @@
 "use client";
 import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
 import { Loading } from "@/app/ui/Loading/Loading";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -8,7 +9,6 @@ export default function CardDetails({ params }) {
 	const id = params.id;
 	const [card, setCard] = useState();
 	const router = useRouter;
-
 
 	useEffect(() => {
 		const getCards = async () => {
@@ -34,28 +34,54 @@ export default function CardDetails({ params }) {
 	}
 
 	return (
-		<section className="p-4 mx-auto">
-			<Breadcrumbs/>
-			<h2 className="text-2xl mt-10">{card.title}</h2>
-			<div className="mt-10">
-				<img src={card.img} className="h-96"></img>
-				<p>{card.date}</p>
-				<p>ДАТА ПРОЕКТИРОВАНИЯ</p>
-				<p className="text-right">{card.type}</p>
-				<p className="text-right">ТИП ПРОЕКТА</p>
-				<p className="ordinal">
-					{card.square} M<sup>2</sup>
-				</p>
-				<p>ПЛОЩАДЬ</p>
-				<p className="text-right">{card.location}</p>
-				<p className="text-right">МЕСТОПОЛОЖЕНИЕ</p>
-				<p>{card.status}</p>
-				<p>СТАТУС</p>
-			</div>
+		<main className="px-2">
+			<div className="container mx-auto">
+				<Breadcrumbs />
+				<h2 className="text-2xl mt-10">{card.title}</h2>
+				<div className="mt-5">
+					<Image
+						src={card.img}
+						width={1536}
+						height={400}
+						alt="Изображение проекта"
+						style={{ objectFit: "cover" }}
+					/>
+					<ul className="space-y-4 md:space-y-0">
+						<li className="mt-5 text-xl">{card.date}</li>
+						<li>ДАТА ПРОЕКТИРОВАНИЯ</li>
+						<li className="md:text-right text-xl">{card.type}</li>
+						<li className="md:text-right">ТИП ПРОЕКТА</li>
+						<li className="ordinal text-xl">
+							{card.square} M<sup>2</sup>
+						</li>
+						<li>ПЛОЩАДЬ</li>
+						<li className="md:text-right text-xl">{card.location}</li>
+						<li className="md:text-right">МЕСТОПОЛОЖЕНИЕ</li>
+						<li className="text-xl">{card.status}</li>
+						<li>СТАТУС</li>
+					</ul>
+				</div>
 
-			<h2 className="text-2xl">ОПИСАНИЕ ПРОЕКТА</h2>
-			<p className="mt-10">{card.description}</p>
-			<img src="/card.png" className="h-96"></img>
-		</section>
+				<h2 className="text-2xl mt-10">ОПИСАНИЕ ПРОЕКТА</h2>
+				<p className="mt-5">{card.description}</p>
+				<Image
+					className="mt-5"
+					src={card.img2}
+					width={1536}
+					height={400}
+					alt="Изображение проекта"
+					style={{ objectFit: "cover" }}
+				/>
+				<p className="mt-5">{card.text}</p>
+				<Image
+					className="mt-5"
+					src={card.img3}
+					width={1536}
+					height={400}
+					alt="Изображение проекта"
+					style={{ objectFit: "cover" }}
+				/>
+			</div>
+		</main>
 	);
 }

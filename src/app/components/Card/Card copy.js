@@ -62,7 +62,7 @@ export const CardTest = ({ id, title, link, imgSrc, description, type }) => {
 			/>
 			<div className="flex items-center mx-auto justify-between w-4/5"></div>
 			<section className="flex justify-center p-4">
-				<div className="grid grid-cols-3 gap-10 p-10 mt-10">
+				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 lg:mt-10">
 					{isLoading ? (
 						<div className="col-span-3 justify-self-center mt-[30vh]">
 							<Loading />
