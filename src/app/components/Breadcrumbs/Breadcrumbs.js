@@ -29,9 +29,7 @@ export default function Breadcrumbs() {
 								key={index}
 								className="inline-flex item-center hover:text-gray-700"
 							>
-								<Link href={href}>
-									{translate(pathName[index]).toUpperCase()}
-								</Link>
+								<Link href={href}>{translate(pathName[index])}</Link>
 							</li>
 						</>
 					);
