@@ -1,5 +1,5 @@
-import { CardTest } from "@/app/components/Card/Card copy";
+import { Cards } from "@/app/components/Cards/Cards";
 
 export default async function Test() {
-	return <CardTest />;
+	return <Cards />;
 }

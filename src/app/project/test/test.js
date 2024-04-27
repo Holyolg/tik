@@ -1,33 +1,28 @@
 "use client";
 
 import items from "@/app/Data/Cards";
-import Card from "@/app/components/Card/Card copy";
+import Card from "@/app/components/Cards/Cards";
 import Categories from "@/app/components/Categories/Categories";
-import Menu from "@/app/components/Menu/Menu";
-import { getCards } from "@/app/servises/GetCards/GetCards";
 import { useState } from "react";
-
 
 export default function Concept({}) {
 	const [categoryId, setCategoryId] = useState(0);
 	const filterCategories = items.filter(item => item.type == categoryId);
 
-
 	return (
 		<>
-			<Categories 
+			<Categories
 				type={items.type}
 				category={categoryId}
 				onClickCategory={i => {
 					setCategoryId(i);
 				}}
 			/>
-			
 
 			<div className="flex items-center mx-auto justify-between w-4/5"></div>
 			<section className="flex justify-center p-4">
 				<div className="grid grid-cols-3 gap-10 p-10 mt-10">
-				{filterCategories.map(item => {
+					{filterCategories.map(item => {
 						return (
 							<Card
 								key={item.id}
@@ -84,4 +79,3 @@ export default function Concept({}) {
 // 	open: { opacity: 1 },
 // 	hidden: { opacity: 0 },
 // };
-

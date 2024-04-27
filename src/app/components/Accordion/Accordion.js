@@ -16,6 +16,7 @@ const VerticalAccordion = () => {
 					autoPlay
 					loop
 					muted
+					playsinline
 				>
 					<source src="/hero.mp4" type="video/mp4" />
 					<track

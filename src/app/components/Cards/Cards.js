@@ -2,12 +2,11 @@
 import getCards from "@/app/servises/GetCards/GetCards";
 import { Loading } from "@/app/ui/Loading/Loading";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import Card from "../Card/Card";
 import Categories from "../Categories/Categories";
-import Card from "./Card";
 
-export const CardTest = ({ id, title, link, imgSrc, description, type }) => {
-	let cardRef = useRef();
+export const Cards = ({ id, title, link, imgSrc, description, type }) => {
 	const [cards, setCards] = useState([]);
 	const [categoryId, setCategoryId] = useState(undefined);
 	const [isLoading, setIsLoading] = useState(true);
