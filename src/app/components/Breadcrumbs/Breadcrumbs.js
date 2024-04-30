@@ -16,22 +16,19 @@ export default function Breadcrumbs() {
 			className="flex text-gray-400 mt-10 overflow-x-auto min-w-full whitespace-nowrap"
 			aria-label="Breadcrumb"
 		>
-			<ul className="inline-flex items-center space-x-4">
+			<ul className="inline-flex items-center space-x-3">
 				<li className="inline-flex item-center hover:text-gray-700">
 					<Link href={"/"}>TIK PRO</Link>
 				</li>
 				{pathName.map((link, index) => {
 					let href = `/${pathName.slice(0, index + 1).join("/")}`;
 					return (
-						<>
-							<li>|</li>
-							<li
-								key={index}
-								className="inline-flex item-center hover:text-gray-700"
-							>
-								<Link href={href}>{translate(pathName[index])}</Link>
-							</li>
-						</>
+						<li key={index} className="inline-flex item-center  space-x-3">
+							<p>|</p>
+							<Link className="hover:text-gray-700" href={href}>
+								{translate(pathName[index])}
+							</Link>
+						</li>
 					);
 				})}
 			</ul>

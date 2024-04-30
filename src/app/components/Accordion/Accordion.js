@@ -177,7 +177,7 @@ const items = [
 	{
 		id: 2,
 		title: "ГЕНПРОЕКТИРОВАНИЕ",
-		link: "/project/general",
+		link: "/project/genproject",
 		imgSrc: "/genproject.png",
 		textMod: " -right-[28vw]",
 		textAlign: "center",

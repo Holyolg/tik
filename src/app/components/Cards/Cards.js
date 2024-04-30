@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import Categories from "../Categories/Categories";
 
-export const Cards = ({ id, title, link, imgSrc, description, type }) => {
+export const Cards = () => {
 	const [cards, setCards] = useState([]);
 	const [categoryId, setCategoryId] = useState(undefined);
 	const [isLoading, setIsLoading] = useState(true);
@@ -19,22 +19,15 @@ export const Cards = ({ id, title, link, imgSrc, description, type }) => {
 		}
 	}, [categoryId]);
 
-	//Сделать перелинковку
-	useEffect(() => {
-		if (window.location.search == "?category=NaN") {
-			router.push(pathName);
-		}
-	}, []);
 	//Переделать костыль
 	useEffect(() => {
 		if (window.location.search) {
-			const pathId = window.location.search.slice(-1);
-			setCategoryId(Number(pathId));
-			console.log(pathName);
-			console.log(window.location.search);
-		} else {
-			router.push(pathName);
-			console.log(pathName);
+			const pathId = Number(window.location.search.slice(-1));
+			const numPath = Number(pathId);
+			if (isNaN(numPath) || numPath > 3) {
+			} else {
+				setCategoryId(pathId);
+			}
 		}
 	}, []);
 
@@ -87,9 +80,4 @@ export const Cards = ({ id, title, link, imgSrc, description, type }) => {
 	);
 };
 
-const variants = {
-	open: { opacity: 1 },
-	hidden: { opacity: 0 },
-};
-
-export default Card;
+export default Cards;
