@@ -1,12 +1,12 @@
 "use client";
-import getCards from "@/app/servises/GetCards/GetCards";
+import getCards from "@/app/services/GetCards/GetCards";
 import { Loading } from "@/app/ui/Loading/Loading";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import Categories from "../Categories/Categories";
 
-export const Cards = () => {
+export const Cards = ({ category }) => {
 	const [cards, setCards] = useState([]);
 	const [categoryId, setCategoryId] = useState(undefined);
 	const [isLoading, setIsLoading] = useState(true);
@@ -32,7 +32,9 @@ export const Cards = () => {
 	}, []);
 
 	useEffect(() => {
-		getCards(categoryId).then(res => {
+		const API_URL = `https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/${category}/?category=${categoryId}`;
+		console.log(API_URL);
+		getCards(API_URL).then(res => {
 			setCards(res);
 			setIsLoading(false);
 		});

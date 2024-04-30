@@ -168,7 +168,7 @@ const items = [
 	{
 		id: 1,
 		title: "КОНЦЕПЦИЯ",
-		link: "/project/concept",
+		link: "/concept",
 		imgSrc: "/card.png",
 		textMod: " -right-[22vw]",
 		textAlign: "start",
@@ -177,7 +177,7 @@ const items = [
 	{
 		id: 2,
 		title: "ГЕНПРОЕКТИРОВАНИЕ",
-		link: "/project/genproject",
+		link: "/genproject",
 		imgSrc: "/genproject.png",
 		textMod: " -right-[28vw]",
 		textAlign: "center",

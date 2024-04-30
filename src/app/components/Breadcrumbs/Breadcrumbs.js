@@ -3,9 +3,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import translationsJson from "../../../../public/translation/translation";
 
-export default function Breadcrumbs() {
+export default function Breadcrumbs({ pageTitle }) {
 	const path = usePathname();
 	const pathName = path.split("/").filter(path => path);
+	pathName.pop();
 	const translations = translationsJson;
 	function translate(text) {
 		return translations.breadcrumbs[text];
@@ -31,6 +32,10 @@ export default function Breadcrumbs() {
 						</li>
 					);
 				})}
+				<li className="inline-flex item-center space-x-3">
+					<p>|</p>
+					<p className="text-gray-700">{pageTitle}</p>
+				</li>
 			</ul>
 		</nav>
 	);

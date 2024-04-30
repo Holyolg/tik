@@ -13,7 +13,7 @@ export default function CardDetails({ params }) {
 	useEffect(() => {
 		const getCards = async () => {
 			const API_URL =
-				"https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/projects/" + id;
+				"https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/concept/" + id;
 			const res = await fetch(API_URL);
 			if (!res.ok) {
 				throw new Error("не загрузился");
@@ -36,7 +36,7 @@ export default function CardDetails({ params }) {
 	return (
 		<main className="px-2">
 			<div className="container mx-auto">
-				<Breadcrumbs />
+				<Breadcrumbs pageTitle={card.title} />
 				<h2 className="text-2xl mt-10">{card.title}</h2>
 				<div className="mt-5">
 					<Image
