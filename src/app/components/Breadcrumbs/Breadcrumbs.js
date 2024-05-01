@@ -14,7 +14,7 @@ export default function Breadcrumbs({ pageTitle }) {
 
 	return (
 		<nav
-			className="flex text-gray-400 mt-10 overflow-x-auto min-w-full whitespace-nowrap"
+			className="flex text-gray-400 mt-10 overflow-x-auto min-w-full whitespace-nowrap uppercase"
 			aria-label="Breadcrumb"
 		>
 			<ul className="inline-flex items-center space-x-3">

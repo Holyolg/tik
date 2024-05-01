@@ -34,6 +34,6 @@ export default function Card({ id, title, link, img, subtitle, category }) {
 }
 
 const variants = {
-	open: { opacity: 1 },
+	open: { opacity: 0.8 },
 	hidden: { opacity: 0 },
 };

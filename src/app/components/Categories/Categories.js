@@ -6,7 +6,7 @@ function Categories({ category, onClickCategory }) {
 		"БЛАГОУСТРОЙСТВО",
 	];
 	return (
-		<div className="categories lg:absolute -top-0 lg:w-10/12 xl:w-11/12 lg:text-white lg:text-xl">
+		<div className="categories lg:absolute -top-0 lg:w-10/12 xl:w-11/12 lg:text-white lg:text-xl font-semibold">
 			<div className="flex md:flex-row p-4 md:h-[10vh] justify-around flex-col">
 				{categories.map((categoryName, i) => (
 					<button

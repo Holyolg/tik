@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function CardDetails({ data }) {
 	return (
 		<>
-			<h2 className="text-2xl mt-10">{data.title}</h2>
+			<h2 className="text-2xl mt-10 font-semibold">{data.title}</h2>
 			<div className="mt-5">
 				<Image
 					src={data.img}
@@ -28,7 +28,7 @@ export default function CardDetails({ data }) {
 				</ul>
 			</div>
 
-			<h2 className="text-2xl mt-10">ОПИСАНИЕ ПРОЕКТА</h2>
+			<h2 className="text-2xl mt-10 font-semibold">ОПИСАНИЕ ПРОЕКТА</h2>
 			<p className="mt-5">{data.description}</p>
 			<Image
 				className="mt-5"

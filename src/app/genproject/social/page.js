@@ -2,5 +2,5 @@
 import { useRouter } from "next/navigation";
 
 export default function Redirect() {
-	useRouter().push("/concept?category=1");
+	useRouter().push("/genproject?category=1");
 }
