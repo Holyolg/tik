@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useWindowSize } from "./useWindowSize";
@@ -94,8 +95,13 @@ const Panel = ({
 						exit="closed"
 					>
 						<div className="content-wrapper h-full ml-10">
-							<img className="w-full	saturate-0" src={imgSrc}></img>
-							<p className="text-xl text-start">{description}</p>
+							<Image
+								className="w-full saturate-0"
+								src={imgSrc}
+								width={400}
+								height={200}
+							></Image>
+							<p className="mt-4 text-xl text-start">{description}</p>
 						</div>
 					</motion.div>
 				)}
