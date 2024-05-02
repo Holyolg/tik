@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata = {
-	title: "TIK PRO",
+	title: "TIK PRO тестовый",
 	description: "TIK PRO тестовый сервер",
 	verification: {
         google: "b5nvzgpWzGQRLKd0y3C8WiXjkA-PyErwiEh7XHNJA8A",

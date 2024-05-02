@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /conceptual
+Disallow: /homes
+Disallow: /improvement
+Disallow: /social
+Allow: /
+
+User-agent: Googlebot
+Disallow: /site
+Allow: *.css
+Allow: *.js
+
+Sitemap: https://tik-six.vercel.app/sitemap.xml
