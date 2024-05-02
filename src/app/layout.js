@@ -7,7 +7,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
 	title: "TIK PRO",
-	description: "TIK PRO",
+	description: "TIK PRO тестовый сервер",
+	verification: {
+        google: "b5nvzgpWzGQRLKd0y3C8WiXjkA-PyErwiEh7XHNJA8A",
+        yandex: "c0ca61b48eb6ea99",
+    },
 };
 
 export default function RootLayout({ children }) {

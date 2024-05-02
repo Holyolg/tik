@@ -27,7 +27,7 @@ export default function Menu({ category, onClickCategory, name }) {
 			<div className="menu-logo w-full flex justify-end bg-[#003056] p-5 text-white border-b h-[10vh]">
 				<div className="flex items-center mx-auto justify-between w-4/5"></div>
 				<Link className="flex items-center" href="/">
-					<img className="w-[150px]" src="/logo.png"></img>
+					<img className="w-[150px]" src="/logo.png" alt="Logo"></img>
 				</Link>
 			</div>
 		</header>

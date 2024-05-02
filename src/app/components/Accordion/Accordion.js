@@ -101,7 +101,7 @@ const Panel = ({
 								width={400}
 								height={200}
 							></Image>
-							<p className="mt-4 text-xl text-start">{description}</p>
+							<h2 className="mt-4 text-xl text-start">{description}</h2>
 						</div>
 					</motion.div>
 				)}
@@ -118,7 +118,7 @@ const Panel = ({
 			<div key={`panel-${id}`} className="mt-5">
 				<div className="content-wrapper h-full">
 					<img className="w-full saturate-0" src={imgSrc}></img>
-					<p className="text-xl text-start mt-5">{description}</p>
+					<h2 className="text-xl text-start mt-5">{description}</h2>
 				</div>
 			</div>
 		</div>
