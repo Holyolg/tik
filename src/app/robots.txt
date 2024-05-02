@@ -6,7 +6,6 @@ Disallow: /social
 Allow: /
 
 User-agent: Googlebot
-Disallow: /site
 Allow: *.css
 Allow: *.js
 
