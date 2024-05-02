@@ -9,8 +9,8 @@ import { useWindowSize } from "./useWindowSize";
 const VerticalAccordion = () => {
 	const [open, setOpen] = useState(0);
 	return (
-		<>
-			<section className="relative w-full overflow-hidden">
+
+			<section className="relative w-full overflow-x-hidden">
 				<video
 					className="md:w-full md:h-[90vh] h-[60vh] object-cover"
 					preload="none"
@@ -47,7 +47,7 @@ const VerticalAccordion = () => {
 					);
 				})}
 			</section>
-		</>
+
 	);
 };
 
