@@ -14,10 +14,12 @@ const VerticalAccordion = () => {
 				<video
 					className="md:w-full md:h-[90vh] h-[60vh] object-cover"
 					preload="none"
+					width='100%' 
+					height='100%'
 					autoPlay
 					loop
 					muted
-					playsinline
+					playsInline
 				>
 					<source src="/hero.mp4" type="video/mp4" />
 					<track
