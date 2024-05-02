@@ -25,8 +25,8 @@ const VerticalAccordion = () => {
 					<track
 						src="/path/to/captions.vtt"
 						kind="subtitles"
-						srcLang="en"
-						label="English"
+						srcLang="ru"
+						label="Russian"
 					/>
 					Your browser does not support the video tag.
 				</video>
