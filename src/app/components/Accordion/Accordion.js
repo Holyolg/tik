@@ -10,7 +10,7 @@ const VerticalAccordion = () => {
 	const [open, setOpen] = useState(0);
 	return (
 
-			<section className="relative w-full overflow-x-hidden">
+			<section className="relative w-full">
 				<video
 					className="md:w-full md:h-[90vh] h-[60vh] object-cover"
 					preload="none"
