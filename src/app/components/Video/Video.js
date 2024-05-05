@@ -63,6 +63,7 @@ export const Video = ({ src, ...props }) => {
 		};
 	}, [videoElementRef]);
 
+	// для кнопки паузы
 	const handlePlayPauseClick = () => {
 		if (videoElementRef.current) {
 			if (isPlaying) {
