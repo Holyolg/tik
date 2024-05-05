@@ -1,5 +1,6 @@
 "use client";
 
+import { Video } from "@/app/components/Video/Video";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,31 +9,10 @@ import { useWindowSize } from "./useWindowSize";
 
 const VerticalAccordion = () => {
 	const [open, setOpen] = useState(0);
-	const video = (
-		<video
-			width="1920"
-			height="1080"
-			className="md:w-full md:h-[90vh] h-[60vh] object-cover"
-			preload="none"
-			autoPlay
-			loop
-			muted
-			playsInline
-		>
-			<source src="/hero.mp4" type="video/mp4" />
-			<track
-				src="/path/to/captions.vtt"
-				kind="subtitles"
-				srcLang="ru"
-				label="Russian"
-			/>
-			Your browser does not support the video tag.
-		</video>
-	);
 
 	return (
 		<section className="relative w-full">
-			{video.oncanplaythrough ? console.log("yse") : video}
+			<Video src={"/hero.mp4"} />
 			{items.map(item => {
 				return (
 					<Panel
