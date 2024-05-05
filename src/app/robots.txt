@@ -1,9 +1,5 @@
 User-agent: *
-Disallow: /conceptual
-Disallow: /homes
-Disallow: /improvement
-Disallow: /social
-Allow: /
+Disallow: /
 
 User-agent: Googlebot
 Allow: *.css

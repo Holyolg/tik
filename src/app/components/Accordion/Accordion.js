@@ -8,44 +8,48 @@ import { useWindowSize } from "./useWindowSize";
 
 const VerticalAccordion = () => {
 	const [open, setOpen] = useState(0);
+	const video = (
+		<video
+			width="1920"
+			height="1080"
+			className="md:w-full md:h-[90vh] h-[60vh] object-cover"
+			preload="none"
+			autoPlay
+			loop
+			muted
+			playsInline
+		>
+			<source src="/hero.mp4" type="video/mp4" />
+			<track
+				src="/path/to/captions.vtt"
+				kind="subtitles"
+				srcLang="ru"
+				label="Russian"
+			/>
+			Your browser does not support the video tag.
+		</video>
+	);
+
 	return (
-
-			<section className="relative w-full">
-				<video
-					className="md:w-full md:h-[90vh] h-[60vh] object-cover"
-					preload="none"
-					autoPlay
-					loop
-					muted
-					playsInline
-				>
-					<source src="/hero.mp4" type="video/mp4" />
-					<track
-						src="/path/to/captions.vtt"
-						kind="subtitles"
-						srcLang="ru"
-						label="Russian"
+		<section className="relative w-full">
+			{video.oncanplaythrough ? console.log("yse") : video}
+			{items.map(item => {
+				return (
+					<Panel
+						key={item.id}
+						open={open}
+						setOpen={setOpen}
+						id={item.id}
+						title={item.title}
+						link={item.link}
+						imgSrc={item.imgSrc}
+						description={item.description}
+						textMod={item.textMod}
+						textAlign={item.textAlign}
 					/>
-					Your browser does not support the video tag.
-				</video>
-				{items.map(item => {
-					return (
-						<Panel
-							key={item.id}
-							open={open}
-							setOpen={setOpen}
-							id={item.id}
-							title={item.title}
-							link={item.link}
-							imgSrc={item.imgSrc}
-							description={item.description}
-							textMod={item.textMod}
-							textAlign={item.textAlign}
-						/>
-					);
-				})}
-			</section>
-
+				);
+			})}
+		</section>
 	);
 };
 
