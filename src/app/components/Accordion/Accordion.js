@@ -11,7 +11,7 @@ const VerticalAccordion = () => {
 	const [open, setOpen] = useState(0);
 
 	return (
-		<section className="relative w-full">
+		<section className="relative w-full bg-[url('/blur_min.jpg')] bg-cover bg-no-repeat">
 			<Video src={"/hero.mp4"} />
 			{items.map(item => {
 				return (

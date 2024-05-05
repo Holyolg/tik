@@ -18,7 +18,7 @@ export default function Card({ id, title, link, img, subtitle, category }) {
 					className="card-wrapper flex items-center text-center text-white w-80 h-80"
 				>
 					<motion.div
-						className="text-xl p-0.5 opacity-0 flex-col h-full content-center bg-[#003056]"
+						className="text-xl p-0.5 opacity-0 flex-col w-full h-full content-center bg-[#003056]"
 						animate={isHover ? "open" : "hidden"}
 						variants={variants}
 						onMouseEnter={() => setIsHover(true)}
