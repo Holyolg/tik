@@ -8,7 +8,7 @@ import Categories from "../Categories/Categories";
 
 export const Cards = ({ category }) => {
 	const [cards, setCards] = useState([]);
-	const [categoryId, setCategoryId] = useState(null);
+	const [categoryId, setCategoryId] = useState(undefined);
 	const [isLoading, setIsLoading] = useState(true);
 	const pathName = usePathname();
 	const router = useRouter();
