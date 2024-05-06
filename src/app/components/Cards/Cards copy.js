@@ -32,7 +32,7 @@ export const Cards = ({ category }) => {
 	}, []);
 
 	useEffect(() => {
-		const API_URL = `https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/${category}/?category=${categoryId}`;
+		const API_URL = `https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/${category}/`;
 		getCards(API_URL).then(res => {
 			setCards(res);
 			setIsLoading(false);
@@ -45,7 +45,8 @@ export const Cards = ({ category }) => {
 		router.push(filterPath);
 	}, [categoryId, pathName]);
 
-	// const cardFilter = cards.filter(card => card.category == categoryId);
+	const cardFilter = cards.filter(card => card.category == categoryId);
+
 	return (
 		<>
 			<Categories
@@ -62,7 +63,7 @@ export const Cards = ({ category }) => {
 							<Loading />
 						</div>
 					) : (
-						cards.map(card => {
+						cardFilter.map(card => {
 							return (
 								<Card
 									key={card.id}
