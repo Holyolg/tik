@@ -1,11 +1,12 @@
 import { Inter } from "next/font/google";
-import Menu from "../app/components/Menu/Menu";
-import "./globals.css";
+import Footer from "../components/Footer/Footer";
+import Menu from "../components/Menu copy/MenuCopy";
+import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-	title: "TIK PRO тестовый",
+	title: "TIK PRO тестовый 2",
 	description: "TIK PRO тестовый сервер",
 	verification: {
 		google: "b5nvzgpWzGQRLKd0y3C8WiXjkA-PyErwiEh7XHNJA8A",
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
 			<body className={`${inter.className}`}>
 				<Menu />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
