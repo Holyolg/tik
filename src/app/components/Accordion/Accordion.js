@@ -9,9 +9,10 @@ import { useWindowSize } from "./useWindowSize";
 
 const VerticalAccordion = () => {
 	const [open, setOpen] = useState(0);
+	const { width, height } = useWindowSize();
 
 	return (
-		<section className="relative w-full bg-[url('/blur_min.jpg')] bg-cover bg-no-repeat">
+		<section className={width && width > 768 ? "relative w-full bg-[url('/blur_min.jpg')] bg-cover bg-no-repeat" : "relative w-full bg-cover bg-no-repeat"}>
 			<Video src={"/hero.mp4"} />
 			{items.map(item => {
 				return (
