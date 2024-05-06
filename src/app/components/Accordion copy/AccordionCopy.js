@@ -13,7 +13,7 @@ const VerticalAccordion = () => {
 
 	return (
 		<>
-			<div className="absolute z-0 top-8 left-0 w-full bg-[url('/blur_min.jpg')] bg-cover bg-no-repeat">
+			<div className="absolute z-0 top-0 left-0 w-full bg-[url('/blur_min.jpg')] bg-no-repeat">
 				<Video src={"/hero.mp4"} />
 			</div>
 			<section className="relative w-full h-[94vh]">
