@@ -12,8 +12,10 @@ const VerticalAccordion = () => {
 	const { width, height } = useWindowSize();
 
 	return (
-		<section className={width && width > 768 ? "relative w-full bg-[url('/blur_min.jpg')] bg-cover bg-no-repeat" : "relative w-full bg-cover bg-no-repeat"}>
+		<section className="relative w-full">
+			<div className="w-full  bg-[url('/blur_min.jpg')] bg-cover bg-no-repeat">
 			<Video src={"/hero.mp4"} />
+			</div>
 			{items.map(item => {
 				return (
 					<Panel
