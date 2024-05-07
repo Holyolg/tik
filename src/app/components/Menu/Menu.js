@@ -24,10 +24,10 @@ export default function Menu({ category, onClickCategory, name }) {
 
 	return (
 		<header className="menu fixed top-0 z-10 w-full bg-[#1c4d71bf] text-black ">
-			<div className="menu-logo w-full flex py-2 px-72 border-b border-white h-[8vh]">
+			<div className="menu-logo w-full flex py-2 px-36 border-b border-white h-[8vh]">
 				<div className="flex items-center mx-auto justify-between w-4/5"></div>
 				<Link className="flex items-center" href="/">
-					<img className="w-[160px]" src="/logo.png" alt="Logo"></img>
+					<img className="w-[160px]" src="/logoWhite.svg" alt="Logo"></img>
 				</Link>
 			</div>
 		</header>

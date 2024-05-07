@@ -13,7 +13,7 @@ function Categories({ category, onClickCategory }) {
 					<button
 						key={i}
 						onClick={() => onClickCategory(i)}
-						className={`text-left hover:underline decoration-white-100 ${
+						className={`text-left hover:underline decoration-white-100 min-w-[160px] text-center ${
 							category == i ? "underline" : " "
 						}`}
 					>
