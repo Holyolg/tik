@@ -1,32 +1,33 @@
 {
-  "name": "tik",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "@headlessui/react": "^1.7.18",
-    "@mui/material": "^5.15.15",
-    "@plaiceholder/next": "^3.0.0",
-    "framer-motion": "^11.0.28",
-    "next": "14.2.1",
-    "next-video": "^1.0.0",
-    "next-videos": "^1.4.1",
-    "react": "^18",
-    "react-dom": "^18"
-  },
-  "devDependencies": {
-    "@types/node": "20.12.7",
-    "@types/react": "18.2.78",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1"
-  }
+	"name": "tik",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"export": "next export"
+	},
+	"dependencies": {
+		"@emotion/react": "^11.11.4",
+		"@emotion/styled": "^11.11.5",
+		"@headlessui/react": "^1.7.18",
+		"@mui/material": "^5.15.15",
+		"@plaiceholder/next": "^3.0.0",
+		"framer-motion": "^11.0.28",
+		"next": "14.2.1",
+		"next-video": "^1.0.0",
+		"next-videos": "^1.4.1",
+		"react": "^18",
+		"react-dom": "^18"
+	},
+	"devDependencies": {
+		"@types/node": "20.12.7",
+		"@types/react": "18.2.78",
+		"eslint": "^8",
+		"eslint-config-next": "14.2.1",
+		"postcss": "^8",
+		"tailwindcss": "^3.4.1"
+	}
 }
