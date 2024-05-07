@@ -4,7 +4,7 @@ export default function Footer() {
 			<footer class="bg-[#1c1c1c] h-[8vh] w-full px-4 flex justify-center">
 				<div class="w-full mx-auto p-2 text-white grid grid-cols-3 text-sm">
 					<p className="flex items-center">
-						TIK-Projekt 2017-2024. Все права защищены
+						TIK-Projeсt 2017-2024. Все права защищены
 					</p>
 					<ul className="flex flex-col text-center justify-center">
 						<li>+7 800 555 3535</li>
