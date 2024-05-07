@@ -2,7 +2,7 @@ function Categories({ category, onClickCategory }) {
 	const categories = [
 		"ВСЕ",
 		"ЖИЛЬЕ",
-		"СОЦИАЛЬНЫЕ",
+		"ОБЩЕСТВЕННЫЕ",
 		"КОНЦЕПТУАЛЬНЫЕ",
 		"БЛАГОУСТРОЙСТВО",
 	];

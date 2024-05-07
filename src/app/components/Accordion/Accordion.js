@@ -75,24 +75,26 @@ const Panel = ({
 					{title}
 				</Link>
 				{isOpen && (
-					<motion.div
-						key={`panel-${id}`}
-						className="self-center"
-						variants={descriptionVariants}
-						initial="closed"
-						animate="open"
-						exit="closed"
-					>
-						<div className="content-wrapper h-full ml-10">
-							<Image
-								className="w-full saturate-0"
-								src={imgSrc}
-								width={400}
-								height={200}
-							></Image>
-							<h2 className="mt-4 text-xl text-start">{description}</h2>
-						</div>
-					</motion.div>
+					<Link href={link}>
+						<motion.div
+							key={`panel-${id}`}
+							className="self-center"
+							variants={descriptionVariants}
+							initial="closed"
+							animate="open"
+							exit="closed"
+						>
+							<div className="content-wrapper h-full ml-10">
+								<Image
+									className="w-full saturate-0"
+									src={imgSrc}
+									width={400}
+									height={200}
+								></Image>
+								<h2 className="mt-4 text-xl text-start">{description}</h2>
+							</div>
+						</motion.div>
+					</Link>
 				)}
 			</div>
 		</motion.div>
@@ -167,7 +169,7 @@ const items = [
 		imgSrc: "/card.png",
 		textMod: " -right-[22vw]",
 		textAlign: "start",
-		description: "Лучший концептуальный план Москвы",
+		description: "СОЗДАНИЕ И АДАПТАЦИЯ АРХИТЕКТУРНЫХ КОНЦЕПЦИЙ",
 	},
 	{
 		id: 2,
@@ -177,7 +179,7 @@ const items = [
 		textMod: " -right-[28vw]",
 		textAlign: "center",
 		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
+			"АРХИТЕКТУРНОЕ ПРОЕКТИРОВАНИЕ - ОТ ИДЕИ ДО ВВОДА ОБЪЕКТА В ЭСКПЛУАТАЦИЮ. ПРОХОЖДЕНИЕ ЭКСПЕРТИЗЫ, АВТОРСКИЙ НАДЗОР",
 	},
 	{
 		id: 3,
@@ -188,7 +190,7 @@ const items = [
 		textMod: " -right-[34vw]",
 		textAlign: "end",
 		description:
-			"- 30% специалистов с опытом работы по профессии - > 15 - 20 лет, 50% - > 5 лет,  20% - менее 5 лет; - текучка кадров не превышает 2-3% в год, коллектив стабилен, при подборе новых кадров предпочтение отдается не только опыту, но и навыкам командной работы в коллективе, что крайне важно в BIM-проектировании. Каждый год Компанию пополняют выпускники ВУЗов.",
+			"TIK PROJECT - КОМАНДА АРХИТЕКТОРОВ, BIM-СПЕЦИАЛИСТОВ, ИНЖЕНЕРОВ И КОНСТРУКТОРОВ. <br/> МЫ ПРОЕКТИРУЕМ ЖИЛЫЕ И ОБЩЕСТВЕННЫЕ ЗДАНИЯ, ОБРАЗОВАТЕЛЬНЫЕ УЧРЕЖДЕНИЯ, ОФИСЫ И ДЕЛОВЫЕ ЦЕНТРЫ, ИНДИВИДУАЛЬНЫЕ ЖИЛЫЕ ЗДАНИЯ И ИНТЕРЬЕРЫ, А ТАКЖЕ ЗАНИМАЕМСЯ РАЗРАБОТКОЙ КОМФОРТНОЙ ГОРОДСКОЙ СРЕДЫ ДЛЯ ВАС",
 	},
 ];
 
