@@ -25,14 +25,14 @@ export default function CardDetailsPage({ params }) {
 
 	if (!card) {
 		return (
-			<div className="flex justify-center mt-[30vh]">
+			<div className="flex justify-center mt-[30vh] h-[100vh]">
 				<Loading />
 			</div>
 		);
 	}
 
 	return (
-		<main className="px-2">
+		<main className="px-2 mt-40">
 			<div className="container mx-auto">
 				<Breadcrumbs pageTitle={card.title} />
 				<CardDetails data={card} />

@@ -12,27 +12,29 @@ const VerticalAccordion = () => {
 	const { width, height } = useWindowSize();
 
 	return (
-		<section className="relative w-full">
-			<div className="w-full  bg-[url('/blur_min.jpg')] bg-cover bg-no-repeat">
-			<Video src={"/hero.mp4"} />
+		<>
+			<div className="absolute z-0 top-0 left-0 w-full bg-[url('/blur_min.jpg')] bg-no-repeat">
+				<Video src={"/hero.mp4"} />
 			</div>
-			{items.map(item => {
-				return (
-					<Panel
-						key={item.id}
-						open={open}
-						setOpen={setOpen}
-						id={item.id}
-						title={item.title}
-						link={item.link}
-						imgSrc={item.imgSrc}
-						description={item.description}
-						textMod={item.textMod}
-						textAlign={item.textAlign}
-					/>
-				);
-			})}
-		</section>
+			<section className="relative w-full h-[100vh]">
+				{items.map(item => {
+					return (
+						<Panel
+							key={item.id}
+							open={open}
+							setOpen={setOpen}
+							id={item.id}
+							title={item.title}
+							link={item.link}
+							imgSrc={item.imgSrc}
+							description={item.description}
+							textMod={item.textMod}
+							textAlign={item.textAlign}
+						/>
+					);
+				})}
+			</section>
+		</>
 	);
 };
 
@@ -50,7 +52,7 @@ const Panel = ({
 	const { width, height } = useWindowSize();
 	const isOpen = open === id;
 	let textStyle =
-		"text-white bg-[#003056] px-5 py-10 border-l w-[40vw] h-[90vh] absolute top-0 flex flex-col";
+		"mt-[8vh] text-black bg-[#1c4d71bf] px-10 py-20 border-l border-white w-[40vw] h-[92vh] absolute top-0 flex flex-col text-white";
 	const panelLg = (
 		<motion.div
 			className={textStyle + textMod}

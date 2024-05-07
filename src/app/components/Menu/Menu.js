@@ -17,23 +17,21 @@ export default function Menu({ category, onClickCategory, name }) {
 	// 	console.log(filteredCategories);
 	// }
 	const pathname = usePathname();
-	console.log(pathname);
 	const { width, height } = useWindowSize();
 
 	// const [categoryId, setCategoryId] = useState(0);
 	// const filterCategories = items.filter(item => item.type == categoryId);
-	const header = (
-		<header className="menu">
-			<div className="menu-logo w-full flex justify-end bg-[#003056] p-5 text-white border-b h-[10vh]">
+
+	return (
+		<header className="menu fixed top-0 z-10 w-full bg-[#1c4d71bf] text-black ">
+			<div className="menu-logo w-full flex py-2 px-72 border-b border-white h-[8vh]">
 				<div className="flex items-center mx-auto justify-between w-4/5"></div>
 				<Link className="flex items-center" href="/">
-					<img className="w-[150px]" src="/logo.png" alt="Logo"></img>
+					<img className="w-[160px]" src="/logo.png" alt="Logo"></img>
 				</Link>
 			</div>
 		</header>
 	);
-
-	return <>{pathname === "/home" ? "" : header}</>;
 }
 
 {
@@ -82,13 +80,11 @@ export function Sort({ chooseCategory }) {
 
 const Nav = () => {
 	return (
-		<>
-			<div className="menu-logo w-full flex justify-end bg-[#003056] p-5 text-white border-b h-[10vh]">
-				<div className="flex items-center mx-auto justify-between w-4/5"></div>
-				<Link className="flex items-center" href="/">
-					<img className="w-[150px]" src="/logo.png"></img>
-				</Link>
-			</div>
-		</>
+		<div className="menu-logo w-full flex justify-end bg-[#003056] p-5 text-white border-b h-[10vh]">
+			<div className="flex items-center mx-auto justify-between w-4/5"></div>
+			<Link className="flex items-center" href="/">
+				<img className="w-[150px]" src="/logo.png"></img>
+			</Link>
+		</div>
 	);
 };

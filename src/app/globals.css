@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+	overflow-y: scroll;
+}
+
 :root {
 	--foreground-rgb: 0, 0, 0;
 	--background-start-rgb: 214, 219, 220;
@@ -33,23 +37,29 @@ body {
 }
 
 @keyframes animate-card {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
 }
 
 @keyframes animate-card-reverse {
-  0% {width:  200px;}
-  100% {width: 100px;}
+	0% {
+		width: 200px;
+	}
+	100% {
+		width: 100px;
+	}
 }
 
 .animate-card {
-animation-name: animate-card;
-animation-duration: 2s;
+	animation-name: animate-card;
+	animation-duration: 2s;
 }
 
 .animate-card-reverse {
-  animation-name: animate-card-reverse;
-  animation-duration: 2s, linear;
-  }
-
-
+	animation-name: animate-card-reverse;
+	animation-duration: 2s, linear;
+}

@@ -1,13 +1,14 @@
 function Categories({ category, onClickCategory }) {
 	const categories = [
+		"ВСЕ",
 		"ЖИЛЬЕ",
 		"СОЦИАЛЬНЫЕ",
 		"КОНЦЕПТУАЛЬНЫЕ",
 		"БЛАГОУСТРОЙСТВО",
 	];
 	return (
-		<div className="categories lg:absolute -top-0 lg:w-10/12 xl:w-11/12 lg:text-white lg:text-xl font-semibold">
-			<div className="flex md:flex-row p-4 md:h-[10vh] justify-around flex-col">
+		<div className="categories lg:fixed top-0 z-20 lg:w-10/12 xl:w-9/12 lg:text-xl font-semibold">
+			<div className="flex md:flex-row py-4 pl-36 md:h-[8vh] justify-around flex-col text-white">
 				{categories.map((categoryName, i) => (
 					<button
 						key={i}

@@ -1,11 +1,13 @@
+"use client";
+import { usePathname } from "next/navigation";
+
 export default function Footer() {
-	return (
-		<div className="fixed bottom-0 w-full">
-			<footer class="bg-[#1c1c1c] h-[8vh] w-full px-4 flex justify-center">
-				<div class="w-full mx-auto p-2 text-white grid grid-cols-3 text-sm">
-					<p className="flex items-center">
-						TIK-Projeсt 2017-2024. Все права защищены
-					</p>
+	const pathname = usePathname();
+	const footerItem = (
+		<>
+			<footer class=" bg-[#f4f4f4] h-[8vh] w-full px-4 flex justify-center">
+				<div class="w-full mx-auto p-2 grid grid-cols-3 text-sm">
+					<p className="flex items-center">ТИК ПРОДЖЕКТ</p>
 					<ul className="flex flex-col text-center justify-center">
 						<li>+7 800 555 3535</li>
 						<li>info@tik.pro</li>
@@ -17,6 +19,20 @@ export default function Footer() {
 					</div>
 				</div>
 			</footer>
-		</div>
+		</>
 	);
+	const footerItemEmpty = (
+		<>
+			<footer class="absolute bottom-8 text-white w-1/6 px-4 flex justify-center">
+				<div class="w-full mx-auto p-2 grid grid-cols-3 font-semibold">
+					<p className="flex items-center text-9xl">
+						ТИК <br />
+						ПРОДЖЕКТ
+					</p>
+				</div>
+			</footer>
+		</>
+	);
+
+	return <>{pathname == "/" ? footerItemEmpty : footerItem}</>;
 }

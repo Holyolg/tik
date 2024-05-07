@@ -8,7 +8,7 @@ import Categories from "../Categories/Categories";
 
 export const Cards = ({ category }) => {
 	const [cards, setCards] = useState([]);
-	const [categoryId, setCategoryId] = useState(undefined);
+	const [categoryId, setCategoryId] = useState(0);
 	const [isLoading, setIsLoading] = useState(true);
 	const pathName = usePathname();
 	const router = useRouter();
@@ -24,7 +24,7 @@ export const Cards = ({ category }) => {
 		if (window.location.search) {
 			const pathId = Number(window.location.search.slice(-1));
 			const numPath = Number(pathId);
-			if (isNaN(numPath) || numPath > 3) {
+			if (isNaN(numPath) || numPath > 4) {
 			} else {
 				setCategoryId(pathId);
 			}
@@ -32,20 +32,22 @@ export const Cards = ({ category }) => {
 	}, []);
 
 	useEffect(() => {
-		const API_URL = `https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/${category}/?category=${categoryId}`;
+		const API_URL = `https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/${category}/`;
 		getCards(API_URL).then(res => {
 			setCards(res);
 			setIsLoading(false);
 		});
 	}, [categoryId]);
-	
+
 	useEffect(() => {
 		const filterPath = pathName + `?category=${categoryId}`;
 
 		router.push(filterPath);
 	}, [categoryId, pathName]);
 
-	// const cardFilter = cards.filter(card => card.category == categoryId);
+	const cardFilter =
+		categoryId > 0 ? cards.filter(card => card.category == categoryId) : cards;
+
 	return (
 		<>
 			<Categories
@@ -54,15 +56,14 @@ export const Cards = ({ category }) => {
 					setCategoryId(i);
 				}}
 			/>
-			<div className="flex items-center mx-auto justify-between w-4/5"></div>
-			<section className="flex justify-center p-4">
+			<section className="flex justify-center p-4 pt-40">
 				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 lg:mt-10">
 					{isLoading ? (
 						<div className="col-span-3 justify-self-center mt-[30vh]">
 							<Loading />
 						</div>
 					) : (
-						cards.map(card => {
+						cardFilter.map(card => {
 							return (
 								<Card
 									key={card.id}

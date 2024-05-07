@@ -8,11 +8,15 @@ export default function CardDetails({ data }) {
 				<Image
 					src={data.img}
 					width={1536}
-					height={400}
+					height={600}
 					alt="Изображение проекта"
-					style={{ objectFit: "cover" }}
+					style={{ height: "600px", objectFit: "cover" }}
+					fill={false}
+					placeholder="blur"
+					blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAD0lEQVR42mNkwAIYh7IgAAVVAAuInjI5AAAAAElFTkSuQmCC"
+					priority={true}
 				/>
-				<ul className="space-y-4 md:space-y-0">
+				<ul className="">
 					<li className="mt-5 text-xl">{data.date}</li>
 					<li>ДАТА ПРОЕКТИРОВАНИЯ</li>
 					<li className="md:text-right text-xl">{data.type}</li>
