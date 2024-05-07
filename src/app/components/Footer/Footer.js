@@ -1,7 +1,7 @@
 export default function Footer() {
 	return (
 		<div className="fixed bottom-0 w-full">
-			<footer class="bg-[#1c1c1c] h-[6vh] w-full px-4 flex justify-center">
+			<footer class="bg-[#1c1c1c] h-[8vh] w-full px-4 flex justify-center">
 				<div class="w-full mx-auto p-2 text-white grid grid-cols-3 text-sm">
 					<p className="flex items-center">
 						TIK-Projekt 2017-2024. Все права защищены

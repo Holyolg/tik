@@ -24,9 +24,9 @@ export default function Menu({ category, onClickCategory, name }) {
 
 	return (
 		<header className="menu fixed z-10 w-full bg-[#e8e8e8a1]  backdrop-blur-xl text-black">
-			<div className="menu-logo w-full flex p-2 border-b border-gray-600 h-[6vh]">
+			<div className="menu-logo w-full flex p-2 border-b border-gray-600 h-[8vh]">
 				<Link className="flex items-center" href="/">
-					<img className="w-[180px]" src="/logo.png" alt="Logo"></img>
+					<img className="w-[160px]" src="/logo.png" alt="Logo"></img>
 					<p className="text-sm">
 						Technologies <br /> Innovations <br /> Knowledge
 					</p>
