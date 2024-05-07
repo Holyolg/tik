@@ -16,7 +16,7 @@ const VerticalAccordion = () => {
 			<div className="absolute z-0 top-0 left-0 w-full bg-[url('/blur_min.jpg')] bg-no-repeat">
 				<Video src={"/hero.mp4"} />
 			</div>
-			<section className="relative w-full h-[94vh]">
+			<section className="relative w-full h-[92vh]">
 				{items.map(item => {
 					return (
 						<Panel
@@ -52,7 +52,7 @@ const Panel = ({
 	const { width, height } = useWindowSize();
 	const isOpen = open === id;
 	let textStyle =
-		"mt-[6vh] text-black bg-[#e8e8e8a1] backdrop-blur-xl px-5 py-10 border-l border-gray-600 w-[40vw] h-[88vh] absolute top-0 flex flex-col";
+		"mt-[8vh] text-black bg-[#e8e8e8a1] backdrop-blur-xl p-10 border-l border-gray-600 w-[40vw] h-[84vh] absolute top-0 flex flex-col";
 	const panelLg = (
 		<motion.div
 			className={textStyle + textMod}
