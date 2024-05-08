@@ -52,7 +52,7 @@ const Panel = ({
 	const { width, height } = useWindowSize();
 	const isOpen = open === id;
 	let textStyle =
-		"mt-[8vh] text-black bg-[#1c4d71bf] px-10 py-20 border-l border-white w-[40vw] h-[92vh] absolute top-0 flex flex-col text-white";
+		"mt-[8vh] text-black bg-[#1c4d71bf] px-10 py-16 border-l border-white w-[40vw] h-[92vh] absolute top-0 flex flex-col text-white";
 	const panelLg = (
 		<motion.div
 			className={textStyle + textMod}
