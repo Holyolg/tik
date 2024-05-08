@@ -23,8 +23,8 @@ export default function Footer() {
 	);
 	const footerItemEmpty = (
 		<>
-			<footer class="absolute bottom-8 text-white w-1/6 px-4 flex justify-center">
-				<div class="w-full mx-auto p-2 grid grid-cols-3 font-semibold">
+			<footer class="absolute left-8 bottom-8 text-white w-1/6 flex justify-center">
+				<div class="w-full mx-auto grid grid-cols-3 font-semibold">
 					<p className="flex items-center text-8xl">
 						ТИК <br />
 						ПРОДЖЕКТ

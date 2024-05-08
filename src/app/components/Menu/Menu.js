@@ -23,12 +23,13 @@ export default function Menu({ category, onClickCategory, name }) {
 	// const filterCategories = items.filter(item => item.type == categoryId);
 
 	return (
-		<header className="menu fixed top-0 z-10 w-full bg-[#1c4d71bf] text-black ">
-			<div className="menu-logo w-full flex py-2 px-36 border-b border-white h-[8vh]">
-				<div className="flex items-center mx-auto justify-between w-4/5"></div>
-				<Link className="flex items-center" href="/">
-					<img className="w-[160px]" src="/logoWhite.svg" alt="Logo"></img>
+		<header className="menu fixed top-0 z-10 w-full bg-[#073355]/[.75] text-black ">
+			<div className="menu-logo w-full flex py-2 px-12 border-b border-white h-[6vh]">
+			<Link className="flex items-center" href="/">
+					<img className="w-[120px]" src="/logoWhite.svg" alt="Logo"></img>
 				</Link>
+				<div className="flex items-center mx-auto justify-between w-4/5"></div>
+
 			</div>
 		</header>
 	);

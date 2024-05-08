@@ -16,23 +16,14 @@ const VerticalAccordion = () => {
 			<div className="absolute z-0 top-0 left-0 w-full bg-[url('/blur_min.jpg')] bg-no-repeat">
 				<Video src={"/hero.mp4"} />
 			</div>
-			<section className="relative w-full h-[100vh]">
-				{items.map(item => {
-					return (
+			<section className="relative w-full h-[100vh] font-bold">
+
 						<Panel
-							key={item.id}
 							open={open}
 							setOpen={setOpen}
-							id={item.id}
-							title={item.title}
-							link={item.link}
-							imgSrc={item.imgSrc}
-							description={item.description}
-							textMod={item.textMod}
-							textAlign={item.textAlign}
+							
 						/>
-					);
-				})}
+
 			</section>
 		</>
 	);
@@ -50,35 +41,77 @@ const Panel = ({
 	textAlign,
 }) => {
 	const { width, height } = useWindowSize();
-	const isOpen = open === id;
-	let textStyle =
-		"mt-[8vh] text-black bg-[#1c4d71bf] px-10 py-16 border-l border-white w-[40vw] h-[92vh] absolute top-0 flex flex-col text-white";
+	const isOpen = open;
 	const panelLg = (
-		<motion.div
-			className={textStyle + textMod}
-			onMouseEnter={() => setOpen(id)}
+<>
+<motion.div
+			className="mt-[6vh] w-[40vw] h-[94vh] absolute top-0 -right-[25vw] flex flex-col text-white"
+			onMouseEnter={() => setOpen(1)}
 			onMouseLeave={() => setOpen(0)}
 			whileHover={{
-				transform: "translateX(-34vw)",
+				transform: "translateX(-35vw)",
+				transition: { duration: 0.3, delay: 0.125 },
+			}}
+		>
+			<div className="card-wrapper flex h-full">
+			{(isOpen == 0 || isOpen == 1) && (
+				<Link
+								href='/concept'
+								style={{
+									writingMode: "vertical-lr",
+									textAlign: textAlign,
+								}}
+								className="border-r border-white lg:text-2xl md:text-xl px-8 py-10 rotate-180 bg-[#073355]/[.75]"
+							>КОНЦЕПЦИЯ</Link>
+			)}
+				{isOpen == 1 && (
+					<Link href='/concept'>
+						<motion.div
+						
+							className="self-center px-12 bg-[#073355]/[.75] w-full h-full"
+							variants="СОЗДАНИЕ И АДАПТАЦИЯ АРХИТЕКТУРНЫХ КОНЦЕПЦИЙ"
+							initial="closed"
+							animate="open"
+							exit="closed"
+						>
+							<div className="content-wrapper h-full ml-10">
+								<Image
+									className="w-full saturate-0"
+									src="/card.png"
+									width={400}
+									height={200}
+								></Image>
+								<h2 className="mt-4 text-base text-start">СОЗДАНИЕ И АДАПТАЦИЯ АРХИТЕКТУРНЫХ КОНЦЕПЦИЙ</h2>
+							</div>
+						</motion.div>
+					</Link>
+				)}
+			</div>
+		</motion.div>
+		<motion.div
+			className="mt-[6vh] border-l border-white w-[40vw] h-[94vh] absolute top-0 -right-[30vw] flex flex-col text-white"
+			onMouseEnter={() => setOpen(2)}
+			onMouseLeave={() => setOpen(0)}
+			whileHover={{
+				transform: "translateX(-35vw)",
 				transition: { duration: 0.3, delay: 0.125 },
 			}}
 		>
 			<div className="card-wrapper flex h-full">
 				<Link
-					href={link}
+					href='/concept'
 					style={{
 						writingMode: "vertical-lr",
 						textAlign: textAlign,
 					}}
-					className="lg:text-3xl md:text-xl rotate-180 font-semibold"
+					className="lg:text-2xl md:text-xl px-8 py-10 text-center rotate-180  bg-[#073355]/[.75]"
 				>
-					{title}
-				</Link>
-				{isOpen && (
-					<Link href={link}>
+ГЕНПРОЕКТИРОВАНИЕ				
+</Link>
+				{isOpen == 2 && (
+					<Link href='/concept'>
 						<motion.div
-							key={`panel-${id}`}
-							className="self-center"
+							className="self-center bg-[#073355]/[.75] w-full h-full"
 							variants={descriptionVariants}
 							initial="closed"
 							animate="open"
@@ -87,38 +120,80 @@ const Panel = ({
 							<div className="content-wrapper h-full ml-10">
 								<Image
 									className="w-full saturate-0"
-									src={imgSrc}
+									src='/genproject.png'
 									width={400}
 									height={200}
 								></Image>
-								<h2 className="mt-4 text-xl text-start">{description}</h2>
+								<h2 className="mt-4 text-base text-start">АРХИТЕКТУРНОЕ ПРОЕКТИРОВАНИЕ - ОТ ИДЕИ ДО ВВОДА ОБЪЕКТА В ЭСКПЛУАТАЦИЮ. ПРОХОЖДЕНИЕ ЭКСПЕРТИЗЫ, АВТОРСКИЙ НАДЗОР</h2>
 							</div>
 						</motion.div>
 					</Link>
 				)}
 			</div>
 		</motion.div>
-	);
-
-	const panelSm = (
-		<div className="text-white text-left text-xl card-wrapper p-4 flex-col h-full border-t">
-			<Link href={link} className="font-semibold underline">
-				{title}
-			</Link>
-
-			<div key={`panel-${id}`} className="mt-5">
-				<div className="content-wrapper h-full">
-					<img className="w-full saturate-0" src={imgSrc}></img>
-					<h2 className="text-xl text-start mt-5">{description}</h2>
-				</div>
+		<motion.div
+			className="mt-[6vh] border-l border-white w-[40vw] h-[94vh] absolute top-0 -right-[35vw] flex flex-col text-white"
+			onMouseEnter={() => setOpen(3)}
+			onMouseLeave={() => setOpen(0)}
+			whileHover={{
+				transform: "translateX(-35vw)",
+				transition: { duration: 0.3, delay: 0.125 },
+			}}
+		>
+			<div className="card-wrapper flex h-full">
+				<Link
+					href='/concept'
+					style={{
+						writingMode: "vertical-lr",
+						textAlign: textAlign,
+					}}
+					className="lg:text-2xl md:text-xl px-8 py-10 text-end rotate-180 bg-[#073355]/[.75]"
+				>О НАС</Link>
+				{isOpen == 3 && (
+					<Link href='/concept'>
+						<motion.div
+							className="self-center bg-[#073355]/[.75] w-full h-full"
+							variants={descriptionVariants}
+							initial="closed"
+							animate="open"
+							exit="closed"
+						>
+							<div className="content-wrapper h-full ml-10">
+								<Image
+									className="w-full saturate-0"
+									src="/about.png"
+									width={400}
+									height={200}
+								></Image>
+								<h2 className="mt-4 text-base text-start">TIK PROJECT - КОМАНДА АРХИТЕКТОРОВ, BIM-СПЕЦИАЛИСТОВ, ИНЖЕНЕРОВ И КОНСТРУКТОРОВ. <br/> МЫ ПРОЕКТИРУЕМ ЖИЛЫЕ И ОБЩЕСТВЕННЫЕ ЗДАНИЯ, ОБРАЗОВАТЕЛЬНЫЕ УЧРЕЖДЕНИЯ, ОФИСЫ И ДЕЛОВЫЕ ЦЕНТРЫ, ИНДИВИДУАЛЬНЫЕ ЖИЛЫЕ ЗДАНИЯ И ИНТЕРЬЕРЫ, А ТАКЖЕ ЗАНИМАЕМСЯ РАЗРАБОТКОЙ КОМФОРТНОЙ ГОРОДСКОЙ СРЕДЫ ДЛЯ ВАС</h2>
+							</div>
+						</motion.div>
+					</Link>
+				)}
 			</div>
-		</div>
+		</motion.div></>
+		
 	);
+
+	// const panelSm = (
+	// 	<div className="text-white text-left text-xl card-wrapper p-4 flex-col h-full border-t">
+	// 		<Link href={link} className="font-semibold underline">
+	// 			{title}
+	// 		</Link>
+
+	// 		<div key={`panel-${id}`} className="mt-5">
+	// 			<div className="content-wrapper h-full">
+	// 				<img className="w-full saturate-0" src={imgSrc}></img>
+	// 				<h2 className="text-xl text-start mt-5">{description}</h2>
+	// 			</div>
+	// 		</div>
+	// 	</div>
+	// );
 
 	return (
 		<>
 			<AnimatePresence>
-				{width && width > 768 ? panelLg : panelSm}
+				{width && width > 768 ? panelLg : ''}
 			</AnimatePresence>
 		</>
 	);
@@ -167,7 +242,7 @@ const items = [
 		title: "КОНЦЕПЦИЯ",
 		link: "/concept",
 		imgSrc: "/card.png",
-		textMod: " -right-[22vw]",
+		textMod: " -right-[23vw]",
 		textAlign: "start",
 		description: "СОЗДАНИЕ И АДАПТАЦИЯ АРХИТЕКТУРНЫХ КОНЦЕПЦИЙ",
 	},
@@ -176,7 +251,7 @@ const items = [
 		title: "ГЕНПРОЕКТИРОВАНИЕ",
 		link: "/genproject",
 		imgSrc: "/genproject.png",
-		textMod: " -right-[28vw]",
+		textMod: " -right-[29vw]",
 		textAlign: "center",
 		description:
 			"АРХИТЕКТУРНОЕ ПРОЕКТИРОВАНИЕ - ОТ ИДЕИ ДО ВВОДА ОБЪЕКТА В ЭСКПЛУАТАЦИЮ. ПРОХОЖДЕНИЕ ЭКСПЕРТИЗЫ, АВТОРСКИЙ НАДЗОР",
@@ -187,7 +262,7 @@ const items = [
 		title: "О НАС",
 		link: "/about",
 		imgSrc: "/about.png",
-		textMod: " -right-[34vw]",
+		textMod: " -right-[35vw]",
 		textAlign: "end",
 		description:
 			"TIK PROJECT - КОМАНДА АРХИТЕКТОРОВ, BIM-СПЕЦИАЛИСТОВ, ИНЖЕНЕРОВ И КОНСТРУКТОРОВ. <br/> МЫ ПРОЕКТИРУЕМ ЖИЛЫЕ И ОБЩЕСТВЕННЫЕ ЗДАНИЯ, ОБРАЗОВАТЕЛЬНЫЕ УЧРЕЖДЕНИЯ, ОФИСЫ И ДЕЛОВЫЕ ЦЕНТРЫ, ИНДИВИДУАЛЬНЫЕ ЖИЛЫЕ ЗДАНИЯ И ИНТЕРЬЕРЫ, А ТАКЖЕ ЗАНИМАЕМСЯ РАЗРАБОТКОЙ КОМФОРТНОЙ ГОРОДСКОЙ СРЕДЫ ДЛЯ ВАС",
