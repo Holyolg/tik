@@ -3,8 +3,8 @@ function Categories({ category, onClickCategory }) {
 		"ВСЕ",
 		"ЖИЛЬЕ",
 		"ОБЩЕСТВЕННЫЕ",
-		"КОНЦЕПТУАЛЬНЫЕ",
 		"БЛАГОУСТРОЙСТВО",
+		"ИНТЕРЬЕРЫ",
 	];
 	return (
 		<div className="categories lg:fixed top-0 z-20 lg:w-10/12 xl:w-9/12 lg:text-xl font-semibold">

@@ -32,7 +32,7 @@ export default function CardDetailsPage({ params }) {
 	}
 
 	return (
-		<main className="px-2 mt-40">
+		<main className="px-2 my-40">
 			<div className="container mx-auto">
 				<Breadcrumbs pageTitle={card.title} />
 				<CardDetails data={card} />

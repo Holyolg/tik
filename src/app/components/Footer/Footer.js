@@ -25,7 +25,7 @@ export default function Footer() {
 		<>
 			<footer class="absolute bottom-8 text-white w-1/6 px-4 flex justify-center">
 				<div class="w-full mx-auto p-2 grid grid-cols-3 font-semibold">
-					<p className="flex items-center text-9xl">
+					<p className="flex items-center text-8xl">
 						ТИК <br />
 						ПРОДЖЕКТ
 					</p>
