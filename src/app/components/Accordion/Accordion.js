@@ -44,8 +44,10 @@ const Panel = ({
 	const isOpen = open;
 	const panelLg = (
 <>
+<AnimatePresence>
+
 <motion.div
-			className="mt-[6vh] w-[40vw] h-[94vh] absolute top-0 -right-[25vw] flex flex-col text-white"
+			className="mt-[6vh] w-[40vw] h-[94vh] absolute top-0 right-[-25vw] flex flex-col text-white"
 			onMouseEnter={() => setOpen(1)}
 			onMouseLeave={() => setOpen(0)}
 			whileHover={{
@@ -68,13 +70,13 @@ const Panel = ({
 					<Link href='/concept'>
 						<motion.div
 						
-							className="self-center px-12 bg-[#073355]/[.75] w-full h-full"
-							variants="СОЗДАНИЕ И АДАПТАЦИЯ АРХИТЕКТУРНЫХ КОНЦЕПЦИЙ"
+							className="p-8 bg-[#073355]/[.75] w-full h-full flex"
+							variants={descriptionVariants}
 							initial="closed"
 							animate="open"
 							exit="closed"
 						>
-							<div className="content-wrapper h-full ml-10">
+							<div className="self-end content-wrapper">
 								<Image
 									className="w-full saturate-0"
 									src="/card.png"
@@ -89,7 +91,7 @@ const Panel = ({
 			</div>
 		</motion.div>
 		<motion.div
-			className="mt-[6vh] border-l border-white w-[40vw] h-[94vh] absolute top-0 -right-[30vw] flex flex-col text-white"
+			className="mt-[6vh] border-l border-white w-[40vw] h-[94vh] absolute top-0 right-[-30vw] flex flex-col text-white"
 			onMouseEnter={() => setOpen(2)}
 			onMouseLeave={() => setOpen(0)}
 			whileHover={{
@@ -111,20 +113,21 @@ const Panel = ({
 				{isOpen == 2 && (
 					<Link href='/concept'>
 						<motion.div
-							className="self-center bg-[#073355]/[.75] w-full h-full"
+							className="p-8 bg-[#073355]/[.75] flex items-center w-full h-full"
 							variants={descriptionVariants}
 							initial="closed"
 							animate="open"
 							exit="closed"
 						>
-							<div className="content-wrapper h-full ml-10">
+							<div className="content-wrapper">
+							<h2 className="text-base text-start">АРХИТЕКТУРНОЕ ПРОЕКТИРОВАНИЕ - ОТ ИДЕИ ДО ВВОДА ОБЪЕКТА В ЭСКПЛУАТАЦИЮ. ПРОХОЖДЕНИЕ ЭКСПЕРТИЗЫ, АВТОРСКИЙ НАДЗОР</h2>
 								<Image
-									className="w-full saturate-0"
+									className="w-[500px] pb-24 saturate-0"
 									src='/genproject.png'
-									width={400}
+									width={500}
 									height={200}
 								></Image>
-								<h2 className="mt-4 text-base text-start">АРХИТЕКТУРНОЕ ПРОЕКТИРОВАНИЕ - ОТ ИДЕИ ДО ВВОДА ОБЪЕКТА В ЭСКПЛУАТАЦИЮ. ПРОХОЖДЕНИЕ ЭКСПЕРТИЗЫ, АВТОРСКИЙ НАДЗОР</h2>
+								
 							</div>
 						</motion.div>
 					</Link>
@@ -132,7 +135,7 @@ const Panel = ({
 			</div>
 		</motion.div>
 		<motion.div
-			className="mt-[6vh] border-l border-white w-[40vw] h-[94vh] absolute top-0 -right-[35vw] flex flex-col text-white"
+			className="mt-[6vh] border-l border-white w-[40vw] h-[94vh] absolute top-0 right-[-35vw] flex flex-col text-white"
 			onMouseEnter={() => setOpen(3)}
 			onMouseLeave={() => setOpen(0)}
 			whileHover={{
@@ -152,26 +155,29 @@ const Panel = ({
 				{isOpen == 3 && (
 					<Link href='/concept'>
 						<motion.div
-							className="self-center bg-[#073355]/[.75] w-full h-full"
+							className=" bg-[#073355]/[.75] w-full h-full"
 							variants={descriptionVariants}
 							initial="closed"
 							animate="open"
 							exit="closed"
 						>
-							<div className="content-wrapper h-full ml-10">
+							<div className="content-wrapper p-8 flex flex-col justify-between h-full">
+							<h2 className="text-base text-start">TIK PROJECT - КОМАНДА АРХИТЕКТОРОВ, BIM-СПЕЦИАЛИСТОВ, ИНЖЕНЕРОВ И КОНСТРУКТОРОВ. <br/> МЫ ПРОЕКТИРУЕМ ЖИЛЫЕ И ОБЩЕСТВЕННЫЕ ЗДАНИЯ, ОБРАЗОВАТЕЛЬНЫЕ УЧРЕЖДЕНИЯ, ОФИСЫ И ДЕЛОВЫЕ ЦЕНТРЫ, ИНДИВИДУАЛЬНЫЕ ЖИЛЫЕ ЗДАНИЯ И ИНТЕРЬЕРЫ, А ТАКЖЕ ЗАНИМАЕМСЯ РАЗРАБОТКОЙ КОМФОРТНОЙ ГОРОДСКОЙ СРЕДЫ ДЛЯ ВАС</h2>
 								<Image
 									className="w-full saturate-0"
 									src="/about.png"
 									width={400}
 									height={200}
 								></Image>
-								<h2 className="mt-4 text-base text-start">TIK PROJECT - КОМАНДА АРХИТЕКТОРОВ, BIM-СПЕЦИАЛИСТОВ, ИНЖЕНЕРОВ И КОНСТРУКТОРОВ. <br/> МЫ ПРОЕКТИРУЕМ ЖИЛЫЕ И ОБЩЕСТВЕННЫЕ ЗДАНИЯ, ОБРАЗОВАТЕЛЬНЫЕ УЧРЕЖДЕНИЯ, ОФИСЫ И ДЕЛОВЫЕ ЦЕНТРЫ, ИНДИВИДУАЛЬНЫЕ ЖИЛЫЕ ЗДАНИЯ И ИНТЕРЬЕРЫ, А ТАКЖЕ ЗАНИМАЕМСЯ РАЗРАБОТКОЙ КОМФОРТНОЙ ГОРОДСКОЙ СРЕДЫ ДЛЯ ВАС</h2>
 							</div>
 						</motion.div>
 					</Link>
 				)}
 			</div>
-		</motion.div></>
+		</motion.div>
+		</AnimatePresence>
+
+		</>
 		
 	);
 
@@ -233,7 +239,13 @@ const descriptionVariants = {
 			duration: 0.2,
 		},
 	},
-	closed: { opacity: 0, x: "100%" },
+	closed: { opacity: 0, 
+		x: "100%",
+		transition: {
+			easy: "linear",
+			duration: 0.2,
+		},
+	 },
 };
 
 const items = [

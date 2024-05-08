@@ -7,8 +7,8 @@ function Categories({ category, onClickCategory }) {
 		"ИНТЕРЬЕРЫ",
 	];
 	return (
-		<div className="categories lg:fixed top-0 z-20 lg:w-10/12 xl:w-9/12 lg:text-xl font-semibold">
-			<div className="flex md:flex-row py-4 pl-36 md:h-[8vh] justify-around flex-col text-white">
+		<div className="categories lg:fixed top-0 right-1/4 z-20 w-1/2 font-bold">
+			<div className="flex md:flex-row py-4 md:h-[6vh] justify-between flex-col text-white">
 				{categories.map((categoryName, i) => (
 					<button
 						key={i}
