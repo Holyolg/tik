@@ -63,3 +63,6 @@ body {
 	animation-name: animate-card-reverse;
 	animation-duration: 2s, linear;
 }
+.card-grid {
+	grid-area: 1 / 1 / 2 / 2;
+}
