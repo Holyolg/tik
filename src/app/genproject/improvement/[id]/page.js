@@ -28,7 +28,7 @@ export default function CardDetailsPage({ params }) {
 	}
 
 	return (
-		<main className="px-2 my-40">
+		<main className="px-2 my-24">
 			<div className="container mx-auto">
 				<Breadcrumbs pageTitle={card.title} />
 				<CardDetails data={card} />
