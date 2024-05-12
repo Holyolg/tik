@@ -56,10 +56,10 @@ export const Cards = ({ category }) => {
 					setCategoryId(i);
 				}}
 			/>
-			<section className="flex justify-center p-4 py-40">
+			<section className="flex justify-center p-4 my-40">
 				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 lg:mt-10">
 					{isLoading ? (
-						<div className="col-span-3 justify-self-center mt-[30vh]">
+						<div className="col-span-3 justify-self-center">
 							<Loading />
 						</div>
 					) : (
