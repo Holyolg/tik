@@ -1,3 +1,5 @@
+import toBase64 from "@/app/services/toBase64/toBase64";
+import shimmer from "@/app/ui/Shimer/Shimer";
 import Image from "next/image";
 
 export default function CardDetails({ data }) {
@@ -12,8 +14,9 @@ export default function CardDetails({ data }) {
 					alt="Изображение проекта"
 					style={{ height: "600px", objectFit: "cover" }}
 					fill={false}
-					placeholder="blur"
-					blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAD0lEQVR42mNkwAIYh7IgAAVVAAuInjI5AAAAAElFTkSuQmCC"
+					placeholder={`data:image/svg+xml;base64,${toBase64(
+						shimmer(1536, 600)
+					)}`}
 					priority={true}
 				/>
 				<ul className="">
