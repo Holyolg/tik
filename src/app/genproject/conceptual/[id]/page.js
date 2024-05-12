@@ -24,11 +24,7 @@ export default function CardDetailsPage({ params }) {
 	}, []);
 
 	if (!card) {
-		return (
-			<div className="flex justify-center mt-[30vh] min-h-[100vh]">
-				<Loading />
-			</div>
-		);
+		return <Loading />;
 	}
 
 	return (

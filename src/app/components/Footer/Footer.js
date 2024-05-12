@@ -5,8 +5,8 @@ export default function Footer() {
 	const pathname = usePathname();
 	const footerItem = (
 		<>
-			<footer class=" bg-[#f4f4f4] h-[8vh] w-full px-4 flex justify-center">
-				<div class="w-full mx-auto p-2 grid grid-cols-3 text-sm">
+			<footer className=" bg-[#f4f4f4] h-[8vh] w-full px-4 flex justify-center">
+				<div className="w-full mx-auto p-2 grid grid-cols-3 text-sm">
 					<p className="flex items-center">ТИК ПРОДЖЕКТ</p>
 					<ul className="flex flex-col text-center justify-center">
 						<li>+7 800 555 3535</li>
@@ -23,8 +23,8 @@ export default function Footer() {
 	);
 	const footerItemEmpty = (
 		<>
-			<footer class="absolute left-8 bottom-8 text-white w-1/6 flex justify-center">
-				<div class="w-full mx-auto grid grid-cols-3 font-semibold">
+			<footer className="absolute left-8 bottom-8 text-white w-1/6 flex justify-center">
+				<div className="w-full mx-auto grid grid-cols-3 font-semibold">
 					<p className="flex items-center text-8xl">
 						ТИК <br />
 						ПРОДЖЕКТ
