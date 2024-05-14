@@ -39,30 +39,30 @@ const Panel = ({
 	const panelLg = (
 		<>
 			<AnimatePresence>
-				<motion.div
-					className="mt-[6vh] w-[40vw] h-[94vh] absolute top-0 right-[-25vw] 2xl:right-[-28vw] flex flex-col text-white"
-					onMouseEnter={() => setOpen(1)}
-					onMouseLeave={() => setOpen(0)}
-					whileHover={{
-						transform: "translateX(-35vw)",
-						transition: { duration: 0.3, delay: 0.125 },
-					}}
-				>
-					<div className="card-wrapper flex h-full">
-						{(isOpen == 0 || isOpen == 1) && (
-							<Link
-								href="/concept"
-								style={{
-									writingMode: "vertical-lr",
-									textAlign: textAlign,
-								}}
-								className="border-r border-white lg:text-2xl md:text-xl px-8 2xl:px-9 py-10 rotate-180 bg-[#073355]/[.75]"
-							>
-								КОНЦЕПЦИЯ
-							</Link>
-						)}
-						{isOpen == 1 && (
-							<Link href="/concept">
+				<Link href="/concept">
+					<motion.div
+						className="mt-16 w-[40vw] h-[calc(100vh-4rem)] absolute top-0 right-[calc(-40vw+12rem)] flex flex-col text-white"
+						onMouseEnter={() => setOpen(1)}
+						onMouseLeave={() => setOpen(0)}
+						whileHover={{
+							transform: "translateX(-35vw)",
+							transition: { duration: 0.3, delay: 0.125 },
+						}}
+					>
+						<div className="card-wrapper flex h-full">
+							{isOpen <= 1 && (
+								<div
+									style={{
+										writingMode: "vertical-lr",
+									}}
+									className="border-r border-white lg:text-2xl md:text-xl text-end py-10 rotate-180 bg-[#073355]/[.75]"
+								>
+									<div className="w-16 px-2 align-middle flex items-center h-full">
+										КОНЦЕПЦИЯ
+									</div>
+								</div>
+							)}
+							{isOpen == 1 && (
 								<motion.div
 									className="p-8 bg-[#073355]/[.75] w-[35vw] h-full flex"
 									variants={descriptionVariants}
@@ -82,32 +82,35 @@ const Panel = ({
 										</h2>
 									</div>
 								</motion.div>
-							</Link>
-						)}
-					</div>
-				</motion.div>
-				<motion.div
-					className="mt-[6vh] border-l border-white w-[40vw] h-[94vh] absolute top-0 right-[-30vw] 2xl:right-[-32vw] flex flex-col text-white"
-					onMouseEnter={() => setOpen(2)}
-					onMouseLeave={() => setOpen(0)}
-					whileHover={{
-						transform: "translateX(-35vw)",
-						transition: { duration: 0.3, delay: 0.125 },
-					}}
-				>
-					<div className="card-wrapper flex h-full">
-						<Link
-							href="/concept"
-							style={{
-								writingMode: "vertical-lr",
-								textAlign: textAlign,
-							}}
-							className="lg:text-2xl md:text-xl px-8 2xl:px-9 py-10 text-center rotate-180  bg-[#073355]/[.75]"
-						>
-							ГЕНПРОЕКТИРОВАНИЕ
-						</Link>
-						{isOpen == 2 && (
-							<Link href="/concept">
+							)}
+						</div>
+					</motion.div>
+				</Link>
+
+				<Link href="/genproject">
+					<motion.div
+						className="mt-16 w-[40vw] h-[calc(100vh-4rem)] absolute top-0 right-[calc(-40vw+8rem)] flex flex-col text-white"
+						onMouseEnter={() => setOpen(2)}
+						onMouseLeave={() => setOpen(0)}
+						whileHover={{
+							transform: "translateX(-35vw)",
+							transition: { duration: 0.3, delay: 0.125 },
+						}}
+					>
+						<div className="card-wrapper flex h-full">
+							{isOpen <= 2 && (
+								<div
+									style={{
+										writingMode: "vertical-lr",
+									}}
+									className="border-r border-white lg:text-2xl md:text-xl text-end py-10 rotate-180 bg-[#073355]/[.75]"
+								>
+									<div className="w-16 px-2 align-middle flex justify-center items-center h-full">
+										ГЕНЕРАЛЬНОЕ ПРОЕКТИРОВАНИЕ
+									</div>
+								</div>
+							)}
+							{isOpen == 2 && (
 								<motion.div
 									className="p-8 bg-[#073355]/[.75] flex items-center w-[35vw] h-full"
 									variants={descriptionVariants}
@@ -128,32 +131,35 @@ const Panel = ({
 										></Image>
 									</div>
 								</motion.div>
-							</Link>
-						)}
-					</div>
-				</motion.div>
-				<motion.div
-					className="mt-[6vh] border-l border-white w-[40vw] h-[94vh] absolute top-0 right-[-35vw] 2xl:right-[-36vw] flex flex-col text-white"
-					onMouseEnter={() => setOpen(3)}
-					onMouseLeave={() => setOpen(0)}
-					whileHover={{
-						transform: "translateX(-35vw)",
-						transition: { duration: 0.3, delay: 0.125 },
-					}}
-				>
-					<div className="card-wrapper flex h-full">
-						<Link
-							href="/concept"
-							style={{
-								writingMode: "vertical-lr",
-								textAlign: textAlign,
-							}}
-							className="lg:text-2xl md:text-xl px-8 2xl:px-9 py-10 text-end rotate-180 bg-[#073355]/[.75]"
-						>
-							О НАС
-						</Link>
-						{isOpen == 3 && (
-							<Link href="/concept">
+							)}
+						</div>
+					</motion.div>
+				</Link>
+
+				<Link href="/about">
+					<motion.div
+						className="mt-16 w-[40vw] h-[calc(100vh-4rem)] absolute top-0 right-[calc(-40vw+4rem)] flex flex-col text-white"
+						onMouseEnter={() => setOpen(3)}
+						onMouseLeave={() => setOpen(0)}
+						whileHover={{
+							transform: "translateX(-35vw)",
+							transition: { duration: 0.3, delay: 0.125 },
+						}}
+					>
+						<div className="card-wrapper flex h-full">
+							{isOpen <= 3 && (
+								<div
+									style={{
+										writingMode: "vertical-lr",
+									}}
+									className="border-r border-white lg:text-2xl md:text-xl text-end py-10 rotate-180 bg-[#073355]/[.75]"
+								>
+									<div className="w-16 px-2 align-middle flex justify-end items-center h-full">
+										О НАС
+									</div>
+								</div>
+							)}
+							{isOpen == 3 && (
 								<motion.div
 									className="bg-[#073355]/[.75] w-[35vw] h-full"
 									variants={descriptionVariants}
@@ -178,10 +184,10 @@ const Panel = ({
 										></Image>
 									</div>
 								</motion.div>
-							</Link>
-						)}
-					</div>
-				</motion.div>
+							)}
+						</div>
+					</motion.div>
+				</Link>
 			</AnimatePresence>
 		</>
 	);
@@ -239,7 +245,7 @@ const descriptionVariants = {
 		x: "0%",
 		transition: {
 			easy: "linear",
-			duration: 0.2,
+			duration: 0.1,
 		},
 	},
 	closed: {
@@ -247,7 +253,7 @@ const descriptionVariants = {
 		x: "100%",
 		transition: {
 			easy: "linear",
-			duration: 0.2,
+			duration: 0.3,
 		},
 	},
 };
