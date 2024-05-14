@@ -34,5 +34,5 @@ export default function Footer() {
 		</>
 	);
 
-	return <>{pathname == "/" ? footerItemEmpty : footerItem}</>;
+	return <>{pathname == "/" ? footerItemEmpty : ""}</>;
 }

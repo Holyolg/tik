@@ -1,24 +1,31 @@
-import Image from "next/image";
-import Link from "next/link";
 export default function about() {
+	async function createMap() {
+		return "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa90f7f2ba45af4e6468c2980a10d94974abf6acb7da27d3f885a84b26606e57d&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true";
+	}
+
 	return (
-		<main class="grid min-h-full place-items-center bg-white px-6 py-16 sm:py-32 lg:px-8">
-			<div class="text-center">
-				<div class="flex items-center justify-center gap-x-6">
-					<Image
-						className="mt-5"
-						src="/404.png"
-						width={200}
-						height={153}
-						alt="Изображение проекта"
-						style={{ objectFit: "cover" }}
-					/>
+		<section className="container flex mx-auto mt-10">
+			<div>
+				<div className="text-xl flex">
+					<img src="/map.png" className="w-5 h-5" />
+					<p className="ml-1">ТАМБОВ</p>
 				</div>
-				<p class="mt-10 text-3xl font-semibold">В разработке</p>
-				<button className="mt-10 bg-[#003056] rounded-xl px-4 py-3 text-white hover:bg-[#002f56d7]">
-					<Link href="/">Вернуться на главную</Link>
-				</button>
+				<ul className="space-y-5 mt-10">
+					<li>
+						<p className="text-xs">АДРЕС</p>
+						<p className="">ТАМБОВ, 123</p>
+					</li>
+					<li>
+						<p className="text-xs">ПОЧТА</p>
+						<a className="">@TIK.RU</a>
+					</li>
+					<li>
+						<p className="text-xs">ТЕЛЕФОН</p>
+						<a className="">+7 (111) 111-11-11</a>
+					</li>
+				</ul>
 			</div>
-		</main>
+			<div></div>
+		</section>
 	);
 }

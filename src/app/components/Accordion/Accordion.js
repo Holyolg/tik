@@ -55,7 +55,7 @@ const Panel = ({
 									style={{
 										writingMode: "vertical-lr",
 									}}
-									className="border-r border-white lg:text-2xl md:text-xl text-end py-10 rotate-180 bg-[#073355]/[.75]"
+									className="border-r border-white lg:text-2xl md:text-xl py-10 rotate-180 bg-[#073355]/[.75]"
 								>
 									<div className="w-16 px-2 align-middle flex items-center h-full">
 										КОНЦЕПЦИЯ
@@ -64,7 +64,7 @@ const Panel = ({
 							)}
 							{isOpen == 1 && (
 								<motion.div
-									className="p-8 bg-[#073355]/[.75] w-[35vw] h-full flex"
+									className="px-4 py-9 bg-[#073355]/[.75] w-[35vw] h-full flex"
 									variants={descriptionVariants}
 									initial="closed"
 									animate="open"
@@ -103,7 +103,7 @@ const Panel = ({
 									style={{
 										writingMode: "vertical-lr",
 									}}
-									className="border-r border-white lg:text-2xl md:text-xl text-end py-10 rotate-180 bg-[#073355]/[.75]"
+									className="border-r border-white lg:text-2xl md:text-xl rotate-180 bg-[#073355]/[.75]"
 								>
 									<div className="w-16 px-2 align-middle flex justify-center items-center h-full">
 										ГЕНЕРАЛЬНОЕ ПРОЕКТИРОВАНИЕ
@@ -152,7 +152,7 @@ const Panel = ({
 									style={{
 										writingMode: "vertical-lr",
 									}}
-									className="border-r border-white lg:text-2xl md:text-xl text-end py-10 rotate-180 bg-[#073355]/[.75]"
+									className="border-r border-white lg:text-2xl md:text-xl py-10 rotate-180 bg-[#073355]/[.75]"
 								>
 									<div className="w-16 px-2 align-middle flex justify-end items-center h-full">
 										О НАС
@@ -167,7 +167,7 @@ const Panel = ({
 									animate="open"
 									exit="closed"
 								>
-									<div className="content-wrapper p-8 flex flex-col justify-between h-full">
+									<div className="content-wrapper px-4 py-9 flex flex-col justify-between h-full">
 										<h2 className="text-base text-start">
 											TIK PROJECT - КОМАНДА АРХИТЕКТОРОВ, BIM-СПЕЦИАЛИСТОВ,
 											ИНЖЕНЕРОВ И КОНСТРУКТОРОВ. <br /> МЫ ПРОЕКТИРУЕМ ЖИЛЫЕ И

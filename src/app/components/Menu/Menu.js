@@ -22,16 +22,18 @@ export default function Menu({ category, onClickCategory, name }) {
 	// const [categoryId, setCategoryId] = useState(0);
 	// const filterCategories = items.filter(item => item.type == categoryId);
 
-	return (
+	const homeHeader = (
 		<header className="menu fixed top-0 z-10 w-full bg-[#073355]/[.75] text-black ">
-			<div className="menu-logo w-full flex py-2 px-12 border-b border-white h-16">
+			<div className="menu-logo w-full flex py-2 px-20 border-b border-white h-16">
+				<div className="flex items-center mx-auto justify-between w-4/5"></div>
 				<Link className="flex items-center" href="/">
 					<img className="w-[110px]" src="/logoWhite.svg" alt="Logo"></img>
 				</Link>
-				<div className="flex items-center mx-auto justify-between w-4/5"></div>
 			</div>
 		</header>
 	);
+
+	return <>{pathname == "/" ? homeHeader : ""}</>;
 }
 
 {

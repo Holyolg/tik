@@ -9,39 +9,43 @@ export default function Card({ id, title, link, img, subtitle, category }) {
 	const [isHover, setIsHover] = useState(false);
 
 	return (
-		<>
-			<div className="" id={id}>
-				<Link
-					href={link + id}
-					className="card-wrapper flex items-center text-center text-white w-80 h-80 relative"
-				>
-					<Image
-						src={img}
-						alt="Изображение проекта"
-						style={{ objectFit: "cover" }}
-						fill
-						sizes="400px"
-						placeholder={`data:image/svg+xml;base64,${toBase64(
-							shimmer(320, 320)
-						)}`}
-					/>
+		<div
+			id={id}
+			onMouseEnter={() => setIsHover(true)}
+			onMouseLeave={() => setIsHover(false)}
+		>
+			<Link
+				href={link + id}
+				className="card-wrapper flex items-center text-center text-white size-52 relative"
+			>
+				<Image
+					src={img}
+					alt="Изображение проекта"
+					style={{ objectFit: "cover" }}
+					fill
+					sizes="400px"
+					placeholder={`data:image/svg+xml;base64,${toBase64(
+						shimmer(320, 320)
+					)}`}
+				/>
+				{isHover && (
 					<motion.div
-						className="text-xl p-0.5 opacity-0 flex-col w-full h-full content-center bg-[#003056]"
-						animate={isHover ? "open" : "hidden"}
+						className="absolute p-1 flex-col w-full h-full content-center bg-[#003056]"
 						variants={variants}
-						onMouseEnter={() => setIsHover(true)}
-						onMouseLeave={() => setIsHover(false)}
+						initial="hidden"
+						animate="open"
+						exit="hidden"
 					>
 						{title}
-						<p className="mt-10 text-sm">{subtitle}</p>
+						<p className="mt-5 text-sm">{subtitle}</p>
 					</motion.div>
-				</Link>
-			</div>
-		</>
+				)}
+			</Link>
+		</div>
 	);
 }
 
 const variants = {
-	open: { opacity: 0.8 },
+	open: { opacity: 1 },
 	hidden: { opacity: 0 },
 };
