@@ -15,7 +15,7 @@ function Categories({ category, onClickCategory }) {
 	return (
 		<>
 			<header className="menu fixed top-0 z-10 w-full text-[#003056] font-bold text-xl">
-				<div className="menu-logo w-full flex justify-between py-2 px-20 h-16">
+				<div className="menu-logo w-full flex justify-between py-2 px-8 h-16">
 					<Link className="flex items-center" href="/">
 						<img className="w-[110px]" src="/logo.svg" alt="Logo"></img>
 					</Link>

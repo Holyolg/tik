@@ -24,7 +24,7 @@ export default function Menu({ category, onClickCategory, name }) {
 
 	const homeHeader = (
 		<header className="menu fixed top-0 z-10 w-full bg-[#073355]/[.75] text-black ">
-			<div className="menu-logo w-full flex py-2 px-20 border-b border-white h-16">
+			<div className="menu-logo w-full flex py-2 px-8 border-b border-white h-16">
 			<Link className="flex items-center" href="/">
 					<img className="w-[110px]" src="/logoWhite.svg" alt="Logo"></img>
 				</Link>

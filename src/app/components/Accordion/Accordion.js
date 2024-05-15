@@ -112,19 +112,19 @@ const Panel = ({
 							)}
 							{isOpen == 2 && (
 								<motion.div
-									className="p-8 bg-[#073355]/[.75] flex items-center w-[35vw] h-full"
+									className="p-8 pr-24 bg-[#073355]/[.75] flex items-center w-[35vw] h-full"
 									variants={descriptionVariants}
 									initial="closed"
 									animate="open"
 									exit="closed"
 								>
-									<div className="content-wrapper pb-24 space-y-14">
-										<h2 className="mb-10 text-base text-start leading-relaxed">
+									<div className="content-wrapper space-y-[5.5rem]">
+										<h2 className="text-base text-start leading-relaxed">
 											АРХИТЕКТУРНОЕ ПРОЕКТИРОВАНИЕ - ОТ ИДЕИ ДО ВВОДА ОБЪЕКТА В
 											ЭСКПЛУАТАЦИЮ <br/> ПРОХОЖДЕНИЕ ЭКСПЕРТИЗЫ, АВТОРСКИЙ НАДЗОР
 										</h2>
 										<Image
-											className="w-[500px] saturate-0"
+											className="w-[515px] saturate-0 pb-24"
 											src="/genproject.png"
 											width={500}
 											height={300}
@@ -167,14 +167,14 @@ const Panel = ({
 									animate="open"
 									exit="closed"
 								>
-									<div className="content-wrapper px-4 py-9 flex flex-col justify-between h-full">
+									<div className="content-wrapper px-4 py-9 pr-24 flex flex-col justify-between h-full">
 										<h2 className="text-base text-start leading-relaxed">
-											TIK PROJECT - КОМАНДА АРХИТЕКТОРОВ, BIM-СПЕЦИАЛИСТОВ,
+											TIK PROJECT - КОМАНДА АРХИТЕКТОРОВ, <br/>BIM-СПЕЦИАЛИСТОВ,
 											ИНЖЕНЕРОВ И КОНСТРУКТОРОВ <br /> <br/>
 											МЫ ПРОЕКТИРУЕМ ЖИЛЫЕ И
-											ОБЩЕСТВЕННЫЕ ЗДАНИЯ, ОБРАЗОВАТЕЛЬНЫЕ УЧРЕЖДЕНИЯ, ОФИСЫ И
-											ДЕЛОВЫЕ ЦЕНТРЫ, ИНДИВИДУАЛЬНЫЕ ЖИЛЫЕ ЗДАНИЯ И ИНТЕРЬЕРЫ, А
-											ТАКЖЕ ЗАНИМАЕМСЯ РАЗРАБОТКОЙ КОМФОРТНОЙ ГОРОДСКОЙ СРЕДЫ
+											ОБЩЕСТВЕННЫЕ ЗДАНИЯ, <br/> ОБРАЗОВАТЕЛЬНЫЕ УЧРЕЖДЕНИЯ, ОФИСЫ И
+											ДЕЛОВЫЕ <br/> ЦЕНТРЫ, ИНДИВИДУАЛЬНЫЕ ЖИЛЫЕ ЗДАНИЯ И ИНТЕРЬЕРЫ, <br/>А
+											ТАКЖЕ ЗАНИМАЕМСЯ РАЗРАБОТКОЙ КОМФОРТНОЙ <br/> ГОРОДСКОЙ СРЕДЫ
 											ДЛЯ ВАС
 										</h2>
 										<Image
