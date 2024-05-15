@@ -57,7 +57,7 @@ export const Cards = ({ category }) => {
 				}}
 			/>
 			<section className="flex justify-center p-4 my-40">
-				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 lg:mt-10">
+				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-20 lg:mt-10">
 					{isLoading ? (
 						<div className="col-span-3 justify-self-center">
 							<Loading />

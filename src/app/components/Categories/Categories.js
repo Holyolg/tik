@@ -20,19 +20,21 @@ function Categories({ category, onClickCategory }) {
 						<img className="w-[110px]" src="/logo.svg" alt="Logo"></img>
 					</Link>
 
-					<div className="flex items-center w-full justify-around">
+					<div className="flex w-full justify-center">
+						<div className="grid grid-cols-3 gap-20 relative justify-items-center w-[1024px] max-w-5xl"> 
 						<div
 							onClick={() => setOpen(!open)}
-							className="cursor-pointer  flex items-center hover:underline relative"
+							className="cursor-pointer flex items-center hover:underline "
 							href="/"
 						>
-							<div className="w-2 h-2 mr-2 relative border-[#003056] border-r-2 border-b-2 rotate-45">
+							<div className="absolute left-0">
+							<div className="w-2 h-2 border-[#003056] border-r-2 border-b-2 rotate-45">
 								{/* <span className="bg-[#003056] float-right left-10 w-[2px] h-4  block rotate-[35deg]  rounded-sm"></span>
 								<span className="bg-[#003056] left-0 float-right w-[2px] h-4  block rotate-[-35deg] rounded-sm"></span> */}
+						
 							</div>
-							ПРОЕКТ
 							{open ? (
-								<div className="categories font-bold absolute top-5">
+								<div className="categories font-bold absolute top-5 left-0">
 									<div className="py-4">
 										{categories.map((categoryName, i) => (
 											<div
@@ -50,6 +52,10 @@ function Categories({ category, onClickCategory }) {
 							) : (
 								""
 							)}
+							</div>
+							<p>ПРОЕКТ</p>
+
+							
 						</div>
 						<Link className="flex items-center hover:underline" href="/about">
 							О НАС
@@ -60,8 +66,9 @@ function Categories({ category, onClickCategory }) {
 						>
 							КОНТАКТЫ
 						</Link>
+						</div>
 					</div>
-					<Link className="flex items-center hover:underline" href="/">
+					<Link className="flex items-center hover:underline w-[110px]" href="/">
 						EN
 					</Link>
 				</div>

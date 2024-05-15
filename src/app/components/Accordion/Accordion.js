@@ -119,12 +119,12 @@ const Panel = ({
 									exit="closed"
 								>
 									<div className="content-wrapper">
-										<h2 className="text-base text-start">
+										<h2 className="mb-10 text-base text-start">
 											АРХИТЕКТУРНОЕ ПРОЕКТИРОВАНИЕ - ОТ ИДЕИ ДО ВВОДА ОБЪЕКТА В
 											ЭСКПЛУАТАЦИЮ. ПРОХОЖДЕНИЕ ЭКСПЕРТИЗЫ, АВТОРСКИЙ НАДЗОР
 										</h2>
 										<Image
-											className="w-[500px] pb-24 saturate-0"
+											className="w-[500px] saturate-0 mx-auto"
 											src="/genproject.png"
 											width={500}
 											height={200}

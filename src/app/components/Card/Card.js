@@ -16,7 +16,7 @@ export default function Card({ id, title, link, img, subtitle, category }) {
 		>
 			<Link
 				href={link + id}
-				className="card-wrapper flex items-center text-center text-white size-52 relative"
+				className="card-wrapper flex items-center text-center text-white size-72 relative"
 			>
 				<Image
 					src={img}
