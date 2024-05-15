@@ -15,16 +15,16 @@ function Categories({ category, onClickCategory }) {
 	return (
 		<>
 			<header className="menu fixed top-0 z-10 w-full text-[#003056] font-bold text-xl">
-				<div className="menu-logo w-full flex py-2 px-20 h-16">
+				<div className="menu-logo w-full flex justify-between py-2 px-20 h-16">
 					<Link className="flex items-center" href="/">
 						<img className="w-[110px]" src="/logo.svg" alt="Logo"></img>
 					</Link>
 
-					<div className="flex w-full justify-center">
+					<div className="flex justify-center">
 						<div className="grid grid-cols-3 gap-20 relative justify-items-center w-[1024px] max-w-5xl"> 
 						<div
 							onClick={() => setOpen(!open)}
-							className="cursor-pointer flex items-center hover:underline "
+							className="cursor-pointer flex items-center hover:underline"
 							href="/"
 						>
 							<div className="absolute left-0">
