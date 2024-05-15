@@ -77,7 +77,7 @@ const Panel = ({
 											width={400}
 											height={200}
 										></Image>
-										<h2 className="mt-4 text-base text-start">
+										<h2 className="mt-4 text-base text-start leading-relaxed">
 											СОЗДАНИЕ И АДАПТАЦИЯ АРХИТЕКТУРНЫХ КОНЦЕПЦИЙ
 										</h2>
 									</div>
@@ -119,7 +119,7 @@ const Panel = ({
 									exit="closed"
 								>
 									<div className="content-wrapper">
-										<h2 className="mb-10 text-base text-start">
+										<h2 className="mb-10 text-base text-start leading-relaxed">
 											АРХИТЕКТУРНОЕ ПРОЕКТИРОВАНИЕ - ОТ ИДЕИ ДО ВВОДА ОБЪЕКТА В
 											ЭСКПЛУАТАЦИЮ <br/> ПРОХОЖДЕНИЕ ЭКСПЕРТИЗЫ, АВТОРСКИЙ НАДЗОР
 										</h2>
@@ -168,9 +168,10 @@ const Panel = ({
 									exit="closed"
 								>
 									<div className="content-wrapper px-4 py-9 flex flex-col justify-between h-full">
-										<h2 className="text-base text-start">
+										<h2 className="text-base text-start leading-relaxed">
 											TIK PROJECT - КОМАНДА АРХИТЕКТОРОВ, BIM-СПЕЦИАЛИСТОВ,
-											ИНЖЕНЕРОВ И КОНСТРУКТОРОВ. <br /> МЫ ПРОЕКТИРУЕМ ЖИЛЫЕ И
+											ИНЖЕНЕРОВ И КОНСТРУКТОРОВ <br /> <br/>
+											МЫ ПРОЕКТИРУЕМ ЖИЛЫЕ И
 											ОБЩЕСТВЕННЫЕ ЗДАНИЯ, ОБРАЗОВАТЕЛЬНЫЕ УЧРЕЖДЕНИЯ, ОФИСЫ И
 											ДЕЛОВЫЕ ЦЕНТРЫ, ИНДИВИДУАЛЬНЫЕ ЖИЛЫЕ ЗДАНИЯ И ИНТЕРЬЕРЫ, А
 											ТАКЖЕ ЗАНИМАЕМСЯ РАЗРАБОТКОЙ КОМФОРТНОЙ ГОРОДСКОЙ СРЕДЫ
