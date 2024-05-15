@@ -55,7 +55,7 @@ const Panel = ({
 									style={{
 										writingMode: "vertical-lr",
 									}}
-									className="border-r border-white lg:text-2xl md:text-xl py-10 rotate-180 bg-[#073355]/[.75]"
+									className="border-r border-white lg:text-[25px] md:text-xl py-11 rotate-180 bg-[#073355]/[.75]"
 								>
 									<div className="w-16 px-2 align-middle flex items-center h-full">
 										КОНЦЕПЦИЯ
@@ -77,7 +77,7 @@ const Panel = ({
 											width={400}
 											height={200}
 										></Image>
-										<h2 className="mt-4 text-base text-start leading-relaxed">
+										<h2 className="mt-5 text-base text-start leading-relaxed">
 											СОЗДАНИЕ И АДАПТАЦИЯ АРХИТЕКТУРНЫХ КОНЦЕПЦИЙ
 										</h2>
 									</div>
@@ -103,9 +103,9 @@ const Panel = ({
 									style={{
 										writingMode: "vertical-lr",
 									}}
-									className="border-r border-white lg:text-2xl md:text-xl rotate-180 bg-[#073355]/[.75]"
+									className="border-r border-white lg:text-[25px] md:text-xl rotate-180 bg-[#073355]/[.75]"
 								>
-									<div className="w-16 px-2 align-middle flex justify-center items-center h-full">
+									<div className="w-16 px-2 pt-[5.5rem] align-middle flex justify-center items-center h-full">
 										ГЕНЕРАЛЬНОЕ ПРОЕКТИРОВАНИЕ
 									</div>
 								</div>
@@ -118,7 +118,7 @@ const Panel = ({
 									animate="open"
 									exit="closed"
 								>
-									<div className="content-wrapper">
+									<div className="content-wrapper pb-24 space-y-14">
 										<h2 className="mb-10 text-base text-start leading-relaxed">
 											АРХИТЕКТУРНОЕ ПРОЕКТИРОВАНИЕ - ОТ ИДЕИ ДО ВВОДА ОБЪЕКТА В
 											ЭСКПЛУАТАЦИЮ <br/> ПРОХОЖДЕНИЕ ЭКСПЕРТИЗЫ, АВТОРСКИЙ НАДЗОР
@@ -127,7 +127,7 @@ const Panel = ({
 											className="w-[500px] saturate-0"
 											src="/genproject.png"
 											width={500}
-											height={200}
+											height={300}
 										></Image>
 									</div>
 								</motion.div>
@@ -152,7 +152,7 @@ const Panel = ({
 									style={{
 										writingMode: "vertical-lr",
 									}}
-									className="border-r border-white lg:text-2xl md:text-xl py-10 rotate-180 bg-[#073355]/[.75]"
+									className="border-r border-white lg:text-[25px] md:text-xl py-11 rotate-180 bg-[#073355]/[.75]"
 								>
 									<div className="w-16 px-2 align-middle flex justify-end items-center h-full">
 										О НАС
