@@ -55,7 +55,7 @@ const Panel = ({
 									style={{
 										writingMode: "vertical-lr",
 									}}
-									className="border-r border-white lg:text-[25px] md:text-xl py-11 rotate-180 bg-[#073355]/[.75]"
+									className="border-r border-white lg:text-[27px] md:text-xl py-11 rotate-180 bg-[#073355]/[.75]"
 								>
 									<div className="w-16 px-2 align-middle flex items-center h-full">
 										КОНЦЕПЦИЯ
@@ -103,9 +103,9 @@ const Panel = ({
 									style={{
 										writingMode: "vertical-lr",
 									}}
-									className="border-r border-white lg:text-[25px] md:text-xl rotate-180 bg-[#073355]/[.75]"
+									className="border-r border-white lg:text-[27px] md:text-xl rotate-180 bg-[#073355]/[.75]"
 								>
-									<div className="w-16 px-2 pt-[5.5rem] align-middle flex justify-center items-center h-full">
+									<div className="w-16 px-2 pt-24 align-middle flex justify-center items-center h-full">
 										ГЕНЕРАЛЬНОЕ ПРОЕКТИРОВАНИЕ
 									</div>
 								</div>
@@ -152,7 +152,7 @@ const Panel = ({
 									style={{
 										writingMode: "vertical-lr",
 									}}
-									className="border-r border-white lg:text-[25px] md:text-xl py-11 rotate-180 bg-[#073355]/[.75]"
+									className="border-r border-white lg:text-[27px] md:text-xl py-11 rotate-180 bg-[#073355]/[.75]"
 								>
 									<div className="w-16 px-2 align-middle flex justify-end items-center h-full">
 										О НАС
