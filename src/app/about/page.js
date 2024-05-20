@@ -31,7 +31,6 @@ export default function about() {
 			</div>
 			<div>
 				 <YMaps>
-				 My awesome application with maps!
 				 <Map defaultState={{ center: [55.75, 37.57], zoom: 9 }}/>
 
 				 </YMaps>

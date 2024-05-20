@@ -26,13 +26,6 @@ const VerticalAccordion = () => {
 const Panel = ({
 	open,
 	setOpen,
-	id,
-	title,
-	link,
-	imgSrc,
-	description,
-	textMod,
-	textAlign,
 }) => {
 	const { width, height } = useWindowSize();
 	const isOpen = open;

@@ -62,3 +62,10 @@ body {
 .card-grid {
 	grid-area: 1 / 1 / 2 / 2;
 }
+.ymaps-2-1-79-ground-pane {
+	filter: hue-rotate(180deg);
+	-ms-filter: hue-rotate(180deg);
+	-webkit-filter: hue-rotate(180deg);
+	-moz-filter: hue-rotate(180deg);
+	-o-filter: hue-rotate(180deg);
+}
