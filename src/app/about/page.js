@@ -1,7 +1,11 @@
+'use client'
+import { YMapLoader } from '../components/YMapLoader/YMapLoader';
+
+import { YMaps, Map  } from '@pbe/react-yandex-maps';
+
 export default function about() {
-	async function createMap() {
-		return "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa90f7f2ba45af4e6468c2980a10d94974abf6acb7da27d3f885a84b26606e57d&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true";
-	}
+
+
 
 	return (
 		<section className="container flex mx-auto mt-10">
@@ -25,7 +29,15 @@ export default function about() {
 					</li>
 				</ul>
 			</div>
-			<div></div>
+			<div>
+				 <YMaps>
+				 My awesome application with maps!
+				 <Map defaultState={{ center: [55.75, 37.57], zoom: 9 }}/>
+
+				 </YMaps>
+				 <YMapLoader />
+
+			</div>
 		</section>
 	);
 }

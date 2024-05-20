@@ -16,9 +16,9 @@ const VerticalAccordion = () => {
 			<div className="absolute z-0 top-0 left-0 w-full bg-[url('/blur_min.jpg')] bg-no-repeat">
 				<Video src={"/hero.mp4"} />
 			</div>
-			<section className="relative w-full h-[100vh] font-bold">
+			<div className="relative w-full h-[100vh] font-bold">
 				<Panel open={open} setOpen={setOpen} />
-			</section>
+			</div>
 		</>
 	);
 };
@@ -38,9 +38,8 @@ const Panel = ({
 	const isOpen = open;
 	const panelLg = (
 		<>
-			<AnimatePresence>
 				<Link href="/concept">
-					<motion.div
+					<motion.div key='concept'
 						className="mt-16 w-[40vw] h-[calc(100vh-4rem)] absolute top-0 right-[calc(-40vw+12rem)] flex flex-col text-white"
 						onMouseEnter={() => setOpen(1)}
 						onMouseLeave={() => setOpen(0)}
@@ -55,7 +54,7 @@ const Panel = ({
 									style={{
 										writingMode: "vertical-lr",
 									}}
-									className="border-r border-white lg:text-[27px] md:text-xl py-11 rotate-180 bg-[#073355]/[.75]"
+									className="border-r border-white xl:text-[27px] md:text-xl py-11 rotate-180 bg-[#073355]/[.75]"
 								>
 									<div className="w-16 px-2 align-middle flex items-center h-full">
 										КОНЦЕПЦИЯ
@@ -63,7 +62,7 @@ const Panel = ({
 								</div>
 							)}
 							{isOpen == 1 && (
-								<motion.div
+								<motion.div key='conceptAccordion'
 									className="px-4 py-9 bg-[#073355]/[.75] w-[35vw] h-full flex"
 									variants={descriptionVariants}
 									initial="closed"
@@ -88,7 +87,7 @@ const Panel = ({
 				</Link>
 
 				<Link href="/genproject">
-					<motion.div
+					<motion.div key='genproject'
 						className="mt-16 w-[40vw] h-[calc(100vh-4rem)] absolute top-0 right-[calc(-40vw+8rem)] flex flex-col text-white"
 						onMouseEnter={() => setOpen(2)}
 						onMouseLeave={() => setOpen(0)}
@@ -103,15 +102,15 @@ const Panel = ({
 									style={{
 										writingMode: "vertical-lr",
 									}}
-									className="border-r border-white lg:text-[27px] md:text-xl rotate-180 bg-[#073355]/[.75]"
+									className="border-r border-white xl:text-[27px] md:text-xl rotate-180 bg-[#073355]/[.75]"
 								>
-									<div className="w-16 px-2 pt-24 align-middle flex justify-center items-center h-full">
+									<div className="w-16 px-2 xl:pt-24 lg:pt-12 align-middle flex justify-center items-center h-full">
 										ГЕНЕРАЛЬНОЕ ПРОЕКТИРОВАНИЕ
 									</div>
 								</div>
 							)}
 							{isOpen == 2 && (
-								<motion.div
+								<motion.div key='genprojectAccordion'
 									className="p-8 pr-24 bg-[#073355]/[.75] flex items-center w-[35vw] h-full"
 									variants={descriptionVariants}
 									initial="closed"
@@ -137,7 +136,7 @@ const Panel = ({
 				</Link>
 
 				<Link href="/about">
-					<motion.div
+					<motion.div key='about'
 						className="mt-16 w-[40vw] h-[calc(100vh-4rem)] absolute top-0 right-[calc(-40vw+4rem)] flex flex-col text-white"
 						onMouseEnter={() => setOpen(3)}
 						onMouseLeave={() => setOpen(0)}
@@ -152,7 +151,7 @@ const Panel = ({
 									style={{
 										writingMode: "vertical-lr",
 									}}
-									className="border-r border-white lg:text-[27px] md:text-xl py-11 rotate-180 bg-[#073355]/[.75]"
+									className="border-r border-white xl:text-[27px] md:text-xl py-11 rotate-180 bg-[#073355]/[.75]"
 								>
 									<div className="w-16 px-2 align-middle flex justify-end items-center h-full">
 										О НАС
@@ -160,7 +159,7 @@ const Panel = ({
 								</div>
 							)}
 							{isOpen == 3 && (
-								<motion.div
+								<motion.div key='aboutAccordion'
 									className="bg-[#073355]/[.75] w-[35vw] h-full"
 									variants={descriptionVariants}
 									initial="closed"
@@ -189,7 +188,6 @@ const Panel = ({
 						</div>
 					</motion.div>
 				</Link>
-			</AnimatePresence>
 		</>
 	);
 
@@ -259,38 +257,6 @@ const descriptionVariants = {
 	},
 };
 
-const items = [
-	{
-		id: 1,
-		title: "КОНЦЕПЦИЯ",
-		link: "/concept",
-		imgSrc: "/card.png",
-		textMod: " -right-[23vw]",
-		textAlign: "start",
-		description: "СОЗДАНИЕ И АДАПТАЦИЯ АРХИТЕКТУРНЫХ КОНЦЕПЦИЙ",
-	},
-	{
-		id: 2,
-		title: "ГЕНПРОЕКТИРОВАНИЕ",
-		link: "/genproject",
-		imgSrc: "/genproject.png",
-		textMod: " -right-[29vw]",
-		textAlign: "center",
-		description:
-			"АРХИТЕКТУРНОЕ ПРОЕКТИРОВАНИЕ - ОТ ИДЕИ ДО ВВОДА ОБЪЕКТА В ЭСКПЛУАТАЦИЮ. ПРОХОЖДЕНИЕ ЭКСПЕРТИЗЫ, АВТОРСКИЙ НАДЗОР",
-	},
-	{
-		id: 3,
-
-		title: "О НАС",
-		link: "/about",
-		imgSrc: "/about.png",
-		textMod: " -right-[35vw]",
-		textAlign: "end",
-		description:
-			"TIK PROJECT - КОМАНДА АРХИТЕКТОРОВ, BIM-СПЕЦИАЛИСТОВ, ИНЖЕНЕРОВ И КОНСТРУКТОРОВ. <br/> МЫ ПРОЕКТИРУЕМ ЖИЛЫЕ И ОБЩЕСТВЕННЫЕ ЗДАНИЯ, ОБРАЗОВАТЕЛЬНЫЕ УЧРЕЖДЕНИЯ, ОФИСЫ И ДЕЛОВЫЕ ЦЕНТРЫ, ИНДИВИДУАЛЬНЫЕ ЖИЛЫЕ ЗДАНИЯ И ИНТЕРЬЕРЫ, А ТАКЖЕ ЗАНИМАЕМСЯ РАЗРАБОТКОЙ КОМФОРТНОЙ ГОРОДСКОЙ СРЕДЫ ДЛЯ ВАС",
-	},
-];
 
 {
 	/* <motion.div

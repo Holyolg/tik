@@ -20,7 +20,7 @@ export default function Card({ id, title, link, img, subtitle, category }) {
 			>
 				<Image
 					src={img}
-					alt="Изображение проекта"
+					alt={title}
 					style={{ objectFit: "cover" }}
 					fill
 					sizes="400px"

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useWindowSize } from "../Accordion/useWindowSize";
+import { motion } from "framer-motion";
 
 export default function Menu({ category, onClickCategory, name }) {
 	const categories = [
@@ -23,10 +24,10 @@ export default function Menu({ category, onClickCategory, name }) {
 	// const filterCategories = items.filter(item => item.type == categoryId);
 
 	const homeHeader = (
-		<header className="menu fixed top-0 z-10 w-full bg-[#073355]/[.75] text-black ">
+		<header className="menu fixed top-0 z-10 w-full bg-[#073355]/[.75]">
 			<div className="menu-logo w-full flex py-2 px-8 border-b border-white h-16">
 			<Link className="flex items-center" href="/">
-					<img className="w-[110px]" src="/logoWhite.svg" alt="Logo"></img>
+					<motion.img className="w-[110px]" src="/logoWhite.svg" alt="Logo" whileTap={{ scale: 0.97 }}></motion.img>
 				</Link>
 				<div className="flex items-center mx-auto justify-between w-4/5"></div>
 
