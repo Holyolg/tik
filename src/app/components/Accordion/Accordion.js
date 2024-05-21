@@ -1,11 +1,11 @@
 "use client";
 
-import {Video} from '../Video/Video'
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useWindowSize } from "./useWindowSize";
+import { Video } from "../Video/Video";
 
 const VerticalAccordion = () => {
 	const [open, setOpen] = useState(0);

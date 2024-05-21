@@ -6,8 +6,7 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint",
-		"export": "next export"
+		"lint": "next lint"
 	},
 	"dependencies": {
 		"@emotion/react": "^11.11.4",
@@ -22,11 +21,13 @@
 		"next-videos": "^1.4.1",
 		"react": "^18",
 		"react-dom": "^18",
-		"react-ymaps3": "^0.1.1"
+		"react-ymaps3": "^0.1.1",
+		"ymap3-components": "^1.1.6"
 	},
 	"devDependencies": {
 		"@types/node": "20.12.7",
 		"@types/react": "18.2.78",
+		"@yandex/ymaps3-types": "^0.0.27",
 		"eslint": "^8",
 		"eslint-config-next": "14.2.1",
 		"postcss": "^8",

@@ -1,13 +1,11 @@
 'use client'
 
-import { YMaps, Map  } from '@pbe/react-yandex-maps';
-import { YMap } from 'react-ymaps3';
+import dynamic from 'next/dynamic';
+
+const Map = dynamic(() => import('../components/Map/Map'), { ssr: false });
 
 
 export default function about() {
-
-
-
 	return (
 		<section className="container flex mx-auto mt-10">
 			<div>
@@ -31,10 +29,12 @@ export default function about() {
 				</ul>
 			</div>
 			<div>
-				 <YMaps>
+				 {/* <YMaps>
 				 <Map defaultState={{ center: [55.75, 37.57], zoom: 9 }}/>
 
 				 </YMaps>
+				 <MapView/> */}
+				 <Map/>
 			</div>
 		</section>
 	);
