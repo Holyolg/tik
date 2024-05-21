@@ -1,7 +1,11 @@
 'use client'
+import dynamic from 'next/dynamic';
 import { YMapLoader } from '../components/YMapLoader/YMapLoader';
 
 import { YMaps, Map  } from '@pbe/react-yandex-maps';
+
+const YandexMap = dynamic(() => import('../components/Map/Map'), { ssr: false });
+
 
 export default function about() {
 
@@ -35,6 +39,7 @@ export default function about() {
 
 				 </YMaps>
 				 <YMapLoader />
+				 <YandexMap />
 
 			</div>
 		</section>

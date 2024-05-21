@@ -1,6 +1,6 @@
 "use client";
 
-import { Video } from "@/app/components/Video/Video";
+import {Video} from '../Video/Video'
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
