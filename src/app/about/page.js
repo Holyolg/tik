@@ -35,8 +35,6 @@ export default function about() {
 				 <Map defaultState={{ center: [55.75, 37.57], zoom: 9 }}/>
 
 				 </YMaps>
-
-<YMap/>
 			</div>
 		</section>
 	);
