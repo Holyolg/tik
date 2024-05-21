@@ -1,4 +1,4 @@
-import { Cards } from "@/app/components/Cards/Cards";
+import { Cards } from "../components/Cards/Cards";
 
 export default async function Concept() {
 	return (

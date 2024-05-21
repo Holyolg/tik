@@ -1,5 +1,5 @@
-import toBase64 from "@/app/services/toBase64/toBase64";
-import shimmer from "@/app/ui/Shimer/Shimer";
+import toBase64 from "../../services/toBase64/toBase64";
+import shimmer from "../../ui/Shimer/Shimer";
 import Image from "next/image";
 
 export default function CardDetails({ data }) {

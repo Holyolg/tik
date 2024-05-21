@@ -1,5 +1,5 @@
-import toBase64 from "@/app/services/toBase64/toBase64";
-import shimmer from "@/app/ui/Shimer/Shimer";
+import shimmer from "../../ui/Shimer/Shimer";
+import toBase64 from '../../services/toBase64/toBase64'
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";

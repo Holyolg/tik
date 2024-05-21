@@ -1,8 +1,8 @@
 "use client";
-import Breadcrumbs from "@/app/components/Breadcrumbs/Breadcrumbs";
-import CardDetails from "@/app/components/CardDetails/CardDetails";
-import { Loading } from "@/app/ui/Loading/Loading";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import {Loading} from '../../../ui/Loading/Loading'
+import  Breadcrumbs  from '../../../components/Breadcrumbs/Breadcrumbs';
+import CardDetails from '../../../components/CardDetails/CardDetails'
 
 export default function CardDetailsPage({ params }) {
 	const id = params.id;

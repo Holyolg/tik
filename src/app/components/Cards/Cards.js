@@ -1,6 +1,6 @@
 "use client";
-import getCards from "@/app/services/GetCards/GetCards";
-import { Loading } from "@/app/ui/Loading/Loading";
+import getCards from "../../services/GetCards/GetCards";
+import { Loading } from "../../ui/Loading/Loading";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Card from "../Card/Card";

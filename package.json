@@ -21,7 +21,8 @@
 		"next-video": "^1.0.0",
 		"next-videos": "^1.4.1",
 		"react": "^18",
-		"react-dom": "^18"
+		"react-dom": "^18",
+		"react-ymaps3": "^0.1.1"
 	},
 	"devDependencies": {
 		"@types/node": "20.12.7",
