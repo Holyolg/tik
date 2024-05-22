@@ -1,19 +1,16 @@
 import { YMapLoader } from "../components/YMapLoader/YMapLoader";
 
 export const metadata = {
-	title: "TIK PRO тестовый о компании",
-	description: "TIK PRO тестовый сервер",
-
-    
+	title: "IP-ADDRESS-TRACKER",
+	description: "Frontend mentor challenge",
 };
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="ru">
-			<body>
-								<YMapLoader/>
-
+		<html lang="en">
+			<body className="min-h-screen bg-dark-gray">
 				{children}
+				<YMapLoader />
 			</body>
 		</html>
 	);

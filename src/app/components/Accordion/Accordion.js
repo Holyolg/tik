@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Video } from "../Video/Video";
 import { useWindowSize } from "./useWindowSize";
 import { Video } from "../Video/Video";
 
@@ -31,156 +32,162 @@ const Panel = ({
 	const isOpen = open;
 	const panelLg = (
 		<>
-				<Link href="/concept">
-					<motion.div key='concept'
-						className="mt-16 w-[40vw] h-[calc(100vh-4rem)] absolute top-0 right-[calc(-40vw+12rem)] flex flex-col text-white"
-						onMouseEnter={() => setOpen(1)}
-						onMouseLeave={() => setOpen(0)}
-						whileHover={{
-							transform: "translateX(-35vw)",
-							transition: { duration: 0.3, delay: 0.125 },
-						}}
-					>
-						<div className="card-wrapper flex h-full">
-							{isOpen <= 1 && (
-								<div
-									style={{
-										writingMode: "vertical-lr",
-									}}
-									className="border-r border-white xl:text-[27px] md:text-xl py-11 rotate-180 bg-[#073355]/[.75]"
-								>
-									<div className="w-16 px-2 align-middle flex items-center h-full">
-										КОНЦЕПЦИЯ
-									</div>
+			<Link href="/concept">
+				<motion.div
+					key="concept"
+					className="mt-16 w-[40vw] h-[calc(100vh-4rem)] absolute top-0 right-[calc(-40vw+12rem)] flex flex-col text-white"
+					onMouseEnter={() => setOpen(1)}
+					onMouseLeave={() => setOpen(0)}
+					whileHover={{
+						transform: "translateX(-35vw)",
+						transition: { duration: 0.3, delay: 0.125 },
+					}}
+				>
+					<div className="card-wrapper flex h-full">
+						{isOpen <= 1 && (
+							<div
+								style={{
+									writingMode: "vertical-lr",
+								}}
+								className="border-r border-white xl:text-[27px] md:text-xl py-11 rotate-180 bg-[#073355]/[.75]"
+							>
+								<div className="w-16 px-2 align-middle flex items-center h-full">
+									КОНЦЕПЦИЯ
 								</div>
-							)}
-							{isOpen == 1 && (
-								<motion.div key='conceptAccordion'
-									className="px-4 py-9 bg-[#073355]/[.75] w-[35vw] h-full flex"
-									variants={descriptionVariants}
-									initial="closed"
-									animate="open"
-									exit="closed"
-								>
-									<div className="self-end content-wrapper">
-										<Image
-											className="w-full saturate-0"
-											src="/card.png"
-											width={400}
-											height={200}
-										></Image>
-										<h2 className="mt-5 text-base text-start leading-relaxed">
-											СОЗДАНИЕ И АДАПТАЦИЯ АРХИТЕКТУРНЫХ КОНЦЕПЦИЙ
-										</h2>
-									</div>
-								</motion.div>
-							)}
-						</div>
-					</motion.div>
-				</Link>
+							</div>
+						)}
+						{isOpen == 1 && (
+							<motion.div
+								key="conceptAccordion"
+								className="px-4 py-9 bg-[#073355]/[.75] w-[35vw] h-full flex"
+								variants={descriptionVariants}
+								initial="closed"
+								animate="open"
+								exit="closed"
+							>
+								<div className="self-end content-wrapper">
+									<Image
+										className="w-full saturate-0"
+										src="/card.png"
+										width={400}
+										height={200}
+									></Image>
+									<h2 className="mt-5 text-base text-start leading-relaxed">
+										СОЗДАНИЕ И АДАПТАЦИЯ АРХИТЕКТУРНЫХ КОНЦЕПЦИЙ
+									</h2>
+								</div>
+							</motion.div>
+						)}
+					</div>
+				</motion.div>
+			</Link>
 
-				<Link href="/genproject">
-					<motion.div key='genproject'
-						className="mt-16 w-[40vw] h-[calc(100vh-4rem)] absolute top-0 right-[calc(-40vw+8rem)] flex flex-col text-white"
-						onMouseEnter={() => setOpen(2)}
-						onMouseLeave={() => setOpen(0)}
-						whileHover={{
-							transform: "translateX(-35vw)",
-							transition: { duration: 0.3, delay: 0.125 },
-						}}
-					>
-						<div className="card-wrapper flex h-full">
-							{isOpen <= 2 && (
-								<div
-									style={{
-										writingMode: "vertical-lr",
-									}}
-									className="border-r border-white xl:text-[27px] md:text-xl rotate-180 bg-[#073355]/[.75]"
-								>
-									<div className="w-16 px-2 xl:pt-24 lg:pt-12 align-middle flex justify-center items-center h-full">
-										ГЕНЕРАЛЬНОЕ ПРОЕКТИРОВАНИЕ
-									</div>
+			<Link href="/genproject">
+				<motion.div
+					key="genproject"
+					className="mt-16 w-[40vw] h-[calc(100vh-4rem)] absolute top-0 right-[calc(-40vw+8rem)] flex flex-col text-white"
+					onMouseEnter={() => setOpen(2)}
+					onMouseLeave={() => setOpen(0)}
+					whileHover={{
+						transform: "translateX(-35vw)",
+						transition: { duration: 0.3, delay: 0.125 },
+					}}
+				>
+					<div className="card-wrapper flex h-full">
+						{isOpen <= 2 && (
+							<div
+								style={{
+									writingMode: "vertical-lr",
+								}}
+								className="border-r border-white xl:text-[27px] md:text-xl rotate-180 bg-[#073355]/[.75]"
+							>
+								<div className="w-16 px-2 xl:pt-24 lg:pt-12 align-middle flex justify-center items-center h-full">
+									ГЕНЕРАЛЬНОЕ ПРОЕКТИРОВАНИЕ
 								</div>
-							)}
-							{isOpen == 2 && (
-								<motion.div key='genprojectAccordion'
-									className="p-8 pr-24 bg-[#073355]/[.75] flex items-center w-[35vw] h-full"
-									variants={descriptionVariants}
-									initial="closed"
-									animate="open"
-									exit="closed"
-								>
-									<div className="content-wrapper space-y-[5.5rem]">
-										<h2 className="text-base text-start leading-relaxed">
-											АРХИТЕКТУРНОЕ ПРОЕКТИРОВАНИЕ - ОТ ИДЕИ ДО ВВОДА ОБЪЕКТА В
-											ЭСКПЛУАТАЦИЮ <br/> ПРОХОЖДЕНИЕ ЭКСПЕРТИЗЫ, АВТОРСКИЙ НАДЗОР
-										</h2>
-										<Image
-											className="w-[515px] saturate-0 pb-24"
-											src="/genproject.png"
-											width={500}
-											height={300}
-										></Image>
-									</div>
-								</motion.div>
-							)}
-						</div>
-					</motion.div>
-				</Link>
+							</div>
+						)}
+						{isOpen == 2 && (
+							<motion.div
+								key="genprojectAccordion"
+								className="p-8 pr-24 bg-[#073355]/[.75] flex items-center w-[35vw] h-full"
+								variants={descriptionVariants}
+								initial="closed"
+								animate="open"
+								exit="closed"
+							>
+								<div className="content-wrapper space-y-[5.5rem]">
+									<h2 className="text-base text-start leading-relaxed">
+										АРХИТЕКТУРНОЕ ПРОЕКТИРОВАНИЕ - ОТ ИДЕИ ДО ВВОДА ОБЪЕКТА В
+										ЭСКПЛУАТАЦИЮ <br /> ПРОХОЖДЕНИЕ ЭКСПЕРТИЗЫ, АВТОРСКИЙ НАДЗОР
+									</h2>
+									<Image
+										className="w-[515px] saturate-0 pb-24"
+										src="/genproject.png"
+										width={500}
+										height={300}
+									></Image>
+								</div>
+							</motion.div>
+						)}
+					</div>
+				</motion.div>
+			</Link>
 
-				<Link href="/about">
-					<motion.div key='about'
-						className="mt-16 w-[40vw] h-[calc(100vh-4rem)] absolute top-0 right-[calc(-40vw+4rem)] flex flex-col text-white"
-						onMouseEnter={() => setOpen(3)}
-						onMouseLeave={() => setOpen(0)}
-						whileHover={{
-							transform: "translateX(-35vw)",
-							transition: { duration: 0.3, delay: 0.125 },
-						}}
-					>
-						<div className="card-wrapper flex h-full">
-							{isOpen <= 3 && (
-								<div
-									style={{
-										writingMode: "vertical-lr",
-									}}
-									className="border-r border-white xl:text-[27px] md:text-xl py-11 rotate-180 bg-[#073355]/[.75]"
-								>
-									<div className="w-16 px-2 align-middle flex justify-end items-center h-full">
-										О НАС
-									</div>
+			<Link href="/about">
+				<motion.div
+					key="about"
+					className="mt-16 w-[40vw] h-[calc(100vh-4rem)] absolute top-0 right-[calc(-40vw+4rem)] flex flex-col text-white"
+					onMouseEnter={() => setOpen(3)}
+					onMouseLeave={() => setOpen(0)}
+					whileHover={{
+						transform: "translateX(-35vw)",
+						transition: { duration: 0.3, delay: 0.125 },
+					}}
+				>
+					<div className="card-wrapper flex h-full">
+						{isOpen <= 3 && (
+							<div
+								style={{
+									writingMode: "vertical-lr",
+								}}
+								className="border-r border-white xl:text-[27px] md:text-xl py-11 rotate-180 bg-[#073355]/[.75]"
+							>
+								<div className="w-16 px-2 align-middle flex justify-end items-center h-full">
+									О НАС
 								</div>
-							)}
-							{isOpen == 3 && (
-								<motion.div key='aboutAccordion'
-									className="bg-[#073355]/[.75] w-[35vw] h-full"
-									variants={descriptionVariants}
-									initial="closed"
-									animate="open"
-									exit="closed"
-								>
-									<div className="content-wrapper px-4 py-9 pr-24 flex flex-col justify-between h-full">
-										<h2 className="text-base text-start leading-relaxed">
-											TIK PROJECT - КОМАНДА АРХИТЕКТОРОВ, <br/>BIM-СПЕЦИАЛИСТОВ,
-											ИНЖЕНЕРОВ И КОНСТРУКТОРОВ <br /> <br/>
-											МЫ ПРОЕКТИРУЕМ ЖИЛЫЕ И
-											ОБЩЕСТВЕННЫЕ ЗДАНИЯ, <br/> ОБРАЗОВАТЕЛЬНЫЕ УЧРЕЖДЕНИЯ, ОФИСЫ И
-											ДЕЛОВЫЕ <br/> ЦЕНТРЫ, ИНДИВИДУАЛЬНЫЕ ЖИЛЫЕ ЗДАНИЯ И ИНТЕРЬЕРЫ, <br/>А
-											ТАКЖЕ ЗАНИМАЕМСЯ РАЗРАБОТКОЙ КОМФОРТНОЙ <br/> ГОРОДСКОЙ СРЕДЫ
-											ДЛЯ ВАС
-										</h2>
-										<Image
-											className="w-full saturate-0"
-											src="/about.png"
-											width={400}
-											height={200}
-										></Image>
-									</div>
-								</motion.div>
-							)}
-						</div>
-					</motion.div>
-				</Link>
+							</div>
+						)}
+						{isOpen == 3 && (
+							<motion.div
+								key="aboutAccordion"
+								className="bg-[#073355]/[.75] w-[35vw] h-full"
+								variants={descriptionVariants}
+								initial="closed"
+								animate="open"
+								exit="closed"
+							>
+								<div className="content-wrapper px-4 py-9 pr-24 flex flex-col justify-between h-full">
+									<h2 className="text-base text-start leading-relaxed">
+										TIK PROJECT - КОМАНДА АРХИТЕКТОРОВ, <br />
+										BIM-СПЕЦИАЛИСТОВ, ИНЖЕНЕРОВ И КОНСТРУКТОРОВ <br /> <br />
+										МЫ ПРОЕКТИРУЕМ ЖИЛЫЕ И ОБЩЕСТВЕННЫЕ ЗДАНИЯ, <br />{" "}
+										ОБРАЗОВАТЕЛЬНЫЕ УЧРЕЖДЕНИЯ, ОФИСЫ И ДЕЛОВЫЕ <br /> ЦЕНТРЫ,
+										ИНДИВИДУАЛЬНЫЕ ЖИЛЫЕ ЗДАНИЯ И ИНТЕРЬЕРЫ, <br />А ТАКЖЕ
+										ЗАНИМАЕМСЯ РАЗРАБОТКОЙ КОМФОРТНОЙ <br /> ГОРОДСКОЙ СРЕДЫ ДЛЯ
+										ВАС
+									</h2>
+									<Image
+										className="w-full saturate-0"
+										src="/about.png"
+										width={400}
+										height={200}
+									></Image>
+								</div>
+							</motion.div>
+						)}
+					</div>
+				</motion.div>
+			</Link>
 		</>
 	);
 
@@ -249,7 +256,6 @@ const descriptionVariants = {
 		},
 	},
 };
-
 
 {
 	/* <motion.div
