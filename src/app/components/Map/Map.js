@@ -1,7 +1,7 @@
 'use client';
+import Image from 'next/image';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Image from 'next/image';
 
 const ymaps3Reactify = await ymaps3.import('@yandex/ymaps3-reactify');
 const reactify = ymaps3Reactify.reactify.bindTo(React, ReactDOM);
@@ -10,11 +10,8 @@ const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls, YM
 
 const { YMapZoomControl } = reactify.module(await ymaps3.import('@yandex/ymaps3-controls@0.0.1'));
 
-
-const Map = ({ coordinates }) => {
-  if (!coordinates) return null;
-
-  const location = { center: [coordinates.lng, coordinates.lat], zoom: 13 };
+const Map = () => {
+  const location = { center: [55.751574, 37.573856], zoom: 13 };
 
   return (
     <YMap location={location} className="min-h-[calc(100vh-300px)] md:min-h-[calc(100vh-280px)]">

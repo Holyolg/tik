@@ -3,7 +3,7 @@ import Menu from "../app/components/Menu/Menu";
 import Footer from "./components/Footer/Footer";
 import "./globals.css";
 
-const inter = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
 	title: "TIK PRO тестовый",
@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="ru">
-			<body className={`${inter.className}`}>
+			<body className={`${montserrat.className}`}>
 				<Menu />
 				{children}
 				<Footer />
