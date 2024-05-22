@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { Video } from "../Video/Video";
 import { useWindowSize } from "./useWindowSize";
-import { Video } from "../Video/Video";
 
 const VerticalAccordion = () => {
 	const [open, setOpen] = useState(0);
@@ -24,10 +23,7 @@ const VerticalAccordion = () => {
 	);
 };
 
-const Panel = ({
-	open,
-	setOpen,
-}) => {
+const Panel = ({ open, setOpen }) => {
 	const { width, height } = useWindowSize();
 	const isOpen = open;
 	const panelLg = (
