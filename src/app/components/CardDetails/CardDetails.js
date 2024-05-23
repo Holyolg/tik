@@ -40,19 +40,27 @@ export default function CardDetails({ data }) {
 			<Image
 				className="mt-5"
 				src={data.img2}
-				width={1536}
-				height={400}
-				alt="Изображение проекта"
-				style={{ objectFit: "cover" }}
+					width={1536}
+					height={600}
+					alt="Изображение проекта"
+					style={{ height: "600px", objectFit: "cover" }}
+					fill={false}
+					placeholder={`data:image/svg+xml;base64,${toBase64(
+						shimmer(1536, 600)
+					)}`}
 			/>
 			<p className="mt-5">{data.text}</p>
 			<Image
 				className="mt-5"
 				src={data.img3}
-				width={1536}
-				height={400}
-				alt="Изображение проекта"
-				style={{ objectFit: "cover" }}
+					width={1536}
+					height={600}
+					alt="Изображение проекта"
+					style={{ height: "600px", objectFit: "cover" }}
+					fill={false}
+					placeholder={`data:image/svg+xml;base64,${toBase64(
+						shimmer(1536, 600)
+					)}`}
 			/>
 		</>
 	);
