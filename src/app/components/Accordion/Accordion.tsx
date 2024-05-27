@@ -23,7 +23,12 @@ const VerticalAccordion = () => {
 	);
 };
 
-const Panel = ({ open, setOpen }) => {
+interface IPanel {
+	open: number;
+	setOpen: Function;
+}
+
+const Panel = ({ open, setOpen }: IPanel) => {
 	const { width, height } = useWindowSize();
 	const isOpen = open;
 	const panelLg = (
@@ -67,6 +72,7 @@ const Panel = ({ open, setOpen }) => {
 										src="/card.png"
 										width={400}
 										height={200}
+										alt="Изображение"
 									></Image>
 									<h2 className="mt-5 text-base text-start leading-relaxed">
 										СОЗДАНИЕ И АДАПТАЦИЯ АРХИТЕКТУРНЫХ КОНЦЕПЦИЙ
@@ -121,6 +127,7 @@ const Panel = ({ open, setOpen }) => {
 										src="/genproject.png"
 										width={500}
 										height={300}
+										alt="Изображение"
 									></Image>
 								</div>
 							</motion.div>
@@ -177,6 +184,7 @@ const Panel = ({ open, setOpen }) => {
 										src="/about.png"
 										width={400}
 										height={200}
+										alt="Изображение"
 									></Image>
 								</div>
 							</motion.div>

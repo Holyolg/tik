@@ -1,4 +1,4 @@
-const getCards = async API_URL => {
+const getCards = async (API_URL: string) => {
 	const res = await fetch(API_URL);
 	if (!res.ok) {
 		throw new Error("не загрузился");

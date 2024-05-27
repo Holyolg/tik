@@ -1,13 +1,35 @@
 "use client";
-import getCards from "../../services/GetCards/GetCards";
-import { Loading } from "../../ui/Loading/Loading";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import getCards from "../../services/GetCards/GetCards";
+import { Loading } from "../../ui/Loading/Loading";
 import Card from "../Card/Card";
 import Categories from "../Categories/Categories";
 
-export const Cards = ({ category }) => {
-	const [cards, setCards] = useState([]);
+interface ICards {
+	category: string;
+}
+
+interface IJSONCards {
+	id: string;
+	img: string;
+	link: string;
+	title: string;
+	category: string | number;
+	subtitle: string;
+	date: string;
+	type: string;
+	square: string;
+	location: string;
+	status: string;
+	description: string;
+	text: string;
+	img2: string;
+	img3: string;
+}
+
+export const Cards = ({ category }: ICards) => {
+	const [cards, setCards] = useState<IJSONCards[]>([]);
 	const [categoryId, setCategoryId] = useState(0);
 	const [isLoading, setIsLoading] = useState(true);
 	const pathName = usePathname();
@@ -33,7 +55,7 @@ export const Cards = ({ category }) => {
 
 	useEffect(() => {
 		const API_URL = `https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/${category}/`;
-		getCards(API_URL).then(res => {
+		getCards(API_URL).then((res: IJSONCards[]) => {
 			setCards(res);
 			setIsLoading(false);
 		});
@@ -46,13 +68,15 @@ export const Cards = ({ category }) => {
 	}, [categoryId, pathName]);
 
 	const cardFilter =
-		categoryId > 0 ? cards.filter(card => card.category == categoryId) : cards;
+		categoryId > 0
+			? cards.filter((card: IJSONCards) => card.category == categoryId)
+			: cards;
 
 	return (
 		<>
 			<Categories
 				category={categoryId}
-				onClickCategory={i => {
+				onClickCategory={(i: number) => {
 					setCategoryId(i);
 				}}
 			/>

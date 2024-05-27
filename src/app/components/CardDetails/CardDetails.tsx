@@ -1,8 +1,8 @@
+import Image from "next/image";
 import toBase64 from "../../services/toBase64/toBase64";
 import shimmer from "../../ui/Shimer/Shimer";
-import Image from "next/image";
 
-export default function CardDetails({ data }) {
+const CardDetails = ({ data }) => {
 	return (
 		<>
 			<h2 className="text-2xl mt-10 font-semibold">{data.title}</h2>
@@ -40,28 +40,29 @@ export default function CardDetails({ data }) {
 			<Image
 				className="mt-5"
 				src={data.img2}
-					width={1536}
-					height={600}
-					alt="Изображение проекта"
-					style={{ height: "600px", objectFit: "cover" }}
-					fill={false}
-					placeholder={`data:image/svg+xml;base64,${toBase64(
-						shimmer(1536, 600)
-					)}`}
+				width={1536}
+				height={600}
+				alt="Изображение проекта"
+				style={{ height: "600px", objectFit: "cover" }}
+				fill={false}
+				placeholder={`data:image/svg+xml;base64,${toBase64(
+					shimmer(1536, 600)
+				)}`}
 			/>
 			<p className="mt-5">{data.text}</p>
 			<Image
 				className="mt-5"
 				src={data.img3}
-					width={1536}
-					height={600}
-					alt="Изображение проекта"
-					style={{ height: "600px", objectFit: "cover" }}
-					fill={false}
-					placeholder={`data:image/svg+xml;base64,${toBase64(
-						shimmer(1536, 600)
-					)}`}
+				width={1536}
+				height={600}
+				alt="Изображение проекта"
+				style={{ height: "600px", objectFit: "cover" }}
+				fill={false}
+				placeholder={`data:image/svg+xml;base64,${toBase64(
+					shimmer(1536, 600)
+				)}`}
 			/>
 		</>
 	);
-}
+};
+export default CardDetails;

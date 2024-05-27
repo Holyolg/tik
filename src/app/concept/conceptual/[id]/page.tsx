@@ -1,10 +1,14 @@
 "use client";
-import { useEffect, useState } from 'react';
-import {Loading} from '../../../ui/Loading/Loading'
-import  Breadcrumbs  from '../../../components/Breadcrumbs/Breadcrumbs';
-import CardDetails from '../../../components/CardDetails/CardDetails'
+import { useEffect, useState } from "react";
+import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
+import CardDetails from "../../../components/CardDetails/CardDetails";
+import { Loading } from "../../../ui/Loading/Loading";
 
-export default function CardDetailsPage({ params }) {
+interface ICardDetailsPage {
+	params: any;
+}
+
+export default function CardDetailsPage({ params }: ICardDetailsPage) {
 	const id = params.id;
 	const [card, setCard] = useState();
 

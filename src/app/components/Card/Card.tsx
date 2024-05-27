@@ -1,11 +1,20 @@
-import shimmer from "../../ui/Shimer/Shimer";
-import toBase64 from '../../services/toBase64/toBase64'
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import toBase64 from "../../services/toBase64/toBase64";
+import shimmer from "../../ui/Shimer/Shimer";
 
-export default function Card({ id, title, link, img, subtitle, category }) {
+interface IJSONCards {
+	id: string;
+	img: string;
+	link: string;
+	title: string;
+	category: string | number;
+	subtitle: string;
+}
+
+const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 	const [isHover, setIsHover] = useState(false);
 
 	return (
@@ -43,9 +52,10 @@ export default function Card({ id, title, link, img, subtitle, category }) {
 			</Link>
 		</div>
 	);
-}
+};
 
 const variants = {
 	open: { opacity: 1 },
 	hidden: { opacity: 0 },
 };
+export default Card;
