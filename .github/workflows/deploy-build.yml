@@ -6,7 +6,15 @@ on:
       - master
 
 jobs:
-
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20.x.x
+          cache: npm
+      - run: npm ci
   deploy:
     runs-on: ubuntu-latest
     concurrency:
@@ -21,4 +29,4 @@ jobs:
           user: ${{ secrets.STAGING_SSH_USERNAME }}
           private_key: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
           host_fingerprint: ${{ secrets.SSH_FINGERPRINT }}
-          command: source echo 'hello world'
+          command: source ~/.nvm/nvm.sh; ~/deploy.sh;
