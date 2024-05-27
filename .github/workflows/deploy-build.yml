@@ -17,7 +17,8 @@ jobs:
         with:
           # hostname / IP of the server
           host: ${{ secrets.STAGING_SSH_HOST }}
-          user: ${{ secrets.STAGING_SSH_USERNAME }}
-          private_key: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
-          host_fingerprint: ${{ secrets.SSH_FINGERPRINT }}
-          command: source ~/.nvm/nvm.sh; echo 'hello world'
+          username: ${{ secrets.STAGING_SSH_USERNAME }}
+          key: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
+          proxy_fingerprint: ${{ secrets.SSH_FINGERPRINT }}
+          # command: source ~/.nvm/nvm.sh; echo 'hello world'
+          script: whoami
