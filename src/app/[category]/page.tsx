@@ -9,7 +9,7 @@ export default function Category({ params }: { params: string }) {
 	const category = pathname.slice(1)
 
 	return (
-		category == 'category' || 'concept' ?  
+		category === 'genproject' || category === 'concept' ?  
 		(<section className="min-h-[100vh]">
 		<Cards category={category} />
 		</section>)
