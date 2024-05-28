@@ -26,8 +26,7 @@ interface ICard {
 }
 
 
-
-export default function CardDetailsPage({ params }: ICardDetailsPage) {
+export default function CardDetailsPage({ params }: {params: {id: string}}) {
 	const id = params.id;
 	const [card, setCard] = useState<ICard>();
 

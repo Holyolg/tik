@@ -1,13 +1,12 @@
 "use client";
-import { useEffect, useState } from 'react';
-import {Loading} from '../../../ui/Loading/Loading'
-import  Breadcrumbs  from '../../../components/Breadcrumbs/Breadcrumbs';
-import CardDetails from '../../../components/CardDetails/CardDetails'
+import { useEffect, useState } from "react";
+import Breadcrumbs from "../../../../components/Breadcrumbs/Breadcrumbs";
+import CardDetails from "../../../../components/CardDetails/CardDetails";
+import { Loading } from "../../../../ui/Loading/Loading";
 
 interface ICardDetailsPage {
 	params: any;
 }
-
 interface ICard {
 	id: string;
 	img: string;
@@ -27,13 +26,15 @@ interface ICard {
 }
 
 
-export default function CardDetailsPage({ params }:ICardDetailsPage) {
+
+export default function CardDetailsPage({ params }: ICardDetailsPage) {
 	const id = params.id;
-	const [card, setCard] =  useState<ICard>();
+	const [card, setCard] = useState<ICard>();
+
 	useEffect(() => {
 		const getCards = async () => {
 			const API_URL =
-				"https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/genproject/" + id;
+				"https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/concept/" + id;
 			const res = await fetch(API_URL);
 			if (!res.ok) {
 				throw new Error("не загрузился");
