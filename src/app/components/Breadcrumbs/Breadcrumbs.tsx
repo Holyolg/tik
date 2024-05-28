@@ -1,15 +1,33 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import translationsJson from "../../../../public/translation/translation";
+import translationsJson from "../../../../public/translation/translation.json";
 
-export default function Breadcrumbs({ pageTitle }) {
+interface IBreadcrumbs {
+	pageTitle: string;
+}
+interface ITranslations {
+	breadcrumbs: {
+		[project:string]: string;
+		concept:string;
+		genproject: string;
+		about: string;
+		homes: string;
+		conceptual: string;
+		improvement: string;
+		social: string;
+	};
+}
+
+export default function Breadcrumbs({ pageTitle }: IBreadcrumbs) {
 	const path = usePathname();
 	const pathName = path.split("/").filter(path => path);
 	pathName.pop();
-	const translations = translationsJson;
-	function translate(text) {
-		return translations.breadcrumbs[text];
+
+
+	const translations:ITranslations = translationsJson;
+	function translate(text: string) {
+		 		return translations.breadcrumbs[text];	
 	}
 
 	return (

@@ -4,10 +4,32 @@ import {Loading} from '../../../ui/Loading/Loading'
 import  Breadcrumbs  from '../../../components/Breadcrumbs/Breadcrumbs';
 import CardDetails from '../../../components/CardDetails/CardDetails'
 
-export default function CardDetailsPage({ params }) {
-	const id = params.id;
-	const [card, setCard] = useState();
+interface ICardDetailsPage {
+	params: any;
+}
 
+interface ICard {
+	id: string;
+	img: string;
+	link: string;
+	title: string;
+	category: string | number;
+	subtitle: string;
+	date: string;
+	type: string;
+	square: string;
+	location: string;
+	status: string;
+	description: string;
+	text: string;
+	img2: string;
+	img3: string;
+}
+
+
+export default function CardDetailsPage({ params }:ICardDetailsPage) {
+	const id = params.id;
+	const [card, setCard] =  useState<ICard>();
 	useEffect(() => {
 		const getCards = async () => {
 			const API_URL =

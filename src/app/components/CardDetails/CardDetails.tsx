@@ -2,7 +2,27 @@ import Image from "next/image";
 import toBase64 from "../../services/toBase64/toBase64";
 import shimmer from "../../ui/Shimer/Shimer";
 
-const CardDetails = ({ data }) => {
+interface ICardDetails {
+	data: 
+		{id: string;
+			img: string;
+			link: string;
+			title: string;
+			category: string | number;
+			subtitle: string;
+			date: string;
+			type: string;
+			square: string;
+			location: string;
+			status: string;
+			description: string;
+			text: string;
+			img2: string;
+			img3: string;
+		}
+}
+
+const CardDetails = ({ data }:ICardDetails) => {
 	return (
 		<>
 			<h2 className="text-2xl mt-10 font-semibold">{data.title}</h2>

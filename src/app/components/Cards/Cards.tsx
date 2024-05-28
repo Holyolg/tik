@@ -1,7 +1,7 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import getCards from "../../services/GetCards/GetCards";
+import getCards from "../../services/getCards/getCards";
 import { Loading } from "../../ui/Loading/Loading";
 import Card from "../Card/Card";
 import Categories from "../Categories/Categories";

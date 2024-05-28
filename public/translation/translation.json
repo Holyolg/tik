@@ -4,17 +4,9 @@
 		"concept": "Концепция",
 		"genproject": "Генеральное проектирование",
 		"about": "О нас",
-
 		"homes": "Жилые",
 		"conceptual": "Интерьеры",
 		"improvement": "Благоустройство",
 		"social": "Общественные"
-	},
-	"header": {
-		"menu_btn": "Меню",
-		"search_products": "Поиск товаров",
-		"search_infos": "Название товара, категория, тип...",
-		"profile": "Профиль",
-		"logout": "Выйти"
 	}
 }

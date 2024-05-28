@@ -2,14 +2,18 @@ import { useEffect, useRef, useState } from "react";
 const PLAYING_DEBOUNCE_TIME = 50;
 const WAITING_DEBOUNCE_TIME = 200;
 
-export const Video = ({ src, ...props }) => {
+interface IVideo {
+	src: string
+}
+
+export const Video = ({ src, ...props }: IVideo) => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [isWaiting, setIsWaiting] = useState(false);
 
-	const isWaitingTimeout = useRef(null);
-	const isPlayingTimeout = useRef(null);
+	const isWaitingTimeout: {current: NodeJS.Timeout | null} = useRef(null);
+	const isPlayingTimeout: {current: NodeJS.Timeout | null} = useRef(null);
 
-	const videoElementRef = useRef();
+	const videoElementRef = useRef<HTMLVideoElement | null>(null);
 
 	useEffect(() => {
 		if (!videoElementRef.current) {
@@ -17,16 +21,16 @@ export const Video = ({ src, ...props }) => {
 		}
 
 		const waitingHandler = () => {
-			clearTimeout(isWaitingTimeout.current);
+			clearTimeout(isWaitingTimeout.current as NodeJS.Timeout);
 
-			isWaitingTimeout.current = setTimeout(() => {
+			isWaitingTimeout.current  = setTimeout(() => {
 				setIsWaiting(true);
 			}, WAITING_DEBOUNCE_TIME);
 		};
 
 		const playHandler = () => {
-			clearTimeout(isWaitingTimeout.current);
-			clearTimeout(isPlayingTimeout.current);
+			clearTimeout(isWaitingTimeout.current as NodeJS.Timeout);
+			clearTimeout(isPlayingTimeout.current as NodeJS.Timeout);
 
 			isPlayingTimeout.current = setTimeout(() => {
 				setIsPlaying(true);
@@ -35,8 +39,8 @@ export const Video = ({ src, ...props }) => {
 		};
 
 		const pauseHandler = () => {
-			clearTimeout(isWaitingTimeout.current);
-			clearTimeout(isPlayingTimeout.current);
+			clearTimeout(isWaitingTimeout.current as NodeJS.Timeout);
+			clearTimeout(isPlayingTimeout.current as NodeJS.Timeout);
 
 			isPlayingTimeout.current = setTimeout(() => {
 				setIsPlaying(false);
@@ -53,8 +57,8 @@ export const Video = ({ src, ...props }) => {
 
 		// clean up
 		return () => {
-			clearTimeout(isWaitingTimeout.current);
-			clearTimeout(isPlayingTimeout.current);
+			clearTimeout(isWaitingTimeout.current as NodeJS.Timeout);
+			clearTimeout(isPlayingTimeout.current as NodeJS.Timeout);
 
 			element.removeEventListener("waiting", waitingHandler);
 			element.removeEventListener("play", playHandler);
