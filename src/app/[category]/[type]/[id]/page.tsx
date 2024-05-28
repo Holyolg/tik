@@ -4,9 +4,7 @@ import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
 import CardDetails from "../../../components/CardDetails/CardDetails";
 import { Loading } from "../../../ui/Loading/Loading";
 
-interface ICardDetailsPage {
-	params: any;
-}
+
 interface ICard {
 	id: string;
 	img: string;
