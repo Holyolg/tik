@@ -1,17 +1,19 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 const PLAYING_DEBOUNCE_TIME = 50;
 const WAITING_DEBOUNCE_TIME = 200;
 
 interface IVideo {
-	src: string
+	src: string;
 }
 
 export const Video = ({ src, ...props }: IVideo) => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [isWaiting, setIsWaiting] = useState(false);
 
-	const isWaitingTimeout: {current: NodeJS.Timeout | null} = useRef(null);
-	const isPlayingTimeout: {current: NodeJS.Timeout | null} = useRef(null);
+	const isWaitingTimeout: { current: NodeJS.Timeout | null } = useRef(null);
+	const isPlayingTimeout: { current: NodeJS.Timeout | null } = useRef(null);
 
 	const videoElementRef = useRef<HTMLVideoElement | null>(null);
 
@@ -23,7 +25,7 @@ export const Video = ({ src, ...props }: IVideo) => {
 		const waitingHandler = () => {
 			clearTimeout(isWaitingTimeout.current as NodeJS.Timeout);
 
-			isWaitingTimeout.current  = setTimeout(() => {
+			isWaitingTimeout.current = setTimeout(() => {
 				setIsWaiting(true);
 			}, WAITING_DEBOUNCE_TIME);
 		};

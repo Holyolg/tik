@@ -28,9 +28,10 @@ interface IJSONCards {
 	img3: string;
 }
 
-export const Cards = ({ category }: ICards) => {
+export const Cards = () => {
 	const [cards, setCards] = useState<IJSONCards[]>([]);
 	const [categoryId, setCategoryId] = useState(0);
+	const [category, setCategory] = useState("genproject");
 	const [isLoading, setIsLoading] = useState(true);
 	const pathName = usePathname();
 	const router = useRouter();
@@ -59,7 +60,7 @@ export const Cards = ({ category }: ICards) => {
 			setCards(res);
 			setIsLoading(false);
 		});
-	}, [categoryId]);
+	}, [categoryId, category]);
 
 	useEffect(() => {
 		const filterPath = pathName + `?category=${categoryId}`;
@@ -74,14 +75,28 @@ export const Cards = ({ category }: ICards) => {
 
 	return (
 		<>
+			<div className="space-x-5 mt-12">
+				<button
+					onClick={() => setCategory("genproject")}
+					className="w-72 h-10 border-black border rounded-lg hover:bg-black hover:text-white active:opacity-85"
+				>
+					Генеральное проектирование
+				</button>
+				<button
+					onClick={() => setCategory("concept")}
+					className="w-72 h-10 border-black border rounded-lg hover:bg-black hover:text-white active:opacity-85"
+				>
+					Концепция
+				</button>
+			</div>
 			<Categories
 				category={categoryId}
 				onClickCategory={(i: number) => {
 					setCategoryId(i);
 				}}
 			/>
-			<section className="flex justify-center p-4 my-40">
-				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-20 lg:mt-10">
+			<section className="mt-12 container">
+				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3   gap-[45px]">
 					{isLoading ? (
 						<div className="col-span-3 justify-self-center">
 							<Loading />

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
 
 interface ICategories {
@@ -28,23 +27,11 @@ function Categories({ category, onClickCategory }: ICategories) {
 	};
 
 	return (
-		<motion.header className="menu fixed top-0 z-10 w-full text-[#003056] font-bold text-xl">
-			<div className="menu-logo w-full flex justify-between py-2 px-8 h-16">
-				<Link className="flex items-center" href="/">
-					<motion.img
-						className="w-[110px]"
-						src="/logo.svg"
-						alt="Logo"
-						whileTap={{ scale: 0.97 }}
-					></motion.img>
-				</Link>
-
+		<>
+			<motion.header className="w-full font-bold text-xl">
 				<div className="flex justify-center">
 					<div className="grid grid-cols-3 gap-20 relative justify-items-center xl:w-[1024px] max-w-5xl">
-						<div
-							onClick={() => setOpen(!open)}
-							className="cursor-pointer flex items-center hover:underline"
-						>
+						<div className="cursor-pointer flex items-center hover:underline">
 							<motion.div
 								className="absolute left-0 "
 								initial={false}
@@ -109,22 +96,10 @@ function Categories({ category, onClickCategory }: ICategories) {
 							</motion.div>
 							<motion.p whileTap={{ scale: 0.97 }}>ПРОЕКТ</motion.p>
 						</div>
-						<Link className="flex items-center hover:underline" href="/about">
-							<motion.p whileTap={{ scale: 0.97 }}>О НАС</motion.p>
-						</Link>
-						<Link
-							className="flex items-center hover:underline"
-							href="/contacts"
-						>
-							<motion.p whileTap={{ scale: 0.97 }}>КОНТАКТЫ</motion.p>
-						</Link>
 					</div>
 				</div>
-				<Link className="flex items-center hover:underline w-[110px]" href="/">
-					<motion.p whileTap={{ scale: 0.97 }}>EN</motion.p>
-				</Link>
-			</div>
-		</motion.header>
+			</motion.header>
+		</>
 	);
 }
 

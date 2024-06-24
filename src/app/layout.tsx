@@ -1,9 +1,9 @@
-import { Montserrat } from "next/font/google";
-import Menu from "./components/Menu/Menu";
+import { Inter } from "next/font/google";
 import Footer from "./components/Footer/Footer";
+import Menu from "./components/Menu/Menu";
 import "./globals.css";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
 	title: "TIK PRO тестовый",
@@ -14,12 +14,14 @@ export const metadata = {
 	},
 };
 
-export default function RootLayout({ children}: {
-	children: React.ReactNode
-  }) {
+export default function RootLayout({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
 	return (
 		<html lang="ru">
-			<body className={`${montserrat.className}`}>
+			<body className={`${inter.className}`}>
 				<Menu />
 				{children}
 				<Footer />

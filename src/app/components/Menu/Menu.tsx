@@ -1,8 +1,11 @@
 "use client";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useWindowSize } from "../Accordion/useWindowSize";
+
+import { useState } from "react";
+import "./Menu.css";
 
 const Menu = () => {
 	// const categories = [
@@ -18,82 +21,87 @@ const Menu = () => {
 	// }
 	const pathname = usePathname();
 	const { width, height } = useWindowSize();
+	const [opened, setOpened] = useState(false);
 
-	// const [categoryId, setCategoryId] = useState(0);
-	// const filterCategories = items.filter(item => item.type == categoryId);
-
-	const homeHeader = (
-		<header className="menu fixed top-0 z-10 w-full bg-[#073355]/[.75]">
-			<div className="menu-logo w-full flex py-2 px-8 border-b border-white h-16">
-				<Link className="flex items-center" href="/">
-					<motion.img
-						className="w-[110px]"
-						src="/logoWhite.svg"
-						alt="Logo"
-						whileTap={{ scale: 0.97 }}
-					></motion.img>
-				</Link>
-				<div className="flex items-center mx-auto justify-between w-4/5"></div>
+	return (
+		<header className="menu fixed z-10 w-full top-5 ">
+			<div className="mx-auto container relative bg-white rounded-xl h-14 shadow-lg">
+				<div className="menu-logo w-full h-14 flex justify-between   px-8">
+					<Link className="flex items-center content-center" href="/">
+						<motion.img
+							className="w-[110px]"
+							src="/logo.svg"
+							alt="Logo"
+							whileTap={{ scale: 0.97 }}
+						></motion.img>
+					</Link>
+					<div
+						onClick={() => setOpened(!opened)}
+						className={
+							opened
+								? "tham tham-e-squeeze tham-w-6 tham-active h-full "
+								: "tham tham-e-squeeze tham-w-6 h-full "
+						}
+					>
+						<div className="tham-box">
+							<div className="tham-inner" />
+						</div>
+					</div>
+					<AnimatePresence>
+						{opened ? (
+							<motion.nav className="absolute right-24">
+								<div className="flex items-center space-x-9 h-14">
+									<motion.a
+										initial={{ x: 45, opacity: 0 }}
+										animate={{ x: 0, opacity: 1 }}
+										exit={{ x: 45, opacity: 0 }}
+										whileHover={{
+											opacity: 0.7,
+										}}
+										className="
+										cursor-pointer"
+									>
+										Проекты
+									</motion.a>
+									<motion.a
+										initial={{ x: 35, opacity: 0 }}
+										animate={{ x: 0, opacity: 1 }}
+										exit={{ x: 35, opacity: 0 }}
+										whileHover={{
+											opacity: 0.7,
+										}}
+										className="
+										cursor-pointer"
+									>
+										О нас
+									</motion.a>
+									<motion.a
+										initial={{ x: 25, opacity: 0 }}
+										animate={{ x: 0, opacity: 1 }}
+										exit={{ x: 25, opacity: 0 }}
+										whileHover={{
+											opacity: 0.7,
+										}}
+										className="cursor-pointer"
+									>
+										Контакты
+									</motion.a>
+								</div>
+							</motion.nav>
+						) : (
+							""
+						)}
+					</AnimatePresence>
+				</div>
 			</div>
 		</header>
 	);
-
-	return <>{pathname == "/" ? homeHeader : ""}</>;
 };
 
-{
-	/* <Categories
-					type={items.type}
-					// category={categoryId}
-					onClickCategory={i => {
-						chooseCategory(i);
-						// setFilteredCategories(filterCategories);
-					}}
-				/> */
-}
-
-{
-	/* <Sort
-chooseCategory={chooseCategory}
-onClick={() => showCards(filteredCategories)}
-/> */
-}
-
-// export function Sort({ chooseCategory }) {
-// 	const [categoryId, setCategoryId] = useState(0);
-// 	// const [filteredCategories, setFilteredCategories] = useState([]);
-// 	// const filterCategories = items.filter(item => item.type == categoryId);
-// 	return (
-// 		<>
-// 			<div className="menu-logo w-full flex justify-end bg-[#003056] text-white p-5 border-b h-[10vh]">
-// 				<div className="flex items-center mx-auto justify-between w-4/5">
-// 					{/* <Categories
-// 						type={items.type}
-// 						category={categoryId}
-// 						onClickCategory={i => {
-// 							setCategoryId(i);
-// 							// setFilteredCategories(filterCategories);
-// 							chooseCategory(filterCategories);
-// 						}}
-// 					/> */}
-// 					<Link className="flex items-center" href="/">
-// 						<img className="w-[150px]" src="/logo.png"></img>
-// 					</Link>
-// 				</div>
-// 			</div>
-// 		</>
-// 	);
-// }
-
-// const Nav = () => {
-// 	return (
-// 		<div className="menu-logo w-full flex justify-end bg-[#003056] p-5 text-white border-b h-[10vh]">
-// 			<div className="flex items-center mx-auto justify-between w-4/5"></div>
-// 			<Link className="flex items-center" href="/">
-// 				<img className="w-[150px]" src="/logo.png"></img>
-// 			</Link>
-// 		</div>
-// 	);
-// };
+const open = {
+	type: "spring",
+	stiffness: 700,
+	damping: 30,
+};
 
 export default Menu;

@@ -25,27 +25,27 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 		>
 			<Link
 				href={link + id}
-				className="card-wrapper flex items-center text-center text-white size-72 relative"
+				className="card-wrapper flex items-center text-center text-white w-[450px] h-[250px] 2xl:w-[610px] 2xl: h-[350px] relative rounded-lg"
 			>
 				<Image
 					src={img}
 					alt={title}
-					style={{ objectFit: "cover" }}
+					style={{ objectFit: "cover", borderRadius: "0.5rem" }}
 					fill
-					sizes="400px"
+					sizes="700px"
 					placeholder={`data:image/svg+xml;base64,${toBase64(
-						shimmer(320, 320)
+						shimmer(550, 250)
 					)}`}
 				/>
 				{isHover && (
 					<motion.div
-						className="absolute p-1 flex-col w-full h-full content-center bg-[#003056]"
+						className="flex-col w-full h-full content-center backdrop-blur-sm rounded-lg backdrop-brightness-90"
 						variants={variants}
 						initial="hidden"
 						animate="open"
 						exit="hidden"
 					>
-						{title}
+						<p className="font-semibold">{title}</p>
 						<p className="mt-5 text-sm">{subtitle}</p>
 					</motion.div>
 				)}

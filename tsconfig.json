@@ -27,7 +27,8 @@
 		"**/*.ts",
 		"**/*.tsx",
 		"src/app/components/Menu/Menu.tsx",
-		"src/app/components/Video/Video.tsx"
+		"src/app/components/Video/Video.tsx",
+		"src/app/components/MainCards/MainCards.js"
 	],
 	"exclude": ["node_modules"]
 }

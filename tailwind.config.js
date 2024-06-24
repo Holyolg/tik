@@ -23,9 +23,10 @@ module.exports = {
 				},
 			},
 			screens: {
-				"2xl": "1921px",
+				xl: "1440px",
+				"2xl": "1920px",
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require("tailwind-hamburgers")],
 };

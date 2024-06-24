@@ -1,38 +1,54 @@
 "use client";
-import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Footer() {
-	const pathname = usePathname();
-	const footerItem = (
-		<>
-			<footer className=" bg-[#f4f4f4] h-[8vh] w-full px-4 flex justify-center">
-				<div className="w-full mx-auto p-2 grid grid-cols-3 text-sm">
-					<p className="flex items-center">ТИК ПРОДЖЕКТ</p>
-					<ul className="flex flex-col text-center justify-center">
-						<li>+7 800 555 3535</li>
-						<li>info@tik.pro</li>
-						<li>г. Москва, 1-я Тверская-Ямская ул., д.25, стр.1</li>
-					</ul>
-					<div className="space-x-5 flex items-center justify-end">
-						<img className="h-[27px]" src="/telegram.png" />
-						<img className="h-[27px]" src="/whatsapp.png" />
-					</div>
+	return (
+		<footer className=" bg-gray-100 w-full mt-56">
+			<div className=" mx-auto container py-10 md:flex md:items-center md:justify-between">
+				<div className="text-gray-500 sm:text-center flex items-center space-x-5">
+					<Link className="flex items-center content-center" href="/">
+						<motion.img
+							className="w-[110px]"
+							src="/logo.svg"
+							alt="Logo"
+							whileTap={{ scale: 0.97 }}
+						></motion.img>
+					</Link>
+					<span>ТИК ПРОДЖЕКТ 2024</span>
 				</div>
-			</footer>
-		</>
+				<ul className="flex flex-wrap items-center mt-3 space-x-5 text-gray-500 sm:mt-0">
+					<li>
+						<a
+							href="#"
+							className="cursor-pointer hover:opacity-75 me-4 md:me-6"
+						>
+							Главная
+						</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							className="cursor-pointer hover:opacity-75 me-4 md:me-6"
+						>
+							Проекты
+						</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							className="cursor-pointer hover:opacity-75 me-4 md:me-6"
+						>
+							О нас
+						</a>
+					</li>
+					<li>
+						<a href="#" className="cursor-pointer hover:opacity-75">
+							Контакты
+						</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
 	);
-	const footerItemEmpty = (
-		<>
-			<footer className="absolute left-8 bottom-8 text-white w-1/6 flex justify-center">
-				<div className="w-full mx-auto grid grid-cols-3 font-semibold">
-					<p className="flex items-center xl:text-8xl text-7xl">
-						ТИК <br />
-						ПРОДЖЕКТ
-					</p>
-				</div>
-			</footer>
-		</>
-	);
-
-	return <>{pathname == "/" ? footerItemEmpty : ""}</>;
 }

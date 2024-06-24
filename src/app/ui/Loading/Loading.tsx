@@ -1,6 +1,6 @@
 export const Loading = () => {
 	return (
-		<div className="wrapper  min-h-[100vh]">
+		<div className="container relative h-[100vh]">
 			<div className="absolute top-1/2 left-1/2">
 				<svg
 					className="animate-spin h-10 w-10 text-black"
