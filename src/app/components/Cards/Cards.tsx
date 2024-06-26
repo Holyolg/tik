@@ -1,8 +1,9 @@
 "use client";
 import getCards from "@/app/services/GetCards/GetCards";
+import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
+import { Skeleton } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Loading } from "../../ui/Loading/Loading";
 import Card from "../Card/Card";
 import Categories from "../Categories/Categories";
 
@@ -36,6 +37,16 @@ export const Cards = () => {
 	const pathName = usePathname();
 	const router = useRouter();
 
+	const { width, height } = useWindowSize();
+	const skeletons = [...new Array(9)].map((_, index) => (
+		<Skeleton
+			sx={{ borderRadius: "0.5rem" }}
+			variant="rounded"
+			height={width > 1920 ? 360 : 300}
+			key={index}
+		></Skeleton>
+	));
+
 	useEffect(() => {
 		if (categoryId === undefined) {
 			setCategoryId(0);
@@ -63,10 +74,10 @@ export const Cards = () => {
 	}, [categoryId, category]);
 
 	useEffect(() => {
-		const filterPath = pathName + `?category=${categoryId}`;
+		const filterPath = pathName + `?${category}&category=${categoryId}`;
 
 		router.push(filterPath);
-	}, [categoryId, pathName]);
+	}, [categoryId, pathName, category]);
 
 	const cardFilter =
 		categoryId > 0
@@ -75,47 +86,62 @@ export const Cards = () => {
 
 	return (
 		<>
-			<div className="space-x-5 mt-12">
-				<button
-					onClick={() => setCategory("genproject")}
-					className="w-72 h-10 border-black border rounded-lg hover:bg-black hover:text-white active:opacity-85"
-				>
-					Генеральное проектирование
-				</button>
-				<button
-					onClick={() => setCategory("concept")}
-					className="w-72 h-10 border-black border rounded-lg hover:bg-black hover:text-white active:opacity-85"
-				>
-					Концепция
-				</button>
+			<div className="mt-12 justify-between lg:flex">
+				<div className="flex items-center sm:space-y-0 space-x-0 sm:space-x-5 mb-6 lg:mb-0">
+					<button
+						onClick={() => {
+							{
+								setCategory("genproject");
+								category == "genproject" ? "" : setIsLoading(true);
+							}
+						}}
+						className={
+							category === "genproject"
+								? "w-full h-14 sm:w-72 sm:h-10 bg-black border-black border sm:rounded-lg rounded-l-lg hover:bg-black text-white active:opacity-85"
+								: "w-full h-14 sm:w-72 sm:h-10 border-black border sm:rounded-lg rounded-l-lg  hover:bg-black hover:text-white active:opacity-85"
+						}
+					>
+						Генеральное проектирование
+					</button>
+					<button
+						onClick={() => {
+							setCategory("concept");
+							category == "concept" ? "" : setIsLoading(true);
+						}}
+						className={
+							category === "concept"
+								? "w-full h-14 sm:w-72 sm:h-10 bg-black border-black border sm:rounded-lg rounded-r-lg hover:bg-black text-white active:opacity-85"
+								: "w-full h-14 sm:w-72 sm:h-10 border-black border sm:rounded-lg rounded-r-lg  hover:bg-black hover:text-white active:opacity-85"
+						}
+					>
+						Концепция
+					</button>
+				</div>
+				<Categories
+					category={categoryId}
+					onClickCategory={(i: number) => {
+						setCategoryId(i);
+					}}
+				/>
 			</div>
-			<Categories
-				category={categoryId}
-				onClickCategory={(i: number) => {
-					setCategoryId(i);
-				}}
-			/>
-			<section className="mt-12 container">
+
+			<section className="mt-12">
 				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3   gap-[45px]">
-					{isLoading ? (
-						<div className="col-span-3 justify-self-center">
-							<Loading />
-						</div>
-					) : (
-						cardFilter.map(card => {
-							return (
-								<Card
-									key={card.id}
-									id={card.id}
-									title={card.title}
-									link={card.link}
-									img={card.img}
-									subtitle={card.subtitle}
-									category={card.category}
-								/>
-							);
-						})
-					)}
+					{isLoading
+						? skeletons
+						: cardFilter.map(card => {
+								return (
+									<Card
+										key={card.id}
+										id={card.id}
+										title={card.title}
+										link={card.link}
+										img={card.img}
+										subtitle={card.subtitle}
+										category={card.category}
+									/>
+								);
+						  })}
 				</div>
 			</section>
 		</>

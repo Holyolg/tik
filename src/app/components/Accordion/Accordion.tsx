@@ -4,8 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useWindowSize } from "../../services/hooks/useWindowSize/useWindowSize";
 import { Video } from "../Video/Video";
-import { useWindowSize } from "./useWindowSize";
 
 const VerticalAccordion = () => {
 	const [open, setOpen] = useState(0);

@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export const About = () => {
 	return (
-		<div className="w-full h-[450px] relative">
+		<div className="w-full h-[500px] relative">
 			<Image
-				src="/about.png"
+				src="/about2.jpg"
 				alt="about"
 				style={{ objectFit: "cover", borderRadius: "0.5rem" }}
 				fill

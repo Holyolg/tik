@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="ru">
-			<body className={`${inter.className}`}>
+			<body className={`${inter.className} min-h-[100vh]`}>
 				<Menu />
 				{children}
 				<Footer />

@@ -1,18 +1,48 @@
-import { About } from "./components/About/About";
+"use client";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useRef } from "react";
 import MainCards from "./components/MainCards/MainCards";
 import { Video } from "./components/Video/Video";
 import { NawArrow } from "./ui/NavArrow/NawArrow";
 
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 export default function Home() {
+	const animateRef = useRef<HTMLElement | any>();
+	const heroRef = useRef<HTMLElement | any>();
+
+	useGSAP(
+		() => {
+			const texts = gsap.utils.toArray(".animate_text");
+			texts.forEach((text: any) => {
+				gsap.from(text, {
+					opacity: 0,
+					x: -200,
+					scrollTrigger: {
+						trigger: text,
+						start: "bottom 90%",
+						end: "top 40%",
+
+						scrub: true,
+						//markers: true,
+					},
+				});
+			});
+		},
+		{ scope: animateRef }
+	);
+
 	return (
 		<>
 			<main className="">
 				<div className="hero-wrapper">
 					<div className="w-full bg-[url('/blur_min.jpg')] bg-no-repeat">
 						<div className="text-white absolute top-1/2 w-full">
-							<div className="mx-auto container">
+							<div className="mx-auto container" ref={heroRef}>
 								<h2 className="text-xl">Проектная организация</h2>
-								<h1 className="mt-5 text-7xl uppercase font-semibold">
+								<h1 className="mt-5 text-5xl sm:text-7xl uppercase font-semibold">
 									Тик Проджект
 								</h1>
 							</div>
@@ -24,23 +54,26 @@ export default function Home() {
 					</div>
 				</div>
 			</main>
-			<section className="mx-auto container mt-32">
+			<section className="mx-auto container mt-12 md:mt-32">
 				<div className="flex justify-between items-center">
-					<h2 className="text-7xl font-semibold">Проекты</h2>
+					<h2 className="text-4xl lg:text-6xl font-semibold">Проекты</h2>
 				</div>
 				<MainCards />
 			</section>
-			<section className="mx-auto container mt-32">
+			{/* <section className="mx-auto container mt-12 md:mt-32">
 				<div className="flex justify-between items-center">
-					<h2 className="text-7xl font-semibold">О нас</h2>
-					<a className="hover:opacity-75 flex items-center justify-center space-x-2 cursor-pointer">
+					<h2 className="text-6xl font-semibold">О нас</h2>
+					<Link
+						href={"about"}
+						className="hover:opacity-75 flex items-center justify-center space-x-2 cursor-pointer"
+					>
 						<span>Подробнее о нас</span>
 						<div className="w-5">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
 								<path d="M23.5587,16.916 C24.1447,17.4999987 24.1467,18.446 23.5647,19.034 L16.6077,26.056 C16.3147,26.352 15.9287,26.4999987 15.5427,26.4999987 C15.1607,26.4999987 14.7787,26.355 14.4867,26.065 C13.8977,25.482 13.8947,24.533 14.4777,23.944 L20.3818,17.984 L14.4408,12.062 C13.8548,11.478 13.8528,10.5279 14.4378,9.941 C15.0218,9.354 15.9738,9.353 16.5588,9.938 L23.5588,16.916 L23.5587,16.916 Z"></path>
 							</svg>
 						</div>
-					</a>
+					</Link>
 				</div>
 				<div className="mt-12">
 					<About />
@@ -57,10 +90,37 @@ export default function Home() {
 						среды.
 					</h3>
 				</div>
-			</section>
-			<section className="mx-auto container mt-32">
-				<h2 className="text-7xl font-semibold">Контактная информация</h2>
-				<div className="mt-12 flex justify-between">
+			</section> */}
+
+			<div className="container mx-auto mt-12 md:mt-32">
+				<div className="sm:flex space-y-10 justify-between items-start">
+					<h2 className="text-4xl lg:text-6xl" ref={animateRef}>
+						<span className="font-semibold">Мы</span>
+						<div className="animate_text">инженеры</div>
+						<div className="animate_text">архитекторы</div>
+						<div className="animate_text">конструкторы</div>
+						<div className="animate_text">BIM-специалисты</div>
+					</h2>
+					<a className="hover:opacity-75 flex items-center space-x-2 cursor-pointer">
+						<span>Подробнее о нас</span>
+						<div className="w-5">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+								<path d="M23.5587,16.916 C24.1447,17.4999987 24.1467,18.446 23.5647,19.034 L16.6077,26.056 C16.3147,26.352 15.9287,26.4999987 15.5427,26.4999987 C15.1607,26.4999987 14.7787,26.355 14.4867,26.065 C13.8977,25.482 13.8947,24.533 14.4777,23.944 L20.3818,17.984 L14.4408,12.062 C13.8548,11.478 13.8528,10.5279 14.4378,9.941 C15.0218,9.354 15.9738,9.353 16.5588,9.938 L23.5588,16.916 L23.5587,16.916 Z"></path>
+							</svg>
+						</div>
+					</a>
+				</div>
+				<div className=" md:w-2/3 xl:w-1/3 rounded-lg mt-6">
+					Проектируем жилые и общественные здания, образовательные учреждения,
+					офисы и деловые центры, индивидуальные жилые здания и интерьеры, а
+					также занимаемся разработкой комфортной городской среды.
+				</div>
+			</div>
+			<section className="mx-auto container mt-12 md:mt-32">
+				<h2 className="text-4xl lg:text-6xl font-semibold">
+					Контактная информация
+				</h2>
+				<div className="mt-12 flex flex-col space-y-10 md:space-y-0 md:flex-row justify-between">
 					<div className="flex space-x-16">
 						<a className="cursor-pointer hover:opacity-75">
 							Москва <br /> 1-я Тверская-Ямская ул., 25, стр. 1
@@ -69,7 +129,7 @@ export default function Home() {
 							Тамбов <br /> Кронштадская улица, 4Ак1
 						</a>
 					</div>
-					<div className="flex space-x-16 items-center">
+					<div className="flex flex-col md:flex-row space-x-0 space-y-5 lg:space-x-5 xl:space-x-16 md:space-y-0 md:items-center">
 						<a className="cursor-pointer hover:opacity-75">
 							Номер <br /> + 8 800 555 35 35
 						</a>

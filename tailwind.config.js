@@ -6,6 +6,15 @@ module.exports = {
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
+		container: {
+			padding: {
+				DEFAULT: "1rem",
+				sm: "2rem",
+				lg: "4rem",
+				xl: "5rem",
+				"2xl": "6rem",
+			},
+		},
 		extend: {
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -23,8 +32,8 @@ module.exports = {
 				},
 			},
 			screens: {
-				xl: "1440px",
-				"2xl": "1920px",
+				xl: "1538px",
+				"2xl": "1922px",
 			},
 		},
 	},

@@ -89,7 +89,7 @@ export const Video = ({ src, ...props }: IVideo) => {
 				className={
 					isWaiting
 						? "blur-lg md:w-full md:h-[100vh] h-[60vh] object-cover"
-						: "md:w-full md:h-[100vh] h-[60vh] object-cover"
+						: "md:w-full md:h-[100vh] h-[100vh] object-cover"
 				}
 				width="1920"
 				height="1080"

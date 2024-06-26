@@ -17,7 +17,7 @@ export default function Footer() {
 					</Link>
 					<span>ТИК ПРОДЖЕКТ 2024</span>
 				</div>
-				<ul className="flex flex-wrap items-center mt-3 space-x-5 text-gray-500 sm:mt-0">
+				<ul className="flex flex-wrap items-center mt-3 space-x-2 sm:space-x-5 text-gray-500 sm:mt-0">
 					<li>
 						<a
 							href="#"

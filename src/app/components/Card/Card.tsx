@@ -1,3 +1,4 @@
+import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,6 +17,7 @@ interface IJSONCards {
 
 const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 	const [isHover, setIsHover] = useState(false);
+	const { width } = useWindowSize();
 
 	return (
 		<div
@@ -25,7 +27,7 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 		>
 			<Link
 				href={link + id}
-				className="card-wrapper flex items-center text-center text-white w-[450px] h-[250px] 2xl:w-[610px] 2xl: h-[350px] relative rounded-lg"
+				className="card-wrapper flex items-center text-center text-white min-w-full h-[300px] 2xl:h-[360px] relative rounded-lg"
 			>
 				<Image
 					src={img}
@@ -34,7 +36,7 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 					fill
 					sizes="700px"
 					placeholder={`data:image/svg+xml;base64,${toBase64(
-						shimmer(550, 250)
+						shimmer(width > 1920 ? 610 : 450, 350)
 					)}`}
 				/>
 				{isHover && (
