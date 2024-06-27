@@ -19,33 +19,33 @@ export default function Footer() {
 				</div>
 				<ul className="flex flex-wrap items-center mt-3 space-x-2 sm:space-x-5 text-gray-500 sm:mt-0">
 					<li>
-						<a
-							href="#"
+						<Link
+							href="/"
 							className="cursor-pointer hover:opacity-75 me-4 md:me-6"
 						>
 							Главная
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a
-							href="#"
+						<Link
+							href="/projects"
 							className="cursor-pointer hover:opacity-75 me-4 md:me-6"
 						>
 							Проекты
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a
-							href="#"
+						<Link
+							href="/about"
 							className="cursor-pointer hover:opacity-75 me-4 md:me-6"
 						>
 							О нас
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="#" className="cursor-pointer hover:opacity-75">
+						<Link href="#contacts" className="cursor-pointer hover:opacity-75">
 							Контакты
-						</a>
+						</Link>
 					</li>
 				</ul>
 			</div>
