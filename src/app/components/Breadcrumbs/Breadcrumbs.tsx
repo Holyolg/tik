@@ -5,11 +5,12 @@ import translationsJson from "../../../../public/translation/translation.json";
 
 interface IBreadcrumbs {
 	pageTitle: string;
+	category: string;
 }
 interface ITranslations {
 	breadcrumbs: {
-		[project:string]: string;
-		concept:string;
+		[project: string]: string;
+		concept: string;
 		genproject: string;
 		about: string;
 		homes: string;
@@ -19,15 +20,14 @@ interface ITranslations {
 	};
 }
 
-export default function Breadcrumbs({ pageTitle }: IBreadcrumbs) {
+export default function Breadcrumbs({ pageTitle, category }: IBreadcrumbs) {
 	const path = usePathname();
 	const pathName = path.split("/").filter(path => path);
 	pathName.pop();
 
-
-	const translations:ITranslations = translationsJson;
+	const translations: ITranslations = translationsJson;
 	function translate(text: string) {
-		 		return translations.breadcrumbs[text];	
+		return translations.breadcrumbs[text];
 	}
 
 	return (
@@ -50,6 +50,10 @@ export default function Breadcrumbs({ pageTitle }: IBreadcrumbs) {
 						</li>
 					);
 				})}
+				<li className="inline-flex item-center space-x-3">
+					<p>|</p>
+					<p className="text-gray-700">{translate(category)}</p>
+				</li>
 				<li className="inline-flex item-center space-x-3">
 					<p>|</p>
 					<p className="text-gray-700">{pageTitle}</p>

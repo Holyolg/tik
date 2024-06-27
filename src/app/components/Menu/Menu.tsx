@@ -47,7 +47,8 @@ const Menu = () => {
 const menuXl = (
 	<motion.nav className="absolute right-24">
 		<div className="flex items-center space-x-9 h-14">
-			<motion.a
+			<motion.div
+				whileTap={{ scale: 0.97 }}
 				initial={{ x: 45, opacity: 0 }}
 				animate={{ x: 0, opacity: 1 }}
 				exit={{ x: 45, opacity: 0 }}
@@ -57,9 +58,10 @@ const menuXl = (
 				className="
 	cursor-pointer"
 			>
-				Проекты
-			</motion.a>
-			<motion.a
+				<Link href="/projects">Проекты</Link>
+			</motion.div>
+			<motion.div
+				whileTap={{ scale: 0.97 }}
 				initial={{ x: 35, opacity: 0 }}
 				animate={{ x: 0, opacity: 1 }}
 				exit={{ x: 35, opacity: 0 }}
@@ -69,9 +71,10 @@ const menuXl = (
 				className="
 	cursor-pointer"
 			>
-				О нас
-			</motion.a>
-			<motion.a
+				<Link href="/about">О нас</Link>
+			</motion.div>
+			<motion.div
+				whileTap={{ scale: 0.97 }}
 				initial={{ x: 25, opacity: 0 }}
 				animate={{ x: 0, opacity: 1 }}
 				exit={{ x: 25, opacity: 0 }}
@@ -80,8 +83,8 @@ const menuXl = (
 				}}
 				className="cursor-pointer"
 			>
-				Контакты
-			</motion.a>
+				<Link href="#contacts">Контакты</Link>
+			</motion.div>
 		</div>
 	</motion.nav>
 );
@@ -94,7 +97,8 @@ const menuXs = (
 		className="absolute top-20 p-8 left-0 bg-white w-full text-3xl rounded-lg shadow-lg"
 	>
 		<div className="flex flex-col items-end space-y-6">
-			<motion.a
+			<motion.div
+				whileTap={{ scale: 0.97 }}
 				initial={{ y: -45, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				exit={{ y: -45, opacity: 0 }}
@@ -104,10 +108,11 @@ const menuXs = (
 				className="
 	cursor-pointer"
 			>
-				Проекты
-			</motion.a>
+				<Link href="/projects">Проекты</Link>
+			</motion.div>
 
-			<motion.a
+			<motion.div
+				whileTap={{ scale: 0.97 }}
 				initial={{ y: -25, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				exit={{ y: -25, opacity: 0 }}
@@ -116,9 +121,10 @@ const menuXs = (
 				}}
 				className="cursor-pointer"
 			>
-				Контакты
-			</motion.a>
-			<motion.a
+				<Link href="#contacts">Контакты</Link>
+			</motion.div>
+			<motion.div
+				whileTap={{ scale: 0.97 }}
 				initial={{ y: -35, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				exit={{ y: -35, opacity: 0 }}
@@ -128,8 +134,8 @@ const menuXs = (
 				className="
 	cursor-pointer"
 			>
-				О нас
-			</motion.a>
+				<Link href="/about">О нас</Link>
+			</motion.div>
 		</div>
 	</motion.nav>
 );

@@ -4,7 +4,6 @@ import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
 import CardDetails from "../../../components/CardDetails/CardDetails";
 import { Loading } from "../../../ui/Loading/Loading";
 
-
 interface ICard {
 	id: string;
 	img: string;
@@ -23,8 +22,11 @@ interface ICard {
 	img3: string;
 }
 
-
-export default function CardDetailsPage({ params }: {params: {id: string}}) {
+export default function CardDetailsPage({
+	params,
+}: {
+	params: { id: string };
+}) {
 	const id = params.id;
 	const [card, setCard] = useState<ICard>();
 
