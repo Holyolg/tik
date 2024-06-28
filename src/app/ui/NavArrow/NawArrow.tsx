@@ -1,6 +1,8 @@
-export const NawArrow = () => {
+import { MouseEventHandler } from "react";
+
+export const NawArrow = ({ scroll }: { scroll: MouseEventHandler }) => {
 	return (
-		<div className="animate-bounce">
+		<div onClick={scroll} className="animate-bounce cursor-pointer">
 			<svg
 				className="w-10 h-10 text-white rotate-90"
 				fill="white"
