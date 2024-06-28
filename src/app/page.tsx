@@ -12,7 +12,6 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function Home() {
 	const animateRef = useRef<HTMLElement | any>();
-	const heroRef = useRef<HTMLElement | any>();
 
 	useGSAP(
 		() => {
@@ -39,9 +38,9 @@ export default function Home() {
 		<>
 			<main className="">
 				<div className="hero-wrapper">
-					<div className="w-full bg-[url('/blur_min.jpg')] bg-no-repeat">
+					<div className="w-full bg-[url('/blur_min.jpg')] bg-cover bg-no-repeat h-[100vh]">
 						<div className="text-white absolute top-1/2 w-full">
-							<div className="mx-auto container" ref={heroRef}>
+							<div className="mx-auto container">
 								<h2 className="text-xl">Проектная организация</h2>
 								<h1 className="mt-5 text-5xl sm:text-7xl uppercase font-semibold">
 									Тик Проджект

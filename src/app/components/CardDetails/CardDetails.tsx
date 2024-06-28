@@ -60,6 +60,7 @@ const CardDetails = ({ data }: ICardDetails) => {
 	}, []);
 
 	const filteredCards = cards.filter((card: any) => card.id !== data.id);
+	filteredCards.length === 2 ? filteredCards : delete filteredCards[2];
 
 	return (
 		<>
