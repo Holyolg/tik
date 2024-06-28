@@ -1,9 +1,9 @@
 import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
+import toBase64 from "@/app/services/toBase64/toBase64";
 import Image from "next/image";
 import { CSSProperties } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import toBase64 from "../../services/toBase64/toBase64";
 import shimmer from "../../ui/Shimer/Shimer";
 const ImgContentXS = ({ imgContent, id }: { imgContent: any; id: string }) => {
 	const { width } = useWindowSize();

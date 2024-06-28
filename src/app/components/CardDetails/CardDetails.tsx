@@ -5,13 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import toBase64 from "../../services/toBase64/toBase64";
 import { Accordion } from "../../ui/Accordion/Accordion";
 import shimmer from "../../ui/Shimer/Shimer";
 import Card from "../Card/Card";
 import ImgContentXS from "../ImgContentXS/ImgContentXS";
 
 // Import Swiper styles
+import toBase64 from "@/app/services/toBase64/toBase64";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/zoom";

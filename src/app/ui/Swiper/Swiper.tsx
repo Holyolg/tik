@@ -1,8 +1,8 @@
-import toBase64 from "@/app/services/toBase64/toBase64";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import shimmer from "../Shimer/Shimer";
 
+import toBase64 from "@/app/services/toBase64/toBase64";
 import "swiper/css";
 
 export const MainSwiper = ({ img2, img3 }: { img2: string; img3: string }) => {

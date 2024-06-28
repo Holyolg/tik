@@ -1,9 +1,9 @@
 import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
+import toBase64 from "@/app/services/toBase64/toBase64";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import toBase64 from "../../services/toBase64/toBase64";
 import shimmer from "../../ui/Shimer/Shimer";
 
 interface IJSONCards {

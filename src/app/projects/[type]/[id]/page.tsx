@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import CardDetails from "../../../components/CardDetails/CardDetails";
-import { Loading } from "../../../loading";
 
 interface ICard {
 	id: string;
@@ -45,7 +44,7 @@ export default function CardDetailsPage({
 	}, []);
 
 	if (!card) {
-		return <Loading />;
+		return <h2>Ошибка на стороне сервера</h2>;
 	}
 
 	return (
