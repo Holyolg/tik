@@ -44,7 +44,7 @@ export default function Footer() {
 					</li>
 					<li>
 						<Link
-							href="/"
+							href="/#contacts"
 							scroll={false}
 							className="cursor-pointer hover:opacity-75"
 						>
