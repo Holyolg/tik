@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
 	return (
-		<footer className=" bg-gray-100 w-full mt-56">
+		<footer className=" bg-gray-100 w-full mt-24 sm:mt-40">
 			<div className=" mx-auto container py-10 md:flex md:items-center md:justify-between">
 				<div className="text-gray-500 sm:text-center flex items-center space-x-5">
 					<Link className="flex items-center content-center" href="/">
@@ -43,7 +43,11 @@ export default function Footer() {
 						</Link>
 					</li>
 					<li>
-						<Link href="#contacts" className="cursor-pointer hover:opacity-75">
+						<Link
+							href="/"
+							scroll={false}
+							className="cursor-pointer hover:opacity-75"
+						>
 							Контакты
 						</Link>
 					</li>

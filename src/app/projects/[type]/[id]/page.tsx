@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import CardDetails from "../../../components/CardDetails/CardDetails";
-import { Loading } from "../../../ui/Loading/Loading";
+import { Loading } from "../../../loading";
 
 interface ICard {
 	id: string;
@@ -17,8 +17,7 @@ interface ICard {
 	status: string;
 	description: string;
 	text: string;
-	img2: string;
-	img3: string;
+	imgcontent: [];
 }
 
 export default function CardDetailsPage({

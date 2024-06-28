@@ -2,11 +2,121 @@
 import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const Menu = () => {
 	const [opened, setOpened] = useState(false);
-	const { width, height } = useWindowSize();
+	const { width } = useWindowSize();
+	const router = useRouter();
+
+	const menuXL = (
+		<motion.nav className="absolute right-24">
+			<div className="flex items-center space-x-9 h-14">
+				<motion.div
+					whileTap={{ scale: 0.97 }}
+					initial={{ x: 45, opacity: 0 }}
+					animate={{ x: 0, opacity: 1 }}
+					exit={{ x: 45, opacity: 0 }}
+					whileHover={{
+						opacity: 0.7,
+					}}
+					className="
+		cursor-pointer"
+				>
+					<Link onClick={() => setOpened(!open)} href="/projects">
+						Проекты
+					</Link>
+				</motion.div>
+				<motion.div
+					whileTap={{ scale: 0.97 }}
+					initial={{ x: 35, opacity: 0 }}
+					animate={{ x: 0, opacity: 1 }}
+					exit={{ x: 35, opacity: 0 }}
+					whileHover={{
+						opacity: 0.7,
+					}}
+					className="
+		cursor-pointer"
+				>
+					<Link onClick={() => setOpened(!open)} href="/about">
+						О нас
+					</Link>
+				</motion.div>
+				<motion.div
+					whileTap={{ scale: 0.97 }}
+					initial={{ x: 25, opacity: 0 }}
+					animate={{ x: 0, opacity: 1 }}
+					exit={{ x: 25, opacity: 0 }}
+					whileHover={{
+						opacity: 0.7,
+					}}
+					className="cursor-pointer"
+				>
+					<Link onClick={() => setOpened(!open)} href={"/"}>
+						Контакты
+					</Link>
+				</motion.div>
+			</div>
+		</motion.nav>
+	);
+
+	const menuXS = (
+		<motion.nav
+			initial={{ y: -45, opacity: 0 }}
+			animate={{ y: 0, opacity: 1 }}
+			exit={{ y: -45, opacity: 0 }}
+			className="absolute top-20 p-8 left-0 bg-white w-full text-2xl rounded-lg shadow-lg"
+		>
+			<div className="flex flex-col items-end space-y-6">
+				<motion.div
+					whileTap={{ scale: 0.97 }}
+					initial={{ y: -45, opacity: 0 }}
+					animate={{ y: 0, opacity: 1 }}
+					exit={{ y: -45, opacity: 0 }}
+					whileHover={{
+						opacity: 0.7,
+					}}
+					className="
+		cursor-pointer"
+				>
+					<Link onClick={() => setOpened(!open)} href="/projects">
+						Проекты
+					</Link>
+				</motion.div>
+
+				<motion.div
+					whileTap={{ scale: 0.97 }}
+					initial={{ y: -25, opacity: 0 }}
+					animate={{ y: 0, opacity: 1 }}
+					exit={{ y: -25, opacity: 0 }}
+					whileHover={{
+						opacity: 0.7,
+					}}
+					className="cursor-pointer"
+				>
+					<Link onClick={() => setOpened(!open)} href="/">
+						Контакты
+					</Link>
+				</motion.div>
+				<motion.div
+					whileTap={{ scale: 0.97 }}
+					initial={{ y: -35, opacity: 0 }}
+					animate={{ y: 0, opacity: 1 }}
+					exit={{ y: -35, opacity: 0 }}
+					whileHover={{
+						opacity: 0.7,
+					}}
+					className="
+		cursor-pointer"
+				>
+					<Link onClick={() => setOpened(!open)} href="/about">
+						О нас
+					</Link>
+				</motion.div>
+			</div>
+		</motion.nav>
+	);
 
 	return (
 		<header className="menu fixed z-10 w-full top-5">
@@ -34,8 +144,8 @@ const Menu = () => {
 							</div>
 						</div>
 						<AnimatePresence>
-							{opened && width > 640 ? menuXl : ""}
-							{opened && width < 640 ? menuXs : ""}
+							{opened && width > 640 ? menuXL : ""}
+							{opened && width < 640 ? menuXS : ""}
 						</AnimatePresence>
 					</div>
 				</div>
@@ -43,101 +153,5 @@ const Menu = () => {
 		</header>
 	);
 };
-
-const menuXl = (
-	<motion.nav className="absolute right-24">
-		<div className="flex items-center space-x-9 h-14">
-			<motion.div
-				whileTap={{ scale: 0.97 }}
-				initial={{ x: 45, opacity: 0 }}
-				animate={{ x: 0, opacity: 1 }}
-				exit={{ x: 45, opacity: 0 }}
-				whileHover={{
-					opacity: 0.7,
-				}}
-				className="
-	cursor-pointer"
-			>
-				<Link href="/projects">Проекты</Link>
-			</motion.div>
-			<motion.div
-				whileTap={{ scale: 0.97 }}
-				initial={{ x: 35, opacity: 0 }}
-				animate={{ x: 0, opacity: 1 }}
-				exit={{ x: 35, opacity: 0 }}
-				whileHover={{
-					opacity: 0.7,
-				}}
-				className="
-	cursor-pointer"
-			>
-				<Link href="/about">О нас</Link>
-			</motion.div>
-			<motion.div
-				whileTap={{ scale: 0.97 }}
-				initial={{ x: 25, opacity: 0 }}
-				animate={{ x: 0, opacity: 1 }}
-				exit={{ x: 25, opacity: 0 }}
-				whileHover={{
-					opacity: 0.7,
-				}}
-				className="cursor-pointer"
-			>
-				<Link href="#contacts">Контакты</Link>
-			</motion.div>
-		</div>
-	</motion.nav>
-);
-
-const menuXs = (
-	<motion.nav
-		initial={{ y: -45, opacity: 0 }}
-		animate={{ y: 0, opacity: 1 }}
-		exit={{ y: -45, opacity: 0 }}
-		className="absolute top-20 p-8 left-0 bg-white w-full text-3xl rounded-lg shadow-lg"
-	>
-		<div className="flex flex-col items-end space-y-6">
-			<motion.div
-				whileTap={{ scale: 0.97 }}
-				initial={{ y: -45, opacity: 0 }}
-				animate={{ y: 0, opacity: 1 }}
-				exit={{ y: -45, opacity: 0 }}
-				whileHover={{
-					opacity: 0.7,
-				}}
-				className="
-	cursor-pointer"
-			>
-				<Link href="/projects">Проекты</Link>
-			</motion.div>
-
-			<motion.div
-				whileTap={{ scale: 0.97 }}
-				initial={{ y: -25, opacity: 0 }}
-				animate={{ y: 0, opacity: 1 }}
-				exit={{ y: -25, opacity: 0 }}
-				whileHover={{
-					opacity: 0.7,
-				}}
-				className="cursor-pointer"
-			>
-				<Link href="#contacts">Контакты</Link>
-			</motion.div>
-			<motion.div
-				whileTap={{ scale: 0.97 }}
-				initial={{ y: -35, opacity: 0 }}
-				animate={{ y: 0, opacity: 1 }}
-				exit={{ y: -35, opacity: 0 }}
-				whileHover={{
-					opacity: 0.7,
-				}}
-				className="
-	cursor-pointer"
-			>
-				<Link href="/about">О нас</Link>
-			</motion.div>
-		</div>
-	</motion.nav>
-);
 
 export default Menu;

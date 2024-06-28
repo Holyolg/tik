@@ -3,11 +3,19 @@ import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize"
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import toBase64 from "../../services/toBase64/toBase64";
 import { Accordion } from "../../ui/Accordion/Accordion";
 import shimmer from "../../ui/Shimer/Shimer";
 import Card from "../Card/Card";
+import ImgContentXS from "../ImgContentXS/ImgContentXS";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/zoom";
+import ImgContentXL from "../ImgContentXL/ImgContentXL";
 
 interface ICardDetails {
 	data: {
@@ -24,17 +32,17 @@ interface ICardDetails {
 		status: string;
 		description: string;
 		text: string;
-		img2: string;
-		img3: string;
+		imgcontent: [];
 	};
 }
 
 const CardDetails = ({ data }: ICardDetails) => {
-	const { width, height } = useWindowSize();
+	const { width } = useWindowSize();
 	const [isLoading, setIsLoading] = useState(true);
 	const [cards, setCards] = useState([]);
+	const pathname = usePathname();
 
-	const skeletons = [...new Array(3)].map((_, index) => (
+	const skeletons = [...new Array(2)].map((_, index) => (
 		<Skeleton
 			sx={{ borderRadius: "0.5rem" }}
 			variant="rounded"
@@ -51,11 +59,13 @@ const CardDetails = ({ data }: ICardDetails) => {
 		});
 	}, []);
 
+	const filteredCards = cards.filter((card: any) => card.id !== data.id);
+
 	return (
 		<>
 			<div className="h-[100vh] relative">
 				<div className="absolute z-10 w-full top-1/2">
-					<h2 className="container mx-auto text-6xl font-semibold text-white">
+					<h2 className="container mx-auto text-4xl md:text-6xl font-semibold text-white">
 						{data.title}
 					</h2>
 				</div>
@@ -71,33 +81,14 @@ const CardDetails = ({ data }: ICardDetails) => {
 					priority={true}
 				/>
 			</div>
-			<main className="container mx-auto mt-32">
-				<div className="relative flex flex-col md:flex-row justify-between gap-8">
+			<main className="container mx-auto mt-12 md:mt-32">
+				<div className="relative flex pb-8 md:pb-0 flex-col-reverse md:flex-row justify-between gap-8 border-b md:border-none border-gray-300">
 					<section className="w-full md:basis-3/5 lg:basis-2/3">
-						<div className="relative w-full h-[800px]">
-							<Image
-								className=""
-								src={data.img2}
-								alt="Изображение проекта"
-								style={{ objectFit: "cover", borderRadius: "0.5rem" }}
-								fill
-								placeholder={`data:image/svg+xml;base64,${toBase64(
-									shimmer(1536, 900)
-								)}`}
-							/>
-						</div>
-						<div className="relative w-full h-[800px] mt-8">
-							<Image
-								className=""
-								src={data.img3}
-								alt="Изображение проекта"
-								style={{ objectFit: "cover", borderRadius: "0.5rem" }}
-								fill
-								placeholder={`data:image/svg+xml;base64,${toBase64(
-									shimmer(1536, 900)
-								)}`}
-							/>
-						</div>
+						{width > 786 ? (
+							<ImgContentXL imgContent={data.imgcontent} id={data.id} />
+						) : (
+							<ImgContentXS imgContent={data.imgcontent} id={data.id} />
+						)}
 					</section>
 					<section className="sm:basis-0 md:basis-2/5 lg:basis-1/3">
 						<div className="sticky top-1/3">
@@ -124,15 +115,12 @@ const CardDetails = ({ data }: ICardDetails) => {
 									<span className="font-semibold">Статус</span>
 									<p>{data.status}</p>
 								</li>
-							</ul>
-							<div className="">
 								<Accordion description={data.description} />
-							</div>
+							</ul>
 						</div>
 					</section>
 				</div>
-				<section className="mt-12 lg:mt-32 justify-between lg:flex">
-					<div className="flex items-center sm:space-y-0 space-x-0 sm:space-x-5 mb-6 lg:mb-0"></div>
+				<section className="mt-10 lg:mt-32 justify-between lg:flex">
 					<Link
 						href={"/projects"}
 						className="hover:opacity-75 flex items-center justify-center space-x-2 cursor-pointer"
@@ -146,10 +134,10 @@ const CardDetails = ({ data }: ICardDetails) => {
 					</Link>
 				</section>
 				<section className="flex justify-center">
-					<div className="grid grid-cols-1 w-full md:grid-cols-2 xl:grid-cols-3  gap-10 mt-10">
+					<div className="grid grid-cols-1 w-full md:grid-cols-2 gap-10 mt-10">
 						{isLoading
 							? skeletons
-							: cards.map((card: any) => {
+							: filteredCards.map((card: any) => {
 									return (
 										<Card
 											key={card.id}

@@ -1,8 +1,8 @@
 import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import toBase64 from "../../services/toBase64/toBase64";
 import shimmer from "../../ui/Shimer/Shimer";
 
@@ -18,6 +18,28 @@ interface IJSONCards {
 const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 	const [isHover, setIsHover] = useState(false);
 	const { width } = useWindowSize();
+	const ref = useRef(null);
+	const isInView = useInView(ref, {
+		margin: "0px 50% -50% 0px",
+	});
+
+	const variants = {
+		open: { opacity: 1 },
+		hidden: { opacity: 0 },
+	};
+	const blur = (
+		<motion.div
+			key={id}
+			className="flex-col w-full h-full content-center backdrop-blur-sm rounded-lg backdrop-brightness-90"
+			variants={variants}
+			initial="hidden"
+			animate="open"
+			exit="hidden"
+		>
+			<p className="font-semibold">{title}</p>
+			<p className="mt-5 text-sm">{subtitle}</p>
+		</motion.div>
+	);
 
 	return (
 		<div
@@ -31,6 +53,7 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 			>
 				<Image
 					src={img}
+					ref={ref}
 					alt={title}
 					style={{ objectFit: "cover", borderRadius: "0.5rem" }}
 					fill
@@ -39,25 +62,11 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 						shimmer(width > 1920 ? 610 : 450, 350)
 					)}`}
 				/>
-				{isHover && (
-					<motion.div
-						className="flex-col w-full h-full content-center backdrop-blur-sm rounded-lg backdrop-brightness-90"
-						variants={variants}
-						initial="hidden"
-						animate="open"
-						exit="hidden"
-					>
-						<p className="font-semibold">{title}</p>
-						<p className="mt-5 text-sm">{subtitle}</p>
-					</motion.div>
-				)}
+				{isHover && width > 768 && blur}
+				{width < 768 && isInView ? blur : ""}
 			</Link>
 		</div>
 	);
 };
 
-const variants = {
-	open: { opacity: 1 },
-	hidden: { opacity: 0 },
-};
 export default Card;
