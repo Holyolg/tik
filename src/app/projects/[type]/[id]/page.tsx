@@ -43,14 +43,14 @@ export default function CardDetailsPage({
 		});
 	}, []);
 
-	if (!card) {
-		return <h2>Ошибка на стороне сервера</h2>;
-	}
+	// if (!card) {
+	// 	return <h2>Ошибка на стороне сервера</h2>;
+	// }
 
 	return (
-		<div>
+		<>
 			{/* <Breadcrumbs category={card.category} pageTitle={card.title} /> */}
-			<CardDetails data={card} />
-		</div>
+			{card && <CardDetails data={card} />}
+		</>
 	);
 }
