@@ -46,7 +46,7 @@ export default function About() {
 				</div>
 				<div className="basis-2/3 relative">
 					<Image
-						src="/about2.jpg"
+						src="/about.jpg"
 						alt="about"
 						style={{ objectFit: "cover", borderRadius: "0.5rem" }}
 						fill
