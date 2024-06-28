@@ -8,6 +8,7 @@ const ImgContentXL = ({ imgContent, id }: { imgContent: any; id: string }) => {
 			{imgContent.map((img: string) => (
 				<div className="relative w-full h-[800px] mb-8">
 					<Image
+						key={id}
 						id={img}
 						className=""
 						src={img}
