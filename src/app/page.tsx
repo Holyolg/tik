@@ -12,6 +12,10 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function Home() {
 	const animateRef = useRef<HTMLElement | any>();
+	const scrollRef = useRef<HTMLElement | any>();
+
+	const executeScroll = () =>
+		scrollRef.current.scrollIntoView({ behavior: "smooth" });
 
 	useGSAP(
 		() => {
@@ -49,12 +53,12 @@ export default function Home() {
 						</div>
 						<Video src={"/hero.mp4"} />
 						<div className="absolute bottom-5 left-1/2">
-							<NawArrow />
+							<NawArrow scroll={executeScroll} />
 						</div>
 					</div>
 				</div>
 			</main>
-			<section className="mx-auto container mt-12 md:mt-32">
+			<section className="mx-auto container mt-12 md:mt-32" ref={scrollRef}>
 				<div className="flex justify-between items-center">
 					<h2 className="text-4xl lg:text-6xl font-semibold">Проекты</h2>
 				</div>
