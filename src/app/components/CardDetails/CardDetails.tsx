@@ -105,7 +105,7 @@ const CardDetails = ({ data }: ICardDetails) => {
 								<li>
 									<span className="font-semibold">Площадь</span>
 									<p>
-										{data.square} M<sup>2</sup>
+										{data.square} м<sup>2</sup>
 									</p>
 								</li>
 								<li>

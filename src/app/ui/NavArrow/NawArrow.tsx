@@ -1,8 +1,7 @@
-import { MouseEventHandler } from "react";
-
-export const NawArrow = ({ scroll }: { scroll: MouseEventHandler }) => {
+export const NawArrow = ({ scroll }: { scroll: HTMLElement | any }) => {
+	const scrolling = () => scroll.current.scrollIntoView({ behavior: "smooth" });
 	return (
-		<div onClick={scroll} className="animate-bounce cursor-pointer">
+		<div onClick={scrolling} className="animate-bounce cursor-pointer">
 			<svg
 				className="w-10 h-10 text-white rotate-90"
 				fill="white"

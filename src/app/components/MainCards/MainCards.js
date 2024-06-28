@@ -11,6 +11,7 @@ const MainCards = () => {
 	const [category, setCategory] = useState("genproject");
 	const [isLoading, setIsLoading] = useState(true);
 	const { width, height } = useWindowSize();
+
 	const skeletons = [...new Array(9)].map((_, index) => (
 		<Skeleton
 			sx={{ borderRadius: "0.5rem" }}
@@ -30,6 +31,7 @@ const MainCards = () => {
 
 	return (
 		<>
+			<h2 className="text-4xl lg:text-6xl font-semibold">Проекты</h2>
 			<div className="mt-12 justify-between lg:flex">
 				<div className="flex items-center sm:space-y-0 space-x-0 sm:space-x-5 mb-6 lg:mb-0">
 					<button
