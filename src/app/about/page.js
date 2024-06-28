@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { Contacts } from "../components/PageComponents/Contacts/Contacts";
 import toBase64 from "../services/toBase64/toBase64";
 import shimmer from "../ui/Shimer/Shimer";
@@ -10,8 +9,10 @@ export default function About() {
 		<div className="container mx-auto mt-32 min-h-[100vh]">
 			<div className="flex justify-between items-center">
 				<h2 className="text-4xl lg:text-6xl font-semibold">О компании</h2>
-				<Link
-					href={"/"}
+				<a
+					target="_blank"
+					href={"/TikPRO.pdf"}
+					rel="noopener noreferrer"
 					className="hover:opacity-75 flex space-x-2 cursor-pointer"
 				>
 					<span>Скачать презентацию о компании</span>
@@ -27,7 +28,7 @@ export default function About() {
 							)}`}
 						/>
 					</div>
-				</Link>
+				</a>
 			</div>
 			<div className="w-full h-full rounded-lg flex justify-between mt-12">
 				<div className="flex flex-col justify-between basis-2/5">
