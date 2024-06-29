@@ -1,3 +1,5 @@
+import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
+
 interface ICategories {
 	category: number;
 	onClickCategory: Function;
@@ -11,6 +13,8 @@ function Categories({ category, onClickCategory }: ICategories) {
 		"Интерьеры",
 		"Благоустройство",
 	];
+
+	const { width } = useWindowSize();
 
 	return (
 		<nav className="flex space-x-10 items-center overflow-x-auto">
@@ -28,11 +32,5 @@ function Categories({ category, onClickCategory }: ICategories) {
 		</nav>
 	);
 }
-
-const open = {
-	type: "spring",
-	stiffness: 700,
-	damping: 30,
-};
 
 export default Categories;

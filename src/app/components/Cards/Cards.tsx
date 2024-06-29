@@ -86,8 +86,8 @@ export const Cards = () => {
 
 	return (
 		<>
-			<div className="mt-12 justify-between lg:flex">
-				<div className="flex items-center sm:space-y-0 space-x-0 sm:space-x-5 mb-6 lg:mb-0">
+			<div className="mt-12 justify-between xl:flex">
+				<div className="flex items-center sm:space-y-0 space-x-0 sm:space-x-5 mb-6 xl:mb-0">
 					<button
 						onClick={() => {
 							{
