@@ -6,7 +6,6 @@
 	--foreground-rgb: 0, 0, 0;
 	--background-start-rgb: 214, 219, 220;
 	--background-end-rgb: 255, 255, 255;
-	-webkit-backdrop-filter: blur(4px);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -27,6 +26,7 @@ body {
     rgb(var(--background-start-rgb)); 
 }*/
 .blur__fix {
+	-webkit-backdrop-filter: blur(4px);
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	-webkit-transform: translate3d(0, 0, 0);
