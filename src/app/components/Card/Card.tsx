@@ -30,7 +30,7 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 	const blur = (
 		<div
 			key={id}
-			className="blur__animate blur__fix w-full h-full flex flex-col  justify-center backdrop-blur-sm rounded-lg backdrop-brightness-90 "
+			className="absolute z-10 blur__animate blur__fix w-full h-full flex flex-col  justify-center backdrop-blur-sm rounded-lg backdrop-brightness-90 "
 		>
 			<p className="font-semibold">{title}</p>
 			<p className="mt-5 text-sm">{subtitle}</p>
