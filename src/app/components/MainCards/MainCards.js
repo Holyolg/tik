@@ -73,7 +73,7 @@ const MainCards = () => {
 				</div>
 			</div>
 			<section className="mx-auto">
-				<div className="grid grid-cols-1 w-full md:grid-cols-2 xl:grid-cols-3  gap-10 mt-6">
+				<div className="grid grid-cols-1 w-full md:grid-cols-2 xl:grid-cols-3  gap-10 mt-6 lg:mt-12">
 					{isLoading
 						? skeletons
 						: cards.map(card => {
