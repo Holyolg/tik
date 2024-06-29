@@ -35,7 +35,7 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 			initial="hidden"
 			animate="open"
 			exit="hidden"
-			transition={{ duration: "0.9" }}
+			transition={{ duration: "900ms" }}
 		>
 			<p className="font-semibold">{title}</p>
 			<p className="mt-5 text-sm">{subtitle}</p>
