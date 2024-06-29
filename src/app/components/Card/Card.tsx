@@ -23,13 +23,19 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 		margin: "0px 50% -50% 0px",
 	});
 
+	const variants = {
+		open: { opacity: 1 },
+		hidden: { opacity: 0 },
+	};
 	const blur = (
 		<motion.div
 			key={id}
-			className="blur__fix w-full h-full flex flex-col justify-center backdrop-blur-sm rounded-lg backdrop-brightness-90 text-shadow-lg"
+			className="blur__fix w-full h-full flex flex-col justify-center backdrop-blur-sm rounded-lg backdrop-brightness-90"
+			variants={variants}
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
+			transition={{ duration: 0.5 }}
 		>
 			<p className="font-semibold">{title}</p>
 			<p className="mt-5 text-sm">{subtitle}</p>
