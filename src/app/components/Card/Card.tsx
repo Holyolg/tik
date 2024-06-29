@@ -1,6 +1,6 @@
 import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
 import toBase64 from "@/app/services/toBase64/toBase64";
-import { AnimatePresence, useInView } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
@@ -23,22 +23,17 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 		margin: "0px 50% -50% 0px",
 	});
 
-	const variants = {
-		hover: { animation: "to-show" },
-		hidden: { animation: "to-hide" },
-	};
 	const blur = (
-		<div
+		<motion.div
 			key={id}
-			className="blur__animate blur__fix w-full h-full flex flex-col  justify-center backdrop-blur-sm rounded-lg backdrop-brightness-90"
-			// variants={variants}
-			// initial="hidden"
-			// animate="open"
-			// exit="hidden"
+			className="blur__fix w-full h-full flex flex-col justify-center backdrop-blur-sm rounded-lg backdrop-brightness-90 text-shadow-lg"
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
 		>
 			<p className="font-semibold">{title}</p>
 			<p className="mt-5 text-sm">{subtitle}</p>
-		</div>
+		</motion.div>
 	);
 
 	return (
