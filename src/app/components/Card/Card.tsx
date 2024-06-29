@@ -30,7 +30,7 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 	const blur = (
 		<motion.div
 			key={id}
-			className="w-full h-full backdrop-blur-sm rounded-lg backdrop-brightness-90"
+			className="blur__fix w-full h-full backdrop-blur-sm rounded-lg backdrop-brightness-90"
 			variants={variants}
 			initial="hidden"
 			animate="open"
