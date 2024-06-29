@@ -24,13 +24,17 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 	});
 
 	const variants = {
-		open: { opacity: 1 },
-		hidden: { opacity: 0 },
+		hover: { animation: "to-show" },
+		hidden: { animation: "to-hide" },
 	};
 	const blur = (
 		<div
 			key={id}
-			className="absolute z-10 blur__animate blur__fix w-full h-full flex flex-col  justify-center backdrop-blur-sm rounded-lg backdrop-brightness-90 "
+			className="blur__animate blur__fix w-full h-full flex flex-col  justify-center backdrop-blur-sm rounded-lg backdrop-brightness-90"
+			// variants={variants}
+			// initial="hidden"
+			// animate="open"
+			// exit="hidden"
 		>
 			<p className="font-semibold">{title}</p>
 			<p className="mt-5 text-sm">{subtitle}</p>
