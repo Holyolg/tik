@@ -30,12 +30,12 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 	const blur = (
 		<motion.div
 			key={id}
-			className="blur__fix w-full h-full flex flex-col justify-center backdrop-blur-sm rounded-lg backdrop-brightness-90"
+			className="blur__fix w-full h-full flex flex-col justify-center backdrop-blur-sm rounded-lg backdrop-brightness-90 "
 			variants={variants}
 			initial="hidden"
 			animate="open"
 			exit="hidden"
-			transition={{ duration: "900ms" }}
+			transition={{ duration: 1 }}
 		>
 			<p className="font-semibold">{title}</p>
 			<p className="mt-5 text-sm">{subtitle}</p>
