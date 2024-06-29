@@ -62,9 +62,8 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 						shimmer(width > 1920 ? 610 : 450, 350)
 					)}`}
 				/>
-				{/* {isHover && width > 768 && blur}
-				{width < 768 && isInView ? blur : ""} */}
-				{blur}
+				{isHover && width > 768 && blur}
+				{width < 768 && isInView ? blur : ""}
 			</Link>
 		</div>
 	);
