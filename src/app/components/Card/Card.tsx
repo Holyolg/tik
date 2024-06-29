@@ -30,7 +30,7 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 	const blur = (
 		<motion.div
 			key={id}
-			className="flex-col w-full h-full content-center backdrop-blur-sm rounded-lg backdrop-brightness-90"
+			className="w-full h-full backdrop-blur-sm rounded-lg backdrop-brightness-90"
 			variants={variants}
 			initial="hidden"
 			animate="open"
@@ -49,7 +49,7 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 		>
 			<Link
 				href={link + id}
-				className="card-wrapper flex items-center text-center text-white min-w-full h-[300px] 2xl:h-[360px] relative rounded-lg"
+				className="flex items-center text-center text-white min-w-full h-[300px] 2xl:h-[360px] relative rounded-lg"
 			>
 				<Image
 					src={img}
@@ -62,8 +62,9 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 						shimmer(width > 1920 ? 610 : 450, 350)
 					)}`}
 				/>
-				{isHover && width > 768 && blur}
-				{width < 768 && isInView ? blur : ""}
+				{/* {isHover && width > 768 && blur}
+				{width < 768 && isInView ? blur : ""} */}
+				{blur}
 			</Link>
 		</div>
 	);
