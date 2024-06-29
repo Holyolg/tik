@@ -3,7 +3,7 @@ import toBase64 from "@/app/services/toBase64/toBase64";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import shimmer from "../../ui/Shimer/Shimer";
 
 interface IJSONCards {
@@ -16,26 +16,35 @@ interface IJSONCards {
 }
 
 const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
-	const [isHover, setIsHover] = useState(false);
 	const { width } = useWindowSize();
 	const ref = useRef(null);
 	const isInView = useInView(ref, {
 		margin: "0px 50% -50% 0px",
 	});
 
-	const variants = {
-		open: { opacity: 1 },
-		hidden: { opacity: 0 },
-	};
-	const blur = (
+	const blurXL = (
 		<motion.div
 			key={id}
 			className="blur__fix w-full h-full flex flex-col justify-center backdrop-blur-sm rounded-lg backdrop-brightness-90"
-			variants={variants}
 			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
+			whileHover={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
-			transition={{ duration: 0.5 }}
+			transition={{ duration: 0.35 }}
+		>
+			<p className="font-semibold">{title}</p>
+			<p className="mt-5 text-sm">{subtitle}</p>
+		</motion.div>
+	);
+
+	const blurXS = (
+		<motion.div
+			key={id}
+			className="blur__fix w-full h-full flex flex-col justify-center backdrop-blur-sm rounded-lg backdrop-brightness-90"
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			transition={{ duration: 0.35 }}
+			viewport={{ margin: "0px 50% -50% 0px" }}
 		>
 			<p className="font-semibold">{title}</p>
 			<p className="mt-5 text-sm">{subtitle}</p>
@@ -43,11 +52,7 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 	);
 
 	return (
-		<div
-			id={id}
-			onMouseEnter={() => setIsHover(true)}
-			onMouseLeave={() => setIsHover(false)}
-		>
+		<div id={id}>
 			<Link
 				href={link + id}
 				className="flex items-center text-center text-white min-w-full h-[300px] 2xl:h-[360px] relative rounded-lg"
@@ -64,8 +69,8 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 					)}`}
 				/>
 				<AnimatePresence>
-					{isHover && width > 768 && blur}
-					{width < 768 && isInView ? blur : ""}
+					{width >= 768 && blurXL}
+					{width < 768 && isInView ? blurXS : ""}
 				</AnimatePresence>
 			</Link>
 		</div>
