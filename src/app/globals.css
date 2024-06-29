@@ -27,6 +27,7 @@ body {
 }*/
 .blur__fix {
 	-webkit-backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: brightness(0.9);
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	-webkit-transform: translate(0, 0);
