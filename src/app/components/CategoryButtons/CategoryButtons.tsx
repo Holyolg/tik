@@ -1,6 +1,1 @@
-export const CategoryButtons = () => {
-
-    return (
-        
-    )
-};
+export const CategoryButtons = () => {};
