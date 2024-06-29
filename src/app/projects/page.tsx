@@ -1,4 +1,4 @@
-import Cards from "../components/Cards/Cards";
+import ProjectCards from "../components/PageComponents/ProjectCards/ProjectCards";
 
 export default function Projects() {
 	return (
@@ -6,7 +6,7 @@ export default function Projects() {
 			<div className="flex justify-between items-center">
 				<h2 className="text-4xl lg:text-6xl font-semibold">Проекты</h2>
 			</div>
-			<Cards />
+			<ProjectCards />
 		</section>
 	);
 }

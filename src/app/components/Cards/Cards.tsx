@@ -5,7 +5,6 @@ import { Skeleton } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Card from "../Card/Card";
-import Categories from "../Categories/Categories";
 
 interface ICards {
 	category: string;
@@ -37,7 +36,7 @@ export const Cards = () => {
 	const pathName = usePathname();
 	const router = useRouter();
 
-	const { width, height } = useWindowSize();
+	const { width } = useWindowSize();
 	const skeletons = [...new Array(9)].map((_, index) => (
 		<Skeleton
 			sx={{ borderRadius: "0.5rem" }}
@@ -85,66 +84,23 @@ export const Cards = () => {
 			: cards;
 
 	return (
-		<>
-			<div className="mt-12 justify-between xl:flex">
-				<div className="flex items-center sm:space-y-0 space-x-0 sm:space-x-5 mb-6 xl:mb-0">
-					<button
-						onClick={() => {
-							{
-								setCategory("genproject");
-								category == "genproject" ? "" : setIsLoading(true);
-							}
-						}}
-						className={
-							category === "genproject"
-								? "w-full h-14 sm:w-72 sm:h-10 bg-black border-black border sm:rounded-lg rounded-l-lg hover:bg-black text-white active:opacity-85"
-								: "w-full h-14 sm:w-72 sm:h-10 border-black border sm:rounded-lg rounded-l-lg  hover:bg-black hover:text-white active:opacity-85"
-						}
-					>
-						Генеральное проектирование
-					</button>
-					<button
-						onClick={() => {
-							setCategory("concept");
-							category == "concept" ? "" : setIsLoading(true);
-						}}
-						className={
-							category === "concept"
-								? "w-full h-14 sm:w-72 sm:h-10 bg-black border-black border sm:rounded-lg rounded-r-lg hover:bg-black text-white active:opacity-85"
-								: "w-full h-14 sm:w-72 sm:h-10 border-black border sm:rounded-lg rounded-r-lg  hover:bg-black hover:text-white active:opacity-85"
-						}
-					>
-						Концепция
-					</button>
-				</div>
-				<Categories
-					category={categoryId}
-					onClickCategory={(i: number) => {
-						setCategoryId(i);
-					}}
-				/>
-			</div>
-
-			<section className="mt-12">
-				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3   gap-[45px]">
-					{isLoading
-						? skeletons
-						: cardFilter.map(card => {
-								return (
-									<Card
-										key={card.id}
-										id={card.id}
-										title={card.title}
-										link={card.link}
-										img={card.img}
-										subtitle={card.subtitle}
-										category={card.category}
-									/>
-								);
-						  })}
-				</div>
-			</section>
-		</>
+		<div className="grid grid-cols-1 w-full md:grid-cols-2 xl:grid-cols-3  gap-10 mt-6 lg:mt-12">
+			{isLoading
+				? skeletons
+				: cardFilter.map(card => {
+						return (
+							<Card
+								key={card.id}
+								id={card.id}
+								title={card.title}
+								link={card.link}
+								img={card.img}
+								subtitle={card.subtitle}
+								category={card.category}
+							/>
+						);
+				  })}
+		</div>
 	);
 };
 
