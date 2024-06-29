@@ -1,6 +1,6 @@
 import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
 import toBase64 from "@/app/services/toBase64/toBase64";
-import { motion, useInView } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
@@ -63,8 +63,10 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 						shimmer(width > 1920 ? 610 : 450, 350)
 					)}`}
 				/>
-				{isHover && width > 768 && blur}
-				{width < 768 && isInView ? blur : ""}
+				<AnimatePresence>
+					{isHover && width > 768 && blur}
+					{width < 768 && isInView ? blur : ""}
+				</AnimatePresence>
 			</Link>
 		</div>
 	);
