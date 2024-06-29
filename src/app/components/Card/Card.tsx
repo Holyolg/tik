@@ -59,9 +59,8 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 					)}`}
 				/>
 				<AnimatePresence>
-					{/* {isHover && width > 768 && blur}
-					{width < 768 && isInView ? blur : ""} */}
-					{blur}
+					{isHover && width > 768 && blur}
+					{width < 768 && isInView ? blur : ""}
 				</AnimatePresence>
 			</Link>
 		</div>

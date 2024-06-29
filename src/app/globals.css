@@ -31,12 +31,10 @@ body {
 	-moz-backface-visibility: hidden;
 	-webkit-transform: translate(0, 0);
 	-moz-transform: translate3d(0, 0, 0);
-	-webkit-animation-duration: 3s;
 }
 .blur__animate {
 	animation: to-show;
-	animation-duration: 0.9s;
-	animation-iteration-count: infinite;
+	animation-duration: 0.35s;
 }
 
 @keyframes to-show {
