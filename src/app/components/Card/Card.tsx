@@ -1,6 +1,6 @@
 import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
 import toBase64 from "@/app/services/toBase64/toBase64";
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import { AnimatePresence, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
@@ -28,18 +28,13 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 		hidden: { opacity: 0 },
 	};
 	const blur = (
-		<motion.div
+		<div
 			key={id}
-			className="blur__fix w-full h-full flex flex-col justify-center backdrop-blur-sm rounded-lg backdrop-brightness-90 "
-			variants={variants}
-			initial="hidden"
-			animate="open"
-			exit="hidden"
-			transition={{ duration: 1 }}
+			className="blur__animate blur__fix w-full h-full flex flex-col  justify-center backdrop-blur-sm rounded-lg backdrop-brightness-90 "
 		>
 			<p className="font-semibold">{title}</p>
 			<p className="mt-5 text-sm">{subtitle}</p>
-		</motion.div>
+		</div>
 	);
 
 	return (
@@ -64,8 +59,9 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 					)}`}
 				/>
 				<AnimatePresence>
-					{isHover && width > 768 && blur}
-					{width < 768 && isInView ? blur : ""}
+					{/* {isHover && width > 768 && blur}
+					{width < 768 && isInView ? blur : ""} */}
+					{blur}
 				</AnimatePresence>
 			</Link>
 		</div>

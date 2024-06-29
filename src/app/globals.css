@@ -33,3 +33,17 @@ body {
 	-moz-transform: translate3d(0, 0, 0);
 	-webkit-animation-duration: 3s;
 }
+.blur__animate {
+	animation: to-show;
+	animation-duration: 0.9s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes to-show {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
