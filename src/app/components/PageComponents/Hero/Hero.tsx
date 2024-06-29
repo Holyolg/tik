@@ -14,7 +14,7 @@ export const Hero = ({ scroll }: { scroll: HTMLElement | any }) => {
 					</div>
 				</div>
 				<Video src={"/hero.mp4"} />
-				<div className="absolute bottom-5 left-1/2">
+				<div className="absolute bottom-5 w-full">
 					<NawArrow scroll={scroll} />
 				</div>
 			</div>
