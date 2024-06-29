@@ -2,13 +2,11 @@
 import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const Menu = () => {
 	const [opened, setOpened] = useState(false);
 	const { width } = useWindowSize();
-	const router = useRouter();
 
 	const menuXL = (
 		<motion.nav className="absolute right-24">
@@ -121,7 +119,7 @@ const Menu = () => {
 	return (
 		<header className="menu fixed z-10 w-full top-5">
 			<div className="container mx-auto">
-				<div className="px-8 relative bg-white rounded-xl h-14 shadow-lg">
+				<div className="px-6 relative bg-white rounded-xl h-14 shadow-lg">
 					<div className="menu-logo w-full h-14 flex justify-between">
 						<Link className="flex items-center content-center" href="/">
 							<motion.img

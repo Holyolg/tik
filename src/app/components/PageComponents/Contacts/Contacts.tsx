@@ -6,7 +6,7 @@ export const Contacts = () => {
 			<h2 className="text-4xl lg:text-6xl font-semibold">
 				Контактная информация
 			</h2>
-			<div className="mt-12 flex flex-col space-y-10 md:space-y-0 md:flex-row justify-between">
+			<div className="mt-12 flex flex-col space-y-10 xl:space-y-0 xl:flex-row justify-between">
 				<div className="flex space-x-16">
 					<Link
 						href={"https://yandex.ru/maps/-/CDCy5V9-"}
@@ -21,7 +21,7 @@ export const Contacts = () => {
 						Тамбов <br /> Кронштадтская улица, 4Ак1
 					</Link>
 				</div>
-				<div className="flex flex-col md:flex-row space-x-0 space-y-5 lg:space-x-5 xl:space-x-16 md:space-y-0 md:items-center">
+				<div className="flex flex-row space-x-0 space-x-5 xl:space-x-16 md:items-center">
 					<Link
 						href="tel:+8 800 555 35 35"
 						className="cursor-pointer hover:opacity-75"
