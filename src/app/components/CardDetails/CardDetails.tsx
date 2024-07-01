@@ -3,7 +3,6 @@ import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize"
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Accordion } from "../../ui/Accordion/Accordion";
 import shimmer from "../../ui/Shimer/Shimer";
@@ -63,11 +62,11 @@ const CardDetails = ({ data }: ICardDetails) => {
 
 	return (
 		<>
-			<div className="h-[100vh] relative">
+			<div className="min-h-[100vh] relative">
 				<div className="absolute z-10 w-full top-1/2">
-					<h2 className="container mx-auto text-4xl md:text-6xl font-semibold text-white">
+					<h1 className="container mx-auto text-4xl md:text-6xl font-semibold text-white">
 						{data.title}
-					</h2>
+					</h1>
 				</div>
 				<Image
 					src={data.img}
@@ -123,7 +122,7 @@ const CardDetails = ({ data }: ICardDetails) => {
 				<section className="mt-10 lg:mt-32 justify-between lg:flex">
 					<Link
 						href={"/projects"}
-						className="hover:opacity-75 flex items-center justify-center space-x-2 cursor-pointer"
+						className="hover:opacity-70 flex items-center justify-center space-x-2 cursor-pointer"
 					>
 						<span>Больше проектов</span>
 						<div className="w-5">

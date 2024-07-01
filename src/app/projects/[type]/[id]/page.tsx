@@ -48,9 +48,9 @@ export default function CardDetailsPage({
 	// }
 
 	return (
-		<>
+		<main className="min-h-[100vh]">
 			{/* <Breadcrumbs category={card.category} pageTitle={card.title} /> */}
 			{card && <CardDetails data={card} />}
-		</>
+		</main>
 	);
 }

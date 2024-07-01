@@ -9,17 +9,17 @@ export default function Home() {
 	const scrollRef = useRef<HTMLElement | any>();
 
 	return (
-		<>
+		<main>
 			<Hero scroll={scrollRef} />
-			<section className="mx-auto container mt-6 md:mt-20" ref={scrollRef}>
+			<section className="mx-auto container mt-10 md:mt-32" ref={scrollRef}>
 				<MainCards />
 			</section>
-			<section className="container mx-auto mt-12 md:mt-32">
+			<section className="container mx-auto mt-10 md:mt-32">
 				<AnimateAbout />
 			</section>
-			<section className="mx-auto container mt-12 md:mt-32" id="contacts">
+			<section className="mx-auto container mt-10 md:mt-32" id="contacts">
 				<Contacts />
 			</section>
-		</>
+		</main>
 	);
 }

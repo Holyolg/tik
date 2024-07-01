@@ -19,7 +19,7 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 	const { width } = useWindowSize();
 	const ref = useRef(null);
 	const isInView = useInView(ref, {
-		margin: "0px 50% -50% 0px",
+		margin: "0% 70% -20% 0%",
 	});
 
 	const blurXL = (

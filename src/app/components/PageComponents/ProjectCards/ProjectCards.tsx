@@ -93,11 +93,11 @@ export const ProjectCards = () => {
 						}}
 						className={
 							category === "genproject"
-								? "w-full h-14 sm:w-72 sm:h-10 bg-black border-black border sm:rounded-lg rounded-l-lg hover:bg-black text-white active:opacity-85"
-								: "w-full h-14 sm:w-72 sm:h-10 border-black border sm:rounded-lg rounded-l-lg  hover:bg-black hover:text-white active:opacity-85"
+								? " w-full lg:w-72 h-10 bg-black border-black border lg:rounded-lg rounded-l-lg hover:bg-black text-white active:opacity-85"
+								: " w-full lg:w-72 h-10 border-black border lg:rounded-lg rounded-l-lg  hover:bg-black hover:text-white active:opacity-85"
 						}
 					>
-						Генеральное проектирование
+						<span>Генпроектирование</span>
 					</button>
 					<button
 						onClick={() => {
@@ -106,8 +106,8 @@ export const ProjectCards = () => {
 						}}
 						className={
 							category === "concept"
-								? "w-full h-14 sm:w-72 sm:h-10 bg-black border-black border sm:rounded-lg rounded-r-lg hover:bg-black text-white active:opacity-85"
-								: "w-full h-14 sm:w-72 sm:h-10 border-black border sm:rounded-lg rounded-r-lg  hover:bg-black hover:text-white active:opacity-85"
+								? " w-full lg:w-72 h-10 bg-black border-black border lg:rounded-lg rounded-r-lg hover:bg-black text-white active:opacity-85"
+								: " w-full lg:w-72 h-10 border-black border lg:rounded-lg rounded-r-lg  hover:bg-black hover:text-white active:opacity-85"
 						}
 					>
 						Концепция
@@ -121,7 +121,7 @@ export const ProjectCards = () => {
 				/>
 			</div>
 
-			<div className="grid grid-cols-1 w-full md:grid-cols-2 xl:grid-cols-3  gap-10 mt-6 lg:mt-12">
+			<div className="grid grid-cols-1 w-full md:grid-cols-2 xl:grid-cols-3  gap-10 mt-6 lg:mt-10">
 				{isLoading
 					? skeletons
 					: cardFilter.map(card => {

@@ -6,43 +6,43 @@ export const Contacts = () => {
 			<h2 className="text-4xl lg:text-6xl font-semibold">
 				Контактная информация
 			</h2>
-			<div className="mt-12 flex flex-col space-y-10 xl:space-y-0 xl:flex-row justify-between">
+			<div className="mt-10 flex flex-col space-y-10 xl:space-y-0 xl:flex-row justify-between">
 				<div className="flex space-x-16">
 					<Link
 						href={"https://yandex.ru/maps/-/CDCy5V9-"}
-						className="cursor-pointer hover:opacity-75"
+						className="cursor-pointer hover:opacity-70"
 					>
 						Москва <br /> 1-я Тверская-Ямская ул., 25, стр. 1
 					</Link>
 					<Link
 						href={"https://yandex.ru/maps/-/CDCy5F6b"}
-						className="cursor-pointer hover:opacity-75"
+						className="cursor-pointer hover:opacity-70"
 					>
 						Тамбов <br /> Кронштадтская улица, 4Ак1
 					</Link>
 				</div>
-				<div className="flex flex-row space-x-0 space-x-5 xl:space-x-16 md:items-center">
+				<div className="flex flex-row space-x-5 xl:space-x-16 md:items-center">
 					<Link
 						href="tel:+8 800 555 35 35"
-						className="cursor-pointer hover:opacity-75"
+						className="cursor-pointer hover:opacity-70"
 					>
 						Номер <br /> + 8 800 555 35 35
 					</Link>
 					<Link
 						href="mailto:@info.tikpro"
-						className="cursor-pointer hover:opacity-75"
+						className="cursor-pointer hover:opacity-70"
 					>
 						Почта <br /> @info.tikpro
 					</Link>
 					<Link
 						href="mailto:@info.tikpro"
-						className="w-6 cursor-pointer hover:opacity-75"
+						className="w-6 cursor-pointer hover:opacity-70"
 					>
 						<img src="/telegram.png" />
 					</Link>
 					<Link
 						href="mailto:@info.tikpro"
-						className="w-6 cursor-pointer hover:opacity-75"
+						className="w-6 cursor-pointer hover:opacity-70"
 					>
 						<img src="/whatsapp.png" />
 					</Link>

@@ -28,7 +28,7 @@ export const MainSwiper = ({ img2, img3 }: { img2: string; img3: string }) => {
 			<SwiperSlide>
 				<Image
 					className="mt-5"
-					src={img2}
+					src={img3}
 					alt="Изображение проекта"
 					style={{ objectFit: "cover" }}
 					fill

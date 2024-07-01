@@ -2,9 +2,14 @@ import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize"
 import toBase64 from "@/app/services/toBase64/toBase64";
 import Image from "next/image";
 import { CSSProperties } from "react";
-import { Navigation } from "swiper/modules";
+import { Pagination, Zoom } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import shimmer from "../../ui/Shimer/Shimer";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/zoom";
+
 const ImgContentXS = ({ imgContent, id }: { imgContent: any; id: string }) => {
 	const { width } = useWindowSize();
 	return (
@@ -13,22 +18,21 @@ const ImgContentXS = ({ imgContent, id }: { imgContent: any; id: string }) => {
 				<Swiper
 					style={
 						{
-							"--swiper-navigation-color": "#fff",
+							"--swiper-pagination-color": "#fff",
 						} as CSSProperties
 					}
 					className="h-[550px] rounded-lg shadow-lg"
-					modules={[Navigation]}
-					spaceBetween={50}
+					modules={[Pagination, Zoom]}
+					spaceBetween={40}
 					slidesPerView={1}
-					navigation
-					centeredSlides={true}
+					pagination={{ clickable: true }}
+					zoom={true}
 					loop={true}
 				>
 					{imgContent.map((img: string) => {
 						return (
 							<SwiperSlide key={img}>
 								<Image
-									className=""
 									src={img}
 									alt="Изображение проекта"
 									style={{ objectFit: "cover", borderRadius: "0.5rem" }}
