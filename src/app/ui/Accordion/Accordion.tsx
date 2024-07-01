@@ -7,12 +7,12 @@ export const Accordion = ({ description }: { description: string }) => {
 	const item = (
 		<motion.div
 			key="content"
-			initial={{ y: -20, opacity: 0 }}
+			initial={{ y: -15, opacity: 0 }}
 			animate={{ y: 0, opacity: 1 }}
-			exit={{ y: -20, opacity: 0 }}
-			className="py-5"
+			exit={{ y: -15, opacity: 0 }}
+		
 		>
-			<p className="mb-2">{description}</p>
+			<p className="text-sm">{description}</p>
 		</motion.div>
 	);
 
@@ -54,6 +54,7 @@ export const Accordion = ({ description }: { description: string }) => {
 				</motion.button>
 			</h2>
 			<AnimatePresence>{open ? item : ""}</AnimatePresence>
+
 		</>
 	);
 };

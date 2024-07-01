@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export default function Footer() {
 	return (
-		<footer className=" bg-gray-100 w-full mt-24 sm:mt-40">
-			<div className=" mx-auto container py-10 md:flex md:items-center md:justify-between">
-				<div className="text-gray-500 sm:text-center flex items-center space-x-5">
+		<footer className="bg-gray-100 w-full mt-24 sm:mt-40">
+			<div className=" mx-auto container py-10 flex flex-col-reverse md:flex-row md:items-center md:justify-between">
+				<div className="text-gray-500 sm:text-center flex items-center space-x-5 mt-10 md:mt-0">
 					<Link className="flex items-center content-center" href="/">
 						<motion.img
 							className="w-[110px]"

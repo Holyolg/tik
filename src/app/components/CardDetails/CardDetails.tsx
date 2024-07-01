@@ -40,7 +40,6 @@ const CardDetails = ({ data }: ICardDetails) => {
 	const { width } = useWindowSize();
 	const [isLoading, setIsLoading] = useState(true);
 	const [cards, setCards] = useState([]);
-	const pathname = usePathname();
 
 	const skeletons = [...new Array(2)].map((_, index) => (
 		<Skeleton
@@ -82,7 +81,7 @@ const CardDetails = ({ data }: ICardDetails) => {
 					priority={true}
 				/>
 			</div>
-			<main className="container mx-auto mt-12 md:mt-32">
+			<main className="container mx-auto mt-6 md:mt-20">
 				<div className="relative flex pb-8 md:pb-0 flex-col-reverse md:flex-row justify-between gap-8 border-b md:border-none border-gray-300">
 					<section className="w-full md:basis-3/5 lg:basis-2/3">
 						{width > 786 ? (
@@ -92,29 +91,29 @@ const CardDetails = ({ data }: ICardDetails) => {
 						)}
 					</section>
 					<section className="sm:basis-0 md:basis-2/5 lg:basis-1/3">
-						<div className="sticky top-1/3">
-							<ul className="space-y-6">
+						<div className="sticky top-32">
+							<ul className="space-y-4">
 								<li>
 									<span className="font-semibold">Дата проектирования</span>
-									<p>{data.date}</p>
+									<p className="text-sm">{data.date}</p>
 								</li>
 								<li>
 									<span className="font-semibold">Тип проекта</span>
-									<p>{data.type}</p>
+									<p className="text-sm">{data.type}</p>
 								</li>
 								<li>
 									<span className="font-semibold">Площадь</span>
-									<p>
+									<p className="text-sm">
 										{data.square} м<sup>2</sup>
 									</p>
 								</li>
 								<li>
 									<span className="font-semibold">Местоположение</span>
-									<p>{data.location}</p>
+									<p className="text-sm">{data.location}</p>
 								</li>
 								<li>
 									<span className="font-semibold">Статус</span>
-									<p>{data.status}</p>
+									<p className="text-sm">{data.status}</p>
 								</li>
 								<Accordion description={data.description} />
 							</ul>

@@ -117,7 +117,7 @@ const Menu = () => {
 	);
 
 	return (
-		<header className="menu fixed z-10 w-full top-5">
+		<header className="menu fixed z-50 w-full top-5">
 			<div className="container mx-auto">
 				<div className="px-6 relative bg-white rounded-xl h-14 shadow-lg">
 					<div className="menu-logo w-full h-14 flex justify-between">

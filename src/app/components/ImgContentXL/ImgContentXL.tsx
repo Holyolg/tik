@@ -7,7 +7,7 @@ const ImgContentXL = ({ imgContent, id }: { imgContent: any; id: string }) => {
 		<>
 			<div className="space-y-8">
 				{imgContent.map((img: string) => (
-					<div className="relative w-full h-[800px]" key={img}>
+					<div className="relative w-full h-[700px]" key={img}>
 						<Image
 							className=""
 							src={img}

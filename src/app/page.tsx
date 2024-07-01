@@ -11,7 +11,7 @@ export default function Home() {
 	return (
 		<>
 			<Hero scroll={scrollRef} />
-			<section className="mx-auto container mt-12 md:mt-32" ref={scrollRef}>
+			<section className="mx-auto container mt-6 md:mt-20" ref={scrollRef}>
 				<MainCards />
 			</section>
 			<section className="container mx-auto mt-12 md:mt-32">
