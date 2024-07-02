@@ -11,13 +11,13 @@ export default function Home() {
 	return (
 		<main>
 			<Hero scroll={scrollRef} />
-			<section className="mx-auto container mt-10 md:mt-32" ref={scrollRef}>
+			<section className="mx-auto container mt-14 md:mt-32" ref={scrollRef}>
 				<HeroProjects numItems={9} />
 			</section>
-			<section className="container mx-auto mt-10 md:mt-32">
+			<section className="container mx-auto mt-14 md:mt-32">
 				<AnimateAbout />
 			</section>
-			<section className="mx-auto container mt-10 md:mt-32" id="contacts">
+			<section className="mx-auto container mt-14 md:mt-32" id="contacts">
 				<Contacts />
 			</section>
 		</main>
