@@ -5,8 +5,8 @@ import Link from "next/link";
 export default function Footer() {
 	return (
 		<footer className="bg-gray-100 w-full mt-24 sm:mt-40">
-			<div className=" mx-auto container py-10 flex flex-col-reverse md:flex-row md:items-center md:justify-between">
-				<div className="text-gray-500 sm:text-center flex items-center space-x-5 mt-10 md:mt-0">
+			<div className=" mx-auto container py-10 flex flex-col-reverse md:flex-row items-center md:justify-between">
+				<div className="w-full text-gray-500 sm:text-center flex items-center space-x-10 mt-10 md:mt-0">
 					<Link className="flex items-center content-center" href="/">
 						<motion.img
 							className="w-[110px]"
@@ -17,7 +17,7 @@ export default function Footer() {
 					</Link>
 					<span>ТИК ПРОДЖЕКТ 2024</span>
 				</div>
-				<ul className="flex flex-wrap items-center mt-3 space-x-2 sm:space-x-5 text-gray-500 sm:mt-0">
+				<ul className="flex flex-wrap items-center w-full max-w-md justify-between mt-3 space-x-2 sm:space-x-5 text-gray-500 sm:mt-0">
 					<li>
 						<Link
 							href="/"

@@ -64,7 +64,7 @@ const Menu = () => {
 			initial={{ y: -45, opacity: 0 }}
 			animate={{ y: 0, opacity: 1 }}
 			exit={{ y: -45, opacity: 0 }}
-			className="absolute top-20 p-8 left-0 bg-white w-full text-2xl rounded-lg shadow-lg"
+			className="absolute top-20 p-8 left-0 bg-white text-xl w-full rounded-lg shadow-lg"
 		>
 			<div className="flex flex-col items-end space-y-6">
 				<motion.div
