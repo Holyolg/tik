@@ -4,6 +4,8 @@ import Footer from "./components/Footer/Footer";
 import Menu from "./components/Menu/Menu";
 import "./globals.css";
 import Loading from "./loading";
+import Link from "next/link";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +25,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="ru">
+			{/* <Head>
+				<Link rel="icon" href="/favicon.ico" sizes="any" />
+			</Head> */}
 			<body
 				className={`${inter.className} min-h-[100vh] flex flex-col justify-between`}
 			>

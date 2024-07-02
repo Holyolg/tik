@@ -1,14 +1,10 @@
 "use client";
 import getCards from "@/app/services/GetCards/GetCards";
 import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
-import { Skeleton } from "@mui/material";
-import { usePathname, useRouter } from "next/navigation";
+import { Skeleton } from "@mui/material/";
 import { useEffect, useState } from "react";
 import Card from "../Card/Card";
 
-interface ICards {
-	category: string;
-}
 
 interface IJSONCards {
 	id: string;
@@ -28,16 +24,15 @@ interface IJSONCards {
 	img3: string;
 }
 
-export const Cards = () => {
-	const [cards, setCards] = useState<IJSONCards[]>([]);
-	const [categoryId, setCategoryId] = useState(0);
-	const [category, setCategory] = useState("genproject");
+const Cards = ({numItems, category, categoryId, loading} : {numItems?: number | undefined, category:string, categoryId: number, loading:boolean}) => {
+	const [cards, setCards] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
-	const pathName = usePathname();
-	const router = useRouter();
-
 	const { width } = useWindowSize();
-	const skeletons = [...new Array(9)].map((_, index) => (
+	useEffect(() => {
+		setIsLoading(loading)
+	},[category])
+
+	const skeletons = [...new Array(numItems == undefined ? 9 : numItems)].map((_, index) => (
 		<Skeleton
 			sx={{ borderRadius: "0.5rem" }}
 			variant="rounded"
@@ -47,60 +42,38 @@ export const Cards = () => {
 	));
 
 	useEffect(() => {
-		if (categoryId === undefined) {
-			setCategoryId(0);
-		}
-	}, [categoryId]);
-
-	//Переделать костыль
-	useEffect(() => {
-		if (window.location.search) {
-			const pathId = Number(window.location.search.slice(-1));
-			const numPath = Number(pathId);
-			if (isNaN(numPath) || numPath > 4) {
-			} else {
-				setCategoryId(pathId);
-			}
-		}
-	}, []);
-
-	useEffect(() => {
-		const API_URL = `https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/${category}/`;
-		getCards(API_URL).then((res: IJSONCards[]) => {
+		const API_URL = `https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/${category}${numItems ? `?page=1&limit=${numItems}`:''}`;
+		getCards(API_URL).then(res => {
 			setCards(res);
 			setIsLoading(false);
 		});
-	}, [categoryId, category]);
-
-	useEffect(() => {
-		const filterPath = pathName + `?${category}&category=${categoryId}`;
-
-		router.push(filterPath);
-	}, [categoryId, pathName, category]);
+	}, [category]);
 
 	const cardFilter =
-		categoryId > 0
-			? cards.filter((card: IJSONCards) => card.category == categoryId)
-			: cards;
+	categoryId > 0
+		? cards.filter((card: IJSONCards) => card.category == categoryId)
+		: cards;
 
 	return (
-		<div className="grid grid-cols-1 w-full md:grid-cols-2 xl:grid-cols-3  gap-10 mt-10">
-			{isLoading
-				? skeletons
-				: cardFilter.map(card => {
-						return (
-							<Card
-								key={card.id}
-								id={card.id}
-								title={card.title}
-								link={card.link}
-								img={card.img}
-								subtitle={card.subtitle}
-								category={card.category}
-							/>
-						);
-				  })}
-		</div>
+		
+				<div className="mx-auto grid grid-cols-1 w-full md:grid-cols-2 xl:grid-cols-3  gap-10 mt-6 lg:mt-10">
+					{isLoading
+						? skeletons
+						: cardFilter.map((card:IJSONCards) => {
+								return (
+									<Card
+										key={card.id}
+										id={card.id}
+										title={card.title}
+										link={card.link}
+										img={card.img}
+										subtitle={card.subtitle}
+										category={card.category}
+									/>
+								);
+						  })}
+				</div>
+		
 	);
 };
 

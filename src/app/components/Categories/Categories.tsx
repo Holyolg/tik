@@ -1,5 +1,3 @@
-import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
-
 interface ICategories {
 	category: number;
 	onClickCategory: Function;
@@ -14,10 +12,9 @@ function Categories({ category, onClickCategory }: ICategories) {
 		"Благоустройство",
 	];
 
-	const { width } = useWindowSize();
 
 	return (
-		<nav className="flex space-x-10 items-center overflow-x-auto">
+		<nav className="flex space-x-10 items-center overflow-x-auto mt-6 xl:mt-0">
 			{categories.map((categoryName, i) => (
 				<span
 					onClick={() => onClickCategory(i)}

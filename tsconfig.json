@@ -28,7 +28,7 @@
 		"**/*.tsx",
 		"src/app/components/Menu/Menu.tsx",
 		"src/app/components/Video/Video.tsx",
-		"src/app/components/MainCards/MainCards.js"
+		"src/app/components/PageComponents/HeroProjects/MainCards.tsx"
 	],
 	"exclude": ["node_modules"]
 }
