@@ -21,7 +21,7 @@ const ImgContentXS = ({ imgContent, id }: { imgContent: any; id: string }) => {
 							"--swiper-pagination-color": "#fff",
 						} as CSSProperties
 					}
-					className="h-[550px] rounded-lg shadow-lg"
+					className="h-[550px] rounded-lg"
 					modules={[Pagination, Zoom]}
 					spaceBetween={40}
 					slidesPerView={1}
