@@ -1,9 +1,13 @@
 const getCards = async (API_URL: string) => {
-	const res = await fetch(API_URL);
-	if (!res.ok) {
-		throw new Error("не загрузился");
+	try {
+		const res = await fetch(API_URL);
+		if (!res.ok) {
+			throw new Error(`Could not fetch ${API_URL}, status ${res.status}`);
+		}
+		return res.json();
+	} catch (error: any) {
+		throw error;
 	}
-	return res.json();
 };
 
 export default getCards;

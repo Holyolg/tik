@@ -56,10 +56,14 @@ const Cards = ({
 		const API_URL = `https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/${category}${
 			numItems ? `?page=1&limit=${numItems}` : ""
 		}`;
-		getCards(API_URL).then(res => {
-			setCards(res);
-			setIsLoading(false);
-		});
+		try {
+			getCards(API_URL).then(res => {
+				setCards(res);
+				setIsLoading(false);
+			});
+		} catch (error) {
+			throw error;
+		}
 	}, [category]);
 
 	const cardFilter =
