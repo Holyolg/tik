@@ -65,7 +65,7 @@ const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {
 					fill
 					sizes="700px"
 					placeholder={`data:image/svg+xml;base64,${toBase64(
-						shimmer(width > 1920 ? 610 : 450, 350)
+						shimmer(width > 1920 ? 610 : 360, 300)
 					)}`}
 				/>
 				<AnimatePresence>
