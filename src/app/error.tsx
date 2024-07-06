@@ -16,7 +16,7 @@ export default function Error({
 	return (
 		<main className="h-full container m-auto">
 			<div className="flex flex-col justify-center items-center space-y-10">
-				<h2 className="text-xl">Что-то сломалось :&#40; </h2>
+				<h2 className="text-3xl font-semibold">Что-то сломалось :&#40; </h2>
 
 				<p className="text-gray-500">{error.message}</p>
 				<button

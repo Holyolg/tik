@@ -81,24 +81,22 @@ export const Video = ({ src, ...props }: IVideo) => {
 	};
 
 	return (
-		<div>
-			<video
-				{...props}
-				ref={videoElementRef}
-				src={src}
-				className={
-					isWaiting
-						? "blur-lg md:w-full md:h-[100vh] h-[100vh] object-cover"
-						: "md:w-full md:h-[100vh] h-[100vh] object-cover"
-				}
-				width="100%"
-				height="100%"
-				preload="none"
-				autoPlay
-				loop
-				muted
-				playsInline
-			/>
-		</div>
+		<video
+			{...props}
+			ref={videoElementRef}
+			src={src}
+			className={
+				isWaiting
+					? "blur-lg md:w-full md:h-[100vh] h-[100vh] object-cover brightness-50"
+					: "md:w-full md:h-[100vh] h-[100vh] object-cover brightness-50"
+			}
+			width="100%"
+			height="100%"
+			preload="none"
+			autoPlay
+			loop
+			muted
+			playsInline
+		/>
 	);
 };
