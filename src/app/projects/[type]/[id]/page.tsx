@@ -41,7 +41,7 @@ export default function CardDetailsPage({
 		getCards().then(res => {
 			setCard(res);
 		});
-	}, []);
+	}, [id, type]);
 
 	// if (!card) {
 	// 	return <h2>Ошибка на стороне сервера</h2>;
