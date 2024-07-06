@@ -15,7 +15,7 @@ export default function Footer() {
 							whileTap={{ scale: 0.97 }}
 						></motion.img>
 					</Link>
-					<span>ТИК ПРОДЖЕКТ</span>
+					<span>ТИК ПРОДЖЕКТ 2024</span>
 				</div>
 				<ul className="flex flex-wrap items-center w-full max-w-md justify-between mt-3 space-x-2 sm:space-x-5 text-gray-500 sm:mt-0">
 					<li>
