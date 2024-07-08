@@ -1,6 +1,10 @@
+import { addPointerEvent } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
+import { YMap } from "../../YMap/YMap";
 
 export const Contacts = () => {
+	const [style, setStye] = useState('rounded-lg pointer-events-none')
 	return (
 		<>
 			<h2 className="text-4xl lg:text-6xl font-semibold">
@@ -49,13 +53,16 @@ export const Contacts = () => {
 				</div>
 			</div>
 			<div className="mt-8">
-				<iframe
-					className="rounded-lg"
+				{/* <div onClick={() => setStye('rounded-lg pointerEvents: "auto"')}> Нажмите для 
+				<iframe 
+					className={style}
 					src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa90f7f2ba45af4e6468c2980a10d94974abf6acb7da27d3f885a84b26606e57d&amp;source=constructor"
 					width="100%"
 					height="500"
 				></iframe>
-			</div>
+				</div> */}
+				<YMap/>
+				</div>
 		</>
 	);
 };

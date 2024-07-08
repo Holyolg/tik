@@ -37,3 +37,8 @@ body {
 	-moz-transform: translate3d(0, 0, 0);
 	text-shadow: 1px 1px 20px black;
 }
+
+/* Фикс закругления яндекс карты */
+.ymaps-2-1-79-inner-panes {
+  border-radius: 0.5rem;
+}
