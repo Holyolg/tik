@@ -41,7 +41,7 @@ export default function HeroProjects({ numItems }: { numItems: number }) {
 			/>
 			<Link
 				href={"projects"}
-				className="w-full h-10 mt-6 flex justify-center items-center bg-black border-black border rounded-lg  hover:bg-black text-white active:opacity-85 block lg:hidden"
+				className="w-full h-10 mt-6 flex justify-center items-center bg-black border-black border rounded-lg  hover:bg-black text-white active:opacity-85 lg:hidden"
 			>
 				<span>Больше проектов</span>
 				<div className="w-5">
