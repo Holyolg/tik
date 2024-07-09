@@ -4,6 +4,7 @@ import { AnimateAbout } from "./components/PageComponents/AnimateAbout/AnimateAb
 import { Contacts } from "./components/PageComponents/Contacts/Contacts";
 import { Hero } from "./components/PageComponents/Hero/Hero";
 import HeroProjects from "./components/PageComponents/HeroProjects/HeroProjects";
+import { GetYMap } from "./services/GetYMap/GetYMap";
 
 export default function Home() {
 	const scrollRef = useRef<HTMLElement | any>();

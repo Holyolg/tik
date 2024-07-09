@@ -1,5 +1,5 @@
 import getCards from "@/app/services/GetCards/GetCards";
-import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
+import { useWindowSize } from "@/app/hooks/useWindowSize/useWindowSize";
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";

@@ -1,5 +1,5 @@
 "use client";
-import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
+import { useWindowSize } from "@/app/hooks/useWindowSize/useWindowSize";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";

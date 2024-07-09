@@ -1,4 +1,4 @@
-import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
+import { useWindowSize } from "@/app/hooks/useWindowSize/useWindowSize";
 import toBase64 from "@/app/services/toBase64/toBase64";
 import Image from "next/image";
 import { CSSProperties } from "react";

@@ -8,7 +8,7 @@ export const Hero = ({ scroll }: { scroll: HTMLElement | any }) => {
 				<div className="text-white absolute top-1/2 w-full z-10 ">
 					<div className="mx-auto container">
 						<h2 className="text-xl">Проектная организация</h2>
-						<h1 className="mt-5 text-5xl sm:text-7xl uppercase font-semibold">
+						<h1 className="mt-5 text-3xl sm:text-7xl uppercase font-semibold">
 							Тик-Проджект
 						</h1>
 					</div>

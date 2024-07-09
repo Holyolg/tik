@@ -1,6 +1,6 @@
 "use client";
 import getCards from "@/app/services/GetCards/GetCards";
-import { useWindowSize } from "@/app/services/hooks/useWindowSize/useWindowSize";
+import { useWindowSize } from "@/app/hooks/useWindowSize/useWindowSize";
 import { Skeleton } from "@mui/material/";
 import { useEffect, useState } from "react";
 import Card from "../Card/Card";
