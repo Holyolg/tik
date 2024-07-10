@@ -26,12 +26,12 @@ interface IJSONCards {
 const Cards = ({
 	numItems,
 	category,
-	categoryId,
+	type,
 	loading,
 }: {
 	numItems?: number | undefined;
 	category: string;
-	categoryId: number;
+	type: string;
 	loading: boolean;
 }) => {
 	const [cards, setCards] = useState([]);
@@ -39,7 +39,7 @@ const Cards = ({
 	const { width } = useWindowSize();
 	useEffect(() => {
 		setIsLoading(loading);
-	}, [category]);
+	}, [type]);
 
 	const skeletons = [...new Array(numItems == undefined ? 9 : numItems)].map(
 		(_, index) => (
@@ -53,7 +53,7 @@ const Cards = ({
 	);
 
 	useEffect(() => {
-		const API_URL = `https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/${category}${
+		const API_URL = `https://668e955fbf9912d4c92ee8b3.mockapi.io/${type}${
 			numItems ? `?page=1&limit=${numItems}` : ""
 		}`;
 		try {
@@ -64,11 +64,13 @@ const Cards = ({
 		} catch (error) {
 			throw error;
 		}
-	}, [category]);
+	}, [type]);
+
+	console.log(category)
 
 	const cardFilter =
-		categoryId > 0
-			? cards.filter((card: IJSONCards) => card.category == categoryId)
+		category != 'Все'
+			? cards.filter((card: IJSONCards) => card.category == category)
 			: cards;
 
 	return (

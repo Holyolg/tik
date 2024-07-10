@@ -2,7 +2,7 @@ import toBase64 from "@/app/services/toBase64/toBase64";
 import shimmer from "@/app/ui/Shimer/Shimer";
 import Image from "next/image";
 
-const ImgContentXL = ({ imgContent, id }: { imgContent: any; id: string }) => {
+const ImgContentXL = ({ imgContent }: { imgContent: string[]}) => {
 	return (
 		<>
 			<div className="space-y-8">
@@ -11,7 +11,7 @@ const ImgContentXL = ({ imgContent, id }: { imgContent: any; id: string }) => {
 						<Image
 							className=""
 							src={img}
-							sizes="1000px"
+							sizes="2000px"
 							fill
 							alt="Изображение проекта"
 							style={{ objectFit: "cover", borderRadius: "0.5rem" }}

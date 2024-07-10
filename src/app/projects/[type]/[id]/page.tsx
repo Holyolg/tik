@@ -1,6 +1,6 @@
 "use client";
+import CardDetails from "@/app/components/CardDetails/CardDetails";
 import { useEffect, useState } from "react";
-import CardDetails from "../../../components/CardDetails/CardDetails";
 
 interface ICard {
 	id: string;
@@ -8,6 +8,7 @@ interface ICard {
 	link: string;
 	title: string;
 	category: string;
+	customer: string;
 	subtitle: string;
 	date: string;
 	type: string;
@@ -30,7 +31,7 @@ export default function CardDetailsPage({
 
 	useEffect(() => {
 		const getCards = async () => {
-			const API_URL = `https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/${type}/${id}`;
+			const API_URL = `https://668e955fbf9912d4c92ee8b3.mockapi.io/${type}/${id}`;
 			const res = await fetch(API_URL);
 			if (!res.ok) {
 				throw new Error("не загрузился");

@@ -1,7 +1,10 @@
-import { addPointerEvent } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { YMap } from "../../YMap/YMap";
+import Image from 'next/image'
+import phone from '../../../../../public/img/icons/phone.svg'
+import mail from '../../../../../public/img/icons/mail.svg'
+
 
 export const Contacts = () => {
 	const [style, setStye] = useState('rounded-lg pointer-events-none')
@@ -28,39 +31,22 @@ export const Contacts = () => {
 				<div className="flex flex-row space-x-5 xl:space-x-16 md:items-center">
 					<Link
 						href="tel:+8 800 555 35 35"
-						className="cursor-pointer hover:opacity-70"
-					>
-						Номер <br /> + 8 800 555 35 35
+						className="cursor-pointer hover:opacity-70 flex space-x-4"
+					>	<Image width={18} height={18} alt='телефон' src={phone}></Image>
+						<span>+7 (495) 006-29-87</span> 
 					</Link>
 					<Link
 						href="mailto:@info.tikpro"
-						className="cursor-pointer hover:opacity-70"
+						className="cursor-pointer hover:opacity-70 flex space-x-4"
 					>
-						Почта <br /> @info.tikpro
-					</Link>
-					<Link
-						href="mailto:@info.tikpro"
-						className="w-6 cursor-pointer hover:opacity-70"
-					>
-						<img src="/telegram.png" />
-					</Link>
-					<Link
-						href="mailto:@info.tikpro"
-						className="w-6 cursor-pointer hover:opacity-70"
-					>
-						<img src="/whatsapp.png" />
+						<Image width={18} height={18} alt='почта' src={mail}></Image>
+												<span>info@tik.pro</span> 
+
 					</Link>
 				</div>
 			</div>
 			<div className="mt-8">
-				{/* <div onClick={() => setStye('rounded-lg pointerEvents: "auto"')}> Нажмите для 
-				<iframe 
-					className={style}
-					src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa90f7f2ba45af4e6468c2980a10d94974abf6acb7da27d3f885a84b26606e57d&amp;source=constructor"
-					width="100%"
-					height="500"
-				></iframe>
-				</div> */}
+
 				<YMap/>
 				</div>
 		</>

@@ -7,7 +7,7 @@ export default function Footer() {
 	const year = new Date().getFullYear()
 
 	return (
-		<footer className="bg-gray-100 w-full mt-24 sm:mt-40">
+		<footer className="bg-gray-100 w-full mt-14 sm:mt-32">
 			<div className=" mx-auto container py-8 flex flex-col-reverse md:flex-row items-center md:justify-between">
 				<div className="w-full text-gray-500 sm:text-center flex items-center space-x-4 mt-10 md:mt-0">
 					<Link className="flex items-center content-center" href="/">
@@ -20,7 +20,7 @@ export default function Footer() {
 					</Link>
 					<span>© ТИК-ПРОДЖЕКТ {year}</span>
 				</div>
-				<ul className="flex flex-wrap items-center w-full max-w-md justify-between mt-3 space-x-2 sm:space-x-5 text-gray-500 sm:mt-0">
+				<ul className="flex flex-wrap items-center w-full max-w-xl justify-between mt-3 space-x-2 sm:space-x-5 text-gray-500 sm:mt-0">
 					<li>
 						<Link
 							href="/"
@@ -42,7 +42,16 @@ export default function Footer() {
 							href="/about"
 							className="cursor-pointer hover:opacity-75 me-4 md:me-6"
 						>
-							О нас
+							О компании
+						</Link>
+					</li>
+					<li>
+						<Link
+							href="/#contacts"
+							scroll={false}
+							className="cursor-pointer hover:opacity-75 me-4 md:me-6"
+						>
+							Услуги
 						</Link>
 					</li>
 					<li>

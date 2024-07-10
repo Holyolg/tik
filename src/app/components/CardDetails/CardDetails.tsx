@@ -24,6 +24,7 @@ interface ICardDetails {
 		title: string;
 		category: string | number;
 		subtitle: string;
+		customer: string;
 		date: string;
 		type: string;
 		square: string;
@@ -84,36 +85,40 @@ const CardDetails = ({ data }: ICardDetails) => {
 				<div className="relative flex pb-8 md:pb-0 flex-col-reverse md:flex-row justify-between gap-8 border-b md:border-none border-gray-300">
 					<section className="w-full md:basis-3/5 lg:basis-2/3">
 						{width > 786 ? (
-							<ImgContentXL imgContent={data.imgcontent} id={data.id} />
+							<ImgContentXL imgContent={data.imgcontent} />
 						) : (
-							<ImgContentXS imgContent={data.imgcontent} id={data.id} />
+							<ImgContentXS imgContent={data.imgcontent} />
 						)}
 					</section>
 					<section className="sm:basis-0 md:basis-2/5 lg:basis-1/3">
 						<div className="sticky top-32">
 							<ul className="space-y-4">
-								<li>
-									<span className="font-semibold">Дата проектирования</span>
-									<p className="text-sm">{data.date}</p>
-								</li>
-								<li>
+								{data.type && <li>
 									<span className="font-semibold">Тип проекта</span>
 									<p className="text-sm">{data.type}</p>
-								</li>
-								<li>
+								</li>}
+								{data.square && <li>
 									<span className="font-semibold">Площадь</span>
 									<p className="text-sm">
-										{data.square} м<sup>2</sup>
+										{data.square}
 									</p>
-								</li>
-								<li>
+								</li>}
+								{data.location && <li>
 									<span className="font-semibold">Местоположение</span>
 									<p className="text-sm">{data.location}</p>
-								</li>
-								<li>
-									<span className="font-semibold">Статус</span>
+								</li>}
+								{data.status && <li>
+									<span className="font-semibold">Стадия</span>
 									<p className="text-sm">{data.status}</p>
-								</li>
+								</li>}
+								{data.customer && <li>
+									<span className="font-semibold">Стадия</span>
+									<p className="text-sm">{data.customer}</p>
+								</li>}
+								{data.date && <li>
+									<span className="font-semibold">Дата проектирования</span>
+									<p className="text-sm">{data.date}</p>
+								</li> }
 								<Accordion description={data.description} />
 							</ul>
 						</div>

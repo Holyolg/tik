@@ -38,7 +38,22 @@ const Menu = () => {
 		cursor-pointer"
 				>
 					<Link onClick={() => setOpened(!open)} href="/about">
-						О нас
+						О компании
+					</Link>
+				</motion.div>
+				<motion.div
+					whileTap={{ scale: 0.97 }}
+					initial={{ x: 45, opacity: 0 }}
+					animate={{ x: 0, opacity: 1 }}
+					exit={{ x: 45, opacity: 0 }}
+					whileHover={{
+						opacity: 0.7,
+					}}
+					className="
+		cursor-pointer"
+				>
+					<Link onClick={() => setOpened(!open)} href="/projects">
+						Услуги
 					</Link>
 				</motion.div>
 				<motion.div
@@ -79,7 +94,7 @@ const Menu = () => {
 		cursor-pointer"
 				>
 					<Link onClick={() => setOpened(!open)} href="/projects">
-						Проекты
+						Наши работы
 					</Link>
 				</motion.div>
 

@@ -1,10 +1,11 @@
 interface ICategories {
-	category: number;
+	category: string;
 	onClickCategory: Function;
+	type: string
 }
 
-function Categories({ category, onClickCategory }: ICategories) {
-	const categories: string[] = [
+function Categories({ category, onClickCategory, type }: ICategories) {
+	const categoriesProject: string[] = [
 		"Все",
 		"Жилые",
 		"Общественные",
@@ -12,14 +13,23 @@ function Categories({ category, onClickCategory }: ICategories) {
 		"Благоустройство",
 	];
 
+	const categoriesConcept: string[] = [
+		"Все",
+		"Здания",
+		"Интерьеры",
+		"Благоустройство",
+	];
+
+	const categoryValue = type == 'genproject' ? categoriesProject : categoriesConcept
+
 	return (
 		<nav className="flex space-x-10 items-center overflow-x-auto snap-x snap-mandatory mt-6 xl:mt-0">
-			{categories.map((categoryName, i) => (
+			{categoryValue.map((categoryName) => (
 				<span
-					onClick={() => onClickCategory(i)}
-					key={i}
+					onClick={() => {onClickCategory(categoryName), console.log(categoryName)}}
+					key={categoryName}
 					className={`snap-always snap-center hover:opacity-75 cursor-pointer ${
-						category == i ? "font-semibold" : " "
+						category == categoryName ? "font-semibold" : " "
 					}`}
 				>
 					{categoryName}

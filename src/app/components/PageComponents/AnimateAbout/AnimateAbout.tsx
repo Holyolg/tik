@@ -3,6 +3,8 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useRef } from "react";
+import Image from 'next/image'
+import about from '../../../../../public/about.jpg'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -44,16 +46,24 @@ export const AnimateAbout = () => {
 					</div>
 				</button>
 			</div>
+			<div className="flex justify-between w-full">
+				<div className="w-2/5">
 			<h2 className="text-4xl lg:text-6xl" ref={animateRef}>
 				<div className="animate_text">инженеры</div>
 				<div className="animate_text">архитекторы</div>
 				<div className="animate_text">конструкторы</div>
 				<div className="animate_text">BIM-специалисты</div>
 			</h2>
-			<div className=" md:w-2/3 xl:w-2/5 rounded-lg mt-6 text-gray-500 leading-relaxed">
+
+			<div className="rounded-lg mt-6 text-gray-500 leading-relaxed">
 				Проектируем жилые и общественные здания, образовательные учреждения,
 				офисы и деловые центры, индивидуальные жилые здания и интерьеры, а также
 				занимаемся разработкой комфортной городской среды.
+			</div>
+			</div>
+	<div className="relative">
+			<Image className="rounded-lg" src={about} width={650} alt='наше фото'></Image>
+			</div>
 			</div>
 		</>
 	);
