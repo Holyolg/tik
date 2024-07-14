@@ -1,10 +1,10 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-import Image from 'next/image'
-import about from '../../../../../public/about.jpg'
+import about from "../../../../../public/about.jpg";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -46,24 +46,29 @@ export const AnimateAbout = () => {
 					</div>
 				</button>
 			</div>
-			<div className="flex justify-between w-full">
-				<div className="w-2/5">
-			<h2 className="text-4xl lg:text-6xl" ref={animateRef}>
-				<div className="animate_text">инженеры</div>
-				<div className="animate_text">архитекторы</div>
-				<div className="animate_text">конструкторы</div>
-				<div className="animate_text">BIM-специалисты</div>
-			</h2>
+			<div className="flex flex-col lg:flex-row justify-between w-full">
+				<div className="lg:w-2/5">
+					<h2 className="text-4xl lg:text-6xl" ref={animateRef}>
+						<div className="animate_text">инженеры</div>
+						<div className="animate_text">архитекторы</div>
+						<div className="animate_text">конструкторы</div>
+						<div className="animate_text">BIM-специалисты</div>
+					</h2>
 
-			<div className="rounded-lg mt-6 text-gray-500 leading-relaxed">
-				Проектируем жилые и общественные здания, образовательные учреждения,
-				офисы и деловые центры, индивидуальные жилые здания и интерьеры, а также
-				занимаемся разработкой комфортной городской среды.
-			</div>
-			</div>
-	<div className="relative">
-			<Image className="rounded-lg" src={about} width={650} alt='наше фото'></Image>
-			</div>
+					<div className="rounded-lg mt-6 text-gray-500 leading-relaxed">
+						Проектируем жилые и общественные здания, образовательные учреждения,
+						офисы и деловые центры, индивидуальные жилые здания и интерьеры, а
+						также занимаемся разработкой комфортной городской среды.
+					</div>
+				</div>
+				<div className="relative mt-6 lg:mt-0">
+					<Image
+						className="rounded-lg grayscale"
+						src={about}
+						width={650}
+						alt="наше фото"
+					></Image>
+				</div>
 			</div>
 		</>
 	);

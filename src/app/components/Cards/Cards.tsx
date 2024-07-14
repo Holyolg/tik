@@ -55,7 +55,7 @@ const Cards = ({
 
 	useEffect(() => {
 		const API_URL = `https://668e955fbf9912d4c92ee8b3.mockapi.io/${type}${
-			numItems ? `?page=1&limit=${numItems}` : ""
+			numItems ? `?page=1&limit=${numItems}&sortBy=rating&order=asc` : ""
 		}`;
 		try {
 			getCards(API_URL).then(res => {
