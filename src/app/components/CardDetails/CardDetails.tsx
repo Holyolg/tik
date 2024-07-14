@@ -1,5 +1,5 @@
-import getCards from "@/app/services/GetCards/GetCards";
 import { useWindowSize } from "@/app/hooks/useWindowSize/useWindowSize";
+import getCards from "@/app/services/GetCards/GetCards";
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
@@ -93,32 +93,42 @@ const CardDetails = ({ data }: ICardDetails) => {
 					<section className="sm:basis-0 md:basis-2/5 lg:basis-1/3">
 						<div className="sticky top-32">
 							<ul className="space-y-4">
-								{data.type && <li>
-									<span className="font-semibold">Тип проекта</span>
-									<p className="text-sm">{data.type}</p>
-								</li>}
-								{data.square && <li>
-									<span className="font-semibold">Площадь</span>
-									<p className="text-sm">
-										{data.square}
-									</p>
-								</li>}
-								{data.location && <li>
-									<span className="font-semibold">Местоположение</span>
-									<p className="text-sm">{data.location}</p>
-								</li>}
-								{data.status && <li>
-									<span className="font-semibold">Стадия</span>
-									<p className="text-sm">{data.status}</p>
-								</li>}
-								{data.customer && <li>
-									<span className="font-semibold">Стадия</span>
-									<p className="text-sm">{data.customer}</p>
-								</li>}
-								{data.date && <li>
-									<span className="font-semibold">Дата проектирования</span>
-									<p className="text-sm">{data.date}</p>
-								</li> }
+								{data.type && (
+									<li>
+										<span className="font-semibold">Тип проекта</span>
+										<p className="text-sm">{data.type}</p>
+									</li>
+								)}
+								{data.square && (
+									<li>
+										<span className="font-semibold">Площадь</span>
+										<p className="text-sm">{data.square}</p>
+									</li>
+								)}
+								{data.location && (
+									<li>
+										<span className="font-semibold">Местоположение</span>
+										<p className="text-sm">{data.location}</p>
+									</li>
+								)}
+								{data.status && (
+									<li>
+										<span className="font-semibold">Стадия</span>
+										<p className="text-sm">{data.status}</p>
+									</li>
+								)}
+								{data.customer && (
+									<li>
+										<span className="font-semibold">Стадия</span>
+										<p className="text-sm">{data.customer}</p>
+									</li>
+								)}
+								{data.date && (
+									<li>
+										<span className="font-semibold">Дата проектирования</span>
+										<p className="text-sm">{data.date}</p>
+									</li>
+								)}
 								<Accordion description={data.description} />
 							</ul>
 						</div>

@@ -2,7 +2,7 @@ import toBase64 from "@/app/services/toBase64/toBase64";
 import shimmer from "@/app/ui/Shimer/Shimer";
 import Image from "next/image";
 
-const ImgContentXL = ({ imgContent }: { imgContent: string[]}) => {
+const ImgContentXL = ({ imgContent }: { imgContent: string[] }) => {
 	return (
 		<>
 			<div className="space-y-8">

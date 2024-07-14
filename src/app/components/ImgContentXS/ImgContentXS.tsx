@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/zoom";
 
-const ImgContentXS = ({ imgContent }: { imgContent: string[]}) => {
+const ImgContentXS = ({ imgContent }: { imgContent: string[] }) => {
 	const { width } = useWindowSize();
 	return (
 		<>

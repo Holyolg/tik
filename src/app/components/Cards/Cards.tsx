@@ -1,6 +1,6 @@
 "use client";
-import getCards from "@/app/services/GetCards/GetCards";
 import { useWindowSize } from "@/app/hooks/useWindowSize/useWindowSize";
+import getCards from "@/app/services/GetCards/GetCards";
 import { Skeleton } from "@mui/material/";
 import { useEffect, useState } from "react";
 import Card from "../Card/Card";
@@ -37,6 +37,7 @@ const Cards = ({
 	const [cards, setCards] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const { width } = useWindowSize();
+
 	useEffect(() => {
 		setIsLoading(loading);
 	}, [type]);
@@ -66,10 +67,10 @@ const Cards = ({
 		}
 	}, [type]);
 
-	console.log(category)
+	console.log(category);
 
 	const cardFilter =
-		category != 'Все'
+		category != "Все"
 			? cards.filter((card: IJSONCards) => card.category == category)
 			: cards;
 
