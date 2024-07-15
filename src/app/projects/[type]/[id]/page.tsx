@@ -7,9 +7,9 @@ interface ICard {
 	img: string;
 	link: string;
 	title: string;
-	category: string;
-	customer: string;
+	category: string | number;
 	subtitle: string;
+	customer: string;
 	date: string;
 	type: string;
 	square: string;
@@ -17,6 +17,8 @@ interface ICard {
 	status: string;
 	description: string;
 	text: string;
+	stage: string; 
+	partners: string;
 	imgcontent: [];
 }
 

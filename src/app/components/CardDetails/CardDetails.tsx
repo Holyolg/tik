@@ -97,8 +97,8 @@ const CardDetails = ({ data }: ICardDetails) => {
 							<ul className="space-y-4">
 								{data.category && (
 									<li>
-										<span className="font-semibold">Тип проекта</span>
-										<p className="text-sm">{data.category}</p>
+										<span className="font-semibold">Тип</span>
+										<p className="text-sm">{data.category !== 'Интерьеры' && data.category !== 'Благоустройство' ? `${data.category} здания` : data.category}</p>
 									</li>
 								)}
 								{data.square && (
