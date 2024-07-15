@@ -98,7 +98,7 @@ const CardDetails = ({ data }: ICardDetails) => {
 								{data.category && (
 									<li>
 										<span className="font-semibold">Тип</span>
-										<p className="text-sm">{data.category !== 'Интерьеры' && data.category !== 'Благоустройство' ? `${data.category} здания` : data.category}</p>
+										<p className="text-sm">{data.category !== 'Интерьеры' && data.category !== 'Благоустройство' && data.category !== 'Здания' ? `${data.category} здания` : data.category}</p>
 									</li>
 								)}
 								{data.square && (
