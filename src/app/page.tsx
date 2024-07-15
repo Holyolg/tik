@@ -17,9 +17,9 @@ export default function Home() {
 			<section className="mx-auto container mt-14 md:mt-32" ref={scrollRef}>
 				<HeroProjects numItems={9} />
 			</section>
-			<section className="mx-auto container mt-14 md:mt-32" id="contacts">
+			{/* <section className="mx-auto container mt-14 md:mt-32" id="contacts">
 				<Contacts />
-			</section>
+			</section> */}
 		</main>
 	);
 }

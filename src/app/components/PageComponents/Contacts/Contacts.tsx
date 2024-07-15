@@ -30,7 +30,6 @@ export const Contacts = () => {
 						href="tel:+8 800 555 35 35"
 						className="cursor-pointer hover:opacity-70 flex space-x-4"
 					>
-						{" "}
 						<Image width={18} height={18} alt="телефон" src={phone}></Image>
 						<span>+7 (495) 006-29-87</span>
 					</Link>
