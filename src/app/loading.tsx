@@ -43,7 +43,7 @@ export default function Test() {
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
 			>
-				<motion.g clip-path="url(#clip0_310_2)">
+				<motion.g clipPath="url(#clip0_310_2)">
 					<motion.path
 						d="M148.595 8.84766H68.166V40.9472H148.595V8.84766Z"
 						fill="none"

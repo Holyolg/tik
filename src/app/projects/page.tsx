@@ -9,7 +9,7 @@ export default function Projects() {
 	const path = useSearchParams().toString().slice(0, -1)
 
 	const [category, setCategory] = useState('Все');
-	const [type, setType] = useState(path);
+	const [type, setType] = useState(path? path : 'genproject');
 	const [isLoading, setIsLoading] = useState(true);
 
 	//Проверка на категорию, если ее нет

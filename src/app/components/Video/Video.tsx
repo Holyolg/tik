@@ -17,6 +17,7 @@ export const Video = ({ src, ...props }: IVideo) => {
 
 	const videoElementRef = useRef<HTMLVideoElement | null>(null);
 
+
 	useEffect(() => {
 		if (!videoElementRef.current) {
 			return;
