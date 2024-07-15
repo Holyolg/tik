@@ -32,6 +32,8 @@ interface ICardDetails {
 		status: string;
 		description: string;
 		text: string;
+		stage: string; 
+		partners: string;
 		imgcontent: [];
 	};
 }
@@ -93,10 +95,10 @@ const CardDetails = ({ data }: ICardDetails) => {
 					<section className="sm:basis-0 md:basis-2/5 lg:basis-1/3">
 						<div className="sticky top-32">
 							<ul className="space-y-4">
-								{data.type && (
+								{data.category && (
 									<li>
 										<span className="font-semibold">Тип проекта</span>
-										<p className="text-sm">{data.type}</p>
+										<p className="text-sm">{data.category}</p>
 									</li>
 								)}
 								{data.square && (
@@ -111,22 +113,36 @@ const CardDetails = ({ data }: ICardDetails) => {
 										<p className="text-sm">{data.location}</p>
 									</li>
 								)}
-								{data.status && (
+								{data.stage && (
 									<li>
 										<span className="font-semibold">Стадия</span>
-										<p className="text-sm">{data.status}</p>
+										<p className="text-sm">{data.stage}</p>
+									</li>
+								)}
+													{data.partners && (
+									<li>
+										<span className="font-semibold">Партнеры</span>
+										<p className="text-sm">{data.partners}</p>
 									</li>
 								)}
 								{data.customer && (
 									<li>
-										<span className="font-semibold">Стадия</span>
+										<span className="font-semibold">Заказчик</span>
 										<p className="text-sm">{data.customer}</p>
 									</li>
 								)}
+		
+								
 								{data.date && (
 									<li>
 										<span className="font-semibold">Дата проектирования</span>
 										<p className="text-sm">{data.date}</p>
+									</li>
+								)}
+														{data.status && (
+									<li>
+										<span className="font-semibold">Статус</span>
+										<p className="text-sm">{data.status}</p>
 									</li>
 								)}
 								<Accordion description={data.description} />

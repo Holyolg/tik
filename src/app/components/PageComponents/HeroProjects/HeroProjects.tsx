@@ -14,7 +14,7 @@ export default function HeroProjects({ numItems }: { numItems: number }) {
 			<div className="flex justify-between items-center">
 				<h2 className="text-4xl lg:text-6xl font-semibold">Проекты</h2>
 			</div>
-			<div className="mt-12 lg:flex justify-between">
+			<div className="mt-6 lg:flex justify-between">
 				<TypeButtons
 					type={type}
 					onClickType={(type: string) => {
@@ -43,7 +43,7 @@ export default function HeroProjects({ numItems }: { numItems: number }) {
 			/>
 			<Link
 				href={"projects"}
-				className="w-full h-10 mt-6 flex justify-center items-center bg-black border-black border rounded-lg  hover:bg-black text-white active:opacity-85 lg:hidden"
+				className="w-full h-10 mt-10 flex justify-center items-center bg-black border-black border rounded-lg  hover:bg-black text-white active:opacity-85 lg:hidden"
 			>
 				<span>Больше проектов</span>
 				<div className="w-5">

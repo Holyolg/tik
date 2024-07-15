@@ -75,7 +75,7 @@ const Cards = ({
 			: cards;
 
 	return (
-		<div className="mx-auto grid grid-cols-1 w-full md:grid-cols-2 xl:grid-cols-3  gap-10 mt-6 lg:mt-10">
+		<div className="mx-auto grid grid-cols-1 w-full md:grid-cols-2 xl:grid-cols-3 gap-10 mt-10">
 			{isLoading
 				? skeletons
 				: cardFilter.map((card: IJSONCards) => {

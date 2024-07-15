@@ -66,7 +66,7 @@ const Menu = () => {
 					}}
 					className="cursor-pointer"
 				>
-					<Link onClick={() => setOpened(!open)} href={"/#contacts"}>
+					<Link onClick={() => setOpened(!open)} href={"/about/#contacts"}>
 						Контакты
 					</Link>
 				</motion.div>
@@ -108,7 +108,7 @@ const Menu = () => {
 					}}
 					className="cursor-pointer"
 				>
-					<Link onClick={() => setOpened(!open)} href="/#contacts">
+					<Link onClick={() => setOpened(!open)} href="/about/#contacts">
 						Контакты
 					</Link>
 				</motion.div>

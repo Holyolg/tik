@@ -71,7 +71,7 @@ export default function About() {
 						городской среды. Участники ассоциации проектировщиков Московской
 						области
 					</p>
-					<img className="w-[350px] mt-10" src="/mos.svg" alt="Logo"></img>
+					<Image width={250} height={150} className="mt-8" src="/mos.svg" alt="Ассоциация проектировщиков Московской области"/>
 				</div>
 				<div className="">
 					<Image
@@ -85,33 +85,33 @@ export default function About() {
 			</div>
 			<div className="flex flex-wrap justify-between mt-12 gap-10 text-gray-800">
 				<div className="w-full lg:w-60 h-40 p-4 rounded-xl flex flex-col justify-between bg-gray-100 ">
-					<b className="text-2xl">
+					<b className="text-3xl">
 						&gt;230 тыс. м<sup>2</sup>
 					</b>
 					<span className="text-sm">Было в работе в 2022 году</span>
 				</div>
 
 				<div className="w-full lg:w-60 h-40 p-4 rounded-xl flex flex-col justify-between bg-gray-100 ">
-					<b className="text-2xl">АГР и АГО</b>
+					<b className="text-3xl">АГР и АГО</b>
 					<span className="text-sm">
 						С 2022 года получены свидетельства АГР В Москве и АГО в Московской
 						области
 					</span>
 				</div>
 				<div className="w-full lg:w-60 h-40 p-4 rounded-xl flex flex-col justify-between bg-gray-100 ">
-					<b className="text-2xl">80+</b>
+					<b className="text-3xl">80+</b>
 					<span className="text-sm">
 						cпециалистов проектировщиков. Выполнение всех разделов.
 					</span>
 				</div>
 				<div className="w-full lg:w-60 h-40 p-4 rounded-xl flex flex-col justify-between bg-gray-100">
-					<b className="text-2xl">Допуск СРО</b>{" "}
+					<b className="text-3xl">Допуск СРО</b>{" "}
 					<span className="text-sm">
 						Допуск к работе с опасными и уникальными объектами
 					</span>
 				</div>
 				<div className="w-full lg:w-60 h-40 p-4 rounded-xl flex flex-col justify-between bg-gray-100">
-					<b className="text-2xl">BIM 3D, AU Revit</b>
+					<b className="text-3xl">BIM 3D, <br/>AU Revit</b>
 					<span className="text-sm">Все проекты и все стадии</span>
 				</div>
 			</div>
