@@ -3,11 +3,13 @@ import Link from "next/link";
 import { useState } from "react";
 import Cards from "../../Cards/Cards";
 import { TypeButtons } from "../../TypeButtons/TypeButtons";
+import { usePathname } from "next/navigation";
 
 export default function HeroProjects({ numItems }: { numItems: number }) {
 	const [category, setCategory] = useState("Все");
 	const [type, setType] = useState("genproject");
 	const [isLoading, setIsLoading] = useState(true);
+	const pathname = usePathname();
 
 	return (
 		<>
@@ -25,7 +27,7 @@ export default function HeroProjects({ numItems }: { numItems: number }) {
 					}}
 				/>
 				<button className="hover:opacity-70 lg:flex items-center cursor-pointer hidden">
-					<Link href={"/projects"}>{`Больше ${
+					<Link href={`/projects?${type == "genproject" ? "genproject" : "concept"}`}>{`Больше ${
 						type == "genproject" ? "проектов" : "концепций"
 					}`}</Link>
 					<div className="w-5 hover__svg">

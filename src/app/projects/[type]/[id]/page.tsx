@@ -46,13 +46,12 @@ export default function CardDetailsPage({
 		});
 	}, [id, type]);
 
-	// if (!card) {
-	// 	return <h2>Ошибка на стороне сервера</h2>;
-	// }
+	if (!card) {
+		return <h2>Ошибка на стороне сервера</h2>;
+	}
 
 	return (
 		<main className="min-h-[100vh]">
-			{/* <Breadcrumbs category={card.category} pageTitle={card.title} /> */}
 			{card && <CardDetails data={card} />}
 		</main>
 	);

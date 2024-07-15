@@ -53,7 +53,7 @@ const CardDetails = ({ data }: ICardDetails) => {
 	));
 
 	useEffect(() => {
-		const API_URL = `https://668e955fbf9912d4c92ee8b3.mockapi.io/${data.type == 'Генпроектирование' ? 'genproject' : 'concept'}?page=${Math.random()*6}&limit=3&sortBy=rating&order=asc`;
+		const API_URL = `https://668e955fbf9912d4c92ee8b3.mockapi.io/${data.type == 'Генпроектирование' ? 'genproject' : 'concept'}?page=${Math.random()*5}&limit=3&sortBy=rating&order=asc`;
 		getCards(API_URL).then(res => {
 			setCards(res);
 			setIsLoading(false);
@@ -93,7 +93,7 @@ const CardDetails = ({ data }: ICardDetails) => {
 						)}
 					</section>
 					<section className="sm:basis-0 md:basis-2/5 lg:basis-1/3">
-						<div className="sticky top-32">
+						<div className="sticky top-28">
 							<ul className="space-y-4">
 								{data.category && (
 									<li>

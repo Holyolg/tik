@@ -3,10 +3,13 @@ import { useEffect, useState } from "react";
 import Cards from "../components/Cards/Cards";
 import Categories from "../components/Categories/Categories";
 import { TypeButtons } from "../components/TypeButtons/TypeButtons";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export default function Projects() {
+	const path = useSearchParams().toString().slice(0, -1)
+
 	const [category, setCategory] = useState('Все');
-	const [type, setType] = useState("genproject");
+	const [type, setType] = useState(path);
 	const [isLoading, setIsLoading] = useState(true);
 
 	//Проверка на категорию, если ее нет
@@ -15,7 +18,7 @@ export default function Projects() {
 			setCategory('Все');
 		}
 	}, [category]);
-
+	
 	//Проверка на категорию в ссылке
 	// useEffect(() => {
 	// 	if (window.location.search) {
