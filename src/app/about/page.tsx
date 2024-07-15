@@ -46,7 +46,7 @@ export default function About() {
 					target="_blank"
 					href={"/TikPRO.pdf"}
 					rel="noopener noreferrer"
-					className="hover:opacity-70 flex space-x-2 cursor-pointer mt-6"
+					className="hover:opacity-70 flex space-x-2 cursor-pointer md:mt-0 mt-4"
 				>
 					<span>Скачать презентацию о компании</span>
 					<div className="w-5 self-center">
@@ -60,7 +60,7 @@ export default function About() {
 					</div>
 				</a>
 			</div>
-			<div className="w-full h-full rounded-lg flex flex-col-reverse lg:flex-row justify-between mt-12">
+			<div className="w-full h-full flex flex-col-reverse lg:flex-row justify-between mt-12">
 				<div className="flex flex-col justify-between max-w-xl">
 					<p className=" text-gray-500 leading-relaxed mt-10 lg:mt-0">
 						TIK PROJECT - команда архитекторов, BIM-специалистов, инженеров и
@@ -83,7 +83,7 @@ export default function About() {
 					/>
 				</div>
 			</div>
-			<div className="flex flex-wrap justify-between mt-12 gap-10 text-gray-800">
+			<div className="flex flex-wrap justify-between mt-12 gap-6 md:gap-10 text-gray-800">
 				<div className="w-full lg:w-60 h-40 p-4 rounded-xl flex flex-col justify-between bg-gray-100 ">
 					<b className="text-3xl">
 						&gt;230 тыс. м<sup>2</sup>
@@ -110,17 +110,18 @@ export default function About() {
 						Допуск к работе с опасными и уникальными объектами
 					</span>
 				</div>
-				<div className="w-full lg:w-60 h-40 p-4 rounded-xl flex flex-col justify-between bg-gray-100">
+				<div className="w-full lg:w-60 h-40 p-4 rounded-xl flex flex-col justify-between bg-gray-100"  id="services">
 					<b className="text-3xl">BIM 3D, <br/>AU Revit</b>
 					<span className="text-sm">Все проекты и все стадии</span>
 				</div>
 			</div>
-			<h2 className="text-4xl lg:text-6xl font-semibold mt-32">
+			<section className="mt-14 md:mt-32">
+			<h2 className="text-4xl lg:text-6xl font-semibold">
 				Специализация
 			</h2>
-			<div className="flex flex-col xl:flex-row gap-10 mt-12">
+			<div className="flex flex-col xl:flex-row gap-10 mt-8 lg:mt-12">
 				<div>
-					<ul className="space-y-10 w-56">
+					<ul className="space-y-4 md:space-y-10 w-56">
 						{categories.map((categoryName, i) => (
 							<li
 								onClick={() => setCategory(i)}
@@ -134,7 +135,7 @@ export default function About() {
 						))}
 					</ul>
 				</div>
-				<div className="w-full bg-gray-100 rounded-md overflow-hidden">
+				<div className="w-full lg:bg-gray-100 rounded-xl overflow-hidden">
 					{cards.map((card, i) =>
 						i == category ? (
 							<motion.div
@@ -143,14 +144,14 @@ export default function About() {
 								exit={{ x: 500, opacity: 1 }}
 								transition={{ duration: 0.4 }}
 								key={i}
-								className="flex flex-col-reverse lg:flex-row justify-between bg-gray-100 h-full"
+								className="flex flex-col-reverse lg:flex-row justify-between  h-full"
 							>
-								<p className="mt-10 lg:mt-0 max-w-md p-5">{card.description}</p>
-								<div className="relative h-[300px]">
+								<p className="mt-2 lg:mt-0 max-w-md p-5">{card.description}</p>
+								<div className="relative lg:h-[250px] bg-gray-100 rounded-xl">
 									<Image
-										width={600}
-										height={500}
-										className="object-cover"
+									className="rounded-xl"
+										width={550}
+										 height={250}
 										src={card.img}
 										alt="category"
 										sizes="700px"
@@ -163,6 +164,7 @@ export default function About() {
 					)}
 				</div>
 			</div>
+			</section>
 			{/* <div className="flex flex-wrap justify-between mt-12 gap-10 text-gray-800">
 				<div className="w-full lg:w-60 h-24 text-center rounded-xl flex flex-col justify-center items-center bg-gray-100">
 					<p className="">Общественные объекты</p>
@@ -179,7 +181,7 @@ export default function About() {
 				</div>
 			</div> */}
 
-			<section className="mt-32">
+			<section className="mt-14 md:mt-32" id="contacts">
 				<Contacts />
 			</section>
 		</main>

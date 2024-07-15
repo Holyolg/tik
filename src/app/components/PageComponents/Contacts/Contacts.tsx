@@ -25,7 +25,7 @@ export const Contacts = () => {
 						Тамбов <br /> Кронштадтская улица, 4Ак1
 					</Link>
 				</div> */}
-				<div className="flex flex-row space-x-5 xl:space-x-16 md:items-center">
+				<div className="flex space-x-5 xl:space-x-16 md:items-center">
 					<Link
 						href="tel:+8 800 555 35 35"
 						className="cursor-pointer hover:opacity-70 flex space-x-4"
