@@ -53,12 +53,12 @@ const CardDetails = ({ data }: ICardDetails) => {
 	));
 
 	useEffect(() => {
-		const API_URL = `https://6628119354afcabd0734c9fb.mockapi.io/TIKPRO/genproject?page=1&limit=3`;
+		const API_URL = `https://668e955fbf9912d4c92ee8b3.mockapi.io/${data.type == 'Генпроектирование' ? 'genproject' : 'concept'}?page=${Math.random()*6}&limit=3&sortBy=rating&order=asc`;
 		getCards(API_URL).then(res => {
 			setCards(res);
 			setIsLoading(false);
 		});
-	}, []);
+	}, [isLoading, data.type]);
 
 	const filteredCards = cards.filter((card: any) => card.id !== data.id);
 	filteredCards.length === 2 ? filteredCards : delete filteredCards[2];

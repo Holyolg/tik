@@ -1,7 +1,6 @@
 "use client";
 import { useRef } from "react";
 import { AnimateAbout } from "./components/PageComponents/AnimateAbout/AnimateAbout";
-import { Contacts } from "./components/PageComponents/Contacts/Contacts";
 import { Hero } from "./components/PageComponents/Hero/Hero";
 import HeroProjects from "./components/PageComponents/HeroProjects/HeroProjects";
 

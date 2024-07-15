@@ -40,7 +40,7 @@ const Cards = ({
 
 	useEffect(() => {
 		setIsLoading(loading);
-	}, [type]);
+	}, []);
 
 	const skeletons = [...new Array(numItems == undefined ? 9 : numItems)].map(
 		(_, index) => (
@@ -65,7 +65,7 @@ const Cards = ({
 		} catch (error) {
 			throw error;
 		}
-	}, [type]);
+	}, [type, numItems]);
 
 	console.log(category);
 
