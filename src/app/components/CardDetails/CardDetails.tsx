@@ -3,18 +3,20 @@ import getCards from "@/app/services/GetCards/GetCards";
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Accordion } from "../../ui/Accordion/Accordion";
 import shimmer from "../../ui/Shimer/Shimer";
 import Card from "../Card/Card";
 import ImgContentXS from "../ImgContentXS/ImgContentXS";
+import ImgContentXL from "../ImgContentXL/ImgContentXL";
+import { useScroll, useTransform, MotionValue, motion } from "framer-motion";
 
 // Import Swiper styles
 import toBase64 from "@/app/services/toBase64/toBase64";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/zoom";
-import ImgContentXL from "../ImgContentXL/ImgContentXL";
+import { Arrow } from "@/app/ui/Arrow/Arrow";
 
 interface ICardDetails {
 	data: {
@@ -38,7 +40,17 @@ interface ICardDetails {
 	};
 }
 
+
+function useParallax(value: MotionValue<number>, distance: number) {
+	return useTransform(value, [0, 1], [-distance, distance]);
+  }
+
 const CardDetails = ({ data }: ICardDetails) => {
+
+	const ref = useRef(null);
+  	const { scrollYProgress } = useScroll({ target: ref });
+  	const y = useParallax(scrollYProgress, 300);
+
 	const { width } = useWindowSize();
 	const [isLoading, setIsLoading] = useState(true);
 	const [cards, setCards] = useState([]);
@@ -66,11 +78,13 @@ const CardDetails = ({ data }: ICardDetails) => {
 	return (
 		<>
 			<div className="min-h-[100vh] relative">
-				<div className="absolute z-10 w-full top-1/2">
+				<motion.div className="absolute z-10 w-full top-1/2" ref={ref} style={{ y }} initial={
+					{opacity: 0}
+				} animate={{opacity:1}}>
 					<h1 className="container mx-auto text-4xl md:text-6xl font-semibold text-white">
 						{data.title}
 					</h1>
-				</div>
+				</motion.div>
 				<Image
 					src={data.img}
 					alt="Изображение проекта"
@@ -150,17 +164,13 @@ const CardDetails = ({ data }: ICardDetails) => {
 						</div>
 					</section>
 				</div>
-				<section className="mt-10 lg:mt-32 justify-between lg:flex">
+				<section className="mt-10 lg:mt-32 justify-end lg:flex">
 					<Link
 						href={"/projects"}
 						className="hover:opacity-70 flex items-center justify-center space-x-2 cursor-pointer"
 					>
 						<span>Больше проектов</span>
-						<div className="w-5">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
-								<path d="M23.5587,16.916 C24.1447,17.4999987 24.1467,18.446 23.5647,19.034 L16.6077,26.056 C16.3147,26.352 15.9287,26.4999987 15.5427,26.4999987 C15.1607,26.4999987 14.7787,26.355 14.4867,26.065 C13.8977,25.482 13.8947,24.533 14.4777,23.944 L20.3818,17.984 L14.4408,12.062 C13.8548,11.478 13.8528,10.5279 14.4378,9.941 C15.0218,9.354 15.9738,9.353 16.5588,9.938 L23.5588,16.916 L23.5587,16.916 Z"></path>
-							</svg>
-						</div>
+						<Arrow/>
 					</Link>
 				</section>
 				<section className="flex justify-center">

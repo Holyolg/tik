@@ -1,6 +1,6 @@
 import { NawArrow } from "@/app/ui/NavArrow/NawArrow";
 import { Video } from "../../Video/Video";
-import { AnimatePresence, useScroll, useTransform, MotionValue, motion } from "framer-motion";
+import { useScroll, useTransform, MotionValue, motion } from "framer-motion";
 import { useRef } from "react";
 
 function useParallax(value: MotionValue<number>, distance: number) {

@@ -168,7 +168,7 @@ const Menu = () => {
 							}
 						>
 							<div className="tham-box">
-								<div className="tham-inner" />
+								<div className="tham-inner"/>
 							</div>
 						</div>
 						<AnimatePresence>

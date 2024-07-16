@@ -47,7 +47,7 @@ export const Accordion = ({ description }: { description: string }) => {
 							stroke="currentColor"
 							strokeLinecap="round"
 							strokeLinejoin="round"
-							strokeWidth="2"
+							strokeWidth="1"
 							d="M9 5 5 1 1 5"
 						/>
 					</motion.svg>
