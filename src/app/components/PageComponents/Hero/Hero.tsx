@@ -11,7 +11,7 @@ export const Hero = ({ scroll }: { scroll: HTMLElement | any }) => {
 	
 	const ref = useRef(null);
   	const { scrollYProgress } = useScroll({ target: ref });
-  	const y = useParallax(scrollYProgress, 300);
+  	const y = useParallax(scrollYProgress, 350);
 
 	return (
 		<main className="hero-wrapper">
