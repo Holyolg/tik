@@ -1,18 +1,25 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Cards from "../../Cards/Cards";
 import { TypeButtons } from "../../TypeButtons/TypeButtons";
 import { usePathname } from "next/navigation";
+import { motion, useInView } from "framer-motion";
 
 export default function HeroProjects({ numItems }: { numItems: number }) {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true });
 	const [category, setCategory] = useState("Все");
 	const [type, setType] = useState("genproject");
 	const [isLoading, setIsLoading] = useState(true);
 	const pathname = usePathname();
 
 	return (
-		<>
+
+		<section ref={ref} style={{
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s"
+}}>
 			<div className="flex justify-between items-center">
 				<h2 className="text-4xl lg:text-6xl font-semibold">Проекты</h2>
 			</div>
@@ -58,6 +65,7 @@ export default function HeroProjects({ numItems }: { numItems: number }) {
 					</svg>
 				</div>
 			</Link>
-		</>
+			</section>
+
 	);
 }

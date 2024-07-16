@@ -147,7 +147,7 @@ const Menu = () => {
 	);
 
 	return (
-		<header className="menu fixed z-50 w-full top-5">
+		<motion.header className="menu fixed z-50 w-full top-5" initial={{opacity: 0}} animate={{opacity: 1}} transition={{ delay: 0.75 }}>
 			<div className="container mx-auto">
 				<div className="px-5 sm:px-6 relative bg-white rounded-xl h-14 shadow-lg">
 					<div className="menu-logo w-full h-14 flex justify-between">
@@ -178,7 +178,7 @@ const Menu = () => {
 					</div>
 				</div>
 			</div>
-		</header>
+		</motion.header>
 	);
 };
 

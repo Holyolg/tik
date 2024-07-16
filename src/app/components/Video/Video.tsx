@@ -1,6 +1,9 @@
 "use client";
 
+import { useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+
 const PLAYING_DEBOUNCE_TIME = 50;
 const WAITING_DEBOUNCE_TIME = 200;
 
@@ -82,10 +85,11 @@ export const Video = ({ src, ...props }: IVideo) => {
 	};
 
 	return (
-		<video
+		<motion.video
 			{...props}
 			ref={videoElementRef}
 			src={src}
+		
 			className={
 				isWaiting
 					? "blur-lg md:w-full md:h-[100vh] h-[100vh] object-cover brightness-50"
