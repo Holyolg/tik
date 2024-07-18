@@ -121,7 +121,8 @@ const CardDetails = ({ data }: ICardDetails) => {
                     <p className="text-sm">
                       {data.category !== "Интерьеры" &&
                       data.category !== "Благоустройство" &&
-                      data.category !== "Здания"
+                      data.category !== "Здания" &&
+                      data.category !== "Концепция"
                         ? `${data.category} здания`
                         : data.category}
                     </p>

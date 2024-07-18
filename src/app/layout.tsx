@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body
-        className={`${inter.className} min-h-[100vh] flex flex-col justify-between`}
+        className={`${inter.className} min-h-[100vh] flex flex-col justify-between antialiased`}
       >
         <Menu />
         <Suspense fallback={<Loading />}>{children}</Suspense>
