@@ -8,28 +8,28 @@ import Loading from "./loading";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-	title: "TIKPRO - проектная организация",
-	description: "Все стадии П и Р ",
-	verification: {
-		google: "b5nvzgpWzGQRLKd0y3C8WiXjkA-PyErwiEh7XHNJA8A",
-		yandex: "c0ca61b48eb6ea99",
-	},
+  title: "TIK PRO, проектная организация",
+  description: "Все стадии П и Р",
+  verification: {
+    google: "b5nvzgpWzGQRLKd0y3C8WiXjkA-PyErwiEh7XHNJA8A",
+    yandex: "c0ca61b48eb6ea99",
+  },
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-	return (
-		<html lang="ru">
-			<body
-				className={`${inter.className} min-h-[100vh] flex flex-col justify-between`}
-			>
-				<Menu />
-				<Suspense fallback={<Loading />}>{children}</Suspense>
-				<Footer />
-			</body>
-		</html>
-	);
+  return (
+    <html lang="ru">
+      <body
+        className={`${inter.className} min-h-[100vh] flex flex-col justify-between`}
+      >
+        <Menu />
+        <Suspense fallback={<Loading />}>{children}</Suspense>
+        <Footer />
+      </body>
+    </html>
+  );
 }
