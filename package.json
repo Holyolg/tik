@@ -16,6 +16,7 @@
 		"@mui/material": "^5.15.15",
 		"@pbe/react-yandex-maps": "^1.2.5",
 		"@plaiceholder/next": "^3.0.0",
+		"@prisma/client": "^5.17.0",
 		"framer-motion": "^11.0.28",
 		"next": "14.2.4",
 		"plaiceholder": "^3.0.0",
@@ -33,6 +34,7 @@
 		"eslint": "^8",
 		"eslint-config-next": "14.2.1",
 		"postcss": "^8",
+		"prisma": "^5.17.0",
 		"tailwindcss": "^3.4.1"
 	}
 }
