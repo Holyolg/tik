@@ -12,7 +12,7 @@ interface IJSONCards {
 	link: string;
 	title: string;
 	category: string | number;
-	subtitle: string;
+	subtitle: string | undefined;
 }
 
 const Card = ({ id, title, link, img, subtitle, category }: IJSONCards) => {

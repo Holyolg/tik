@@ -1,0 +1,118 @@
+[
+	{
+		"id": "jk_andreevskiy",
+		"img": "/img/concept/buildings/jk_andreevskiy/1.jpg",
+		"link": "/projects/concept/",
+		"title": "Андреевский",
+		"category": "Жилые",
+		"subcategory": "Здания",
+		"type": "concept",
+		"subtitle": "Жилой комплекс",
+		"square": "17 200 м²",
+		"location": "г. Тамбов, ул. Андреевская",
+		"partners": "",
+		"customer": "ООО «СЗ «ТамбовСтарстрой»",
+		"stage": "АК, ПД, РД, АН",
+		"date": "2024",
+		"status": "",
+		"description": "...",
+		"imgcontent": [
+			"/img/concept/buildings/jk_andreevskiy/2.jpg",
+			"/img/concept/buildings/jk_andreevskiy/3.jpg"
+		],
+		"rating": 2
+	},
+	{
+		"id": "mifi",
+		"img": "/img/concept/buildings/mifi/1.jpg",
+		"link": "/projects/concept/",
+		"title": "МИФИ",
+		"category": "Концепция",
+		"subcategory": "Здания",
+		"type": "concept",
+		"subtitle": "",
+		"square": "",
+		"location": "г. Москва, Каширское шоссе, 31",
+		"partners": "",
+		"customer": "АО «АРТПЛАСТ»",
+		"stage": "АХО",
+		"date": "2022",
+		"status": "",
+		"description": "...",
+		"imgcontent": [
+			"/img/concept/buildings/mifi/2.jpg",
+			"/img/concept/buildings/mifi/3.jpg"
+		],
+		"rating": 1
+	},
+	{
+		"id": "bitca_policlinika",
+		"img": "/img/concept/buildings/bitca_policlinika/1.jpg",
+		"link": "/projects/concept/",
+		"title": "Поликлиника",
+		"category": "Концепция",
+		"subcategory": "Здания",
+		"type": "concept",
+		"subtitle": "",
+		"square": "1 832 м²",
+		"location": "Московская обл., пос. Битца",
+		"partners": "",
+		"customer": "ГК «ФСК – Лидер»",
+		"stage": "АХО",
+		"date": "2022",
+		"status": "",
+		"description": "...",
+		"imgcontent": [
+			"/img/concept/buildings/bitca_policlinika/2.jpg",
+			"/img/concept/buildings/bitca_policlinika/3.jpg",
+			"/img/concept/buildings/bitca_policlinika/4.jpg"
+		],
+		"rating": 3
+	},
+	{
+		"id": "most_konkurs",
+		"img": "/img/concept/improvement/most_konkurs/1.jpg",
+		"link": "/projects/concept/",
+		"title": "«Карп съел мост»",
+		"category": "Концепция",
+		"subcategory": "Благоустройство",
+		"type": "concept",
+		"subtitle": "Конкурсное предложение по обустройству моста",
+		"square": "",
+		"location": "г. Москва, Строительный проезд, 9",
+		"partners": "",
+		"customer": "ООО «ФСК Девелопмент»",
+		"stage": "АК",
+		"date": "2022",
+		"status": "",
+		"description": "«Карп съел мост» - название проекта реконструкции моста через реку Сходня. Карп - рыба, украшение водоемов средней полос России. Мост образно напоминает карпа, съевшего старый остов моста. Будущее приходит на смену прошлому, при этом старое и новое органично сосуществуют в синтезе. Обтекаемая бионическая форма моста подчеркивается продольными композитными ламелями. Наружная оболочка опирается на каркас из поперечных арок, закрепленных на старом мосте. Велосипедная дорожка вынесена за контур моста, тем самым создавая безопасную пешеходную зону. Покрытие моста - бетонная плитка. Рельсы существующего моста обрамлены металлическим каркасом и закрыты сверху сверхпрочным стеклом. Через стекло можно видеть старые рельсы, которые смотрятся как сохраненный артефакт. Конструктивно мост представляет собой металлический каркас, закрепленный на остове старого моста.Функционально мост служит не только для перемещения от одного берега на другой, но и является точкой притяжения и арт-объектом района реки Сходня. В разное время суток благодаря подсветке трех видов, мост раскрывается эстетически вариативно.",
+		"imgcontent": [
+			"/img/concept/improvement/most_konkurs/2.jpg",
+			"/img/concept/improvement/most_konkurs/3.jpg"
+		],
+		"rating": 3
+	},
+	{
+		"id": "kitai_4_sezona",
+		"img": "/img/concept/improvement/kitai_4_sezona/1.jpg",
+		"link": "/projects/concept/",
+		"title": "4 сезона. Благоустройство 24 улиц",
+		"category": "Концепция",
+		"subcategory": "Благоустройство",
+		"type": "concept",
+		"subtitle": "",
+		"square": "",
+		"location": "Китай",
+		"partners": "",
+		"customer": "",
+		"stage": "АК",
+		"date": "2021",
+		"status": "",
+		"description": "",
+		"imgcontent": [
+			"/img/concept/improvement/kitai_4_sezona/2.jpg",
+			"/img/concept/improvement/kitai_4_sezona/3.jpg"
+		],
+		"rating": 3
+	}
+]
