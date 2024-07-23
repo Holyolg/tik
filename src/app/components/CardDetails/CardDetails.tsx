@@ -65,7 +65,11 @@ const CardDetails = ({ data }: ICardDetails) => {
   ));
 
   useEffect(() => {
-    const page = Math.floor(Math.random() * (6 - 1));
+    const page =
+      data.type == "Генпроектирование"
+        ? Math.floor(Math.random() * (6 - 1) + 1)
+        : Math.floor(Math.random() * (2 - 1) + 1);
+    console.log(page);
     const API_URL = `https://668e955fbf9912d4c92ee8b3.mockapi.io/${
       data.type == "Генпроектирование" ? "genproject" : "concept"
     }?page=${page}&limit=3&sortBy=rating&order=asc`;
