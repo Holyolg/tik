@@ -28,6 +28,7 @@ export default function Projects() {
           type={type}
           onClickType={(type: string) => {
             setType(type);
+            setCategory("Все");
           }}
           onLoading={(isLoading: boolean) => {
             setIsLoading(isLoading);

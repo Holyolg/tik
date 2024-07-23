@@ -5,20 +5,24 @@ import { Skeleton } from "@mui/material/";
 import { useEffect, useMemo, useState } from "react";
 import Card from "../Card/Card";
 
-interface IJSONCards {
+interface IData {
   id: string;
   img: string;
   link: string;
   title: string;
-  category: string | number;
-  subtitle: string;
-  date: string;
+  category: string;
+  subcategory: string;
   type: string;
-  square: string;
-  location: string;
-  status: string;
-  description: string;
-  text: string;
+  subtitle?: string;
+  square?: string;
+  location?: string;
+  partners?: string;
+  customer?: string;
+  stage?: string;
+  date?: string;
+  status?: string;
+  description?: string;
+  imgcontent?: string[];
 }
 
 const Cards = ({
@@ -64,7 +68,7 @@ const Cards = ({
 
   const filteredCards = useMemo(() => {
     return category != "Все"
-      ? cards.filter((card: IJSONCards) => card.category == category)
+      ? cards.filter((card: IData) => card.subcategory == category)
       : cards;
   }, [category, cards]);
 
@@ -72,7 +76,7 @@ const Cards = ({
     <div className="mx-auto grid grid-cols-1 w-full md:grid-cols-2 xl:grid-cols-3 gap-10 mt-10">
       {isLoading
         ? skeletons
-        : filteredCards.map((card: IJSONCards) => {
+        : filteredCards.map((card: IData) => {
             return (
               <Card
                 key={card.id}
