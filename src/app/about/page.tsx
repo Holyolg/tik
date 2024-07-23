@@ -61,28 +61,22 @@ export default function About() {
         </a>
       </div>
       <div className="w-full h-full flex flex-col-reverse lg:flex-row justify-between mt-12">
-        <div className="flex flex-col justify-between max-w-xl">
+        <div className="flex flex-col justify-between max-w-xl xl:max-w-3xl">
           <p className=" text-gray-500 leading-relaxed mt-10 lg:mt-0">
             TIK-PROJECT - команда архитекторов, конструкторов, инженеров и
             BIM-специалистов. <br /> В аббревиатуре «TIK»: «Technologies
             Innovations Knowledge» заложены основные принципы и ценности
-            компании, которым мы следуем с 2017 года. Применение современных
-            технологий, креативность и энергичность молодых специалистов, знания
-            и опыт старших коллег - такой симбиоз позволяет нам создавать
-            уникальный продукт, задающий новые стандарты качества и
-            удовлетворяющий всем потребностям наших заказчиков. <br /> Основной
-            вид деятельности компании - оказание услуг генпроектирования. Мы
-            проектируем жилые и многофункциональные комплексы, офисные здания и
-            торговые центры, социальные объекты, а также занимаемся разработкой
-            архитектурных концепций, интерьеров и комфортной городской среды.
+            компании, которым мы следуем с 2017 года. <br /> Применение
+            современных технологий, креативность и энергичность молодых
+            специалистов, знания и опыт старших коллег - такой симбиоз позволяет
+            нам создавать уникальный продукт, задающий новые стандарты качества
+            и удовлетворяющий всем потребностям наших заказчиков. <br />
+            Основной вид деятельности компании - оказание услуг
+            генпроектирования. Мы проектируем жилые и многофункциональные
+            комплексы, офисные здания и торговые центры, социальные объекты, а
+            также занимаемся разработкой архитектурных концепций, интерьеров и
+            комфортной городской среды.
           </p>
-          <Image
-            width={250}
-            height={150}
-            className="mt-8"
-            src="/mos.svg"
-            alt="Ассоциация проектировщиков Московской области"
-          />
         </div>
         <div className="">
           <Image
@@ -94,46 +88,56 @@ export default function About() {
           />
         </div>
       </div>
-      <div className="flex flex-wrap justify-between mt-12 gap-6 md:gap-10 text-gray-800">
-        <div className="w-full lg:w-60 h-40 p-4 rounded-xl flex flex-col justify-between bg-gray-100 ">
-          <b className="text-3xl">
-            &gt;230 тыс. м<sup>2</sup>
+      <div className="flex flex-wrap justify-between mt-12  text-gray-800">
+        <div className="w-full lg:w-52 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100 ">
+          <b className="text-lg">
+            &gt;500 тыс. м<sup>2</sup>
           </b>
-          <span className="text-sm">Было в работе в 2022 году</span>
+          <span className="text-sm">Спроектировано</span>
         </div>
 
-        <div className="w-full lg:w-60 h-40 p-4 rounded-xl flex flex-col justify-between bg-gray-100 ">
-          <b className="text-3xl">АГР и АГО</b>
+        <div className="w-full lg:w-52 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100 ">
+          <b className="text-lg">АГР и АГО</b>
           <span className="text-sm">
-            С 2022 года получены свидетельства АГР В Москве и АГО в Московской
+            Получение свидетельств АГР и АГК в Москве, АГО и АХО в Московской
             области
           </span>
         </div>
-        <div className="w-full lg:w-60 h-40 p-4 rounded-xl flex flex-col justify-between bg-gray-100 ">
-          <b className="text-3xl">80+</b>
-          <span className="text-sm">
-            cпециалистов проектировщиков. Выполнение всех разделов.
-          </span>
+        <div className="w-full lg:w-52 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100 ">
+          <b className="text-lg"> &gt;80</b>
+          <span className="text-sm">Специалистов в штате</span>
         </div>
-        <div className="w-full lg:w-60 h-40 p-4 rounded-xl flex flex-col justify-between bg-gray-100">
-          <b className="text-3xl">Допуск СРО</b>{" "}
+        <div className="w-full lg:w-52 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100">
+          <b className="text-lg">
+            Допуск СРО <br /> &gt;300 млн. руб
+          </b>
           <span className="text-sm">
             Допуск к работе с опасными и уникальными объектами
           </span>
         </div>
         <div
-          className="w-full lg:w-60 h-40 p-4 rounded-xl flex flex-col justify-between bg-gray-100"
+          className="w-full lg:w-52 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100"
           id="services"
         >
-          <b className="text-3xl">
+          <b className="text-lg">
             BIM 3D, <br />
             AU Revit
           </b>
           <span className="text-sm">Все проекты и все стадии</span>
         </div>
+        <div
+          className="w-full lg:w-52 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100"
+          id="services"
+        >
+          <b className="text-lg">
+            Ассоциация проектировщиков Московской области
+          </b>
+          <span className="text-sm">Членство с 2022 года</span>
+        </div>
       </div>
+
       <section className="mt-14 md:mt-32">
-        <h2 className="text-4xl lg:text-6xl font-semibold">Специализация</h2>
+        <h2 className="text-4xl lg:text-6xl font-semibold">Услуги</h2>
         <div className="flex flex-col xl:flex-row gap-10 mt-8 lg:mt-12">
           <div>
             <ul className="space-y-4 md:space-y-10 w-56">
@@ -183,17 +187,17 @@ export default function About() {
         </div>
       </section>
       {/* <div className="flex flex-wrap justify-between mt-12 gap-10 text-gray-800">
-				<div className="w-full lg:w-60 h-24 text-center rounded-xl flex flex-col justify-center items-center bg-gray-100">
+				<div className="w-full lg:w-52 h-24 text-center rounded-xl flex flex-col justify-center items-center bg-gray-100">
 					<p className="">Общественные объекты</p>
 				</div>
-				<div className="w-full lg:w-60 h-24 text-center rounded-xl flex flex-col justify-center items-center bg-gray-100">
+				<div className="w-full lg:w-52 h-24 text-center rounded-xl flex flex-col justify-center items-center bg-gray-100">
 					<p className="">Жилые здания</p>
 				</div>
 
-				<div className="w-full lg:w-60 h-24 text-center rounded-xl flex flex-col justify-center items-center bg-gray-100">
+				<div className="w-full lg:w-52 h-24 text-center rounded-xl flex flex-col justify-center items-center bg-gray-100">
 					<p className="">Интерьеры</p>
 				</div>
-				<div className="w-full lg:w-60 h-24 text-center rounded-xl flex flex-col justify-center items-center bg-gray-100">
+				<div className="w-full lg:w-52 h-24 text-center rounded-xl flex flex-col justify-center items-center bg-gray-100">
 					<p className="">Благоустройство</p>
 				</div>
 			</div> */}
