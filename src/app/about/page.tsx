@@ -87,27 +87,27 @@ export default function About() {
 					/>
 				</div>
 			</div>
-			<div className="flex flex-wrap justify-between mt-12  text-gray-800">
-				<div className="w-full lg:w-52 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100 ">
-					<b className="text-lg">
+			<div className="flex flex-wrap justify-between mt-12  text-gray-800 gap-10">
+				<div className="w-full lg:w-52 xl:w-64 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100">
+					<b className="text-lg lg:text-xl">
 						&gt;500 тыс. м<sup>2</sup>
 					</b>
 					<span className="text-sm">Спроектировано</span>
 				</div>
 
-				<div className="w-full lg:w-52 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100 ">
-					<b className="text-lg">АГР и АГО</b>
+				<div className="w-full lg:w-52 xl:w-64 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100 ">
+					<b className="text-lg lg:text-xl">АГР и АГО</b>
 					<span className="text-sm">
 						Получение свидетельств АГР и АГК в Москве, АГО и АХО в Московской
 						области
 					</span>
 				</div>
-				<div className="w-full lg:w-52 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100 ">
-					<b className="text-lg"> &gt;80</b>
+				<div className="w-full lg:w-52 xl:w-64 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100 ">
+					<b className="text-lg lg:text-xl"> &gt;80</b>
 					<span className="text-sm">Специалистов в штате</span>
 				</div>
 				<div className="w-full lg:w-52 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100">
-					<b className="text-lg">
+					<b className="text-lg lg:text-xl">
 						Допуск СРО <br /> &gt;300 млн. руб
 					</b>
 					<span className="text-sm">
@@ -115,20 +115,20 @@ export default function About() {
 					</span>
 				</div>
 				<div
-					className="w-full lg:w-52 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100"
+					className="w-full lg:w-52 xl:w-64 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100"
 					id="services"
 				>
-					<b className="text-lg">
+					<b className="text-lg lg:text-xl">
 						BIM 3D, <br />
 						AU Revit
 					</b>
 					<span className="text-sm">Все проекты и все стадии</span>
 				</div>
 				<div
-					className="w-full lg:w-52 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100"
+					className="w-full lg:w-52 xl:w-64 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100"
 					id="services"
 				>
-					<b className="text-lg">
+					<b className="text-lg lg:text-xl">
 						Ассоциация проектировщиков Московской области
 					</b>
 					<span className="text-sm">Членство с 2022 года</span>
@@ -147,7 +147,9 @@ export default function About() {
 								нормативным требованиям и оперативность выполнения работ.
 							</span>
 							<div>
-								Генпроектирование включает в себя: <br />
+								<br />
+								Генпроектирование включает в себя:
+								<br />
 								1. Предпроектные исследования:
 								<ul className="ml-4">
 									<li>• Анализ исходных данных и условий площадки.</li>
@@ -188,17 +190,17 @@ export default function About() {
 										решений.
 									</li>
 									<li>
-										Консультации и внесение корректировок в процессе
+										• Консультации и внесение корректировок в процессе
 										строительства.
 									</li>
 								</ul>
 							</div>
 							<br />
 						</div>
-						<div className="min-h-fit non-clickable">
+						<div className="min-h-fit non-clickable relative bg-[url('/genproject_min.jpg')] bg-cover bg-no-repeat bg-center rounded-lg max-w-2xl xl:max-w-4xl w-full">
 							<video
 								src="/genproject.mp4"
-								className="max-w-2xl xl:max-w-4xl h-full object-cover rounded-lg non-clickable"
+								className="max-w-2xl xl:max-w-4xl h-full object-cover rounded-lg"
 								width="100%"
 								height="100%"
 								preload="none"
@@ -213,7 +215,7 @@ export default function About() {
 						Концептуальное проектирование
 					</h3>
 					<div className="mt-6 flex flex-col md:flex-row w-full h-full justify-between gap-4 text-gray-500">
-						<div className="min-h-fit non-clickable">
+						<div className="min-h-fit  non-clickable relative  bg-[url('/concept_min.jpg')] bg-cover bg-no-repeat rounded-lg max-w-2xl xl:max-w-4xl bg-center w-full">
 							<video
 								src="/concept.mp4"
 								className="max-w-2xl xl:max-w-4xl h-full object-cover rounded-lg"
