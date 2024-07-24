@@ -9,7 +9,7 @@ const Menu = () => {
 	const { width } = useWindowSize();
 
 	const menuXL = (
-		<motion.nav className="absolute right-24">
+		<nav className="absolute right-6">
 			<div className="flex items-center space-x-9 h-14">
 				<motion.div
 					whileTap={{ scale: 0.97 }}
@@ -17,14 +17,12 @@ const Menu = () => {
 					animate={{ x: 0, opacity: 1 }}
 					exit={{ x: 45, opacity: 0 }}
 					whileHover={{
-						opacity: 0.7,
+						opacity: 0.5,
 					}}
 					className="
 		cursor-pointer"
 				>
-					<Link onClick={() => setOpened(!open)} href="/projects">
-						Проекты
-					</Link>
+					<Link href="/projects">Проекты</Link>
 				</motion.div>
 				<motion.div
 					whileTap={{ scale: 0.97 }}
@@ -32,14 +30,12 @@ const Menu = () => {
 					animate={{ x: 0, opacity: 1 }}
 					exit={{ x: 35, opacity: 0 }}
 					whileHover={{
-						opacity: 0.7,
+						opacity: 0.5,
 					}}
 					className="
 		cursor-pointer"
 				>
-					<Link onClick={() => setOpened(!open)} href="/about">
-						О компании
-					</Link>
+					<Link href="/about">О компании</Link>
 				</motion.div>
 				<motion.div
 					whileTap={{ scale: 0.97 }}
@@ -47,14 +43,12 @@ const Menu = () => {
 					animate={{ x: 0, opacity: 1 }}
 					exit={{ x: 45, opacity: 0 }}
 					whileHover={{
-						opacity: 0.7,
+						opacity: 0.5,
 					}}
 					className="
 		cursor-pointer"
 				>
-					<Link onClick={() => setOpened(!open)} href="/about/#services">
-						Услуги
-					</Link>
+					<Link href="/about/#services">Услуги</Link>
 				</motion.div>
 				<motion.div
 					whileTap={{ scale: 0.97 }}
@@ -62,16 +56,14 @@ const Menu = () => {
 					animate={{ x: 0, opacity: 1 }}
 					exit={{ x: 25, opacity: 0 }}
 					whileHover={{
-						opacity: 0.7,
+						opacity: 0.5,
 					}}
 					className="cursor-pointer"
 				>
-					<Link onClick={() => setOpened(!open)} href="/about/#contacts">
-						Контакты
-					</Link>
+					<Link href="/about/#contacts">Контакты</Link>
 				</motion.div>
 			</div>
-		</motion.nav>
+		</nav>
 	);
 
 	const menuXS = (
@@ -88,7 +80,7 @@ const Menu = () => {
 					animate={{ y: 0, opacity: 1 }}
 					exit={{ y: -45, opacity: 0 }}
 					whileHover={{
-						opacity: 0.7,
+						opacity: 0.5,
 					}}
 					className="
 		cursor-pointer"
@@ -103,7 +95,7 @@ const Menu = () => {
 					animate={{ y: 0, opacity: 1 }}
 					exit={{ y: -35, opacity: 0 }}
 					whileHover={{
-						opacity: 0.7,
+						opacity: 0.5,
 					}}
 					className="
 		cursor-pointer"
@@ -118,7 +110,7 @@ const Menu = () => {
 					animate={{ y: 0, opacity: 1 }}
 					exit={{ y: -45, opacity: 0 }}
 					whileHover={{
-						opacity: 0.7,
+						opacity: 0.5,
 					}}
 					className="
 		cursor-pointer"
@@ -133,7 +125,7 @@ const Menu = () => {
 					animate={{ y: 0, opacity: 1 }}
 					exit={{ y: -25, opacity: 0 }}
 					whileHover={{
-						opacity: 0.7,
+						opacity: 0.5,
 					}}
 					className="cursor-pointer"
 				>
@@ -163,20 +155,25 @@ const Menu = () => {
 								whileTap={{ scale: 0.97 }}
 							></motion.img>
 						</Link>
-						<div
-							onClick={() => setOpened(!opened)}
-							className={
-								opened
-									? "tham tham-e-squeeze tham-w-6 tham-active h-full "
-									: "tham tham-e-squeeze tham-w-6 h-full "
-							}
-						>
-							<div className="tham-box">
-								<div className="tham-inner" />
+						{width > 640 ? (
+							""
+						) : (
+							<div
+								onClick={() => setOpened(!opened)}
+								className={
+									opened
+										? "tham tham-e-squeeze tham-w-6 tham-active h-full "
+										: "tham tham-e-squeeze tham-w-6 h-full "
+								}
+							>
+								<div className="tham-box">
+									<div className="tham-inner" />
+								</div>
 							</div>
-						</div>
+						)}
+
+						{width > 640 ? menuXL : ""}
 						<AnimatePresence>
-							{opened && width > 640 ? menuXL : ""}
 							{opened && width < 640 ? menuXS : ""}
 						</AnimatePresence>
 					</div>

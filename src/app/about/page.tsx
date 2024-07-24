@@ -62,7 +62,7 @@ export default function About() {
 			<div className="w-full h-full flex flex-col-reverse lg:flex-row justify-between mt-12">
 				<div className="flex flex-col justify-between max-w-xl xl:max-w-3xl">
 					<p className=" text-gray-500 leading-relaxed mt-10 lg:mt-0">
-						TIK-PROJECT - команда архитекторов, конструкторов, инженеров и
+						ТИК ПРОДЖЕКТ - команда архитекторов, конструкторов, инженеров и
 						BIM-специалистов. <br /> В аббревиатуре «TIK»: «Technologies
 						Innovations Knowledge» заложены основные принципы и ценности
 						компании, которым мы следуем с 2017 года. <br /> Применение
@@ -87,20 +87,17 @@ export default function About() {
 					/>
 				</div>
 			</div>
-			<div className="flex flex-wrap justify-between mt-12  text-gray-800 gap-10 md:gap-0">
+			<div className="flex flex-wrap justify-between mt-12  text-gray-800 gap-10 xl:gap-0">
 				<div className="w-full lg:w-52 2xl:w-64 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100">
 					<b className="text-lg 2xl:text-xl">
 						&gt;500 тыс. м<sup>2</sup>
 					</b>
-					<span className="text-sm">Спроектировано</span>
+					<span className="text-sm">Выполнено проектов</span>
 				</div>
 
 				<div className="w-full lg:w-52 2xl:w-64 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100 ">
-					<b className="text-lg 2xl:text-xl">АГР и АГО</b>
-					<span className="text-sm">
-						Получение свидетельств АГР и АГК в Москве, АГО и АХО в Московской
-						области
-					</span>
+					<b className="text-lg 2xl:text-xl">&gt;20</b>
+					<span className="text-sm">АХО, АГО и АГР</span>
 				</div>
 				<div className="w-full lg:w-52 2xl:w-64 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100 ">
 					<b className="text-lg 2xl:text-xl"> &gt;80</b>
@@ -111,7 +108,7 @@ export default function About() {
 						Допуск СРО <br /> &gt;300 млн. руб
 					</b>
 					<span className="text-sm">
-						Допуск к работе с опасными и уникальными объектами
+						Допуск к проектированию с опасными и уникальными объектами
 					</span>
 				</div>
 				<div
@@ -119,8 +116,7 @@ export default function About() {
 					id="services"
 				>
 					<b className="text-lg 2xl:text-xl">
-						BIM 3D, <br />
-						AU Revit
+						Технологии информационного моделирования, BIM 3D
 					</b>
 					<span className="text-sm">Все проекты и все стадии</span>
 				</div>
@@ -149,14 +145,13 @@ export default function About() {
 							<div>
 								<br />
 								Генпроектирование включает в себя:
-								<br />
-								1. Предпроектные исследования:
+								<p className="mt-2"> 1. Предпроектные исследования:</p>
 								<ul className="ml-4">
 									<li>• Анализ исходных данных и условий площадки.</li>
 									<li>• Подготовка концептуальных решений.</li>
 									<li>• Технико-экономическое обоснование.</li>
 								</ul>
-								2. Проектная документация:
+								<p className="mt-2"> 2. Проектная документация:</p>
 								<ul className="ml-4">
 									<li>• Разработка всех разделов в составе 87 ПП РФ.</li>
 									<li>
@@ -170,7 +165,7 @@ export default function About() {
 										требованиями.
 									</li>
 								</ul>
-								3. Рабочая документация:
+								<p className="mt-2"> 3. Рабочая документация:</p>
 								<ul className="ml-4">
 									<li>• Разработка разделов в соответствии с ТЗ. </li>
 									<li>• Подготовка ведомостей объемов работ.</li>
@@ -183,7 +178,7 @@ export default function About() {
 										требованиями.
 									</li>
 								</ul>
-								4. Авторский надзор:
+								<p className="mt-2"> 4. Авторский надзор:</p>
 								<ul className="ml-4">
 									<li>
 										• Контроль за ходом строительства и соблюдением проектных
@@ -246,7 +241,7 @@ export default function About() {
 								</ul>
 								<br></br>
 								Комплексная концепция включает в себя: <br />
-								1. Анализ и исследование:
+								<p className="mt-2">1. Анализ и исследование:</p>
 								<ul className="ml-4">
 									<li>• Изучение участка и его окружения.</li>
 									<li>• Анализ градостроительных и нормативных требований.</li>
@@ -255,7 +250,7 @@ export default function About() {
 										заказчика.
 									</li>
 								</ul>
-								2. Создание концептуальных решений:
+								<p className="mt-2">2. Создание концептуальных решений: </p>
 								<ul className="ml-4">
 									<li>• Разработка архитектурных идей и решений.</li>
 									<li>• Формирование эскизов и визуализаций.</li>
@@ -265,7 +260,7 @@ export default function About() {
 									</li>
 									<li>• Проработка благоустройства территории.</li>
 								</ul>
-								3. Детализация концепции:
+								<p className="mt-2">3. Детализация концепции:</p>
 								<ul className="ml-4">
 									<li>• Проработка функциональных зон и их взаимосвязей.</li>
 									<li>
@@ -276,7 +271,7 @@ export default function About() {
 										вентиляция, водоснабжение, электроснабжение и др.).
 									</li>
 								</ul>
-								4. Согласование и презентация:
+								<p className="mt-2">4. Согласование и презентация:</p>
 								<ul className="ml-4">
 									<li>
 										• Подготовка презентационных материалов для заказчика.

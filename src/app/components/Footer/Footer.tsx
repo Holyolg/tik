@@ -17,37 +17,28 @@ export default function Footer() {
 							whileTap={{ scale: 0.97 }}
 						></motion.img>
 					</Link>
-					<span>© ТИК-ПРОДЖЕКТ {year}</span>
+					<span>ООО «ТИК-ПРОДЖЕКТ», {year}</span>
 				</div>
-				<ul className="flex flex-col sm:flex-row flex-wrap w-full max-w-xl mt-3 space-y-4 sm:space-y-0 sm:space-x-5 text-gray-500 sm:mt-0">
+				<ul className="flex flex-col sm:flex-row flex-wrap w-full justify-between md:justify-end max-w-xl mt-3 space-y-4 sm:space-y-0 sm:space-x-4 xl:space-x-8 text-gray-500 sm:mt-0">
 					<li>
-						<Link
-							href="/"
-							className="cursor-pointer hover:opacity-75 me-4 md:me-6"
-						>
+						<Link href="/" className="cursor-pointer hover:opacity-75">
 							Главная
 						</Link>
 					</li>
 					<li>
-						<Link
-							href="/projects"
-							className="cursor-pointer hover:opacity-75 me-4 md:me-6"
-						>
+						<Link href="/projects" className="cursor-pointer hover:opacity-75">
 							Проекты
 						</Link>
 					</li>
 					<li>
-						<Link
-							href="/about"
-							className="cursor-pointer hover:opacity-75 me-4 md:me-6"
-						>
+						<Link href="/about" className="cursor-pointer hover:opacity-75 ">
 							О компании
 						</Link>
 					</li>
 					<li>
 						<Link
 							href="/about/#services"
-							className="cursor-pointer hover:opacity-75 me-4 md:me-6"
+							className="cursor-pointer hover:opacity-75"
 						>
 							Услуги
 						</Link>
