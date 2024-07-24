@@ -89,25 +89,25 @@ export default function About() {
 			</div>
 			<div className="flex flex-wrap justify-between mt-12  text-gray-800 gap-10">
 				<div className="w-full lg:w-52 xl:w-64 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100">
-					<b className="text-lg lg:text-xl">
+					<b className="text-lg xl:text-xl">
 						&gt;500 тыс. м<sup>2</sup>
 					</b>
 					<span className="text-sm">Спроектировано</span>
 				</div>
 
 				<div className="w-full lg:w-52 xl:w-64 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100 ">
-					<b className="text-lg lg:text-xl">АГР и АГО</b>
+					<b className="text-lg xl:text-xl">АГР и АГО</b>
 					<span className="text-sm">
 						Получение свидетельств АГР и АГК в Москве, АГО и АХО в Московской
 						области
 					</span>
 				</div>
 				<div className="w-full lg:w-52 xl:w-64 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100 ">
-					<b className="text-lg lg:text-xl"> &gt;80</b>
+					<b className="text-lg xl:text-xl"> &gt;80</b>
 					<span className="text-sm">Специалистов в штате</span>
 				</div>
 				<div className="w-full lg:w-52 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100">
-					<b className="text-lg lg:text-xl">
+					<b className="text-lg xl:text-xl">
 						Допуск СРО <br /> &gt;300 млн. руб
 					</b>
 					<span className="text-sm">
@@ -118,7 +118,7 @@ export default function About() {
 					className="w-full lg:w-52 xl:w-64 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100"
 					id="services"
 				>
-					<b className="text-lg lg:text-xl">
+					<b className="text-lg xl:text-xl">
 						BIM 3D, <br />
 						AU Revit
 					</b>
@@ -128,7 +128,7 @@ export default function About() {
 					className="w-full lg:w-52 xl:w-64 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100"
 					id="services"
 				>
-					<b className="text-lg lg:text-xl">
+					<b className="text-lg xl:text-xl">
 						Ассоциация проектировщиков Московской области
 					</b>
 					<span className="text-sm">Членство с 2022 года</span>
