@@ -33,7 +33,8 @@ export const TypeButtons = ({
 						onClickType("genproject");
 						type == "genproject" ? "" : onLoading(true);
 						router.push(
-							pathname + "?" + createQueryString("type", "genproject"),
+							`${pathname}?
+								${createQueryString("type", "genproject")}`,
 							{
 								scroll: false,
 							}
@@ -52,9 +53,13 @@ export const TypeButtons = ({
 				onClick={() => {
 					onClickType("concept");
 					type == "concept" ? "" : onLoading(true);
-					router.push(pathname + "?" + createQueryString("type", "concept"), {
-						scroll: false,
-					});
+					router.push(
+						`${pathname}?
+							${createQueryString("type", "concept")}`,
+						{
+							scroll: false,
+						}
+					);
 				}}
 				className={
 					type === "concept"

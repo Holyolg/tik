@@ -29,10 +29,20 @@ export default function Projects() {
 		[searchParams]
 	);
 
+	useEffect(() => {
+		if (paramsType) {
+			setType(paramsType);
+		}
+		if (paramsCategory) {
+			setCategory(paramsCategory);
+		}
+	}),
+		[searchParams];
+
+	console.log(type);
+
 	//Проверка на категорию, если ее нет
 	useEffect(() => {
-		setType(paramsType);
-		setCategory(paramsCategory);
 		if (type == (null || "") && category == (null || "")) {
 			router.push(
 				pathname +

@@ -2,7 +2,7 @@
 import { useWindowSize } from "@/app/hooks/useWindowSize/useWindowSize";
 import getCards from "@/app/services/GetCards/GetCards";
 import { Skeleton } from "@mui/material/";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../Card/Card";
 
 interface IData {
@@ -66,11 +66,10 @@ const Cards = ({
 		});
 	}, [type, numItems]);
 
-	const filteredCards = useMemo(() => {
-		return category != "Все"
+	const filteredCards =
+		category != "Все"
 			? cards.filter((card: IData) => card.subcategory == category)
 			: cards;
-	}, [category, cards]);
 
 	return (
 		<div className="mx-auto grid grid-cols-1 w-full md:grid-cols-2 xl:grid-cols-3 gap-10 mt-10">

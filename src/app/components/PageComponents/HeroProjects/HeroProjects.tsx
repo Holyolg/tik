@@ -2,15 +2,13 @@
 import { Arrow } from "@/app/ui/Arrow/Arrow";
 import { useInView } from "framer-motion";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Cards from "../../Cards/Cards";
 import { TypeButtons } from "../../TypeButtons/TypeButtons";
 
 export default function HeroProjects({ numItems }: { numItems: number }) {
 	const ref = useRef(null);
-	const router = useRouter();
-	const pathname = usePathname();
 	const isInView = useInView(ref, { once: true });
 	const searchParams = useSearchParams();
 	const paramsType = searchParams.get("type");
@@ -29,17 +27,11 @@ export default function HeroProjects({ numItems }: { numItems: number }) {
 		[searchParams]
 	);
 
+	console.log(paramsType);
+
 	useEffect(() => {
-		setType(paramsType);
-		if (type == (null || "")) {
-			router.push(
-				pathname +
-					"?" +
-					createQueryString("type", "genproject") +
-					{
-						scroll: false,
-					}
-			);
+		if (paramsType) {
+			setType(paramsType);
 		}
 	}, []);
 
