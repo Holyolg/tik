@@ -37,12 +37,9 @@ const Cards = ({
 	loading: boolean;
 }) => {
 	const [cards, setCards] = useState([]);
+	const [filteredCards, setFilteredCards] = useState(cards);
 	const [isLoading, setIsLoading] = useState(true);
 	const { width } = useWindowSize();
-
-	useEffect(() => {
-		setIsLoading(loading);
-	}, []);
 
 	const skeletons = [...new Array(numItems == undefined ? 9 : numItems)].map(
 		(_, index) => (
@@ -62,14 +59,23 @@ const Cards = ({
 
 		getCards(API_URL).then(res => {
 			setCards(res);
+			setFilteredCards(res);
 			setIsLoading(false);
 		});
-	}, [type, numItems]);
+	}, [type]);
 
-	const filteredCards =
+	// const filteredCards =
+	// 	category != "Все"
+	// 		? cards.filter((card: IData) => card.subcategory == category)
+	// 		: cards;
+
+	useEffect(() => {
 		category != "Все"
-			? cards.filter((card: IData) => card.subcategory == category)
-			: cards;
+			? setFilteredCards(
+					cards.filter((card: IData) => card.subcategory == category)
+			  )
+			: setFilteredCards(cards);
+	}, [category, type]);
 
 	return (
 		<div className="mx-auto grid grid-cols-1 w-full md:grid-cols-2 xl:grid-cols-3 gap-10 mt-10">

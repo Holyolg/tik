@@ -11,12 +11,14 @@ interface IParams {
 
 export default function Projects() {
 	const searchParams = useSearchParams();
-	const paramsType = searchParams.get("type");
 	const router = useRouter();
 	const pathname = usePathname();
 	const paramsCategory = searchParams.get("category");
-	const [category, setCategory] = useState<string | null>("Все");
-	const [type, setType] = useState<string | null>("genproject");
+	const paramsType = searchParams.get("type");
+
+	const [type, setType] = useState(paramsType ?? "genproject");
+	const [category, setCategory] = useState(paramsCategory ?? "Все");
+
 	const [isLoading, setIsLoading] = useState(true);
 
 	const createQueryString = useCallback(
@@ -30,30 +32,8 @@ export default function Projects() {
 	);
 
 	useEffect(() => {
-		if (paramsType) {
-			setType(paramsType);
-		}
-		if (paramsCategory) {
-			setCategory(paramsCategory);
-		}
-	}),
-		[searchParams];
-
-	console.log(type);
-
-	//Проверка на категорию, если ее нет
-	useEffect(() => {
-		if (type == (null || "") && category == (null || "")) {
-			router.push(
-				pathname +
-					"?" +
-					createQueryString("type", "genproject") +
-					"&" +
-					createQueryString("category", "Все"),
-				{
-					scroll: false,
-				}
-			);
+		if (paramsType !== "genproject" && paramsType !== "concept") {
+			setType("genproject");
 		}
 	}, []);
 

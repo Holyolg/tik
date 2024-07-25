@@ -11,10 +11,10 @@ export default function HeroProjects({ numItems }: { numItems: number }) {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true });
 	const searchParams = useSearchParams();
-	const paramsType = searchParams.get("type");
+	const paramsType = searchParams.get("type") ?? "genproject";
 
 	const [category, setCategory] = useState("Все");
-	const [type, setType] = useState<string | null>("genproject");
+	const [type, setType] = useState(paramsType);
 	const [isLoading, setIsLoading] = useState(true);
 
 	const createQueryString = useCallback(
@@ -27,11 +27,9 @@ export default function HeroProjects({ numItems }: { numItems: number }) {
 		[searchParams]
 	);
 
-	console.log(paramsType);
-
 	useEffect(() => {
-		if (paramsType) {
-			setType(paramsType);
+		if (paramsType !== "genproject" && paramsType !== "concept") {
+			setType("genproject");
 		}
 	}, []);
 

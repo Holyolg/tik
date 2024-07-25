@@ -29,6 +29,8 @@ function Categories({
 	const categoryValue =
 		type == "genproject" ? categoriesProject : categoriesConcept;
 
+	console.log(category);
+
 	const router = useRouter();
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
@@ -50,7 +52,8 @@ function Categories({
 					onClick={() => {
 						onClickCategory(categoryName);
 						router.push(
-							pathname + "?" + createQueryString("category", categoryName),
+							`${pathname}?
+								${createQueryString("category", categoryName)}`,
 							{
 								scroll: false,
 							}
