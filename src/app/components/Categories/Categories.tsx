@@ -29,8 +29,6 @@ function Categories({
 	const categoryValue =
 		type == "genproject" ? categoriesProject : categoriesConcept;
 
-	console.log(category);
-
 	const router = useRouter();
 	const pathname = usePathname();
 	const searchParams = useSearchParams();

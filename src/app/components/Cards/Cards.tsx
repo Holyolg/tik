@@ -1,6 +1,7 @@
 "use client";
 import { useWindowSize } from "@/app/hooks/useWindowSize/useWindowSize";
 import getCards from "@/app/services/GetCards/GetCards";
+import { cardStore } from "@/app/store/store";
 import { Skeleton } from "@mui/material/";
 import { useEffect, useState } from "react";
 import Card from "../Card/Card";
@@ -29,16 +30,15 @@ const Cards = ({
 	numItems,
 	category,
 	type,
-	loading,
 }: {
 	numItems?: number | undefined;
 	category: string | null;
 	type: string | null;
-	loading: boolean;
 }) => {
+	const loading = cardStore(state => state.loading);
+	const updateLoading = cardStore(state => state.updateLoading);
+
 	const [cards, setCards] = useState([]);
-	const [filteredCards, setFilteredCards] = useState(cards);
-	const [isLoading, setIsLoading] = useState(true);
 	const { width } = useWindowSize();
 
 	const skeletons = [...new Array(numItems == undefined ? 9 : numItems)].map(
@@ -59,27 +59,26 @@ const Cards = ({
 
 		getCards(API_URL).then(res => {
 			setCards(res);
-			setFilteredCards(res);
-			setIsLoading(false);
+			updateLoading(false);
 		});
 	}, [type]);
 
-	// const filteredCards =
-	// 	category != "Все"
-	// 		? cards.filter((card: IData) => card.subcategory == category)
-	// 		: cards;
-
-	useEffect(() => {
+	const filteredCards =
 		category != "Все"
-			? setFilteredCards(
-					cards.filter((card: IData) => card.subcategory == category)
-			  )
-			: setFilteredCards(cards);
-	}, [category, type]);
+			? cards.filter((card: IData) => card.subcategory == category)
+			: cards;
+
+	// useEffect(() => {
+	// 	category != "Все"
+	// 		? setFilteredCards(
+	// 				cards.filter((card: IData) => card.subcategory == category)
+	// 		  )
+	// 		: setFilteredCards(cards);
+	// }, [category, type]);
 
 	return (
 		<div className="mx-auto grid grid-cols-1 w-full md:grid-cols-2 xl:grid-cols-3 gap-10 mt-10">
-			{isLoading
+			{loading
 				? skeletons
 				: filteredCards.map((card: IData) => {
 						return (

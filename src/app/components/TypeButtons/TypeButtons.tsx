@@ -5,19 +5,18 @@ import { useCallback } from "react";
 export const TypeButtons = ({
 	onClickType,
 	type,
-	onLoading,
 }: {
 	onClickType: Function;
 	type: string | null;
-	onLoading: Function;
 }) => {
 	const router = useRouter();
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
 
+	const params = new URLSearchParams(searchParams.toString());
+
 	const createQueryString = useCallback(
 		(name: string, value: string) => {
-			const params = new URLSearchParams(searchParams.toString());
 			params.set(name, value);
 
 			return params.toString();
@@ -25,16 +24,18 @@ export const TypeButtons = ({
 		[searchParams]
 	);
 
+	//сброс категории
+	params.set("category", "Все");
+
 	return (
 		<div className="flex items-center sm:space-y-0 space-x-0 lg:space-x-5">
 			<button
 				onClick={() => {
 					{
 						onClickType("genproject");
-						type == "genproject" ? "" : onLoading(true);
+
 						router.push(
-							`${pathname}?
-								${createQueryString("type", "genproject")}`,
+							pathname + "?" + createQueryString("type", "genproject"),
 							{
 								scroll: false,
 							}
@@ -52,7 +53,7 @@ export const TypeButtons = ({
 			<button
 				onClick={() => {
 					onClickType("concept");
-					type == "concept" ? "" : onLoading(true);
+
 					router.push(
 						`${pathname}?
 							${createQueryString("type", "concept")}`,
