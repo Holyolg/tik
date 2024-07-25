@@ -1,4 +1,5 @@
 "use client";
+import { cardStore } from "@/app/store/store";
 import { Arrow } from "@/app/ui/Arrow/Arrow";
 import { useInView } from "framer-motion";
 import Link from "next/link";
@@ -15,7 +16,8 @@ export default function HeroProjects({ numItems }: { numItems: number }) {
 
 	const [category, setCategory] = useState("Все");
 	const [type, setType] = useState(paramsType);
-	const [isLoading, setIsLoading] = useState(true);
+
+	const updateLoading = cardStore(state => state.updateLoading);
 
 	const createQueryString = useCallback(
 		(name: string, value: string) => {
@@ -49,9 +51,7 @@ export default function HeroProjects({ numItems }: { numItems: number }) {
 					type={type}
 					onClickType={(type: string) => {
 						setType(type);
-					}}
-					onLoading={(isLoading: boolean) => {
-						setIsLoading(isLoading);
+						updateLoading(true);
 					}}
 				/>
 				<button className="hover:opacity-70 lg:flex items-center cursor-pointer hidden space-x-2">
@@ -64,12 +64,7 @@ export default function HeroProjects({ numItems }: { numItems: number }) {
 					<Arrow />
 				</button>
 			</div>
-			<Cards
-				numItems={numItems}
-				type={type}
-				category={category}
-				loading={isLoading}
-			/>
+			<Cards numItems={numItems} type={type} category={category} />
 
 			<button className="w-full h-10 mt-10 flex justify-center items-center bg-black border-black border rounded-lg  hover:bg-black text-white active:opacity-85 lg:hidden space-x-2">
 				<Link
@@ -79,6 +74,7 @@ export default function HeroProjects({ numItems }: { numItems: number }) {
 				</Link>
 				<Arrow />
 			</button>
+			<div id="about"></div>
 		</section>
 	);
 }

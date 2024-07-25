@@ -1,17 +1,8 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
 import { Contacts } from "../components/PageComponents/Contacts/Contacts";
 
 export default function About() {
-	const [category, setCategory] = useState(1);
-	const categories: string[] = [
-		"Жилые здания",
-		"Общественные объекты",
-		"Интерьеры",
-		"Благоустройство",
-	];
-
 	const cards = [
 		{
 			description:

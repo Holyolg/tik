@@ -31,23 +31,17 @@ export default function Footer() {
 						</Link>
 					</li>
 					<li>
-						<Link href="/about" className="cursor-pointer hover:opacity-75 ">
+						<Link href="/#about" className="cursor-pointer hover:opacity-75 ">
 							О компании
 						</Link>
 					</li>
 					<li>
-						<Link
-							href="/about/#services"
-							className="cursor-pointer hover:opacity-75"
-						>
+						<Link href="/#services" className="cursor-pointer hover:opacity-75">
 							Услуги
 						</Link>
 					</li>
 					<li>
-						<Link
-							href="/about/#contacts"
-							className="cursor-pointer hover:opacity-75"
-						>
+						<Link href="/#contacts" className="cursor-pointer hover:opacity-75">
 							Контакты
 						</Link>
 					</li>

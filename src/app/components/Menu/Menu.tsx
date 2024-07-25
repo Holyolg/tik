@@ -35,7 +35,7 @@ const Menu = () => {
 					className="
 		cursor-pointer"
 				>
-					<Link href="/about">О компании</Link>
+					<Link href="/#about">О компании</Link>
 				</motion.div>
 				<motion.div
 					whileTap={{ scale: 0.97 }}
@@ -48,7 +48,7 @@ const Menu = () => {
 					className="
 		cursor-pointer"
 				>
-					<Link href="/about/#services">Услуги</Link>
+					<Link href="/#services">Услуги</Link>
 				</motion.div>
 				<motion.div
 					whileTap={{ scale: 0.97 }}
@@ -60,7 +60,7 @@ const Menu = () => {
 					}}
 					className="cursor-pointer"
 				>
-					<Link href="/about/#contacts">Контакты</Link>
+					<Link href="/#contacts">Контакты</Link>
 				</motion.div>
 			</div>
 		</nav>
@@ -100,7 +100,7 @@ const Menu = () => {
 					className="
 		cursor-pointer"
 				>
-					<Link onClick={() => setOpened(!open)} href="/about">
+					<Link onClick={() => setOpened(!open)} href="/#about">
 						О компании
 					</Link>
 				</motion.div>
@@ -115,7 +115,7 @@ const Menu = () => {
 					className="
 		cursor-pointer"
 				>
-					<Link onClick={() => setOpened(!open)} href="/about/#services">
+					<Link onClick={() => setOpened(!open)} href="/#services">
 						Услуги
 					</Link>
 				</motion.div>
@@ -129,7 +129,7 @@ const Menu = () => {
 					}}
 					className="cursor-pointer"
 				>
-					<Link onClick={() => setOpened(!open)} href="/about/#contacts">
+					<Link onClick={() => setOpened(!open)} href="/#contacts">
 						Контакты
 					</Link>
 				</motion.div>
