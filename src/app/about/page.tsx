@@ -99,7 +99,7 @@ export default function About() {
             Допуск СРО <br /> &gt;300 млн. руб
           </b>
           <span className="text-sm">
-            Допуск к проектированию опасных и уникальных объкетов
+            Допуск к проектированию опасных и уникальных объектов
           </span>
         </div>
         <div className="w-full lg:w-52 2xl:w-64 h-40 p-3 rounded-xl flex flex-col justify-between bg-gray-100">
