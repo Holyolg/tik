@@ -8,8 +8,8 @@ export const Video = ({ src, ...props }: { src: string }) => {
       {...props}
       className={
         isWaiting
-          ? "blur-lg md:w-full md:h-[100vh] h-[100vh] object-cover brightness-50"
-          : "md:w-full md:h-[100vh] h-[100vh] object-cover brightness-50"
+          ? "blur-lg md:w-full md:h-[100vh] h-[100vh] object-cover"
+          : "md:w-full md:h-[100vh] h-[100vh] object-cover"
       }
       width="100%"
       height="100%"
