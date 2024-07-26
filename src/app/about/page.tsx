@@ -179,7 +179,6 @@ export default function About() {
             </div>
             <div className="min-h-fit non-clickable relative bg-[url('/genproject_min.jpg')] bg-cover bg-no-repeat bg-center rounded-lg max-w-2xl xl:max-w-4xl w-full">
               <video
-                src="/genproject.mp4"
                 className="max-w-2xl xl:max-w-4xl h-full object-cover rounded-lg"
                 width="100%"
                 height="100%"
@@ -188,7 +187,9 @@ export default function About() {
                 loop
                 muted
                 playsInline
-              />
+              >
+                <source src="/genproject.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
           <h3 className="text-2xl font-semibold mt-12 md:text-end">
@@ -197,7 +198,6 @@ export default function About() {
           <div className="mt-6 flex flex-col md:flex-row w-full h-full justify-between gap-4 text-gray-500">
             <div className="min-h-fit  non-clickable relative  bg-[url('/concept_min.jpg')] bg-cover bg-no-repeat rounded-lg max-w-2xl xl:max-w-4xl bg-center w-full">
               <video
-                src="/concept.mp4"
                 className="max-w-2xl xl:max-w-4xl h-full object-cover rounded-lg"
                 width="100%"
                 height="100%"
@@ -206,7 +206,9 @@ export default function About() {
                 loop
                 muted
                 playsInline
-              />
+              >
+                <source src="/concept.mp4" type="video/mp4" />
+              </video>
             </div>
             <div className="max-w-2xl xl:max-w-3xl">
               <span>

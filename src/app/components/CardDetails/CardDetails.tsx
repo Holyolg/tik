@@ -222,7 +222,7 @@ const CardDetails = ({ data }: ICardDetails) => {
         </div>
         <section className="mt-10 lg:mt-32 justify-end lg:flex">
           <Link
-            href={"/projects"}
+            href={`/projects?type=${data.type}`}
             className="hover:opacity-50 flex items-center justify-center space-x-2 cursor-pointer"
           >
             <p>Больше проектов</p>
