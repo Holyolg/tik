@@ -18,7 +18,7 @@ export default function notFound() {
         </div>
         <h2 className="text-3xl font-semibold">Страница не найдена</h2>
 
-        <button className="hover:opacity-70 lg:flex items-center cursor-pointer hidden">
+        <button className="hover:opacity-50 lg:flex items-center cursor-pointer hidden">
           <Link href={"/"}>Попробовать снова</Link>
           <div className="w-5 hover__svg">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 36 36">

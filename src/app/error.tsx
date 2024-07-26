@@ -20,7 +20,7 @@ export default function Error({
 
         <p className="text-gray-500">{error.message}</p>
         <button
-          className="hover:opacity-70 lg:flex items-center cursor-pointer hidden"
+          className="hover:opacity-00 lg:flex items-center cursor-pointer hidden"
           onClick={() => reset()}
         >
           Попробовать снова

@@ -36,7 +36,7 @@ export default function About() {
           target="_blank"
           href={"/TikPRO.pdf"}
           rel="noopener noreferrer"
-          className="hover:opacity-70 flex space-x-2 cursor-pointer md:mt-0 mt-4"
+          className="hover:opacity-50 flex space-x-2 cursor-pointer md:mt-0 mt-4"
         >
           <span>Скачать презентацию о компании</span>
           <div className="w-5 self-center">

@@ -19,29 +19,29 @@ export default function Footer() {
           </Link>
           <span>ООО «ТИК-ПРОДЖЕКТ», {year}</span>
         </div>
-        <ul className="flex flex-col sm:flex-row flex-wrap w-full justify-between md:justify-end md:max-w-xs lg:max-w-xl mt-3 space-y-4 sm:space-y-0 sm:space-x-4 xl:space-x-8 text-gray-500 sm:mt-0">
+        <ul className="flex flex-col sm:flex-row flex-wrap w-full justify-between md:justify-end md:max-w-xs lg:max-w-xl mt-3 space-y-4 sm:space-y-0 sm:space-x-5 xl:space-x-8 text-gray-500 sm:mt-0">
           <li>
-            <Link href="/" className="cursor-pointer hover:opacity-75">
+            <Link href="/" className="cursor-pointer hover:opacity-50">
               Главная
             </Link>
           </li>
           <li>
-            <Link href="/projects" className="cursor-pointer hover:opacity-75">
+            <Link href="/projects" className="cursor-pointer hover:opacity-50">
               Проекты
             </Link>
           </li>
           <li>
-            <Link href="/#about" className="cursor-pointer hover:opacity-75 ">
+            <Link href="/#about" className="cursor-pointer hover:opacity-50">
               О компании
             </Link>
           </li>
           <li>
-            <Link href="/#services" className="cursor-pointer hover:opacity-75">
+            <Link href="/#services" className="cursor-pointer hover:opacity-50">
               Услуги
             </Link>
           </li>
           <li>
-            <Link href="/#contacts" className="cursor-pointer hover:opacity-75">
+            <Link href="/#contacts" className="cursor-pointer hover:opacity-50">
               Контакты
             </Link>
           </li>
