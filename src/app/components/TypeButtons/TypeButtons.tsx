@@ -1,17 +1,16 @@
 "use client";
+import { cardStore } from "@/app/store/store";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 
-export const TypeButtons = ({
-	onClickType,
-	type,
-}: {
-	onClickType: Function;
-	type: string | null;
-}) => {
+export const TypeButtons = ({ type }: { type: string }) => {
 	const router = useRouter();
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
+
+	const updateType = cardStore(state => state.updateType);
+	const updateCategory = cardStore(state => state.updateCategory);
+	const updateLoading = cardStore(state => state.updateLoading);
 
 	const params = new URLSearchParams(searchParams.toString());
 
@@ -32,8 +31,9 @@ export const TypeButtons = ({
 			<button
 				onClick={() => {
 					{
-						onClickType("genproject");
-
+						updateType("genproject");
+						updateCategory("Все");
+						updateLoading(true);
 						router.push(
 							pathname + "?" + createQueryString("type", "genproject"),
 							{
@@ -52,7 +52,9 @@ export const TypeButtons = ({
 			</button>
 			<button
 				onClick={() => {
-					onClickType("concept");
+					updateType("concept");
+					updateCategory("Все");
+					updateLoading(true);
 
 					router.push(
 						`${pathname}?

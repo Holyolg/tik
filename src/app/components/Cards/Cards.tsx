@@ -1,9 +1,11 @@
 "use client";
 import { useWindowSize } from "@/app/hooks/useWindowSize/useWindowSize";
-import getCards from "@/app/services/GetCards/GetCards";
 import { cardStore } from "@/app/store/store";
 import { Skeleton } from "@mui/material/";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import conceptData from "../../../concept.json";
+import genprojectData from "../../../genproject.json";
 import Card from "../Card/Card";
 
 interface IData {
@@ -28,17 +30,20 @@ interface IData {
 
 const Cards = ({
 	numItems,
-	category,
 	type,
+	category,
+	loading,
 }: {
 	numItems?: number | undefined;
-	category: string | null;
-	type: string | null;
+	type: string;
+	category: string;
+	loading: boolean;
 }) => {
-	const loading = cardStore(state => state.loading);
 	const updateLoading = cardStore(state => state.updateLoading);
 
-	const [cards, setCards] = useState([]);
+	const pathname = usePathname();
+
+	const [cards, setCards] = useState<IData[]>([]);
 	const { width } = useWindowSize();
 
 	const skeletons = [...new Array(numItems == undefined ? 9 : numItems)].map(
@@ -53,28 +58,27 @@ const Cards = ({
 	);
 
 	useEffect(() => {
-		const API_URL = `https://668e955fbf9912d4c92ee8b3.mockapi.io/${type}${
-			numItems ? `?page=1&limit=${numItems}&sortBy=rating&order=asc` : ""
-		}`;
-
-		getCards(API_URL).then(res => {
-			setCards(res);
-			updateLoading(false);
-		});
+		const pathConceptData =
+			pathname === "/projects"
+				? conceptData
+				: conceptData
+						.filter(card => card.rating)
+						.sort((a, b) => (a.rating > b.rating ? 1 : -1));
+		const pathGenpojectData =
+			pathname === "/projects"
+				? genprojectData
+				: genprojectData
+						.filter(card => card.rating > 0)
+						.sort((a, b) => (a.rating > b.rating ? 1 : -1));
+		const data = type === "concept" ? pathConceptData : pathGenpojectData;
+		setCards(data);
+		updateLoading(false);
 	}, [type]);
 
 	const filteredCards =
 		category != "Все"
 			? cards.filter((card: IData) => card.subcategory == category)
 			: cards;
-
-	// useEffect(() => {
-	// 	category != "Все"
-	// 		? setFilteredCards(
-	// 				cards.filter((card: IData) => card.subcategory == category)
-	// 		  )
-	// 		: setFilteredCards(cards);
-	// }, [category, type]);
 
 	return (
 		<div className="mx-auto grid grid-cols-1 w-full md:grid-cols-2 xl:grid-cols-3 gap-10 mt-10">

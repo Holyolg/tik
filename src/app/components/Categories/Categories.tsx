@@ -1,16 +1,9 @@
 "use client";
+import { cardStore } from "@/app/store/store";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 
-function Categories({
-	category,
-	onClickCategory,
-	type,
-}: {
-	category: string | null;
-	onClickCategory: Function;
-	type: string | null;
-}) {
+function Categories({ type, category }: { type: string; category: string }) {
 	const categoriesProject: string[] = [
 		"Все",
 		"Жилые",
@@ -25,6 +18,8 @@ function Categories({
 		"Интерьеры",
 		"Благоустройство",
 	];
+
+	const updateCategory = cardStore(state => state.updateCategory);
 
 	const categoryValue =
 		type == "genproject" ? categoriesProject : categoriesConcept;
@@ -48,7 +43,7 @@ function Categories({
 			{categoryValue.map(categoryName => (
 				<span
 					onClick={() => {
-						onClickCategory(categoryName);
+						updateCategory(categoryName);
 						router.push(
 							`${pathname}?
 								${createQueryString("category", categoryName)}`,
