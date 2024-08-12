@@ -1,11 +1,35 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export const Video = ({ src, ...props }: { src: string }) => {
+export const Video = ({ src }: { src: string }) => {
   const [isWaiting, setIsWaiting] = useState(false);
+
+  const videoElementRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (!videoElementRef.current) {
+      return;
+    }
+
+    const waitingHandler = () => {
+      console.log("waiting");
+      setIsWaiting(true);
+    };
+
+    const playHandler = () => {
+      console.log("play");
+      setIsWaiting(false);
+    };
+
+    const element = videoElementRef.current;
+
+    element.addEventListener("waiting", waitingHandler);
+    element.addEventListener("playing", playHandler);
+  }, [videoElementRef]);
+
   return (
     <video
-      {...props}
+      ref={videoElementRef}
       className={
         isWaiting
           ? "blur-lg md:w-full md:h-[100vh] h-[100vh] object-cover"
