@@ -13,6 +13,7 @@ export const Map = () => (
 					className="rounded-lg"
 					whileHover={{
 						boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.2)",
+						opacity: 0.8,
 					}}
 				>
 					<a href="https://yandex.ru/maps/-/CDCy5V9-" target="_blank">
@@ -36,6 +37,7 @@ export const Map = () => (
 					className="rounded-lg"
 					whileHover={{
 						boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.2)",
+						opacity: 0.8,
 					}}
 				>
 					<a href="https://yandex.ru/maps/-/CDCy5F6b" target="_blank">
