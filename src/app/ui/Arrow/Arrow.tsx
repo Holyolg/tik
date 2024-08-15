@@ -1,4 +1,4 @@
-export const Arrow = () => {
+export const Arrow: React.FC = () => {
   return (
     <svg
       className="w-3 h-3 shrink-0 rotate-90"

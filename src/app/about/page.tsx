@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Contacts } from "../components/PageComponents/Contacts/Contacts";
 
-export default function About() {
+export const About: React.FC = () => {
   return (
     <main className="container mx-auto mt-14 md:mt-32">
       <div className="flex flex-wrap justify-between items-center">
@@ -253,4 +253,4 @@ export default function About() {
       </section>
     </main>
   );
-}
+};

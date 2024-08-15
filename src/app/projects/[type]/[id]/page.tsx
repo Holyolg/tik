@@ -1,6 +1,8 @@
 import CardDetails from "@/app/components/CardDetails/CardDetails";
-import getCards from "@/app/services/GetCards/GetCards";
 import { Metadata, ResolvingMetadata } from "next";
+import conceptData from "../../../../concept.json";
+import genprojectData from "../../../../genproject.json";
+import { IData } from "@/app/components/Cards/Cards";
 
 type Props = {
   params: { id: string; type: string };
@@ -13,23 +15,25 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { id, type } = params;
 
-  const card = await fetch(
-    `https://668e955fbf9912d4c92ee8b3.mockapi.io/${type}/${id}`
-  ).then((res) => res.json());
+  const cards = type == "genproject" ? genprojectData : conceptData;
+  const card = cards.filter((card: IData) => card.id == id);
   return {
-    title: card.title,
+    title: card[0].title,
   };
 }
 export default async function CardDetailsPage({
   params,
 }: {
-  params: { id: string; type: string };
+  params: Props["params"];
 }) {
   const { id, type } = params;
-  const API_URL = `https://668e955fbf9912d4c92ee8b3.mockapi.io/${type}/${id}`;
-  const card = await getCards(API_URL);
+
+  const cards = type == "genproject" ? genprojectData : conceptData;
+  const card = cards.filter((card: IData) => card.id == id);
 
   return (
-    <main className="min-h-[100vh]">{card && <CardDetails data={card} />}</main>
+    <main className="min-h-[100vh]">
+      {card && <CardDetails data={card[0]} />}
+    </main>
   );
 }
