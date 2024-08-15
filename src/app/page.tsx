@@ -1,4 +1,4 @@
-import { About } from "./about/page";
+import About from "./about/page";
 import { AnimateAbout } from "./components/PageComponents/AnimateAbout/AnimateAbout";
 import { Hero } from "./components/PageComponents/Hero/Hero";
 import { HeroProjects } from "./components/PageComponents/HeroProjects/HeroProjects";
