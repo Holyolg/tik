@@ -1,8 +1,4 @@
 User-agent: *
-Disallow: /
+Disallow: /about
 
-User-agent: Googlebot
-Allow: *.css
-Allow: *.js
-
-Sitemap: https://tik-six.vercel.app/sitemap.xml
+Sitemap: https://tik.pro/sitemap.xml
