@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 export const Map = () => (
@@ -9,13 +8,7 @@ export const Map = () => (
 					Офис в г. Москве <br />
 					ул. 1-я Тверская-Ямская, дом 25, стр. 1
 				</p>
-				<motion.div
-					className="rounded-lg"
-					whileHover={{
-						boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.2)",
-						opacity: 0.8,
-					}}
-				>
+				<div className="rounded-lg transition-all duration-300 hover:opacity-90 hover:shadow-lg">
 					<a href="https://yandex.ru/maps/-/CDCy5V9-" target="_blank">
 						<Image
 							src={"/moscovMap.jpg"}
@@ -26,20 +19,14 @@ export const Map = () => (
 							sizes="900"
 						/>
 					</a>
-				</motion.div>
+				</div>
 			</div>
 			<div>
 				<p>
 					Офис в г. Тамбове <br />
 					ул. Кронштадтская, дом 4Ак1
 				</p>
-				<motion.div
-					className="rounded-lg"
-					whileHover={{
-						boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.2)",
-						opacity: 0.8,
-					}}
-				>
+				<div className="rounded-lg transition-all duration-300 hover:opacity-90 hover:shadow-lg">
 					<a href="https://yandex.ru/maps/-/CDCy5F6b" target="_blank">
 						<Image
 							src={"/tambovMap.jpg"}
@@ -50,7 +37,7 @@ export const Map = () => (
 							sizes="900"
 						/>
 					</a>
-				</motion.div>
+				</div>
 			</div>
 		</div>
 	</section>
