@@ -15,7 +15,7 @@ interface IData {
   subtitle: string | undefined;
 }
 
-const Card = ({ id, title, link, img, subtitle }: IData) => {
+const Card: React.FC<IData> = ({ id, title, link, img, subtitle }) => {
   const { width } = useWindowSize();
   const ref = useRef(null);
   const isInView = useInView(ref, {

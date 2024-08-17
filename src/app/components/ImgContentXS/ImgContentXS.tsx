@@ -10,7 +10,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/zoom";
 
-const ImgContentXS = ({ imgContent }: { imgContent: string[] }) => {
+type Props = {
+  imgContent: string[] | undefined;
+};
+
+const ImgContentXS: React.FC<Props> = ({ imgContent }) => {
   const { width } = useWindowSize();
   return (
     <>

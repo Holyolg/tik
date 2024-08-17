@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
 import Footer from "./components/Footer/Footer";
-import Menu from "./components/Menu/Menu";
+import Header from "./components/Header/Header";
 import "./globals.css";
 import Loading from "./loading";
 
@@ -24,9 +24,9 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body
-        className={`${inter.className} min-h-[100vh] flex flex-col justify-between antialiased`}
+        className={`${inter.className} min-h-screen flex flex-col justify-between antialiased`}
       >
-        <Menu />
+        <Header />
         <Suspense fallback={<Loading />}>{children}</Suspense>
         <Footer />
       </body>

@@ -12,6 +12,8 @@ import shimmer from "../../ui/Shimer/Shimer";
 import Card from "../Card/Card";
 import ImgContentXL from "../ImgContentXL/ImgContentXL";
 import ImgContentXS from "../ImgContentXS/ImgContentXS";
+import conceptData from "../../../concept.json";
+import genprojectData from "../../../genproject.json";
 
 // Import Swiper styles
 import toBase64 from "@/app/services/toBase64/toBase64";
@@ -19,45 +21,23 @@ import { Arrow } from "@/app/ui/Arrow/Arrow";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/zoom";
+import { IData } from "../Cards/Cards";
 
-interface ICardDetails {
-  data: {
-    id: string;
-    img: string;
-    link: string;
-    title: string;
-    category: string | number;
-    subtitle: string;
-    customer: string;
-    nolinkcustomer: string;
-    customerlink: string;
-    date: string;
-    type: string;
-    square: string;
-    location: string;
-    status: string;
-    arch: string;
-    archlink: string;
-    description: string;
-    text: string;
-    stage: string;
-    partners: string;
-    partnerslink: string;
-    imgcontent: [];
-  };
+interface Props {
+  data: IData;
 }
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-const CardDetails = ({ data }: ICardDetails) => {
+const CardDetails: React.FC<Props> = ({ data }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 300);
   const { width } = useWindowSize();
   const [isLoading, setIsLoading] = useState(true);
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState<IData[]>([]);
 
   const skeletons = [...new Array(2)].map((_, index) => (
     <Skeleton
@@ -69,21 +49,31 @@ const CardDetails = ({ data }: ICardDetails) => {
   ));
 
   useEffect(() => {
-    const page =
+    const count =
       data.type == "Генпроектирование"
         ? Math.floor(Math.random() * (6 - 1) + 1)
         : Math.floor(Math.random() * (2 - 1) + 1);
-    const API_URL = `https://668e955fbf9912d4c92ee8b3.mockapi.io/${
-      data.type == "Генпроектирование" ? "genproject" : "concept"
-    }?page=${page}&limit=3&sortBy=rating&order=asc`;
-    getCards(API_URL).then((res) => {
-      setCards(res);
-      setIsLoading(false);
-    });
-  }, []);
 
-  const filteredCards = cards.filter((card: any) => card.id !== data.id);
-  filteredCards.length === 2 ? filteredCards : delete filteredCards[2];
+    const cards =
+      data.type == "Генпроектирование" ? genprojectData : conceptData;
+
+    function getRandomObjects(arr: IData[]) {
+      if (arr.length < 2) {
+        throw new Error("Массив должен содержать как минимум два объекта.");
+      }
+      const firstIndex = Math.floor(Math.random() * arr.length);
+      const firstObject = arr[firstIndex];
+      const filteredArr = arr.filter((obj) => obj.id !== firstObject.id);
+      const secondIndex = Math.floor(Math.random() * filteredArr.length);
+      const secondObject = filteredArr[secondIndex];
+
+      return [firstObject, secondObject];
+    }
+    const res = getRandomObjects(cards);
+
+    setCards(res);
+    setIsLoading(false);
+  }, []);
 
   return (
     <>
@@ -233,7 +223,7 @@ const CardDetails = ({ data }: ICardDetails) => {
           <div className="grid grid-cols-1 w-full md:grid-cols-2 gap-10 mt-10">
             {isLoading
               ? skeletons
-              : filteredCards.map((card: any) => {
+              : cards.map((card: any) => {
                   return (
                     <Card
                       key={card.id}

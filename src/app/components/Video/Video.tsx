@@ -1,7 +1,11 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-export const Video = ({ src }: { src: string }) => {
+type Props = {
+  src: string;
+};
+
+export const Video: React.FC<Props> = ({ src }) => {
   const [isWaiting, setIsWaiting] = useState(false);
 
   const videoElementRef = useRef<HTMLVideoElement>(null);
