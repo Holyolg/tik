@@ -16,12 +16,10 @@ export const Video: React.FC<Props> = ({ src }) => {
     }
 
     const waitingHandler = () => {
-      console.log("waiting");
       setIsWaiting(true);
     };
 
     const playHandler = () => {
-      console.log("play");
       setIsWaiting(false);
     };
 
@@ -45,8 +43,7 @@ export const Video: React.FC<Props> = ({ src }) => {
       autoPlay
       loop
       muted
-      playsInline
-    >
+      playsInline>
       <source src={src} type="video/mp4" />
     </video>
   );

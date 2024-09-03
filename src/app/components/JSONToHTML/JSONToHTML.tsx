@@ -9,7 +9,6 @@ const JSONToHTML: FC<Props> = ({ data }) => {
     <div>
       {data.map((item, index) => {
         if (item.type === "p") {
-          // Если контент - массив, то проходим по нему
           if (Array.isArray(item.content)) {
             return (
               <p key={index}>
@@ -23,7 +22,6 @@ const JSONToHTML: FC<Props> = ({ data }) => {
               </p>
             );
           } else {
-            // Если контент - обычный текст, просто выводим его
             return <p key={index}>{item.content}</p>;
           }
         }

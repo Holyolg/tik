@@ -1,12 +1,12 @@
 import { useWindowSize } from "@/app/hooks/useWindowSize/useWindowSize";
-import toBase64 from "@/app/services/toBase64/toBase64";
+import toBase64 from "@/app/lib/toBase64";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { FC, useRef } from "react";
 import shimmer from "../../ui/Shimer/Shimer";
 
-interface IData {
+interface Card {
   id: string;
   img: string;
   link: string;
@@ -15,7 +15,7 @@ interface IData {
   subtitle: string | undefined;
 }
 
-const Card: React.FC<IData> = ({ id, title, link, img, subtitle }) => {
+const Card: FC<Card> = ({ id, title, link, img, subtitle }) => {
   const { width } = useWindowSize();
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -29,8 +29,7 @@ const Card: React.FC<IData> = ({ id, title, link, img, subtitle }) => {
       initial={{ opacity: 0 }}
       whileHover={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.35 }}
-    >
+      transition={{ duration: 0.35 }}>
       <p className="font-semibold">{title}</p>
       <p className="mt-5 text-sm">{subtitle}</p>
     </motion.div>
@@ -44,8 +43,7 @@ const Card: React.FC<IData> = ({ id, title, link, img, subtitle }) => {
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.35 }}
-      viewport={{ margin: "0px 50% -50% 0px" }}
-    >
+      viewport={{ margin: "0px 50% -50% 0px" }}>
       <p className="font-semibold">{title}</p>
       <p className="mt-5 text-sm">{subtitle}</p>
     </motion.div>
@@ -55,8 +53,7 @@ const Card: React.FC<IData> = ({ id, title, link, img, subtitle }) => {
     <div id={id}>
       <Link
         href={link + id}
-        className="flex items-center text-center text-white min-w-full h-[300px] 2xl:h-[360px] relative rounded-lg"
-      >
+        className="flex items-center text-center text-white min-w-full h-[300px] 2xl:h-[360px] relative rounded-lg">
         <Image
           src={img}
           ref={ref}

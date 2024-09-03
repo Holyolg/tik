@@ -1,5 +1,5 @@
 import { useWindowSize } from "@/app/hooks/useWindowSize/useWindowSize";
-import toBase64 from "@/app/services/toBase64/toBase64";
+import toBase64 from "@/app/lib/toBase64";
 import Image from "next/image";
 import { CSSProperties } from "react";
 import { Pagination, Zoom } from "swiper/modules";
@@ -31,8 +31,7 @@ const ImgContentXS: React.FC<Props> = ({ imgContent }) => {
           slidesPerView={1}
           pagination={{ clickable: true }}
           zoom={true}
-          loop={true}
-        >
+          loop={true}>
           {imgContent.map((img: string) => {
             return (
               <SwiperSlide key={img}>
@@ -42,9 +41,7 @@ const ImgContentXS: React.FC<Props> = ({ imgContent }) => {
                   style={{ objectFit: "cover", borderRadius: "0.5rem" }}
                   fill
                   sizes="800px"
-                  placeholder={`data:image/svg+xml;base64,${toBase64(
-                    shimmer(width, 550)
-                  )}`}
+                  placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(width, 550))}`}
                 />
               </SwiperSlide>
             );

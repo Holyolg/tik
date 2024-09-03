@@ -1,75 +1,35 @@
 "use client";
 
 import { useWindowSize } from "@/app/hooks/useWindowSize/useWindowSize";
-import { Skeleton } from "@mui/material";
-import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
+import { getRandomCards } from "@/app/lib/getRandomCards";
+import { Arrow } from "@/app/ui/Arrow/Arrow";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import conceptData from "../../../concept.json";
 import genprojectData from "../../../genproject.json";
 import { Accordion } from "../../ui/Accordion/Accordion";
-import shimmer from "../../ui/Shimer/Shimer";
-import Card from "../Card/Card";
-import ImgContentXL from "../ImgContentXL/ImgContentXL";
-import ImgContentXS from "../ImgContentXS/ImgContentXS";
-
-// Import Swiper styles
-import toBase64 from "@/app/services/toBase64/toBase64";
-import { Arrow } from "@/app/ui/Arrow/Arrow";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/zoom";
 import { IData } from "../Cards/Cards";
+import ImgContentXL from "../ImgContent/ImgContentXL";
+import ImgContentXS from "../ImgContent/ImgContentXS";
+import { CardDetailsHero } from "./CardDetailsHero";
+import { CardDetailsRandomCards } from "./CardDetailsRandomCards";
 
 interface Props {
   data: IData;
 }
 
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [-distance, distance]);
-}
-
 const CardDetails: React.FC<Props> = ({ data }) => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 300);
   const { width } = useWindowSize();
   const [isLoading, setIsLoading] = useState(true);
   const [cards, setCards] = useState<IData[]>([]);
 
-  const skeletons = [...new Array(2)].map((_, index) => (
-    <Skeleton
-      sx={{ borderRadius: "0.5rem" }}
-      variant="rounded"
-      height={width > 1920 ? 360 : 300}
-      key={index}></Skeleton>
-  ));
-
   useEffect(() => {
-    const count =
-      data.type == "Генпроектирование"
-        ? Math.floor(Math.random() * (6 - 1) + 1)
-        : Math.floor(Math.random() * (2 - 1) + 1);
-
     const cards =
       data.type == "Генпроектирование"
         ? (genprojectData as unknown as IData[])
         : (conceptData as IData[]);
 
-    function getRandomObjects(arr: IData[]) {
-      if (arr.length < 2) {
-        throw new Error("Массив должен содержать как минимум два объекта.");
-      }
-      const firstIndex = Math.floor(Math.random() * arr.length);
-      const firstObject = arr[firstIndex];
-      const filteredArr = arr.filter(obj => obj.id !== firstObject.id);
-      const secondIndex = Math.floor(Math.random() * filteredArr.length);
-      const secondObject = filteredArr[secondIndex];
-
-      return [firstObject, secondObject];
-    }
-    const res = getRandomObjects(cards);
+    const res = getRandomCards(cards);
 
     setCards(res);
     setIsLoading(false);
@@ -77,28 +37,7 @@ const CardDetails: React.FC<Props> = ({ data }) => {
 
   return (
     <>
-      <div className="min-h-[100vh] relative">
-        <motion.div
-          className="absolute z-10 w-full top-1/2"
-          ref={ref}
-          style={{ y }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}>
-          <h2 className="container mx-auto text-xl text-white ">{data.subtitle}</h2>
-          <h1 className="container mx-auto mt-5 text-3xl sm:text-7xl font-semibold font-semibold text-white">
-            {data.title}
-          </h1>
-        </motion.div>
-        <Image
-          src={data.img}
-          alt="Изображение проекта"
-          style={{ objectFit: "cover", filter: "brightness(65%)" }}
-          sizes="2200px"
-          fill
-          placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(1920, 1080))}`}
-          priority={true}
-        />
-      </div>
+      <CardDetailsHero title={data.title} img={data.img} subtitle={data.subtitle} />
       <main className="container mx-auto mt-6 md:mt-20">
         <div className="relative flex pb-8 md:pb-0 flex-col-reverse md:flex-row justify-between gap-8 border-b md:border-none border-gray-300">
           <section className="w-full md:basis-3/5 lg:basis-2/3">
@@ -209,23 +148,7 @@ const CardDetails: React.FC<Props> = ({ data }) => {
           </Link>
         </section>
         <section className="flex justify-center">
-          <div className="grid grid-cols-1 w-full md:grid-cols-2 gap-10 mt-10">
-            {isLoading
-              ? skeletons
-              : cards.map((card: any) => {
-                  return (
-                    <Card
-                      key={card.id}
-                      id={card.id}
-                      title={card.title}
-                      link={card.link}
-                      img={card.img}
-                      subtitle={card.subtitle}
-                      category={card.category}
-                    />
-                  );
-                })}
-          </div>
+          <CardDetailsRandomCards cards={cards} isLoading={isLoading} width={width} />
         </section>
       </main>
     </>

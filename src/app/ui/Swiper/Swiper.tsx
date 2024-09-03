@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import shimmer from "../Shimer/Shimer";
 
-import toBase64 from "@/app/services/toBase64/toBase64";
+import toBase64 from "@/app/lib/toBase64";
 import "swiper/css";
 
 type Props = {
@@ -16,8 +16,7 @@ export const MainSwiper: React.FC<Props> = ({ img2, img3 }) => {
       spaceBetween={50}
       slidesPerView={1}
       onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
+      onSwiper={swiper => console.log(swiper)}>
       <SwiperSlide>
         <Image
           className="mt-5"
@@ -25,9 +24,7 @@ export const MainSwiper: React.FC<Props> = ({ img2, img3 }) => {
           alt="Изображение проекта"
           style={{ objectFit: "cover" }}
           fill
-          placeholder={`data:image/svg+xml;base64,${toBase64(
-            shimmer(1536, 900)
-          )}`}
+          placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(1536, 900))}`}
         />
       </SwiperSlide>
       <SwiperSlide>
@@ -37,9 +34,7 @@ export const MainSwiper: React.FC<Props> = ({ img2, img3 }) => {
           alt="Изображение проекта"
           style={{ objectFit: "cover" }}
           fill
-          placeholder={`data:image/svg+xml;base64,${toBase64(
-            shimmer(1536, 900)
-          )}`}
+          placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(1536, 900))}`}
         />
       </SwiperSlide>
     </Swiper>

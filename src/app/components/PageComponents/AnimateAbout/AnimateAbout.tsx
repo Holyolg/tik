@@ -1,5 +1,5 @@
 "use client";
-import toBase64 from "@/app/services/toBase64/toBase64";
+import toBase64 from "@/app/lib/toBase64";
 import { Arrow } from "@/app/ui/Arrow/Arrow";
 import shimmer from "@/app/ui/Shimer/Shimer";
 import { useGSAP } from "@gsap/react";

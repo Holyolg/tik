@@ -14,15 +14,14 @@ export default function Error({
   }, [error]);
 
   return (
-    <main className="h-full container m-auto">
+    <main className="min-h-screen flex flex-col justify-center items-center space-y-10">
       <div className="flex flex-col justify-center items-center space-y-10">
         <h2 className="text-3xl font-semibold">Что-то сломалось :&#40; </h2>
 
         <p className="text-gray-500">{error.message}</p>
         <button
           className="hover:opacity-00 lg:flex items-center cursor-pointer hidden"
-          onClick={() => reset()}
-        >
+          onClick={() => reset()}>
           Попробовать снова
           <div className="w-5 hover__svg">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 36 36">

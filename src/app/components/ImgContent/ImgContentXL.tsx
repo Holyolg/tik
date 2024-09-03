@@ -1,4 +1,4 @@
-import toBase64 from "@/app/services/toBase64/toBase64";
+import toBase64 from "@/app/lib/toBase64";
 import shimmer from "@/app/ui/Shimer/Shimer";
 import Image from "next/image";
 
@@ -17,9 +17,7 @@ const ImgContentXL: React.FC<Props> = ({ imgContent }) => {
             fill
             alt="Изображение проекта"
             style={{ objectFit: "cover", borderRadius: "0.5rem" }}
-            placeholder={`data:image/svg+xml;base64,${toBase64(
-              shimmer(1536, 900)
-            )}`}
+            placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(1536, 900))}`}
           />
         </div>
       ))}
