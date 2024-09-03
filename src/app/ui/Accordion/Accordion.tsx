@@ -1,8 +1,9 @@
+import JSONToHTML from "@/app/components/JSONToHTML/JSONToHTML";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 type Props = {
-  description: string;
+  description: { type: string; content: string }[];
 };
 
 export const Accordion: React.FC<Props> = ({ description }) => {
@@ -13,9 +14,10 @@ export const Accordion: React.FC<Props> = ({ description }) => {
       key="content"
       initial={{ y: -15, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -15, opacity: 0 }}
-    >
-      <p className="text-sm">{description}</p>
+      exit={{ y: -15, opacity: 0 }}>
+      <p className="text-sm">
+        <JSONToHTML data={description} />
+      </p>
     </motion.div>
   );
 
@@ -25,8 +27,7 @@ export const Accordion: React.FC<Props> = ({ description }) => {
         <motion.button
           type="button"
           onClick={() => setOpen(!open)}
-          className="flex items-center justify-between w-full py-5 font-semibold border-b border-gray-300 gap-3 hover:opacity-75"
-        >
+          className="flex items-center justify-between w-full py-5 font-semibold border-b border-gray-300 gap-3 hover:opacity-75">
           <span>Подробнее</span>
           <motion.svg
             animate={
@@ -44,8 +45,7 @@ export const Accordion: React.FC<Props> = ({ description }) => {
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 10 6"
-          >
+            viewBox="0 0 10 6">
             <path
               stroke="currentColor"
               strokeLinecap="round"

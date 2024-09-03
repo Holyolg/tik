@@ -1,19 +1,18 @@
 "use client";
 
 import { useWindowSize } from "@/app/hooks/useWindowSize/useWindowSize";
-import getCards from "@/app/services/GetCards/GetCards";
 import { Skeleton } from "@mui/material";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import conceptData from "../../../concept.json";
+import genprojectData from "../../../genproject.json";
 import { Accordion } from "../../ui/Accordion/Accordion";
 import shimmer from "../../ui/Shimer/Shimer";
 import Card from "../Card/Card";
 import ImgContentXL from "../ImgContentXL/ImgContentXL";
 import ImgContentXS from "../ImgContentXS/ImgContentXS";
-import conceptData from "../../../concept.json";
-import genprojectData from "../../../genproject.json";
 
 // Import Swiper styles
 import toBase64 from "@/app/services/toBase64/toBase64";
@@ -44,8 +43,7 @@ const CardDetails: React.FC<Props> = ({ data }) => {
       sx={{ borderRadius: "0.5rem" }}
       variant="rounded"
       height={width > 1920 ? 360 : 300}
-      key={index}
-    ></Skeleton>
+      key={index}></Skeleton>
   ));
 
   useEffect(() => {
@@ -54,8 +52,7 @@ const CardDetails: React.FC<Props> = ({ data }) => {
         ? Math.floor(Math.random() * (6 - 1) + 1)
         : Math.floor(Math.random() * (2 - 1) + 1);
 
-    const cards =
-      data.type == "Генпроектирование" ? genprojectData : conceptData;
+    const cards = data.type == "Генпроектирование" ? genprojectData : conceptData;
 
     function getRandomObjects(arr: IData[]) {
       if (arr.length < 2) {
@@ -63,7 +60,7 @@ const CardDetails: React.FC<Props> = ({ data }) => {
       }
       const firstIndex = Math.floor(Math.random() * arr.length);
       const firstObject = arr[firstIndex];
-      const filteredArr = arr.filter((obj) => obj.id !== firstObject.id);
+      const filteredArr = arr.filter(obj => obj.id !== firstObject.id);
       const secondIndex = Math.floor(Math.random() * filteredArr.length);
       const secondObject = filteredArr[secondIndex];
 
@@ -83,11 +80,8 @@ const CardDetails: React.FC<Props> = ({ data }) => {
           ref={ref}
           style={{ y }}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        >
-          <h2 className="container mx-auto text-xl text-white ">
-            {data.subtitle}
-          </h2>
+          animate={{ opacity: 1 }}>
+          <h2 className="container mx-auto text-xl text-white ">{data.subtitle}</h2>
           <h1 className="container mx-auto mt-5 text-3xl sm:text-7xl font-semibold font-semibold text-white">
             {data.title}
           </h1>
@@ -98,9 +92,7 @@ const CardDetails: React.FC<Props> = ({ data }) => {
           style={{ objectFit: "cover", filter: "brightness(65%)" }}
           sizes="2200px"
           fill
-          placeholder={`data:image/svg+xml;base64,${toBase64(
-            shimmer(1920, 1080)
-          )}`}
+          placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(1920, 1080))}`}
           priority={true}
         />
       </div>
@@ -153,8 +145,7 @@ const CardDetails: React.FC<Props> = ({ data }) => {
                     <a
                       href={data.archlink}
                       target="_blank"
-                      className="text-sm hover:opacity-50 after:content-['_↗']"
-                    >
+                      className="text-sm hover:opacity-50 after:content-['_↗']">
                       {data.arch}
                     </a>
                   </li>
@@ -166,8 +157,7 @@ const CardDetails: React.FC<Props> = ({ data }) => {
                     <a
                       href={data.partnerslink}
                       target="_blank"
-                      className="text-sm hover:opacity-50 after:content-['_↗']"
-                    >
+                      className="text-sm hover:opacity-50 after:content-['_↗']">
                       {data.partners}
                     </a>
                   </li>
@@ -178,8 +168,7 @@ const CardDetails: React.FC<Props> = ({ data }) => {
                     <a
                       href={data.customerlink}
                       target="_blank"
-                      className="text-sm hover:opacity-50 after:content-['_↗']"
-                    >
+                      className="text-sm hover:opacity-50 after:content-['_↗']">
                       {data.customer}
                     </a>
                   </li>
@@ -203,9 +192,7 @@ const CardDetails: React.FC<Props> = ({ data }) => {
                     <p className="text-sm">{data.status}</p>
                   </li>
                 )}
-                {data.description && (
-                  <Accordion description={data.description} />
-                )}
+                {data.description && <Accordion description={data.description} />}
               </ul>
             </div>
           </section>
@@ -213,8 +200,7 @@ const CardDetails: React.FC<Props> = ({ data }) => {
         <section className="mt-10 lg:mt-32 justify-end lg:flex">
           <Link
             href={`/projects?type=${data.type}`}
-            className="hover:opacity-50 flex items-center justify-center space-x-2 cursor-pointer"
-          >
+            className="hover:opacity-50 flex items-center justify-center space-x-2 cursor-pointer">
             <p>Больше проектов</p>
             <Arrow />
           </Link>
