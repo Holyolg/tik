@@ -67,7 +67,8 @@ const Cards: React.FC<Props> = ({ numItems, type, category, loading }) => {
         : genprojectData
             .filter(card => card.rating > 0)
             .sort((a, b) => (a.rating > b.rating ? 1 : -1));
-    const data = type === "concept" ? pathConceptData : pathGenpojectData;
+    const data: IData[] =
+      type === "concept" ? (pathConceptData as IData[]) : (pathGenpojectData as unknown as IData[]);
     setCards(data);
     updateLoading(false);
   }, [type]);

@@ -52,7 +52,10 @@ const CardDetails: React.FC<Props> = ({ data }) => {
         ? Math.floor(Math.random() * (6 - 1) + 1)
         : Math.floor(Math.random() * (2 - 1) + 1);
 
-    const cards = data.type == "Генпроектирование" ? genprojectData : conceptData;
+    const cards =
+      data.type == "Генпроектирование"
+        ? (genprojectData as unknown as IData[])
+        : (conceptData as IData[]);
 
     function getRandomObjects(arr: IData[]) {
       if (arr.length < 2) {
