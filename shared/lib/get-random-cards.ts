@@ -1,4 +1,4 @@
-import { IData } from "../components/Cards/Cards";
+import { IData } from "../components/cards-list";
 
 export function getRandomCards(arr: IData[]) {
 	if (arr.length < 2) {

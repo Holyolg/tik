@@ -1,7 +1,7 @@
 import { Skeleton } from "@mui/material";
 import { FC } from "react";
-import { IData } from "../cards-list";
 import { Card } from "../card";
+import { IData } from "../cards-list";
 
 interface Props {
 	cards: IData[];
