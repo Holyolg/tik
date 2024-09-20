@@ -1,0 +1,14 @@
+export { Card } from "./card";
+export { CardsList } from "./cards-list";
+export { Categories } from "./categories";
+export { Map } from "./map";
+export { TypeButtons } from "./type-button";
+export { ImgContent } from "./img-content";
+export { ImgContentMobile } from "./img-content-mobile";
+export { Video } from "./video";
+export { GenerateDesc } from "./generate-desc";
+export { AboutDesc } from "./about-desc";
+export { GrayCards } from "./gray-cards";
+export { DescriptionWithVideo } from "./description-with-video";
+export * from "./page-component/index";
+export * from "./card-details/index";
