@@ -37,7 +37,6 @@ export const TypeButtons: React.FC<Props> = ({ type }) => {
 					{
 						updateType("genproject");
 						updateCategory("Все");
-						updateLoading(true);
 						router.push(
 							pathname + "?" + createQueryString("type", "genproject"),
 							{
@@ -57,7 +56,6 @@ export const TypeButtons: React.FC<Props> = ({ type }) => {
 				onClick={() => {
 					updateType("concept");
 					updateCategory("Все");
-					updateLoading(true);
 
 					router.push(
 						`${pathname}?
