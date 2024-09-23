@@ -1,8 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { FC } from "react";
 
-export const Footer = () => {
+export const Footer: FC = () => {
 	const year = new Date().getFullYear();
 
 	return (

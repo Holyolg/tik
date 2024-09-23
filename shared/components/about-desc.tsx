@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import Image from "next/image";
 import { FC } from "react";
 
@@ -8,7 +9,11 @@ interface Props {
 export const AboutDesc: FC<Props> = ({ className }) => {
 	return (
 		<>
-			<div className="flex flex-col justify-between max-w-xl xl:max-w-3xl">
+			<div
+				className={classNames(
+					"flex flex-col justify-between max-w-xl xl:max-w-3xl",
+					className
+				)}>
 				<p className=" text-gray-500 leading-relaxed mt-10 lg:mt-0">
 					ТИК-ПРОДЖЕКТ - команда архитекторов, конструкторов, инженеров и
 					ТИМ-специалистов. <br /> В аббревиатуре «TIK»: «Technologies

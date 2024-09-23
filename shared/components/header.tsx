@@ -1,10 +1,10 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useWindowSize } from "../hooks/use-window-size";
 
-export const Header = () => {
+export const Header: FC = () => {
 	const [opened, setOpened] = useState(false);
 	const { width } = useWindowSize();
 

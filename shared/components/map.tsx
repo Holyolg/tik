@@ -1,6 +1,7 @@
 import Image from "next/image";
+import { FC } from "react";
 
-export const Map = () => (
+export const Map: FC = () => (
 	<section className="w-full">
 		<div className="flex flex-col lg:flex-row justify-between lg:space-x-10 space-y-6 lg:space-y-0">
 			<div>

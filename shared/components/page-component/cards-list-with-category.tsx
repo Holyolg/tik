@@ -7,6 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useRef } from "react";
 import { TypeButtons } from "../type-button";
 import { CardsList } from "../cards-list";
+import { ButtonLink } from "../ui";
 
 type Props = {
 	numItems: number;
@@ -52,7 +53,7 @@ export const CardsListWithCategory: React.FC<Props> = ({ numItems }) => {
 			</div>
 			<div className="mt-6 lg:flex justify-between">
 				<TypeButtons type={type} />
-				<button className="hover:opacity-50 lg:flex items-center cursor-pointer hidden space-x-2">
+				<ButtonLink>
 					<Link
 						href={`/projects?${createQueryString(
 							"type",
@@ -60,8 +61,7 @@ export const CardsListWithCategory: React.FC<Props> = ({ numItems }) => {
 						)}`}>{`Больше ${
 						type == "genproject" ? "проектов" : "концепций"
 					}`}</Link>
-					<Arrow />
-				</button>
+				</ButtonLink>
 			</div>
 			<CardsList
 				numItems={numItems}

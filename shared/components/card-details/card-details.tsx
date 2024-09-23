@@ -10,7 +10,7 @@ import { CardDetailsHero, CardDetailsRandomCards } from ".";
 import { ImgContent, ImgContentMobile } from "..";
 import { CardDetailsDesc } from "./card-details-desc";
 import { IData } from "../cards-list";
-import { Arrow } from "../ui";
+import { Arrow, ButtonLink } from "../ui";
 
 interface Props {
 	data: IData;
@@ -54,12 +54,11 @@ export const CardDetails: React.FC<Props> = ({ data }) => {
 					</section>
 				</div>
 				<section className="mt-10 lg:mt-32 justify-end lg:flex">
-					<Link
-						href={`/projects?type=${data.type}`}
-						className="hover:opacity-50 flex items-center justify-center space-x-2 cursor-pointer">
-						<p>Больше проектов</p>
-						<Arrow />
-					</Link>
+					<ButtonLink>
+						<Link href={`/projects?type=${data.type}`}>
+							{`Больше ${data.type == "genproject" ? "проектов" : "концепций"}`}
+						</Link>
+					</ButtonLink>
 				</section>
 				<section className="flex justify-center">
 					<CardDetailsRandomCards

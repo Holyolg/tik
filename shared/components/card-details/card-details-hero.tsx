@@ -21,6 +21,7 @@ export const CardDetailsHero: FC<Props> = ({
 	const ref = useRef(null);
 	const { scrollYProgress } = useScroll({ target: ref });
 	const y = useParallax(scrollYProgress, 300);
+
 	return (
 		<div className={`min-h-[100vh] relative, ${className}`}>
 			<motion.div

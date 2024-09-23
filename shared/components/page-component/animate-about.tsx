@@ -8,6 +8,7 @@ import Link from "next/link";
 import { FC, useRef } from "react";
 import about from "@/public/about.jpg";
 import { shimmer, toBase64 } from "@/shared/lib";
+import { ButtonLink } from "../ui";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -40,10 +41,9 @@ export const AnimateAbout: FC = () => {
 		<>
 			<div className="flex justify-between items-center">
 				<h2 className="text-4xl lg:text-6xl font-semibold">Мы</h2>
-				<button className="hover:opacity-50 flex items-center cursor-pointer space-x-2">
+				<ButtonLink>
 					<Link href={"/#about"}>Подробнее о нас</Link>
-					<Arrow />
-				</button>
+				</ButtonLink>
 			</div>
 			<div className="flex flex-col xl:flex-row justify-between w-full gap-10">
 				<div className="xl:w-[41%]">

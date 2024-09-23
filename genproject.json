@@ -77,36 +77,7 @@
 			"/img/genproject/house/datskiy_kvartal/4.jpg"
 		]
 	},
-	{
-		"rating": 6,
-		"id": "legenda_korenevo",
-		"img": "/img/genproject/house/legenda_korenevo/1.jpg",
-		"link": "/projects/genproject/",
-		"title": "Легенда Коренево",
-		"category": "Жилые",
-		"subcategory": "Жилые",
-		"type": "Генпроектирование",
-		"subtitle": "Жилой комплекс",
-		"square": "59 628 м²",
-		"location": "Московская область, г.о. Люберцы, д.п. Красково, вблизи ул. Лорха",
-		"partners": "Архитектурная концепция - архитектурное бюро «Четвертое измерение»",
-		"partnerslink": "http://4izmerenie.ru",
-		"customer": "ООО СЗ «Коренево Девелопмент»",
-		"customerlink": "https://legendakorenevo.ru",
-		"stage": "АХО, АГО, ПД, РД, АН",
-		"date": "2023-2024",
-		"status": "В процессе строительства",
-		"description": "",
-		"imgcontent": [
-			"/img/genproject/house/legenda_korenevo/2.jpg",
-			"/img/genproject/house/legenda_korenevo/3.jpg",
-			"/img/genproject/house/legenda_korenevo/4.jpg",
-			"/img/genproject/house/legenda_korenevo/5.jpg",
-			"/img/genproject/house/legenda_korenevo/6.jpg",
-			"/img/genproject/house/legenda_korenevo/7.jpg",
-			"/img/genproject/house/legenda_korenevo/8.jpg"
-		]
-	},
+
 	{
 		"rating": 8,
 		"id": "belkin_house",
