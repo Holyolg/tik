@@ -58,7 +58,7 @@ export const ProjectTypeSwitcher: FC = () => {
       <button
         className={
           type === "concept"
-            ? " w-full lg:w-72 h-10 bg-black border-black border lg:rounded-lg rounded-r-lg hover:bg-black text-white active:opacity-85"
+            ? "w-full lg:w-72 h-10 bg-black border-black border lg:rounded-lg rounded-r-lg hover:bg-black text-white active:opacity-85"
             : " w-full lg:w-72 h-10 border-black border lg:rounded-lg rounded-r-lg  hover:bg-black hover:text-white active:opacity-85"
         }
         onClick={() => switchToType("concept")}>
