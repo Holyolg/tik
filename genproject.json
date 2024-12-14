@@ -30,7 +30,7 @@
     ]
   },
   {
-    "rating": 3,
+    "rating": 2,
     "id": "salaryevo",
     "img": "/img/genproject/house/salaryevo/1.jpg",
     "link": "/projects/genproject/",
@@ -50,6 +50,35 @@
     "description": "",
     "imgcontent": ["/img/genproject/house/salaryevo/2.jpg", "/img/genproject/house/salaryevo/3.jpg"]
   },
+  {
+    "rating": 3,
+    "id": "andreevskiy",
+    "img": "/img/genproject/house/andreevskiy/1.jpg",
+    "link": "/projects/genproject/",
+    "title": "ЖК Андреевский",
+    "category": "Жилые",
+    "subcategory": "Жилые",
+    "type": "concept",
+    "subtitle": "Жилой комплекс",
+    "square": "17 200 м²",
+    "location": "г. Тамбов, ул. Андреевская",
+    "partners": "",
+    "customer": "",
+    "nolinkcustomer": "ООО «СЗ «ТамбовСтарстрой»",
+    "stage": "АК, ПД, РД, АН",
+    "date": "2024",
+    "status": "",
+    "description": "",
+    "imgcontent": [
+      "/img/genproject/house/andreevskiy/2.jpg",
+      "/img/genproject/house/andreevskiy/3.jpg",
+      "/img/genproject/house/andreevskiy/4.jpg",
+      "/img/genproject/house/andreevskiy/5.jpg",
+      "/img/genproject/house/andreevskiy/6.jpg",
+      "/img/genproject/house/andreevskiy/7.jpg"
+    ]
+  },
+
   {
     "rating": 4,
     "id": "datskiy_kvartal",
