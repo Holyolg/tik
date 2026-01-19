@@ -12,7 +12,7 @@ jobs:
       group: prod
       cancel-in-progress: true
     steps:
-      - name: SSH Command
+      - name: Deploy via SSH
         uses: D3rHase/ssh-command-action@v0.2.2
         with:
           # hostname / IP of the server
@@ -20,4 +20,7 @@ jobs:
           user: ${{ secrets.SSH_USERNAME }}
           private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           host_fingerprint: ${{ secrets.SSH_FINGERPRINT }}
-          command: source ~/.nvm/nvm.sh; ~/deploy.sh;
+          command: |
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+            /root/deploy.sh
